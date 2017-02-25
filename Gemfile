@@ -22,6 +22,8 @@ group :development, :test do
 	gem 'sqlite3'
 end
 
+# Use devise here for db management
+gem 'devise'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
