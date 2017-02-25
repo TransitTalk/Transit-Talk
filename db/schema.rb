@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 20170225181946) do
 
   create_table "lines", force: :cascade do |t|
+    t.string  "api_id"
     t.string  "name"
     t.integer "system_type"
   end
