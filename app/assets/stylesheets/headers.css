@@ -20,7 +20,7 @@
 }
 
 /*  */
-. {
+* {
 	text-align: left;
 	color: DimGrey;
 	font: 18px "Open Sans";
