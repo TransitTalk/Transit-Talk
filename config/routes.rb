@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :lines, only: [:index, :show]
 
   get "/stops/:stop_id" => 'stops#show', :as => :stops
-  get "/stops/favorites" => 'stops#fav', :as => :favorites
+  get "/favorites" => 'stops#fav', :as => :favorites
 #  get "/line" name: "vehicles"
 
   root 'pages#home'
