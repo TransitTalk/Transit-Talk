@@ -1,8 +1,8 @@
 /* Styling for main header with project name and transportation line */
-.pageTitle {
+.title {
 	text-align: center;
 	color: white;
-	font: 14px "Open Sans";
+	font: 30px "Open Sans";
 }
 
 /* HEADERS OF STOP SECTIONS ("NEARBY STOPS", "FAVORITE STOPS") */
