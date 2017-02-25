@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # General page routes. Will include items like home and top-level pages
   get "/home" => 'pages#home', :as => :home
-  get "/page/:page_name" => 'pages#about', :as => :about
+  get "/pages/:page_name" => 'pages#show', :as => :page
 
   get "/dashboard" => 'pages#dash', :as => :dash
 
