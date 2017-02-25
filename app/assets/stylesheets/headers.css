@@ -19,11 +19,9 @@
 	font: 16px "Open Sans";
 }
 
-/*  */
-* {
-	text-align: left;
-	color: DimGrey;
-	font: 18px "Open Sans";
-}
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
+* {
+	color: #535353;
+}
 /* Sub headers showing to input e

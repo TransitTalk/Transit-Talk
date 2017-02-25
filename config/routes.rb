@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   get "/home" => 'pages#home', :as => :home
   get "/pages/:page_name" => 'pages#show', :as => :page
 
-  get "/dashboard" => 'pages#dash', :as => :dash
-
   # get "/lines" => 'lines#index', :as => :lines
   # get "/lines/:name" => 'lines#show', :as => :lines_name
 
