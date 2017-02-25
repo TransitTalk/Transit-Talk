@@ -35,9 +35,29 @@ namespace :transit do
     end
   end
 
-  #task populate_lines: :environment do
-  #  GTFS::Source.build("#{Rails.root}/tmp/google_transit.zip")
-  #end
+  task populate_lines: :environment do
+    source = GTFS::Source.build("#{Rails.root}/tmp/google_transit.zip")
+
+    routes_done = Set.new
+    source.trips.each do |trip|
+      if routes_done.add?(trip.route_id)
+        source.stoptimes.select do |stop_time|
+          trip.id == stop_time.trip_id
+        end
+        .sort_by(&:arrival_time)
+        .map do |stop_time|
+          Stop.find_by(
+            api_id: stop_time.stop_id
+          )
+        end
+        .map do |stop|
+
+        end
+      end
+    end
+
+
+  end
 
 
 end
