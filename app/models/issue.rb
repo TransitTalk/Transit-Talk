@@ -1,0 +1,3 @@
+class Issue < ApplicationRecord
+
+end

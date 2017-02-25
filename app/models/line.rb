@@ -1,0 +1,3 @@
+class Line < ApplicationRecord
+
+end

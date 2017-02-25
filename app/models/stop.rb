@@ -1,0 +1,3 @@
+class Stop < ApplicationRecord
+
+end
