@@ -5,12 +5,17 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+group :production do
+	# MySQL
+	gem 'mysql2', '~> 0.3.18'
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
 
-group :production do
+group :development, :test do
 	# SQLite, only on local 
 	gem 'sqlite3'
 end
