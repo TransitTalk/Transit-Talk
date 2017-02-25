@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # General page routes. Will include items like home and top-level pages
   get "/home" => 'home#index', :as => :home
+  get "/demo" => 'demo#index', :as => :demo
 
   root 'home#index'
 
