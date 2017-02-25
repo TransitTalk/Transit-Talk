@@ -19,7 +19,7 @@ gem 'rails', '~> 5.0.1'
 
 group :development, :test do
 	# SQLite, only on local 
-	# gem 'sqlite3'
+	gem 'sqlite3'
 end
 
 # Use Puma as the app server
