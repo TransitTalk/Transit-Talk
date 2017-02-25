@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225180000) do
+ActiveRecord::Schema.define(version: 20170225181946) do
+
+  create_table "lines", force: :cascade do |t|
+    t.string  "name"
+    t.integer "system_type"
+  end
+
+  create_table "lines_stops", force: :cascade do |t|
+    t.integer "stop_id"
+    t.integer "line_id"
+    t.index ["line_id"], name: "index_lines_stops_on_line_id"
+    t.index ["stop_id"], name: "index_lines_stops_on_stop_id"
+  end
 
   create_table "stops", force: :cascade do |t|
     t.string  "api_id"
