@@ -2,14 +2,31 @@
 <html>
   <head>
     <title>TransitNetwork</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <%= stylesheet_link_tag "application" %>
   </head>
 
   <body>
-    <b> Transit Network Project </b>
-    <=% yield %>
+  	<%= render "shared/header" %>
+    <div class="side-menu">
+      <div class="title">TransitNet Menu</div>
+      <ul>
+        <li><%= link_to('About', page_path(:page_name => 'about')) %></li>
+        <% if current_user %>
+          <li>Favorite Stops</li>
+          <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
+        <% else %>
+          <li><%= link_to('Sign In', new_user_session_path)  %></li>
+          <li><%= link_to('Sign Up', new_user_registration_path)  %></li>
+        <% end %>
+      </ul>
+    </div>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <b> Transit Network Project </b>
+    <%= yield %>
   </body>
 </html>
