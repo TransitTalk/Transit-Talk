@@ -41,7 +41,7 @@ namespace :transit do
     routes_done = Set.new
     source.trips.each do |trip|
       if routes_done.add?(trip.route_id)
-        source.stoptimes.select do |stop_time|
+        stops = source.stop_times.select do |stop_time|
           trip.id == stop_time.trip_id
         end
         .sort_by(&:arrival_time)
@@ -50,14 +50,14 @@ namespace :transit do
             api_id: stop_time.stop_id
           )
         end
-        .map do |stop|
+        .map(&:original)
 
-        end
+        line = Line.find_by(
+          api_id: trip.route_id
+        )
+        line.stops = stops
+        line.save
       end
     end
-
-
   end
-
-
 end
