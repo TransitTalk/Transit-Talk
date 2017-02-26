@@ -6,4 +6,9 @@ class LinesController < ApplicationController
   def show
     @line = Line.find(params[:id])
   end
+
+  def get_stops
+    @line = Line.find(params[:id])
+    render :json => @line.stops
+  end
 end
