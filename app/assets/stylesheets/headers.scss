@@ -2,13 +2,14 @@
 	height: 50px;
 	width: 100%;
 	background-color: #58b7ff;
+	text-align: center;
 }
 
 .hamburger {
+	float: left;
 	height: 50px;
 	width: 50px;
 	background-image: url(asset-path('menu.svg'));
-	display: inline-block;
 	background-size: 100%;
 }
 
@@ -17,18 +18,17 @@
 .title {
 	text-align: center;
 	color: white;
+	margin-top: 5px;
 	font-size: 30px;
 	display: inline-block;
-	}
+}
 
-
-
-.search{
+.search {
+	float: right;
 	background-image: url(asset-path('search-white.svg'));
 	height: 50px;
 	width: 50px;
-	background-color: #58b7ff;
-
+	background-size: 100%;
 }
 
 /* HEADERS OF STOP SECTIONS ("NEARBY STOPS", "FAVORITE STOPS") */
