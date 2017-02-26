@@ -63,4 +63,8 @@ $(document).ready(function()
 			});
 		});
 	});
+
+	if ($(".new-issue-line").val()) {
+		$(".new-issue-line").trigger('change');
+	}
 });
