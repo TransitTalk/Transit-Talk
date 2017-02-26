@@ -11,23 +11,25 @@
     </div>
   <% end %>
 
-    <div class="field-issue">
-    <%= f.label :line %>
-    <%= f.collection_select :post, :line_id, Line.order(:system_type, :name), :id, :name %>
+  <div class="field-issue">
+    <%= f.label :line_id %><br>
+    <% line_blank = OpenStruct.new %>
+    <% line_blank.name = "Select Line"; line_blank.id = -1 %>
+    <%= f.collection_select(:line_id, [line_blank] + Line.all.order(:system_type, :name).to_a, :id, :name, {}, {:class => "new-issue-line"}) %>
   </div>
 
   <div class="field-issue">
-    <%= f.label :stop_id %>
-    <%= f.number_field :stop_id %>
+    <%= f.label :stop_id %><br>
+    <%= f.collection_select(:stop_id, [[-1, "Select A Line First"]], :first, :last, {}, {:class => "new-issue-stops"}) %>
   </div>
 
   <div class="field-issue">
-    <%= f.label :types %>
-    <%= f.collection_select :post, :types, ["Broken Infrastructure", "Option Two", "Option Three"], :issue_id, "Hello" %>
+    <%= f.label :types %><br>
+    <%= f.text_field :types %>
   </div>
 
   <div class="field-issue">
-    <%= f.label :description %>
+    <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
 

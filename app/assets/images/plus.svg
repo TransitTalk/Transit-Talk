@@ -43,10 +43,10 @@
      id="namedview6903"
      showgrid="false"
      inkscape:zoom="0.4609375"
-     inkscape:cx="256"
+     inkscape:cx="-65.084746"
      inkscape:cy="256"
-     inkscape:window-x="65"
-     inkscape:window-y="24"
+     inkscape:window-x="75"
+     inkscape:window-y="34"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg6898" />
   <g
@@ -54,5 +54,5 @@
   <path
      d="M496 192h-176v-176c0-8.836-7.164-16-16-16h-96c-8.836 0-16 7.164-16 16v176h-176c-8.836 0-16 7.164-16 16v96c0 8.836 7.164 16 16 16h176v176c0 8.836 7.164 16 16 16h96c8.836 0 16-7.164 16-16v-176h176c8.836 0 16-7.164 16-16v-96c0-8.836-7.164-16-16-16z"
      id="path6901"
-     style="fill:#535353;fill-opacity:1" />
+     style="fill:#ffffff;fill-opacity:1" />
 </svg>
