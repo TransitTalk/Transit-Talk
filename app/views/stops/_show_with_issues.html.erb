@@ -1,3 +1,4 @@
+<% unless stop.lines.empty? %>
 <div class="stops-container">
     <%= render "stops/show", stop: stop %>
     <div class="issue-container">
@@ -11,3 +12,4 @@
         </ul>
     </div>
 </div>
+<% end %>
