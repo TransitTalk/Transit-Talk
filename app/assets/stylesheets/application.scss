@@ -26,7 +26,7 @@ a {
 	text-decoration: none;
 }
 
-.create-issue {
+body > a > .create-issue {
 	position: fixed;
 	height: 40px;
 	width: 40px;
@@ -34,6 +34,18 @@ a {
 	background: #58b7ff;
 	right: 10px;
 	border-radius: 20px;
+	background-image: url(asset-path('plus.svg'));
+	background-size: 60%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.create-issue {
+	display: inline-block;
+	height: 14px;
+	width: 14px;
+	background: #58b7ff;
+	border-radius: 7px;
 	background-image: url(asset-path('plus.svg'));
 	background-size: 60%;
 	background-position: center;
