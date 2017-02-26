@@ -8,7 +8,7 @@ function showLoc(position) {
 
     // document.getElementById('stops_fav').innerHTML = "Found location at " + lat + ", " + long;
 
-    
+    window.position.href = window.location.href + "&lat=" + lat + "&long" + long;
 
 }
 
