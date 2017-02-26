@@ -6,13 +6,15 @@
 	<% end %>
 	<span>
 		<%= stop.name %>
-		<% if current_user.favorites.include?(stop) %>
-			<%= link_to unfavorite_path(stop) do %>
-				<div class="fav-star unfavorite"></div>
-			<% end %>
-		<% else %>
-			<%= link_to favorite_path(stop) do %>
-				<div class="fav-star favorite"></div>
+		<% if user_signed_in? %>
+			<% if current_user.favorites.include?(stop) %>
+				<%= link_to unfavorite_path(stop) do %>
+					<div class="fav-star unfavorite"></div>
+				<% end %>
+			<% else %>
+				<%= link_to favorite_path(stop) do %>
+					<div class="fav-star favorite"></div>
+				<% end %>
 			<% end %>
 		<% end %>
 	</span>
