@@ -1,9 +1,9 @@
 <%- if controller_name != 'sessions' %>
-<div id="signin-options">  <%= link_to "Log in", class: "login-link", new_session_path(resource_name) %><br /></div>
+<div id="signin-options">  <%= link_to "Log in", new_session_path(resource_name), class: "login-link" %><br /></div>
 <% end -%>
 <div id="signin-options">
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  Don't have an account? <%= link_to "Sign up", class: "login-link", new_registration_path(resource_name) %><br />
+  Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name), class: "login-link" %><br />
 <% end -%>
 
 
