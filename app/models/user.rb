@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :issues
-  has_and_belongs_to_many :stops
+  has_and_belongs_to_many :favorites, :class_name => "Stop"
 end

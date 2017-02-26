@@ -23,14 +23,8 @@
         	Favorite Stops
         </h2>
         <div id="stops_fav">
-            <% current_user.issues.each do |fav| %>
-                <span class="stop_favorite"> <%= fav %>
-                    <span class="issue-at-stop">
-                        <% fav.issues.each do |issue| %>
-                            <%= issue %>
-                        <% end %>
-                    </span>
-                </span> <br />
+            <% current_user.favorites.each do |stop| %>
+                <%= render "stops/show", stop: stop %>
             <% end %>
         </div>
     <% end %>
