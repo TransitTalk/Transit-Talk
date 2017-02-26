@@ -8,7 +8,7 @@
 
 }
 
-input#user_email, input#user_password{
+input#user_email, input#user_password, input#user_password_confirmation{
 
 	height: 24px;
 	width: 100%;
@@ -62,7 +62,7 @@ form.new_user {
 	border-radius: 80px;
 	background-color: #6cbfff;
 	color: white;
-	height: 30px;
+	height: 40px;
 	margin-top:15px;
 	width: 100%;
 	border: none;
@@ -83,8 +83,11 @@ a {
 	color:#6cbfff;
 }
 
+
+
 #signin-options {
 	padding-top:15px;
-	margin-top:5px;
+	margin-top:15px;
 	text-align: center;
+	display:inline-grid;
 }
