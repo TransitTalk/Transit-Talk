@@ -65,6 +65,9 @@
 }
 
 .stop-partial {
+	min-height: 30px;
+	margin: 5px 0px;
+
 	.api-id {
 		display: inline-block;
 		background: lightgrey;
@@ -72,4 +75,14 @@
 		padding: 2px 6px;
 		border-radius: 3px;
 	}
+	.line-swatch {
+		width: 20px;
+		height: 20px;
+		border: solid 2px white;
+		border-radius: 50px;
+		display: inline-block;
+		position: relative;
+		top: 6px;
+	}
+	span { margin-left: 5px; }
 }
