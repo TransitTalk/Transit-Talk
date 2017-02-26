@@ -21,8 +21,8 @@
 
   <div class="field-issue">
     <%= f.label :stop_id %><br>
-    <%= f.collection_select(:stop_id, [], :first, :last,
-      {prompt: "Select a line first"},
+    <%= f.collection_select(:stop_id, issue.line&.stops || [], :id, :name,
+      {prompt: issue.line ? nil : "Select a line first"},
       {:class => "new-issue-stops"}
     ) %>
   </div>
