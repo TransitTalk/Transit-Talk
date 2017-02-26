@@ -1,0 +1,12 @@
+<% content_for :title do %> - Dashboard<% end %>
+<%= stylesheet_link_tag "application" %>
+<%= javascript_include_tag "location" %>
+
+
+<% Issue.all.each do |i| %>
+    <%= i %> <br />
+<% end %>
+
+<% Issue.all.each do |i| %>
+    <%= i %> <br />
+<% end %>
