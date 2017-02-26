@@ -34,13 +34,16 @@
 /* HEADERS OF STOP SECTIONS ("NEARBY STOPS", "FAVORITE STOPS") */
 .stopSections {
 	text-align: left;
-	color: DimGrey;
+	color: #575757;
+	font-size: 40px;
+	width: 50px;
+	height: 100%;
 }
 
 /* HEADERS WITH TRANSPORTATION NAMES ("ROOSEVELT", "CERMAK-McCORMICK") */
-.locationStops {
-	text-align: left;
-	color: DimGrey;
+.locationList {
+
+	
 }
 
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
