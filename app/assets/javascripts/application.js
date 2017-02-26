@@ -28,4 +28,21 @@ $(document).ready(function()
 		$(".side-menu").animate({"left": '-85%'});
 		$(".side-menu-overlay").fadeOut();
 	});
+
+	$("header .search").click(function()
+	{
+		$(".overlay-search").fadeIn();
+		$(".overlay-search input[type='text']").val(""); // clear the value
+		$(".overlay-search input[type='text']").focus();
+	});
+
+	$(".overlay-search").click(function()
+	{
+		$(".overlay-search").fadeOut();
+	});
+
+	$(".overlay-search *").click(function(event)
+	{
+		event.stopPropagation();
+	});
 });
