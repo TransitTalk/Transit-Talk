@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "headers" %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
   </head>
 
   <body>
   	<%= render "shared/header" %>
-    <div class="side-menu-overlay"></div>
     <div class="side-menu">
       <div class="title">TransitNet Menu</div>
       <ul>
@@ -20,7 +19,7 @@
         <li><%= link_to('All Lines', lines_path) %> </li>
         <li><%= link_to('About', page_path(:page_name => 'about')) %></li>
         <% if current_user %>
-          <li><%= link_to('Favorite Stops', favorites_path) %></li>
+          <li>Favorite Stops</li>
           <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
         <% else %>
           <li><%= link_to('Sign In', new_user_session_path)  %></li>
