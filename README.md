@@ -24,6 +24,8 @@ In the future we hope to expand the functionality of TransitNetwork by:
 
   * Creating an accountability system that will track an individual user's history of reports and closing of other user's reports. Distribute some form of punishment if logs suggest abuse of the platform.
 
+  * Consistently resolve bugs in the code as they appear over the development process. Unresolved issues are logged on [GitHub](https://github.com/rjaltman/Transit-Network/issues)
+
 <br>
 
 ## Using TransitNetwork
@@ -43,7 +45,7 @@ In the future we hope to expand the functionality of TransitNetwork by:
 
  The report page has a sequential selection order starting with the transportation line being chosen first. Based on which line is chosen, a list of all the stops on that line are listed and can be selected as an origin of an issue. From there, a user can classify the issue as a 'type' and give a description explaining the details.
 
-
+<br>
   
 ## BUILD/INSTALLATION INSTRUCTIONS
   * Ruby on Rails v2.3.0 and Other Packages
@@ -53,16 +55,14 @@ In the future we hope to expand the functionality of TransitNetwork by:
       $ bundle install
       ``` 
     
-    to install all packages listed.
+      to install all packages listed.
 
   * GTFS Data Importation into Database
     * Place compressed GTFS data file (.zip/.rar) into the
 
-    ```
-    root\tmp
-    ```
-
-
+      ```
+      root\tmp
+      ```
  
 
 ## Contributor Guide
