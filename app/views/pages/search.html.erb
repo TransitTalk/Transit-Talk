@@ -10,7 +10,7 @@
 	<% unless @result_stops.empty? %>
 		<h3>Stops</h3>
 		<% @result_stops.each do |stop| %>
-			<%= stop.name %><br>
+			<%= render "stops/show", stop: stop %><br>
 		<% end %>
 	<% end %>
 
