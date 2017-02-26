@@ -16,17 +16,17 @@ _Create a pull request and then create a post on the wiki that explains what the
 
 ## How to report a bug: 
 * Templates: 
-  * _What is wrong:
+  * What is wrong:
      Exact steps to recreate bug (if possible):
      Error Log:
-     _
+     
 * First bugs for Contributors
-  * _Edit framework to accomodate different data sets from other transit centers_
+  * Edit framework to accomodate different data sets from other transit centers
     
 ## New Feature Requirements
-_*New Features must stay within the spirit of the original project: making transportation bettter
-*Submit new feature requests on the wiki and the community can discuss them
-*Features deamed needed will be used to create issues and milestones_
+* New Features must stay within the spirit of the original project: making transportation bettter
+* Submit new feature requests on the wiki and the community can discuss them
+* Features deamed needed will be used to create issues and milestones
 ## Style Guide / Coding conventions 
 We utilize the Airbnb style guide. Specifics about the style can be found [here](http://airbnb.io/projects/styleguides/)
 
@@ -34,8 +34,8 @@ We utilize the Airbnb style guide. Specifics about the style can be found [here]
 This is a constructive environment. No discrimination against any members of this team and community will be tollerated here.
 
 ## Recognition model
-_All contributors who's pull requests are merged can ask to 
-put in the CONTRIBUTERS.md file in order to be recognized_
+All contributors who's pull requests are merged can ask to 
+put in the CONTRIBUTERS.md file in order to be recognized
 
 ## Where can I ask for help?
 The wiki is specifically there to encourage discussion among community members. If you have any problems that Google can't solve, feel free to post them on the wiki.
