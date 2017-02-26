@@ -9,6 +9,11 @@
 <h2>
 	<%= image_tag "star.svg", width: "30px", class: "star" %>
 	Favorite Stops
+
+    <div id="stops_fav">
+         A: 
+    </div>
+
 </h2>
 <% Issue.all.each do |i| %>
     <%= i %> <br />
