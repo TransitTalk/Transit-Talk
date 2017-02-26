@@ -21,8 +21,10 @@
       <p class="alert"><%= alert %></p>
     <% end %>
 
-    <%= link_to new_issue_path() do %>
-      <div class="create-issue"></div>
+    <% if current_user %>
+      <%= link_to new_issue_path() do %>
+        <div class="create-issue"></div>
+      <% end %>
     <% end %>
 
     <%= yield %>
