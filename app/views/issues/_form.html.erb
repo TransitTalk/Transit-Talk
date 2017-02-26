@@ -11,14 +11,16 @@
     </div>
   <% end %>
 
-    <div class="field-issue">
+  <div class="field-issue">
     <%= f.label :line %><br>
-    <%= f.collection_select :line_id, Line.all.order(:system_type, :name), :id, :name %>
+    <% line_blank = OpenStruct.new %>
+    <% line_blank.name = "Select Line"; line_blank.id = -1 %>
+    <%= f.collection_select(:line_id, [line_blank] + Line.all.order(:system_type, :name).to_a, :id, :name, {}, {:class => "new-issue-line"}) %>
   </div>
 
   <div class="field-issue">
     <%= f.label :stop_id %><br>
-    <%= f.number_field :stop_id %>
+    <%= f.collection_select(:stop_id, [[-1, "Select A Line First"]], :first, :last, {}, {:class => "new-issue-stops"}) %>
   </div>
 
   <div class="field-issue">

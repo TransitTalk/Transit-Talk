@@ -5,13 +5,11 @@ Rails.application.routes.draw do
   # General page routes. Will include items like home and top-level pages
   get "/pages/:page_name" => 'pages#show', :as => :page
 
-  # get "/lines" => 'lines#index', :as => :lines
-  # get "/lines/:name" => 'lines#show', :as => :lines_name
-
   resources :lines, only: [:index, :show]
 
+  match "/lines/:line_id/get_stops" => 'lines#get_stops', :as => :get_stops, via: [:get, :post]
+
   get "/stops/:stop_id" => 'stops#show', :as => :stops
-#  get "/line" name: "vehicles"
 
   get "/search" => 'pages#search', :as => :search
 
