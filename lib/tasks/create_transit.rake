@@ -35,15 +35,19 @@ namespace :transit do
     end
   end
 
+  def stop_times(trip_id)
+    path = "#{Rails.root}/tmp/stop_times.txt"
+    relevant_data = `grep ^#{trip_id}, #{path}` # Urgh
+    GTFS::StopTime.parse_stop_times(`head -1 #{path}` + relevant_data)
+  end
+
   task populate_lines: :environment do
     source = GTFS::Source.build("#{Rails.root}/tmp/google_transit.zip")
 
     routes_done = Set.new
     source.trips.each do |trip|
       if routes_done.add?(trip.route_id)
-        stops = source.stop_times.select do |stop_time|
-          trip.id == stop_time.trip_id
-        end
+        stops = stop_times(trip.id)
         .sort_by(&:arrival_time)
         .map do |stop_time|
           Stop.find_by(
@@ -56,6 +60,7 @@ namespace :transit do
           api_id: trip.route_id
         )
         line.stops = stops
+
         line.save
       end
     end

@@ -1,5 +1,5 @@
 class Issue < ApplicationRecord
   belongs_to :user
-  belongs_to :stop, require: false
-  belongs_to :vehicle, require: false
+  belongs_to :stop, required: false
+  belongs_to :vehicle, required: false
 end

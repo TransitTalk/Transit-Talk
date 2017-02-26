@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170226000422) do
+ActiveRecord::Schema.define(version: 20170225220354) do
 
   create_table "issues", force: :cascade do |t|
     t.integer "type"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20170226000422) do
     t.string  "api_id"
     t.string  "name"
     t.integer "system_type"
-    t.index ["api_id"], name: "index_lines_on_api_id"
   end
 
   create_table "lines_stops", force: :cascade do |t|
@@ -43,7 +42,6 @@ ActiveRecord::Schema.define(version: 20170226000422) do
     t.decimal "longitude"
     t.decimal "lattitude"
     t.integer "twin_stop_id"
-    t.index ["api_id"], name: "index_stops_on_api_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,7 +64,6 @@ ActiveRecord::Schema.define(version: 20170226000422) do
   create_table "vehicles", force: :cascade do |t|
     t.string  "api_id"
     t.integer "line_id"
-    t.index ["api_id"], name: "index_vehicles_on_api_id"
     t.index ["line_id"], name: "index_vehicles_on_line_id"
   end
 
