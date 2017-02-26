@@ -2,12 +2,10 @@
 
 .stops-container {
   background-color: rgb(236,236,236);
-  width:100%;
   left:0px;
   right:0px;
   padding:3px 4px 4px 4px;
   margin-bottom:5px;
-  margin-left:-9px;
   position:relative;
   border-bottom-width:1px;
   border-bottom-color:white;
@@ -31,21 +29,11 @@
   display: inline-grid;
 }
 
-#stops_near {
+#stops_near, #stops_fav {
     width:100%;
     left:0px;
     right:0px;
     padding:0;
-    margin:5px;
-    position:relative;
-}
-
-#stops_fav {
-    width:100%;
-    left:0px;
-    right:0px;
-    padding:0;
-    margin:5px;
     position:relative;
 }
 

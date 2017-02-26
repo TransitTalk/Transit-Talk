@@ -1,4 +1,5 @@
 <% content_for :title do %> - Dashboard<% end %>
+<%= javascript_include_tag "location" %>
 
 <div class="page-container">
     <h2>
@@ -9,23 +10,13 @@
         <% if @nearby_stops %>
             <% unless @nearby_stops.empty? %>
                 <% @nearby_stops.each do |stop| %>
-                    <div class="stops-container">
-                        <%= render "stops/show", stop: stop %>
-                        <div class="issue-container">
-                            <ul class="ul-dash">
-                                <% stop.issues.each do |issue| %>
-                                    <li class="li-dash">
-                                        <span class="issue-title"><%= issue.name %></span>
-                                    </li>
-                                <% end %>
-                                
-                            </ul>
-                        </div>
-                    </div>
+                    <%= render "stops/show_with_issues", stop: stop %>
                 <% end %>
             <% else %>
                 <h3>There seem to be no nearby stops!</h3>
             <% end %>
+        <% else %>
+            <h3>We can't show you nearby stops without location services allowed!</h3>
         <% end %>
     </div>
 
@@ -37,19 +28,7 @@
         </h2>
         <div id="stops_fav">
             <% current_user.favorites.each do |stop| %>
-                <div class="stops-container">
-                    <%= render "stops/show", stop: stop %>
-                    <div class="issue-container">
-                        <ul class="ul-dash">
-                            <% stop.issues.each do |issue| %>
-                                <li class="li-dash">
-                                    <span class="issue-title"><%= issue.name %></span>
-                                </li>
-                            <% end %>
-
-                        </ul>
-                    </div>
-                </div>
+                <%= render "stops/show_with_issues", stop: stop %>
             <% end %>
         </div>
     <% end %>
