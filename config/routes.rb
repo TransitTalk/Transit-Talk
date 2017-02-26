@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # General page routes. Will include items like home and top-level pages
-  get "/home" => 'pages#home', :as => :home
   get "/pages/:page_name" => 'pages#show', :as => :page
 
   # get "/lines" => 'lines#index', :as => :lines
@@ -15,6 +14,6 @@ Rails.application.routes.draw do
   get "/favorites" => 'stops#fav', :as => :favorites
 #  get "/line" name: "vehicles"
 
-  root 'pages#home'
+  root 'pages#dashboard'
 
 end
