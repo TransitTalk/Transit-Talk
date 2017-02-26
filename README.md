@@ -20,7 +20,7 @@ In the future we hope to expand the functionality of TransitNetwork by:
 
   * Improving personal abilities to create a creative name.
 
-  * Creating an accountability system that will track an individual user's history of reports and closing of other user's reports. 
+  * Creating an accountability system that will track an individual user's history of reports and closing of other user's reports. Distribute some form of punishment if logs suggest abuse of the platform.
 
 
 
@@ -28,19 +28,39 @@ In the future we hope to expand the functionality of TransitNetwork by:
  
  TransitNetwork's user interaction occurs through a mobile-oriented website that allows users to view recent reported issues of nearby stops and transportation units. 
 
- [//]: <> (Homescreen w/o account photo TBD)
+ [comment]: <> (Homescreen w/o account photo TBD)
+
+ For a user to report, they must first login or create an account. Navigation between pages is largely centered around the menu icon in the top left corner which opens a directory side menu (also accessible through a right swipe).
+
+ [comment]: <> (Insert Side Menu pic)
+
+ The platform utilizes a standard account creation process requiring an email and a password. Once logged in, two core features are unlocked for the user--'Favorite' stops and report submission.
+ Reports are created using the '+' icon located in the bottom right corner. The button takes the user to the issue report page.
+
+ [comment]: <> (Insert issue report page pic)
+
+ The report page has a sequential selection order starting with the transportation line being chosen first. Based on which 
+
+
   
 ## BUILD/INSTALLATION INSTRUCTIONS
-  * [PLATFORM 1]
-    * [BUILD EXAMPLE]
-  * [PLATFORM 2]
-    * [BUILD EXAMPLE]
+  * Ruby on Rails - 2.3.0
+    * All necessary packages for running this software are provided in the GEMFILE included in the source-code. Use 
 
+    ```
+    $ bundle install
+    ``` 
 
-
-## OTHER SOURCES OF DOCUMENTATION
 
 ## Contributor Guide
 [LINK TO CONTRIBUTING.md]
 
 ## License 
+
+Copyright 2017 Copyright shared among all those listed in CONTRIBUTING.md
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
