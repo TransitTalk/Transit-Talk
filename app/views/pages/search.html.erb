@@ -1,0 +1,20 @@
+<div class="page-container">
+	<h2>Search Results for "<%= params[:q] %>"</h2>
+	<% unless @result_lines.empty? %>
+		<h3>Lines</h3>
+		<% @result_lines.each do |line| %>
+			<%= link_to(line.name, line_path(line)) %><br>
+		<% end %>
+	<% end %>
+
+	<% unless @result_stops.empty? %>
+		<h3>Stops</h3>
+		<% @result_stops.each do |stop| %>
+			<%= render "stops/show", stop: stop %><br>
+		<% end %>
+	<% end %>
+
+	<% if @result_stops.empty? and @result_lines.empty? %>
+		<h3>No stops or lines found!</h3>
+	<% end %>
+</div>

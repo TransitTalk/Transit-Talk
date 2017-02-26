@@ -1,18 +1,21 @@
 class PagesController < ApplicationController
-  def home
-    if current_user
-      render 'dashboard'
-    else
-      render 'home'
-    end
+  def dashboard
+      if ((params[:lat]) && (params[:long]))
+          @nearbyStops = Stop.within(0.2, :origin => [params[:lat],params[:long]])
+      end
   end
-  
+
   def show
     if valid_page?
         render template: "pages/#{params[:page_name]}"
     else
         render file: "public/404.html", status: :not_found
     end
+  end
+
+  def search
+    @result_lines = Line.where("name like ?", "%#{params[:q]}%")
+    @result_stops = Stop.where("name like ?", "%#{params[:q]}%")
   end
   
   def valid_page?

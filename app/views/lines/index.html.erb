@@ -1,6 +1,9 @@
 <% content_for :title do %> - Lines<% end %>
-<%= stylesheet_link_tag "application" %>
+<div class="page-container">
+	<h1>All Lines</h1>
+	<%= stylesheet_link_tag "application" %>
 
-<% Line.all.each do |l| %>
-    <%= l %> <br />
-<% end %>
+	<% @lines.each do |line| %>
+	    <%= link_to(line.name, line_path(line)) %> <br>
+	<% end %>
+</div>

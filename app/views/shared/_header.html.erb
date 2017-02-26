@@ -1,6 +1,14 @@
 <header class="headbar">
 	<div class="hamburger"></div>
-	<div class="title">TransitNet CTA</div>
+	<a href="/">
+		<div class="title">TransitNet CTA</div>
+	</a>
 	<div class= "search"></div>
 </header>
 
+<div class="overlay-search">
+	<%= form_tag(search_path, :method => "get", id: "search-form") do %>
+		<%= text_field_tag :q, params[:q], placeholder: "Search Stops or Lines" %>
+		<%= submit_tag "", :name => nil %>
+	<% end %>
+</div>
