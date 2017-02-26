@@ -1,6 +1,17 @@
+<% content_for :title do %> - Dashboard<% end %>
+<%= stylesheet_link_tag "application" %>
+<%= javascript_include_tag "location" %>
+
+
 <h2>Nearby Stops</h2>
+<% Issue.all.each do |i| %>
+    <%= i %> <br />
+<% end %>
 
 <h2>
 	<%= image_tag "star.svg", width: "30px", class: "star" %>
 	Favorite Stops
 </h2>
+<% Issue.all.each do |i| %>
+    <%= i %> <br />
+<% end %>
