@@ -17,7 +17,7 @@ class IssuesController < ApplicationController
     unless user_signed_in?
       redirect_to new_user_session_path
     end
-    @issue = Issue.new
+    @issue = Issue.new(params.permit(:stop_id, :line_id))
   end
 
   # GET /issues/1/edit
