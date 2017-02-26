@@ -4,7 +4,7 @@ function showLoc(position) {
     // p represents a position that is passed in, namely the pos element from above
 
     lat = position.coords.latitude;
-    long = position.coords.latitude;
+    long = position.coords.longitude;
 
     document.write("Found location at " + lat + ", " + long);
 
