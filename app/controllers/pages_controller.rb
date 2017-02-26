@@ -1,4 +1,10 @@
 class PagesController < ApplicationController
+  def dashboard
+      if ((params[:lat]) && (params[:long]))
+          @nearbyStops = Stop.within(0.2, :origin => [params[:lat],params[:long]])
+      end
+  end
+
   def show
     if valid_page?
         render template: "pages/#{params[:page_name]}"

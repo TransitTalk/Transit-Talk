@@ -85,7 +85,7 @@ namespace :transit do
   task set_up_transit: :environment do
     Stop.destroy_all
     Line.destroy_all
-    ["transit:create_lines", "transit:create_stops", "transit:populate_lines"].each do |task|
+    ["transit:create_lines", "transit:create_stops", "transit:pair_stops", "transit:populate_lines"].each do |task|
       Rake::Task[task].invoke
     end
   end

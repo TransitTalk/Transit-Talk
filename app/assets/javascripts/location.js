@@ -1,4 +1,6 @@
-geol();
+if (!window.location.href.includes("?")) {
+    geol();
+}
 
 function showLoc(position) {
     // p represents a position that is passed in, namely the pos element from above
@@ -8,7 +10,7 @@ function showLoc(position) {
 
     // document.getElementById('stops_fav').innerHTML = "Found location at " + lat + ", " + long;
 
-    window.position.href = window.location.href + "&lat=" + lat + "&long" + long;
+    window.location.href = window.location.href + "?&lat=" + lat + "&long=" + long;
 
 }
 
