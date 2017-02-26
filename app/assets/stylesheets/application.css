@@ -16,4 +16,8 @@
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
+}
+.page-container {
+	margin: 0px 15px;
 }
