@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def dashboard
       if ((params[:lat]) && (params[:long]))
-          @nearbyStops = Stop.within(0.2, :origin => [params[:lat],params[:long]])
+          @nearby_stops = Stop.within(0.2, :origin => [params[:lat],params[:long]])
       end
   end
 

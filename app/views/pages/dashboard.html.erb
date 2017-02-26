@@ -6,10 +6,12 @@
     </h2>
 
     <div id="stops_near">
-        <% if @nearbyStops %>
-            <% @nearbyStops.each do |i| %>
-                <%= i.name %>
+        <% unless @nearby_stops.empty? %>
+            <% @nearby_stops.each do |stop| %>
+                <%= render "stops/show", stop: stop %>
             <% end %>
+        <% else %>
+            <h3>There seem to be no nearby stops!</h3>
         <% end %>
     </div>
 
