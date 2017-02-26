@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get "/favorites" => 'stops#fav', :as => :favorites
 #  get "/line" name: "vehicles"
 
+  get "/search" => 'pages#search', :as => :search
+
   root 'pages#dashboard'
 
 end

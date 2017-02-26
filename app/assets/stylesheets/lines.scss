@@ -22,6 +22,10 @@
 	padding: 0px;
 	list-style: none;
 
+	/* Don't extend line past end of last stop */
+	.stop:last-of-type .mark-box {
+		height: 50% !important;
+	}
 	li {
 		display: table;
 		height: 40px;
