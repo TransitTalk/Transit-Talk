@@ -4,6 +4,6 @@
 	<%= stylesheet_link_tag "application" %>
 
 	<% @lines.each do |line| %>
-	    <%= link_to(line.name, line_path(line)) %> <br>
+		<%= render "lines/show", line: line %>
 	<% end %>
 </div>

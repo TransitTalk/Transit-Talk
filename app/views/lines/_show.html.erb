@@ -1,5 +1,9 @@
 <div class="stop-partial">
-	<div class="api-id"><%= line.api_id %></div>
+	<% if line.color %>
+		<div class="line-swatch" style="background: #<%= line.color %>"></div>
+	<% else %>
+		<div class="api-id"><%= line.api_id %></div>
+	<% end %>
 	<span>
 		<%= link_to(line.name, line_path(line)) %><br>
 	</span>
