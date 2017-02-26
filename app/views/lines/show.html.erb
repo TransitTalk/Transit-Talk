@@ -5,8 +5,13 @@
 	<% @line.stops.each do |stop| %>
 		<li class="stop">
 			<div class="line-mark">
-				<div class="mark-box"></div>
-				<div class="mark-circle"></div>
+				<% if @line.color %>
+					<div class="mark-box" style="background: #<%= @line.color %>"></div>
+					<div class="mark-circle" style="border-color: #<%= @line.color %>"></div>
+				<% else %>
+					<div class="mark-box"></div>
+					<div class="mark-circle"></div>
+				<% end %>
 			</div>
 			<div class="name"><%= stop.name %></div>
 		</li>
