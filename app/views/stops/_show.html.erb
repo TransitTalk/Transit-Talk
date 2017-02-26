@@ -1,14 +1,16 @@
 <div class="stop-partial">
 	<% stop.lines.each do |line| %>
-		<div class="line-tile">
-			<%= link_to line_path(line) do %>
-				<% if line.color %>
-					<div class="line-swatch" style="background: #<%= line.color %>"></div>
-				<% else %>
-					<div class="api-id"><%= line.api_id %></div>
+		<% unless defined? current_line and line == current_line %>
+			<div class="line-tile">
+				<%= link_to line_path(line) do %>
+					<% if line.color %>
+						<div class="line-swatch" style="background: #<%= line.color %>"></div>
+					<% else %>
+						<div class="api-id"><%= line.api_id %></div>
+					<% end %>
 				<% end %>
-			<% end %>
-		</div>
+			</div>
+		<% end %>
 	<% end %>
 	<span>
 		<%= stop.name %>

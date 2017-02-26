@@ -13,7 +13,7 @@
 					<div class="mark-circle"></div>
 				<% end %>
 			</div>
-			<div class="name"><%= stop.name %></div>
+			<%= render "stops/show", stop: stop, current_line: @line %>
 		</li>
 	<% end %>
 </ul>
