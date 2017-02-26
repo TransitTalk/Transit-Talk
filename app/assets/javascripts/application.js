@@ -12,5 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// require turbolinks
 //= require_tree .
+
+$(document).ready(function()
+{
+	$("header .hamburger").click(function()
+	{
+		$(".side-menu").animate({"left": '0%'});
+		$(".side-menu-overlay").fadeIn();
+	});
+
+	$(".side-menu-overlay").click(function()
+	{
+		$(".side-menu").animate({"left": '-85%'});
+		$(".side-menu-overlay").fadeOut();
+	});
+});
