@@ -11,9 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :type %>
-    <%= f.number_field :type %>
+    <div class="field">
+    <%= f.label :line %>
+    <%= f.collection_select :line_id, Line.order(:system_type, :name), :id, :name %>
   </div>
 
   <div class="field">
@@ -22,13 +22,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.label :type %>
+    <%= f.collection_select :type, [1,2,3,4,5], :id , :type %>
   </div>
 
   <div class="field">
-    <%= f.label :line_id %>
-    <%= f.number_field :line_id %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
   </div>
 
   <div class="actions">
