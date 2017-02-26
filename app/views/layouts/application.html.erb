@@ -21,9 +21,7 @@
       <p class="alert"><%= alert %></p>
     <% end %>
 
-    <%= link_to new_issue_path() do %>
-      <div class="create-issue"></div>
-    <% end %>
+    <%= new_issue_button %>
 
     <%= yield %>
   </body>
