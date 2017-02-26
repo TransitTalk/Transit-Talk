@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225183849) do
+ActiveRecord::Schema.define(version: 20170225220354) do
+
+  create_table "issues", force: :cascade do |t|
+    t.integer "type"
+    t.integer "stop_id"
+    t.integer "vehicle_id"
+    t.text    "description"
+    t.integer "user_id"
+    t.index ["stop_id"], name: "index_issues_on_stop_id"
+    t.index ["user_id"], name: "index_issues_on_user_id"
+    t.index ["vehicle_id"], name: "index_issues_on_vehicle_id"
+  end
 
   create_table "lines", force: :cascade do |t|
     t.string  "api_id"
@@ -28,9 +39,9 @@ ActiveRecord::Schema.define(version: 20170225183849) do
   create_table "stops", force: :cascade do |t|
     t.string  "api_id"
     t.string  "name"
-    t.string  "direction"
     t.decimal "longitude"
     t.decimal "lattitude"
+    t.integer "twin_stop_id"
   end
 
   create_table "users", force: :cascade do |t|

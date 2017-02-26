@@ -18,7 +18,7 @@ gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
 
 group :development, :test do
-	# SQLite, only on local 
+	# SQLite, only on local
 	gem 'sqlite3'
 end
 
@@ -65,3 +65,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# GTFS to parse data
+gem "gtfs"

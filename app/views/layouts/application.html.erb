@@ -6,6 +6,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <%= stylesheet_link_tag "application" %>
     <%= stylesheet_link_tag "headers" %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
@@ -13,7 +15,7 @@
     <div class="side-menu">
       <div class="title">TransitNet Menu</div>
       <ul>
-        <li>About</li>
+        <li><%= link_to('About', page_path(:page_name => 'about')) %></li>
         <% if current_user %>
           <li>Favorite Stops</li>
           <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
@@ -24,11 +26,10 @@
       </ul>
     </div>
 
-
-    <b> Transit Network Project </b>
-    <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <b> Transit Network Project </b>
+    <%= yield %>
   </body>
 </html>
