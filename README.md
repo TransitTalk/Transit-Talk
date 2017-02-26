@@ -89,3 +89,9 @@ you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
+    
+## Making a New App
+Set up database:
+ 1. Put .zip in root/tmp and unzip files
+ 2. Navigate to root folder
+ 3. Run "rake transit:set_up_transit"
