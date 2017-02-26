@@ -52,7 +52,7 @@
 				border: solid 3px;
 				border-radius: 50px;
 				left: 7px;
-				top: 8px;
+				top: 12px;
 				border-color: #535353;
 			}
 		}
@@ -67,14 +67,16 @@
 .stop-partial {
 	min-height: 30px;
 	margin: 5px 0px;
+	display: table;
 
 	.line-tile {
-		display: inline-block;
+		display: table-cell;
+		vertical-align: middle;
+		padding: 2px;
 
 		a { text-decoration: none; }
 	}
 	.api-id {
-		display: inline-block;
 		background: lightgrey;
 		color: #535353;
 		padding: 2px 6px;
@@ -83,11 +85,11 @@
 	.line-swatch {
 		width: 20px;
 		height: 20px;
-		border: solid 2px white;
 		border-radius: 50px;
-		display: inline-block;
-		position: relative;
-		top: 6px;
 	}
-	span { margin-left: 5px; }
+	span {
+		padding-left: 5px;
+		vertical-align: middle;
+		display: table-cell;
+	}
 }
