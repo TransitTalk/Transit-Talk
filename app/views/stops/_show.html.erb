@@ -1,0 +1,10 @@
+<div class="stop-partial">
+	<% if defined? current_line %>
+		<%= render "lines/tiles", lines: stop.lines, current_line: current_line %>
+	<% else %>
+		<%= render "lines/tiles", lines: stop.lines %>
+	<% end %>
+	<span>
+		<%= stop.name %>
+	</span>
+</div>

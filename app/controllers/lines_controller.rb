@@ -1,6 +1,6 @@
 class LinesController < ApplicationController
   def index
-    @lines = Line.all
+    @lines = Line.all.order(:system_type)
   end
 
   def show

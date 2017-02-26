@@ -1,31 +1,37 @@
 <% content_for :title do %> - Dashboard<% end %>
 
-<h2>
-    Nearby Stops
-</h2>
-
-<div id="stops_near">
-    <% if @nearbyStops %>
-        <% @nearbyStops.each do |i| %>
-            <%= i.name %>
-        <% end %>
-    <% end %>
-</div>
-
-<% if current_user %>
+<div class="page-container">
     <h2>
-    	<%= image_tag "star.svg", width: "30px", class: "star" %>
-    	Favorite Stops
+        Nearby Stops
     </h2>
-    <div id="stops_fav">
-        <% current_user.issues.each do |fav| %>
-            <span class="stop_favorite"> <%= fav %>
-                <span class="issue-at-stop">
-                    <% fav.issues.each do |issue| %>
-                        <%= issue %>
-                    <% end %>
-                </span>
-            </span> <br />
+
+    <div id="stops_near">
+        <% if @nearby_stops %>
+            <% unless @nearby_stops.empty? %>
+                <% @nearby_stops.each do |stop| %>
+                    <%= render "stops/show", stop: stop %>
+                <% end %>
+            <% else %>
+                <h3>There seem to be no nearby stops!</h3>
+            <% end %>
         <% end %>
     </div>
-<% end %>
+
+    <% if current_user %>
+        <h2>
+        	<%= image_tag "star.svg", width: "30px", class: "star" %>
+        	Favorite Stops
+        </h2>
+        <div id="stops_fav">
+            <% current_user.issues.each do |fav| %>
+                <span class="stop_favorite"> <%= fav %>
+                    <span class="issue-at-stop">
+                        <% fav.issues.each do |issue| %>
+                            <%= issue %>
+                        <% end %>
+                    </span>
+                </span> <br />
+            <% end %>
+        </div>
+    <% end %>
+</div>

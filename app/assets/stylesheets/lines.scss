@@ -9,6 +9,7 @@
 		position: absolute;
 		width: 100%;
 		bottom: 0px;
+		box-sizing: border-box;
 		color: white;
 		background-color: rgba(0,0,0,0.7);
 		padding: 8px 20px;
@@ -21,6 +22,10 @@
 	padding: 0px;
 	list-style: none;
 
+	/* Don't extend line past end of last stop */
+	.stop:last-of-type .mark-box {
+		height: 50% !important;
+	}
 	li {
 		display: table;
 		height: 40px;
@@ -47,7 +52,7 @@
 				border: solid 3px;
 				border-radius: 50px;
 				left: 7px;
-				top: 12px;
+				top: calc(50% - 8px);
 				border-color: #535353;
 			}
 		}
@@ -56,5 +61,35 @@
 			vertical-align: middle;
 			padding-left: 10px;
 		}
+	}
+}
+
+.stop-partial {
+	min-height: 30px;
+	margin: 5px 0px;
+	display: table;
+
+	.line-tile {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 2px;
+
+		a { text-decoration: none; }
+	}
+	.api-id {
+		background: lightgrey;
+		color: #535353;
+		padding: 2px 6px;
+		border-radius: 3px;
+	}
+	.line-swatch {
+		width: 20px;
+		height: 20px;
+		border-radius: 50px;
+	}
+	span {
+		padding-left: 5px;
+		vertical-align: middle;
+		display: table-cell;
 	}
 }
