@@ -43,6 +43,40 @@
 	color: DimGrey;
 }
 
+.side-menu-overlay {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	top: 0px;
+}
+
+.side-menu {
+	position: fixed;
+	background: #58b7ff;
+	height: 100%;
+	width: 75%;
+	top: 0px;
+	left: -85%;
+	padding-left: 20px;
+	box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
+
+	ul {
+		padding: 0px;
+		margin: 0px;
+		list-style: none;
+
+		li {
+			color: white;
+			margin: 10px 0px;
+			font-size: 18px;
+
+			a { text-decoration: none; color: white; }
+		}
+	}
+}
+
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
 * {
