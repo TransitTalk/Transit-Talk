@@ -1,10 +1,19 @@
 namespace :transit do
-  task create_lines: :environment do
-    path = "#{Rails.root}/tmp/google_transit.zip"
+
+  def verify_file(path)
+    unless path.present?
+      puts "no file specified. Please specify a file with \"GTFS_FILE=\" before command"
+      exit 1
+    end
     unless File.exist?(path)
       puts "file not available: #{path}"
       exit 1
     end
+  end
+
+  task create_lines: :environment do
+    path = ENV['GTFS_FILE']
+    verify_file(path)
     source = GTFS::Source.build(path)
     source.routes.each do |r|
       Line.create!(
@@ -17,11 +26,8 @@ namespace :transit do
   end
 
   task create_stops: :environment do
-    path = "#{Rails.root}/tmp/google_transit.zip"
-    unless File.exist?(path)
-      puts "file not available: #{path}"
-      exit 1
-    end
+    path = ENV['GTFS_FILE']
+    verify_file(path)
     source = GTFS::Source.build(path)
     source.stops.each do |s|
       Stop.create!(
@@ -47,17 +53,21 @@ namespace :transit do
   end
 
   def stop_times(trip_id)
-    path = "#{Rails.root}/tmp/stop_times.txt"
-    relevant_data = `grep ^#{trip_id}, #{path}` # Urgh
-    GTFS::StopTime.parse_stop_times(`head -1 #{path}` + relevant_data)
+    path = ENV['GTFS_FILE']
+    verify_file(path)
+    `unzip -o #{path} stop_times.txt -d tmp`
+    stop_times_path = "#{Rails.root}/tmp/stop_times.txt"
+    unless path.present?
+      puts "File not extracted successfully. Exiting"
+      exit 1
+    end
+    relevant_data = `grep ^#{trip_id}, #{stop_times_path}` # Urgh
+    GTFS::StopTime.parse_stop_times(`head -1 #{stop_times_path}` + relevant_data)
   end
 
   task populate_lines: :environment do
-    path = "#{Rails.root}/tmp/google_transit.zip"
-    unless File.exist?(path)
-      puts "file not available: #{path}"
-      exit 1
-    end
+    path = ENV['GTFS_FILE']
+    verify_file(path)
     source = GTFS::Source.build(path)
 
     routes_done = Set.new
@@ -83,8 +93,13 @@ namespace :transit do
   end
 
   task set_up_transit: :environment do
+    puts "Destroying Stops ..."
     Stop.destroy_all
+    puts "Stops Destroyed"
+    puts "Destroying Lines ..."
     Line.destroy_all
+    puts "Lines Destroyed"
+    puts "Reading Data"
     ["transit:create_lines", "transit:create_stops", "transit:pair_stops", "transit:populate_lines"].each do |task|
       Rake::Task[task].invoke
     end

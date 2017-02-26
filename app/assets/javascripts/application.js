@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require turbolinks
-// require_tree .
+//= require_tree .
 
 $(document).ready(function()
 {
@@ -63,4 +62,8 @@ $(document).ready(function()
 			});
 		});
 	});
+
+	if ($(".new-issue-line").val()) {
+		$(".new-issue-line").trigger('change');
+	}
 });

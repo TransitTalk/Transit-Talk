@@ -6,7 +6,7 @@
 	<% end %>
 	<span>
 		<%= stop.name %>
-		<% if current_user %>
+		<% if user_signed_in? %>
 			<% if current_user.favorites.include?(stop) %>
 				<%= link_to unfavorite_path(stop) do %>
 					<div class="fav-star unfavorite"></div>

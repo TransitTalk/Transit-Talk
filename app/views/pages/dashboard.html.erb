@@ -30,6 +30,9 @@
             <% current_user.favorites.each do |stop| %>
                 <%= render "stops/show_with_issues", stop: stop %>
             <% end %>
+            <% unless current_user.favorites %>
+                <h3>You have not selected any favorites yet!</h3>
+            <% end %>
         </div>
     <% end %>
 </div>
