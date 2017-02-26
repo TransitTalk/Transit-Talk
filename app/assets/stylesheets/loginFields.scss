@@ -4,6 +4,7 @@
 	width: 100%;
 	background-color: white;
 	padding-bottom:20px;
+	padding-top:14px;
 
 }
 
@@ -17,10 +18,10 @@ input#user_email, input#user_password{
 	margin-top:14px;
 	margin-bottom:4px;
 	background-color: #f1f1f1;
-	
+
 }
 
-#devise-title { 
+#devise-title {
 	font-size:24px;
 	/*padding:10px;*/
 	/*padding-top:10px;*/
@@ -31,7 +32,7 @@ input#user_email, input#user_password{
 	padding:0px;
 }
 
-.remember { 
+.remember {
 	float:left;
  }
 
@@ -62,7 +63,7 @@ form.new_user {
 	background-color: #6cbfff;
 	color: white;
 	height: 30px;
-	margin-top:5px;
+	margin-top:15px;
 	width: 100%;
 	border: none;
 	font-family:"Open Sans", "Segoe UI", sans-serif;
@@ -83,10 +84,7 @@ a {
 }
 
 #signin-options {
-	padding-top:5px;
+	padding-top:15px;
 	margin-top:5px;
 	text-align: center;
 }
-
-
-
