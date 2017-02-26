@@ -11,7 +11,6 @@ TransitNetwork is a platform for collective commuters to inquire and report on t
   * Log individual users with a login system that offers custom settings such as 'Favorite' stops.
 
 <br>
-<br>
 
 In the future we hope to expand the functionality of TransitNetwork by:
 
@@ -25,7 +24,7 @@ In the future we hope to expand the functionality of TransitNetwork by:
 
   * Creating an accountability system that will track an individual user's history of reports and closing of other user's reports. Distribute some form of punishment if logs suggest abuse of the platform.
 
-
+<br>
 
 ## Using TransitNetwork
  
@@ -42,25 +41,40 @@ In the future we hope to expand the functionality of TransitNetwork by:
 
  [//]: # (Insert issue report page pic)
 
- The report page has a sequential selection order starting with the transportation line being chosen first. Based on which 
+ The report page has a sequential selection order starting with the transportation line being chosen first. Based on which line is chosen, a list of all the stops on that line are listed and can be selected as an origin of an issue. From there, a user can classify the issue as a 'type' and give a description explaining the details.
 
 
   
 ## BUILD/INSTALLATION INSTRUCTIONS
-  * Ruby on Rails - 2.3.0
-    * All necessary packages for running this software are provided in the GEMFILE included in the source-code. Use the command
+  * Ruby on Rails v2.3.0 and Other Packages
+    * All necessary packages for running this software are provided in the GEMFILE included in the source-code. Use the command:
 
-    ```
-    $ bundle install
-    ``` 
+      ```
+      $ bundle install
+      ``` 
+    
     to install all packages listed.
 
+  * GTFS Data Importation into Database
+    * Place compressed GTFS data file (.zip/.rar) into the
+
+    ```
+    root\tmp
+    ```
+
+
+ 
+
 ## Contributor Guide
-[LINK TO CONTRIBUTING.md]
+TransitNetwork's contributor's guide can be found on our public repository and the source-code with the file path: 
+
+```
+Transit-Network/CONTRIBUTING.md
+```
 
 ## License 
 
-Copyright 2017 Copyright shared among all those listed in CONTRIBUTING.md
+Copyright 2017 Copyright shared among all those listed in CONTRIBUTORS.md
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
