@@ -11,13 +11,13 @@ Rails.application.routes.draw do
   resources :lines, only: [:index, :show]
 
   get "/stops/:stop_id" => 'stops#show', :as => :stops
-  get "/favorites" => 'stops#fav', :as => :favorites
 #  get "/line" name: "vehicles"
 
   get "/search" => 'pages#search', :as => :search
 
-  get "/favorite/:stop_id" => 'favorites#new', :as => :favorite
 
+  get "/favorites" => 'favorites#index', :as => :favorites
+  get "/favorite/:stop_id" => 'favorites#new', :as => :favorite
   get "/unfavorite/:stop_id" => 'favorites#delete', :as => :unfavorite
 
   root 'pages#dashboard'

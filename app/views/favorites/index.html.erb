@@ -1,0 +1,6 @@
+<div class="page-container">
+	<h1>Favorite Stops</h1>
+	<% current_user.favorites.each do |stop| %>
+		<%= render "stops/show", stop: stop %>
+	<% end %>
+</div>
