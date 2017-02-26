@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :type %>
-    <%= f.number_field :type %>
+    <div class="field-issue">
+    <%= f.label :line %>
+    <%= f.collection_select :post, :line_id, Line.order(:system_type, :name), :id, :name %>
   </div>
 
-  <div class="field">
+  <div class="field-issue">
     <%= f.label :stop_id %>
     <%= f.number_field :stop_id %>
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="field-issue">
+    <%= f.label :types %>
+    <%= f.collection_select :post, :types, ["Broken Infrastructure", "Option Two", "Option Three"], :issue_id, "Hello" %>
   </div>
 
-  <div class="field">
-    <%= f.label :line_id %>
-    <%= f.number_field :line_id %>
+  <div class="field-issue">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
   </div>
 
   <div class="actions">

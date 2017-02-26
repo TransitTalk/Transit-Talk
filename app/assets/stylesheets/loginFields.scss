@@ -1,4 +1,4 @@
-.field {
+.field-login {
 
 	height: 60px;
 	width: 100%;
@@ -36,7 +36,7 @@ input#user_email, input#user_password, input#user_password_confirmation{
 	float:left;
  }
 
-.field label {
+.field-login label {
 	font-size: 15px;
 	float: right;
 	padding-top:10px;
@@ -78,7 +78,7 @@ form.new_user {
 	padding-left: 5%;
 }
 
-a {
+.login-link {
 	text-decoration: none;
 	color:#6cbfff;
 }
