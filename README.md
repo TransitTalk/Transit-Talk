@@ -63,7 +63,15 @@ In the future we hope to expand the functionality of TransitNetwork by:
       ```
       root\tmp
       ```
- 
+   
+  * Local Testing
+    * Navigate to root directory
+   
+   ```
+   rails server
+   ```
+   
+    * Connect to Localhost:3000 on your browser
 
 ## Contributor Guide
 TransitNetwork's contributor's guide can be found on our public repository and the source-code with the file path: 
