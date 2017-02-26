@@ -10,6 +10,8 @@ TransitNetwork is a platform for collective commuters to inquire and report on t
 
   * Log individual users with a login system that offers custom settings such as 'Favorite' stops.
 
+
+
 In the future we hope to expand the functionality of TransitNetwork by:
 
   * Analyzing issues and their effect on a user's commute. From there, suggest alternative routes that improve efficiency.
@@ -28,16 +30,16 @@ In the future we hope to expand the functionality of TransitNetwork by:
  
  TransitNetwork's user interaction occurs through a mobile-oriented website that allows users to view recent reported issues of nearby stops and transportation units. 
 
- [comment]: <> (Homescreen w/o account photo TBD)
+ [//]: # (Homescreen w/o account photo TBD)
 
  For a user to report, they must first login or create an account. Navigation between pages is largely centered around the menu icon in the top left corner which opens a directory side menu (also accessible through a right swipe).
 
- [comment]: <> (Insert Side Menu pic)
+ [//]: # (Insert Side Menu pic)
 
  The platform utilizes a standard account creation process requiring an email and a password. Once logged in, two core features are unlocked for the user--'Favorite' stops and report submission.
  Reports are created using the '+' icon located in the bottom right corner. The button takes the user to the issue report page.
 
- [comment]: <> (Insert issue report page pic)
+ [//]: # (Insert issue report page pic)
 
  The report page has a sequential selection order starting with the transportation line being chosen first. Based on which 
 
@@ -45,12 +47,12 @@ In the future we hope to expand the functionality of TransitNetwork by:
   
 ## BUILD/INSTALLATION INSTRUCTIONS
   * Ruby on Rails - 2.3.0
-    * All necessary packages for running this software are provided in the GEMFILE included in the source-code. Use 
+    * All necessary packages for running this software are provided in the GEMFILE included in the source-code. Use the command
 
     ```
     $ bundle install
     ``` 
-
+    to install all packages listed.
 
 ## Contributor Guide
 [LINK TO CONTRIBUTING.md]
