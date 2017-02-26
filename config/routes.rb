@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "/favorite/:stop_id" => 'favorites#new', :as => :favorite
   get "/unfavorite/:stop_id" => 'favorites#delete', :as => :unfavorite
 
-  root 'pages#dashboard'
+  resources :issues
 
+  root 'pages#dashboard'
 end
