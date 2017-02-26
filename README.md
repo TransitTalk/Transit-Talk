@@ -10,7 +10,8 @@ TransitNetwork is a platform for collective commuters to inquire and report on t
 
   * Log individual users with a login system that offers custom settings such as 'Favorite' stops.
 
-
+<br>
+<br>
 
 In the future we hope to expand the functionality of TransitNetwork by:
 
