@@ -3,4 +3,7 @@
 	<% current_user.favorites.each do |stop| %>
 		<%= render "stops/show", stop: stop %>
 	<% end %>
+
 </div>
+
+<%= new_issue_button %>
