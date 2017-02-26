@@ -25,3 +25,17 @@ body {
 a {
 	text-decoration: none;
 }
+
+.create-issue {
+	position: fixed;
+	height: 40px;
+	width: 40px;
+	bottom: 10px;
+	background: #58b7ff;
+	right: 10px;
+	border-radius: 20px;
+	background-image: url(asset-path('plus.svg'));
+	background-size: 60%;
+	background-position: center;
+	background-repeat: no-repeat;
+}

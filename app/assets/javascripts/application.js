@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 // require turbolinks
-//= require_tree .
+// require_tree .
 
 $(document).ready(function()
 {
@@ -44,5 +44,23 @@ $(document).ready(function()
 	$(".overlay-search *").click(function(event)
 	{
 		event.stopPropagation();
+	});
+
+	$(".new-issue-line").change(function()
+	{
+		var self = this;
+		$(this).find("option:first-of-type").remove(); // remove default option to prevent it being submitted
+
+		$.ajax({
+		  url: "/lines/" + $(this).val() + "/get_stops",
+		  context: document.body
+		}).done(function(value) {
+			// Populate the select with values
+			$(".new-issue-stops option").remove();
+			$(value).each(function(i, value)
+			{
+				$(".new-issue-stops").append('<option value="' + value[0] + '">' + value[1] + '</option>');
+			});
+		});
 	});
 });

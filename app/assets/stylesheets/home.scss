@@ -1,0 +1,59 @@
+.star { vertical-align: bottom; }
+
+.stops-container {
+  background-color: rgb(236,236,236);
+  width:100%;
+  left:0px;
+  right:0px;
+  padding:3px 4px 4px 4px;
+  margin-bottom:5px;
+  margin-left:-9px;
+  position:relative;
+  border-bottom-width:1px;
+  border-bottom-color:white;
+  box-shadow: 1px 1px 1px silver;
+}
+
+.ul-dash {
+    margin:0px;
+    margin-top:1px;
+    margin-bottom:1px;
+}
+
+.issue-container {
+  background-color: rgb(247,247,247);
+  width:100%;
+  float:center;
+  margin-top:0px;
+  margin-bottom:2px;
+  padding:0px;
+  position: relative;
+  display: inline-grid;
+}
+
+#stops_near {
+    width:100%;
+    left:0px;
+    right:0px;
+    padding:0;
+    margin:5px;
+    position:relative;
+}
+
+#stops_fav {
+    width:100%;
+    left:0px;
+    right:0px;
+    padding:0;
+    margin:5px;
+    position:relative;
+}
+
+.issue-title {
+    font-size:18px;
+}
+
+.issue-time {
+    color:#999;
+    font-size:14px;
+}

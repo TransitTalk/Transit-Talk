@@ -9,7 +9,19 @@
         <% if @nearby_stops %>
             <% unless @nearby_stops.empty? %>
                 <% @nearby_stops.each do |stop| %>
-                    <%= render "stops/show", stop: stop %>
+                    <div class="stops-container">
+                        <%= render "stops/show", stop: stop %>
+                        <div class="issue-container">
+                            <ul class="ul-dash">
+                                <% stop.issues.each do |issue| %>
+                                    <li class="li-dash">
+                                        <span class="issue-title"><%= issue.name %></span>
+                                    </li>
+                                <% end %>
+                                
+                            </ul>
+                        </div>
+                    </div>
                 <% end %>
             <% else %>
                 <h3>There seem to be no nearby stops!</h3>
@@ -18,13 +30,26 @@
     </div>
 
     <% if current_user %>
+
         <h2>
         	<%= image_tag "star.svg", width: "30px", class: "star" %>
         	Favorite Stops
         </h2>
         <div id="stops_fav">
             <% current_user.favorites.each do |stop| %>
-                <%= render "stops/show", stop: stop %>
+                <div class="stops-container">
+                    <%= render "stops/show", stop: stop %>
+                    <div class="issue-container">
+                        <ul class="ul-dash">
+                            <% stop.issues.each do |issue| %>
+                                <li class="li-dash">
+                                    <span class="issue-title"><%= issue.name %></span>
+                                </li>
+                            <% end %>
+
+                        </ul>
+                    </div>
+                </div>
             <% end %>
         </div>
     <% end %>
