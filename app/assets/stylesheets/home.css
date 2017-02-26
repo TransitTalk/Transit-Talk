@@ -1,6 +1,6 @@
 .star { vertical-align: bottom; }
 
-#stops-container {
+.stops-container {
   background-color: rgb(236,236,236);
   width:100%;
   left:0px;
@@ -20,7 +20,7 @@
     margin-bottom:1px;
 }
 
-#issue-container {
+.issue-container {
   background-color: rgb(247,247,247);
   width:100%;
   float:center;
@@ -32,6 +32,15 @@
 }
 
 #stops_near {
+    width:100%;
+    left:0px;
+    right:0px;
+    padding:0;
+    margin:5px;
+    position:relative;
+}
+
+#stops_fav {
     width:100%;
     left:0px;
     right:0px;
