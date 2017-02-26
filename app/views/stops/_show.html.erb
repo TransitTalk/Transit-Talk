@@ -1,5 +1,5 @@
 <div class="stop-partial">
-	<% stop.lines.each do |line| %>
+	<% stop.lines.uniq.each do |line| %>
 		<% unless defined? current_line and line == current_line %>
 			<div class="line-tile">
 				<%= link_to line_path(line) do %>
