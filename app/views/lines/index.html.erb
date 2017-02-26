@@ -1,6 +1,6 @@
 <% content_for :title do %> - Lines<% end %>
 <%= stylesheet_link_tag "application" %>
 
-<% Line.all.each do |l| %>
-    <%= l %> <br />
+<% @lines.each do |line| %>
+    <%= link_to(line.name, line_path(line)) %> <br>
 <% end %>

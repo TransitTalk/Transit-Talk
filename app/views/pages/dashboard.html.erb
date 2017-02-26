@@ -1,7 +1,5 @@
 <% content_for :title do %> - Dashboard<% end %>
 
-
-
 <h2>
     Nearby Stops
 </h2>
@@ -16,15 +14,14 @@
     	Favorite Stops
     </h2>
     <div id="stops_fav">
-        <% current_user.issues.all.each do |f| %>
-            <span class="stop_favorite"> <%= f %>
+        <% current_user.issues.each do |fav| %>
+            <span class="stop_favorite"> <%= fav %>
                 <span class="issue-at-stop">
-                    <% f.Issue.all.each do |g| %>
-                        <%= f %>
+                    <% fav.issues.each do |issue| %>
+                        <%= issue %>
                     <% end %>
                 </span>
             </span> <br />
-
         <% end %>
     </div>
 <% end %>

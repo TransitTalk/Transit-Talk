@@ -1,0 +1,14 @@
+<div class="line-cover">
+	<h3><%= @line.name %> Stops</h3>
+</div>
+<ul class="stop-list">
+	<% @line.stops.each do |stop| %>
+		<li class="stop">
+			<div class="line-mark">
+				<div class="mark-box"></div>
+				<div class="mark-circle"></div>
+			</div>
+			<div class="name"><%= stop.name %></div>
+		</li>
+	<% end %>
+</ul>

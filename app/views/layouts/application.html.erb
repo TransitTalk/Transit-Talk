@@ -16,6 +16,7 @@
     <div class="side-menu">
       <div class="title">TransitNet Menu</div>
       <ul>
+        <li><%= link_to('All Lines', lines_path) %> </li>
         <li><%= link_to('About', page_path(:page_name => 'about')) %></li>
         <% if current_user %>
           <li><%= link_to('Favorite Stops', favorites_path) %></li>
@@ -27,11 +28,13 @@
       </ul>
     </div>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
 
-    <div class="page-container">
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>
