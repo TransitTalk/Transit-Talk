@@ -28,7 +28,9 @@
 	background-image: url(asset-path('search-white.svg'));
 	height: 50px;
 	width: 50px;
-	background-size: 100%;
+	background-size: 80%;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 /* HEADERS OF STOP SECTIONS ("NEARBY STOPS", "FAVORITE STOPS") */
