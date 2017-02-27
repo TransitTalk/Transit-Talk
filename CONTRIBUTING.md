@@ -7,18 +7,21 @@
 README.md and the Wiki for any questions you may have about contributing
 * bugs: https://github.com/rjaltman/Transit-Network/issues
 * communcations: We currently use the wiki to organize with each other.
+
 ## Testing
-* To test that your install of this platform is correct, download "google_transit.zip" from http://www.transitchicago.com/downloads/sch_data/ and then follow the directions to launch the platform to the local host in the README.md file.
+To test that your install of this platform is correct, download "google_transit.zip" from http://www.transitchicago.com/downloads/sch_data/ and then follow the directions to launch the platform to the local host in the README.md file.
+
 ## Development environment details
 * Used
+
 ## How to submit changes: Pull Request protocol etc. 
 _Create a pull request and then create a post on the wiki that explains what the pull request includes along with a link to the pull request_ 
 
 ## How to report a bug: 
 * Templates: 
   * What is wrong:
-     Exact steps to recreate bug (if possible):
-     Error Log:
+  * Exact steps to recreate bug (if possible):
+  * Error Log:
      
 * First bugs for Contributors
   * Edit framework to accomodate different data sets from other transit centers
@@ -27,6 +30,7 @@ _Create a pull request and then create a post on the wiki that explains what the
 * New Features must stay within the spirit of the original project: making transportation bettter
 * Submit new feature requests on the wiki and the community can discuss them
 * Features deamed needed will be used to create issues and milestones
+
 ## Style Guide / Coding conventions 
 We utilize the Airbnb style guide. Specifics about the style can be found [here](http://airbnb.io/projects/styleguides/)
 
