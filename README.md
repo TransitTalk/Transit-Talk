@@ -63,7 +63,15 @@ In the future we hope to expand the functionality of TransitNetwork by:
       ```
       root\tmp
       ```
- 
+   
+  * Local Testing
+    * Navigate to root directory
+   
+   ```
+   rails server
+   ```
+   
+    * Connect to Localhost:3000 on your browser
 
 ## Contributor Guide
 TransitNetwork's contributor's guide can be found on our public repository and the source-code with the file path: 
@@ -81,3 +89,9 @@ you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
+    
+## Making a New App
+Set up database:
+ 1. Put .zip in root/tmp and unzip files
+ 2. Navigate to root folder
+ 3. Run "rake transit:set_up_transit"
