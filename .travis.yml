@@ -1,5 +1,4 @@
 language: ruby
+cache: bundler # Cache the bundler. Makes builds run faster, automatically reruns build when bundler changes
 rvm:
  - 2.3.0
- - jruby
- - rbx-2
