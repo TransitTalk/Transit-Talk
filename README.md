@@ -74,15 +74,11 @@ In the future we hope to expand the functionality of TransitNetwork by:
     * Connect to Localhost:3000 on your browser
 
 ## Contributor Guide
-TransitNetwork's contributor's guide can be found on our public repository and the source-code with the file path: 
-
-```
-Transit-Network/CONTRIBUTING.md
-```
+To learn more about how to contribute, check out [our contribution guidelines](CONTRIBUTING.md)
 
 ## License 
 
-Copyright 2017 Copyright shared among all those listed in CONTRIBUTORS.md
+Copyright 2017. Copyright shared among all those listed in [CONTRIBUTORS](CONTRIBUTORS.md)  
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
