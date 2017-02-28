@@ -24,7 +24,7 @@ namespace :transit do
         color: r.color,
       )
     end
-    Line.import(lines)
+    $lines = lines
     puts source.routes.length.to_s + " Lines created"
   end
 
@@ -41,21 +41,27 @@ namespace :transit do
         lattitude: s.lat,
       )
     end
-    Stop.import(stops)
+    $stops = stops
     puts source.stops.length.to_s + " Stops created"
   end
 
   task pair_stops: :environment do
-    Stop.all.group_by do |s|
+    stops = $stops
+    stops.group_by do |s|
       [s.longitude, s.lattitude]
     end
     .each do |latlong, stops|
       original, *twins = stops
       twins.each do |twin|
         twin.twin_stop_id = original.id
-        twin.save
       end
     end
+
+    $stops = stops
+
+    # Pairing is done, so save
+    Stop.import($stops)
+    Line.import($lines)
   end
 
   def stop_times(trip_id)
@@ -72,6 +78,11 @@ namespace :transit do
   end
 
   task populate_lines: :environment do
+    stops = Stop.all
+    lines = Line.all
+    pairs = []
+
+
     path = ENV['GTFS_FILE']
     verify_file(path)
     source = GTFS::Source.build(path)
@@ -79,23 +90,22 @@ namespace :transit do
     routes_done = Set.new
     source.trips.each do |trip|
       if routes_done.add?(trip.route_id)
-        stops = stop_times(trip.id)
+        stops2 = stop_times(trip.id)
         .sort_by(&:arrival_time)
         .map do |stop_time|
-          Stop.find_by(
-            api_id: stop_time.stop_id
-          )
+          stops.find{|s| s.api_id == stop_time.stop_id }
         end
         .map(&:original)
 
-        line = Line.find_by(
-          api_id: trip.route_id
-        )
-        line.stops = stops
-
-        line.save
+        line = lines.find{|l| l.api_id == trip.route_id }
+        stops2.each do |stop|
+          pairs << [stop.id, line.id]
+        end
       end
     end
+
+    values = pairs.map{|p| "(" + p[0].to_s + "," + p[1].to_s + ")" }.join(",")
+    ActiveRecord::Base.connection.execute("INSERT INTO lines_stops (stop_id, line_id) VALUES #{values}")
   end
 
   task set_up_transit: :environment do
