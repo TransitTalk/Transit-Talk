@@ -91,7 +91,9 @@ You may obtain a copy of the License at
     http://www.apache.org/licenses/LICENSE-2.0
     
 ## Making a New App
-Set up database:
- 1. Put .zip in root/tmp and unzip files
- 2. Navigate to root folder
- 3. Run "rake transit:set_up_transit"
+### Loading GTFS Data
+Get the URL for the GTFS data, which we'll call _data_url_.
+
+Download the file using wget - `wget '_data_url_'`
+
+Load in the data using the Rake task - `rake transit:set_up_transit GTFS_FILE=_path_to_data_file_`
