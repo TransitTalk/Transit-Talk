@@ -1,4 +1,4 @@
-# TransitNetwork [![Build Status](https://travis-ci.org/vkoves/Transit-Network.svg?branch=master)](https://travis-ci.org/rjaltman/Transit-Network)
+# TransitNetwork [![Build Status](https://travis-ci.org/vkoves/Transit-Network.svg?branch=master)](https://travis-ci.org/vkoves/Transit-Network)
 
 TransitNetwork is a platform for collective commuters to inquire and report on the status and structure of public transportation stations and lines. Behind the scenes, TransitNetwork is an open-source framework that facilitates efficient implementation of any major transit system that provides their GTFS formatted information. This adaptability to any transportation network provides the potential for an extensive network of locations within one centralized package where users and contributors can take better advantage of transportation resources. Presently, these benefits are products of TransitNetwork's ability to:
   
@@ -56,13 +56,6 @@ In the future we hope to expand the functionality of TransitNetwork by:
       ``` 
     
       to install all packages listed.
-
-  * GTFS Data Importation into Database
-    * Place compressed GTFS data file (.zip/.rar) into the
-
-      ```
-      root\tmp
-      ```
    
   * Local Testing
     * Navigate to root directory
@@ -74,15 +67,11 @@ In the future we hope to expand the functionality of TransitNetwork by:
     * Connect to Localhost:3000 on your browser
 
 ## Contributor Guide
-TransitNetwork's contributor's guide can be found on our public repository and the source-code with the file path: 
-
-```
-Transit-Network/CONTRIBUTING.md
-```
+To learn more about how to contribute, check out [our contribution guidelines](CONTRIBUTING.md)
 
 ## License 
 
-Copyright 2017 Copyright shared among all those listed in CONTRIBUTORS.md
+Copyright 2017. Copyright shared among all those listed in [CONTRIBUTORS](CONTRIBUTORS.md)  
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -91,7 +80,9 @@ You may obtain a copy of the License at
     http://www.apache.org/licenses/LICENSE-2.0
     
 ## Making a New App
-Set up database:
- 1. Put .zip in root/tmp and unzip files
- 2. Navigate to root folder
- 3. Run "rake transit:set_up_transit"
+### Loading GTFS Data
+Get the URL for the GTFS data, which we'll call _data_url_.
+
+Download the file using wget - `wget '_data_url_'`
+
+Load in the data using the Rake task - `rake transit:set_up_transit GTFS_FILE=_path_to_data_file_`
