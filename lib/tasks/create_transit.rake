@@ -94,10 +94,10 @@ namespace :transit do
 
   task set_up_transit: :environment do
     puts "Destroying Stops ..."
-    Stop.destroy_all
+    Stop.delete_all
     puts "Stops Destroyed"
     puts "Destroying Lines ..."
-    Line.destroy_all
+    Line.delete_all
     puts "Lines Destroyed"
     puts "Reading Data"
     ["transit:create_lines", "transit:create_stops", "transit:pair_stops", "transit:populate_lines"].each do |task|
