@@ -23,6 +23,7 @@ namespace :transit do
         color: r.color,
       )
     end
+    puts source.routes.length.to_s + " Lines created"
   end
 
   task create_stops: :environment do
@@ -37,6 +38,7 @@ namespace :transit do
         lattitude: s.lat,
       )
     end
+    puts source.stops.length.to_s + " Stops created"
   end
 
   task pair_stops: :environment do
