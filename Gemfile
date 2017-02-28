@@ -70,3 +70,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # GTFS to parse data
 gem "gtfs"
 gem 'pry'
+
+# TimeDifference for nifty rake time stuff
+gem "time_difference"

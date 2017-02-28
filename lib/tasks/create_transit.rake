@@ -93,15 +93,34 @@ namespace :transit do
   end
 
   task set_up_transit: :environment do
+
+    time = Time.now
     puts "Destroying Stops ..."
     Stop.delete_all
-    puts "Stops Destroyed"
+    puts "Stops Destroyed - " + human_time_taken_since(time)
+
+    time = Time.now
     puts "Destroying Lines ..."
     Line.delete_all
-    puts "Lines Destroyed"
-    puts "Reading Data"
+    puts "Lines Destroyed - " + human_time_taken_since(time)
+
+    puts "Reading Data..."
     ["transit:create_lines", "transit:create_stops", "transit:pair_stops", "transit:populate_lines"].each do |task|
+      time = Time.now
+      puts "Starting  " + task
       Rake::Task[task].invoke
+      puts "Completed " + task + " - " + human_time_taken_since(time)
+    end
+    puts "Reading Data Complete!"
+  end
+
+  def human_time_taken_since(start_time)
+    ms = ((TimeDifference.between(DateTime.now, start_time).in_seconds)*1000).round
+
+    if(ms < 1000)
+      return "took " + ms.to_s + "ms"
+    else
+      return "took " + TimeDifference.between(DateTime.now, start_time).humanize
     end
   end
 end
