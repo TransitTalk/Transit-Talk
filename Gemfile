@@ -73,3 +73,6 @@ gem 'pry'
 
 # TimeDifference for nifty rake time stuff
 gem "time_difference"
+
+# Useful for big data transactions
+gem "activerecord-import"

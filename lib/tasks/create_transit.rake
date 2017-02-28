@@ -15,14 +15,16 @@ namespace :transit do
     path = ENV['GTFS_FILE']
     verify_file(path)
     source = GTFS::Source.build(path)
+    lines = []
     source.routes.each do |r|
-      Line.create!(
+      lines << Line.new(
         api_id: r.id,
         name: r.long_name,
         system_type: r.type,
         color: r.color,
       )
     end
+    Line.import(lines)
     puts source.routes.length.to_s + " Lines created"
   end
 
@@ -30,14 +32,16 @@ namespace :transit do
     path = ENV['GTFS_FILE']
     verify_file(path)
     source = GTFS::Source.build(path)
+    stops = []
     source.stops.each do |s|
-      Stop.create!(
+      stops << Stop.new(
         api_id: s.id,
         name: s.name,
         longitude: s.lon,
         lattitude: s.lat,
       )
     end
+    Stop.import(stops)
     puts source.stops.length.to_s + " Stops created"
   end
 
