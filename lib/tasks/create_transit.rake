@@ -112,12 +112,12 @@ namespace :transit do
 
     time = Time.now
     puts "Destroying Stops ..."
-    Stop.delete_all
+    Stop.destroy_all
     puts "Stops Destroyed - " + human_time_taken_since(time)
 
     time = Time.now
     puts "Destroying Lines ..."
-    Line.delete_all
+    Line.destroy_all
     puts "Lines Destroyed - " + human_time_taken_since(time)
 
     puts "Reading Data..."
