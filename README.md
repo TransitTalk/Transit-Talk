@@ -56,13 +56,6 @@ In the future we hope to expand the functionality of TransitNetwork by:
       ``` 
     
       to install all packages listed.
-
-  * GTFS Data Importation into Database
-    * Place compressed GTFS data file (.zip/.rar) into the
-
-      ```
-      root\tmp
-      ```
    
   * Local Testing
     * Navigate to root directory
