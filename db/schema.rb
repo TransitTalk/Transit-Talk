@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170226102837) do
+ActiveRecord::Schema.define(version: 20170228072225) do
 
   create_table "issues", force: :cascade do |t|
     t.integer  "stop_id"
@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 20170226102837) do
   create_table "stops", force: :cascade do |t|
     t.string  "api_id"
     t.string  "name"
-    t.decimal "longitude"
-    t.decimal "lattitude"
+    t.decimal "longitude",    precision: 10, scale: 2
+    t.decimal "lattitude",    precision: 10, scale: 2
     t.integer "twin_stop_id"
     t.index ["api_id"], name: "index_stops_on_api_id"
   end
