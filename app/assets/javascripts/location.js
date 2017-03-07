@@ -11,11 +11,13 @@ function showLoc(position) {
     // document.getElementById('stops_fav').innerHTML = "Found location at " + lat + ", " + long;
 
     window.location.href = window.location.href + "?&lat=" + lat + "&long=" + long;
-
 }
 
 function errorH(err) {
-    if (err = 1) document.getElementById('stops_near').innerHTML = "Cannot find you since Location Services are off.";
+    if (err.code == 1)
+        document.getElementById('stops_near').innerHTML = "Cannot find you since Location Services are blocked";
+    else
+        document.getElementById('stops_near').innerHTML = "Location hit an error: <i>" + err.message + "</i>";
 }
 
 function geol () {
@@ -25,5 +27,4 @@ function geol () {
     else {
         document.getElementById('stops_near').innerHTML = "This functionality is not supported by your web browser.";
     }
-
 }
