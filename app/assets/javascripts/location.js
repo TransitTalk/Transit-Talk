@@ -1,4 +1,4 @@
-if (!window.location.href.includes("?")) {
+if (!window.location.href.includes("?") && window.location.pathname == "/") {
     geol();
 }
 
