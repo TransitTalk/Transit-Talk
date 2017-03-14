@@ -5,7 +5,7 @@
 ## Below are Some Short Links to Important Resources:
 * docs: We are currently working on creating a contributors guide, but in the mean time, please refer to the 
 README.md and the Wiki for any questions you may have about contributing
-* bugs: https://github.com/rjaltman/Transit-Network/issues
+* bugs: https://github.com/vkoves/Transit-Network/issues
 * communcations: We currently use the wiki to organize with each other.
 
 ## Testing
