@@ -11,7 +11,7 @@ To ease the learning and involvement curve of the project, we have a few resourc
 * The contributing guidelines document. Oh, hey, you're already here!
 * Project Slack and discussion channels. These are WIP and require some discussion on our end before we figure this out completely, so we have no links here yet. Check back very soon.
 * Bugs can be reported through [GitHub Issues](https://github.com/vkoves/Transit-Network/issues).
-* Wiki: Hey, look at that, we have a wiki too! As of this document's construction, it's pretty vacant, but don't be shy. A lot of this project is still in concept development while features are produced, so start a conversation [here](https://github.com/rjaltman/Transit-Network/wiki).
+* Wiki: Hey, look at that, we have a wiki too! As of this document's construction, it's pretty vacant, but don't be shy. A lot of this project is still in concept development while features are produced, so start a conversation [here](https://github.com/vkoves/Transit-Network/wiki).
 * GTFS Primer: This project heavily relies on the General Transit Feed Specification, originally developed by Google but now widely supported by various agencies. If you are unfamiliar with formatting of GTFS packages and what the project was in general, check out [Google's documentation on the matter](https://developers.google.com/transit/gtfs/).
 * Chicago Transit Authority: This project was born in Illinois and mostly lives in Chicago, so many of our testers and contributors are using [CTA GTFS data](http://www.transitchicago.com/developers/gtfs.aspx). If you want to figure out what duplicate stop they're talking about, or any references that seem assumed, we recommend [reviewing the lines as well](http://www.transitchicago.com/travel_information/maps/default.aspx?source_quicklinks=1). 
 
@@ -47,19 +47,17 @@ We use the GitHub Issues platform tied into this repository to manage most featu
   * Edit framework to accomodate different data sets from other transit centers
     
 ## New Feature Requirements
-* New Features must stay within the spirit of the original project: making transportation bettter
-* Submit new feature requests on the wiki and the community can discuss them
-* Features deamed needed will be used to create issues and milestones
+
+New Features must stay within the spirit of the original project: making transportation bettter. Submit new feature requests on the wiki and the community can discuss them. Features deemed needed or intriguing will be used to create issues and milestones.
 
 ## Style Guide / Coding conventions 
-We utilize the Airbnb style guide. Specifics about the style can be found [here](http://airbnb.io/projects/styleguides/)
+We utilize the Airbnb style guide. Specifics about the style can be found [here](http://airbnb.io/projects/styleguides/).
 
 ## Code of Conduct
-This is a constructive environment. No discrimination against any members of this team and community will be tollerated here.
+This is a constructive environment. No discrimination against any members of this team and community will be tolerated here.
 
 ## Recognition model
-All contributors who's pull requests are merged can ask to 
-put in the CONTRIBUTERS.md file in order to be recognized
+We value every bit of energy that is devoted to this project. If you have contributed to the project through a pull request, issue and evaluation management, or in some other way, you can ask for recognition in the repository's [CONTRIBUTORS.md](https://github.com/vkoves/Transit-Network/blob/master/CONTRIBUTORS.md) file.
 
 ## Where can I ask for help?
 The wiki is specifically there to encourage discussion among community members. If you have any problems that Google can't solve, feel free to post them on the wiki.
