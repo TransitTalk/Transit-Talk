@@ -1,9 +1,12 @@
 <div class="page-container">
 	<h1>Favorite Stops</h1>
-	<% current_user.favorites.each do |stop| %>
-		<%= render "stops/show_with_issues", stop: stop %>
+	<% unless current_user.favorites.empty? %>
+		<% current_user.favorites.each do |stop| %>
+			<%= render "stops/show_with_issues", stop: stop %>
+		<% end %>
+	<% else %>
+		You have no favorite stops! Go to <%= link_to "All Lines", lines_path %> or search for stops to favorite them.
 	<% end %>
-
 </div>
 
 <%= new_issue_button %>
