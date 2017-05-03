@@ -1,9 +1,17 @@
-This Project was made possible through the hard work of many people:
+This project was made possible through the hard work of many people:
 * Robert Altman
 * CJ Bennett
-* Viktor Koves
 * Grant Reszczyk
+* Soren Spicknall
+* Viktor Koves
 
-Two Mentors also made the project possible:
+Our non-technical team has also included the following valued contributors over time:
+* Julian Hyde
+* Justin Jones
+* Steven Vance
+* Brent Wilson
+* Jeff Zoline
+
+Two mentors also made the original version of this project possible:
 * Marc-Andre Lafortune
 * Kir Shatrov
