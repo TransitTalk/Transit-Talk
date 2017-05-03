@@ -13,10 +13,11 @@ To ease the learning and involvement curve of the project, we have a few resourc
 * Bugs can be reported through [GitHub Issues](https://github.com/vkoves/Transit-Network/issues).
 * Wiki: Hey, look at that, we have a wiki too! As of this document's construction, it's pretty vacant, but don't be shy. A lot of this project is still in concept development while features are produced, so start a conversation [here](https://github.com/vkoves/Transit-Network/wiki).
 * GTFS Primer: This project heavily relies on the General Transit Feed Specification, originally developed by Google but now widely supported by various agencies. If you are unfamiliar with formatting of GTFS packages and what the project was in general, check out [Google's documentation on the matter](https://developers.google.com/transit/gtfs/).
-* Chicago Transit Authority: This project was born in Illinois and mostly lives in Chicago, so many of our testers and contributors are currently using [CTA GTFS data](http://www.transitchicago.com/developers/gtfs.aspx). Very soon, we will be moving to [Transitland](https://transit.land/) data, which is a curated database of open GTFS data for transit systems around the world. 
+* Very soon, the platform will be moving to [Transitland](https://transit.land/) data, which is a curated database of open GTFS data for transit systems around the world.
+* Chicago Transit Authority: This project was born in Illinois and mostly lives in Chicago, so many of our testers and contributors are currently using [CTA GTFS data](http://www.transitchicago.com/developers/gtfs.aspx). Our first full prototype will be built on CTA data.
 
 ## Testing
-To test that your install of this platform is correct, download "google_transit.zip" from http://www.transitchicago.com/downloads/sch_data/ and then follow the directions to launch the platform to the local host in the README.md file.
+To test that your install of this platform is correct on the data that we are currently using, download "google_transit.zip" from http://www.transitchicago.com/downloads/sch_data/ and then follow the directions to launch the platform to the local host in the README.md file. You can also use data from a wide variety of other transit systems.
 
 ## Development environment details
 
