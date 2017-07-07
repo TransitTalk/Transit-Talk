@@ -5,7 +5,7 @@
 		<%= render "lines/tiles", lines: stop.lines %>
 	<% end %>
 	<span>
-		<%= stop.name %>
+		<%= link_to stop.name, stop %>
 		<% if user_signed_in? %>
 			<% if current_user.favorites.include?(stop) %>
 				<%= link_to unfavorite_path(stop) do %>
