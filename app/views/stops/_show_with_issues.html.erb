@@ -3,16 +3,7 @@
 	<%= render "stops/show", stop: stop %>
 	
 	<% unless stop.issues.empty? # only show issue container if there are issues to show %>
-		<div class="issue-container">
-			<ul class="ul-dash">
-				<% stop.issues.each do |issue| %>
-					<li class="li-dash">
-						<span class="issue-title"><%= issue.types %></span>
-						<span class="issue-time"><%= time_ago_in_words(issue.created_at) %> ago</span>
-					</li>
-				<% end %>
-			</ul>
-		</div>
+		<%= render partial: "issues/show_list", locals: {issues: stop.issues} %>
 	<% end %>
 </div>
 <% end %>
