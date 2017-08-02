@@ -76,3 +76,6 @@ gem "time_difference"
 
 # Useful for big data transactions
 gem "activerecord-import"
+
+# dotenv (https://github.com/bkeepers/dotenv), which lets us store config in .env
+gem 'dotenv-rails', :groups => [:development, :test]

@@ -22,3 +22,6 @@
 
 # Ignore Sublime files
 *.sublime*
+
+# Ignore .env from dot-env, used for local config
+.env
