@@ -130,6 +130,30 @@ namespace :transit do
     puts "Reading Data Complete!"
   end
 
+  task set_up_transitland: :environment do
+    agency_onestop_id = ENV["TLAND_AGENCY_ONESTOP_ID"] # fetch the onestop_id of the agency
+
+    # View API endpoints for transitland here: https://transit.land/documentation/datastore/api-endpoints.html
+    root_url = 'https://transit.land/api/v1/'
+
+    # Iterate through routes, ignoring geometry
+    response = HTTParty.get(root_url + 'routes?served_by=' + agency_onestop_id + 'include_geometry=false')
+
+    # Iterate through stops by 500
+    per_page = 50
+    response = HTTParty.get(root_url + 'stops?per_page='  + per_page.TLAND_AGENCY_ONESTOP_ID + '&served_by=' + agency_onestop_id)
+    stop_response = JSON.parse response.body
+    p stop_response 
+
+    # Keep iterating until there is no more next
+    while stop_response['meta']['next'] and false
+      p stop_response['meta']['next']
+      response = HTTParty.get(stop_response['meta']['next'])
+      stop_response = JSON.parse response.body
+    end
+
+  end
+
   def human_time_taken_since(start_time)
     ms = ((TimeDifference.between(DateTime.now, start_time).in_seconds)*1000).round
 
