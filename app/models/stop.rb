@@ -1,6 +1,6 @@
 class Stop < ApplicationRecord
   has_many :issues
-  has_and_belongs_to_many :lines
+  has_and_belongs_to_many :lines, :foreign_key => 'stop_onestop_id', :association_foreign_key => 'line_onestop_id'
   belongs_to :twin_stop, class_name: "Stop", required: false
   has_and_belongs_to_many :users
 
