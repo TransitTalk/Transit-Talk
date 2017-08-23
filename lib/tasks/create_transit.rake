@@ -139,6 +139,8 @@ namespace :transit do
       stop_response = JSON.parse response.body
 
       stop_response['stops'].each do |stop_obj|
+        next if stop_obj['onestop_id'].include?('<')
+
         stop = Stop.new
         stop.onestop_id = stop_obj['onestop_id']
         stop.name = stop_obj['name']
