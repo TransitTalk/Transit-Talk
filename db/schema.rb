@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307064700) do
+ActiveRecord::Schema.define(version: 20170829022110) do
 
   create_table "issues", force: :cascade do |t|
     t.integer  "stop_id"
@@ -32,14 +32,16 @@ ActiveRecord::Schema.define(version: 20170307064700) do
     t.string  "name"
     t.integer "system_type"
     t.string  "color"
+    t.string  "onestop_id"
     t.index ["api_id"], name: "index_lines_on_api_id"
+    t.index ["onestop_id"], name: "index_lines_on_onestop_id"
   end
 
   create_table "lines_stops", force: :cascade do |t|
-    t.integer "stop_id"
-    t.integer "line_id"
-    t.index ["line_id"], name: "index_lines_stops_on_line_id"
-    t.index ["stop_id"], name: "index_lines_stops_on_stop_id"
+    t.string "stop_onestop_id"
+    t.string "line_onestop_id"
+    t.index ["line_onestop_id"], name: "index_lines_stops_on_line_onestop_id"
+    t.index ["stop_onestop_id"], name: "index_lines_stops_on_stop_onestop_id"
   end
 
   create_table "stops", force: :cascade do |t|
@@ -48,7 +50,9 @@ ActiveRecord::Schema.define(version: 20170307064700) do
     t.decimal "longitude",    precision: 12, scale: 8
     t.decimal "lattitude",    precision: 12, scale: 8
     t.integer "twin_stop_id"
+    t.string  "onestop_id"
     t.index ["api_id"], name: "index_stops_on_api_id"
+    t.index ["onestop_id"], name: "index_stops_on_onestop_id"
   end
 
   create_table "stops_users", force: :cascade do |t|
@@ -71,6 +75,7 @@ ActiveRecord::Schema.define(version: 20170307064700) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.boolean  "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
