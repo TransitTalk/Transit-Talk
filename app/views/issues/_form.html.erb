@@ -13,7 +13,7 @@
 
   <div class="field-issue">
     <%= f.label :line_id %><br>
-    <%= f.collection_select(:line_id, Line.order(:system_type, :name), :id, :name,
+    <%= f.collection_select(:line_id, Line.order('vehicle_type DESC, name'), :id, :name,
       {prompt: 'Select Line'},
       {:class => "new-issue-line"}
     ) %>
