@@ -18,8 +18,8 @@ namespace :transit do
     lines = []
     source.routes.each do |r|
       lines << Line.new(
-        api_id: r.id,
-        name: r.long_name,
+        name: r.id,
+        route_long_name: r.long_name,
         system_type: r.type,
         color: r.color,
       )
@@ -167,6 +167,10 @@ namespace :transit do
       route_response['routes'].each do |route_obj|
         line = Line.new
         line.name = route_obj['name']
+        line.route_long_name = route_obj['tags']['route_long_name']
+        line.vehicle_type = route_obj['vehicle_type']
+        line.wheelchair_accessible = route_obj['wheelchair_accessible']
+        line.bikes_allowed = route_obj['bikes_allowed']
         line.color = route_obj['color']
         line.onestop_id = route_obj['onestop_id']
 
