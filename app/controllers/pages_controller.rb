@@ -14,8 +14,8 @@ class PagesController < ApplicationController
   end
 
   def search
-    @result_lines = Line.where("name like ?", "%#{params[:q]}%")
-    @result_stops = Stop.includes(:lines).where("stops.name LIKE ? AND stops.twin_stop_id IS NULL AND lines.system_type IS NOT NULL", "%#{params[:q]}%").order("lines.system_type")
+    @result_lines = Line.where("name LIKE ? OR route_long_name LIKE ?", "%#{params[:q]}%", "%#{params[:q]}%")
+    @result_stops = Stop.includes(:lines).where("stops.name LIKE ?", "%#{params[:q]}%").order("lines.vehicle_type DESC")
   end
 
   def valid_page?

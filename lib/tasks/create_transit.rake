@@ -18,8 +18,8 @@ namespace :transit do
     lines = []
     source.routes.each do |r|
       lines << Line.new(
-        api_id: r.id,
-        name: r.long_name,
+        name: r.id,
+        route_long_name: r.long_name,
         system_type: r.type,
         color: r.color,
       )
@@ -109,16 +109,7 @@ namespace :transit do
   end
 
   task set_up_transit: :environment do
-
-    time = Time.now
-    puts "Destroying Stops ..."
-    Stop.destroy_all
-    puts "Stops Destroyed - " + human_time_taken_since(time)
-
-    time = Time.now
-    puts "Destroying Lines ..."
-    Line.destroy_all
-    puts "Lines Destroyed - " + human_time_taken_since(time)
+    delete_transit_data
 
     puts "Reading Data..."
     ["transit:create_lines", "transit:create_stops", "transit:pair_stops", "transit:populate_lines"].each do |task|
@@ -128,6 +119,87 @@ namespace :transit do
       puts "Completed " + task + " - " + human_time_taken_since(time)
     end
     puts "Reading Data Complete!"
+  end
+
+  task set_up_transitland: :environment do
+    delete_transit_data
+
+    agency_onestop_id = ENV["TLAND_AGENCY_ONESTOP_ID"] # fetch the onestop_id of the agency
+
+    # View API endpoints for transitland here: https://transit.land/documentation/datastore/api-endpoints.html
+    root_url = 'https://transit.land/api/v1/'
+
+    # Iterate through stops by 500
+    per_page = 500
+    response = HTTParty.get(root_url + 'stops?per_page='  + per_page.to_s + '&served_by=' + agency_onestop_id)
+    i = 0
+
+    loop do
+      puts 'Stop request ' + i.to_s
+      stop_response = JSON.parse response.body
+
+      stop_response['stops'].each do |stop_obj|
+        next if stop_obj['onestop_id'].include?('<')
+
+        stop = Stop.new
+        stop.onestop_id = stop_obj['onestop_id']
+        stop.name = stop_obj['name']
+        stop.longitude = stop_obj['geometry']['coordinates'][0] # takes [X, Y] format, aka [longitude, latitude]
+        stop.lattitude = stop_obj['geometry']['coordinates'][1] # takes [X, Y] format, aka [longitude, latitude]
+        stop.save
+      end
+
+      next_url = stop_response['meta']['next']
+
+      break unless next_url
+
+      response = HTTParty.get(next_url)
+      i += 1
+    end
+
+    # Iterate through routes, ignoring geometry
+    response = HTTParty.get(root_url + 'routes?operated_by=' + agency_onestop_id + '&include_geometry=false')
+
+    # start a loop and break when there's no 'next' link
+    loop do
+      route_response = JSON.parse(response.body)
+
+      route_response['routes'].each do |route_obj|
+        line = Line.new
+        line.name = route_obj['name']
+        line.route_long_name = route_obj['tags']['route_long_name']
+        line.vehicle_type = route_obj['vehicle_type']
+        line.wheelchair_accessible = route_obj['wheelchair_accessible']
+        line.bikes_allowed = route_obj['bikes_allowed']
+        line.color = route_obj['color']
+        line.onestop_id = route_obj['onestop_id']
+
+
+        stop_onestop_ids = route_obj['stops_served_by_route'].map{|hash| hash['stop_onestop_id']}
+        line.stops = Stop.where(onestop_id: stop_onestop_ids)
+
+        line.save
+      end
+
+      next_url = route_response['meta']['next']
+
+      break unless next_url
+
+      response = HTTParty.get(next_url)
+    end
+
+  end
+
+  def delete_transit_data
+    time = Time.now
+    puts "Destroying Stops ..."
+    Stop.destroy_all
+    puts "Stops Destroyed - " + human_time_taken_since(time)
+
+    time = Time.now
+    puts "Destroying Lines ..."
+    Line.destroy_all
+    puts "Lines Destroyed - " + human_time_taken_since(time)
   end
 
   def human_time_taken_since(start_time)

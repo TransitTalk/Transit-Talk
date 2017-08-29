@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307064700) do
+ActiveRecord::Schema.define(version: 20170829123148) do
 
   create_table "issues", force: :cascade do |t|
     t.integer  "stop_id"
@@ -28,18 +28,23 @@ ActiveRecord::Schema.define(version: 20170307064700) do
   end
 
   create_table "lines", force: :cascade do |t|
-    t.string  "api_id"
+    t.string  "route_long_name"
     t.string  "name"
     t.integer "system_type"
     t.string  "color"
-    t.index ["api_id"], name: "index_lines_on_api_id"
+    t.string  "onestop_id"
+    t.string  "vehicle_type"
+    t.string  "wheelchair_accessible"
+    t.string  "bikes_allowed"
+    t.index ["onestop_id"], name: "index_lines_on_onestop_id"
+    t.index ["route_long_name"], name: "index_lines_on_route_long_name"
   end
 
   create_table "lines_stops", force: :cascade do |t|
-    t.integer "stop_id"
-    t.integer "line_id"
-    t.index ["line_id"], name: "index_lines_stops_on_line_id"
-    t.index ["stop_id"], name: "index_lines_stops_on_stop_id"
+    t.string "stop_onestop_id"
+    t.string "line_onestop_id"
+    t.index ["line_onestop_id"], name: "index_lines_stops_on_line_onestop_id"
+    t.index ["stop_onestop_id"], name: "index_lines_stops_on_stop_onestop_id"
   end
 
   create_table "stops", force: :cascade do |t|
@@ -48,7 +53,9 @@ ActiveRecord::Schema.define(version: 20170307064700) do
     t.decimal "longitude",    precision: 12, scale: 8
     t.decimal "lattitude",    precision: 12, scale: 8
     t.integer "twin_stop_id"
+    t.string  "onestop_id"
     t.index ["api_id"], name: "index_stops_on_api_id"
+    t.index ["onestop_id"], name: "index_stops_on_onestop_id"
   end
 
   create_table "stops_users", force: :cascade do |t|

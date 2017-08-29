@@ -1,6 +1,6 @@
 class LinesController < ApplicationController
   def index
-    @lines = Line.all.order(:system_type)
+    @lines = Line.all.sort_by { |l| -l.name.to_i }.sort_by { |l| l.vehicle_type }.reverse!
   end
 
   def show
