@@ -152,7 +152,6 @@ namespace :transit do
         stop.name = stop_obj['name']
         stop.longitude = stop_obj['geometry']['coordinates'][0] # takes [X, Y] format, aka [longitude, latitude]
         stop.lattitude = stop_obj['geometry']['coordinates'][1] # takes [X, Y] format, aka [longitude, latitude]
-        stop.save
       end
 
       next_url = stop_response['meta']['next']
