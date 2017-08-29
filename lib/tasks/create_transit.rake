@@ -152,6 +152,8 @@ namespace :transit do
         stop.name = stop_obj['name']
         stop.longitude = stop_obj['geometry']['coordinates'][0] # takes [X, Y] format, aka [longitude, latitude]
         stop.lattitude = stop_obj['geometry']['coordinates'][1] # takes [X, Y] format, aka [longitude, latitude]
+
+        tland_stops << stop
       end
 
       next_url = stop_response['meta']['next']
@@ -185,7 +187,7 @@ namespace :transit do
         line.onestop_id = route_obj['onestop_id']
 
         # Create an array of pair arrays of form [stop_onestop_id, line_onestop_id], used for data importing
-        lines_stops = route_obj['stops_served_by_route'].map{|hash| [hash['stop_onestop_id'], line.onestop_id]}
+        lines_stops = route_obj['stops_served_by_route'].map{|h| [h['stop_onestop_id'], line.onestop_id]}
         tland_lines_stops = tland_lines_stops + lines_stops
 
         # Add lines to bul import set of lines
@@ -207,7 +209,7 @@ namespace :transit do
     Line.import(tland_lines)
 
     # Import relationships - each pair is [stop_onestop_id, line_onestop_id]
-    values = tland_lines_stops.map{|pair| '("' + pair[0].to_s + '","' + pair[1].to_s + '")' }.join(',')
+    values = tland_lines_stops.map{|pair| '("' + pair[0] + '","' + pair[1] + '")' }.join(',')
     ActiveRecord::Base.connection.execute("INSERT INTO lines_stops (stop_onestop_id, line_onestop_id) VALUES #{values}")
   end
 
