@@ -4,6 +4,8 @@ class Stop < ApplicationRecord
   belongs_to :twin_stop, class_name: "Stop", required: false
   has_and_belongs_to_many :users
 
+  self.primary_key = "onestop_id"
+
   acts_as_mappable :default_units => :miles,
                    :default_formula => :sphere,
                    :distance_field_name => :distance,
