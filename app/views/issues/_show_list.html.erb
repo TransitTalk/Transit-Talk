@@ -1,0 +1,10 @@
+<div class="issue-container">
+	<ul class="ul-dash">
+		<% issues.each do |issue| %>
+			<li class="li-dash">
+				<span class="issue-title"><%= issue.types %></span>
+				<span class="issue-time"><%= time_ago_in_words(issue.created_at) %> ago</span>
+			</li>
+		<% end %>
+	</ul>
+</div>
