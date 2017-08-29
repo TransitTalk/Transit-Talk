@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829123148) do
+ActiveRecord::Schema.define(version: 20170829151944) do
 
   create_table "issues", force: :cascade do |t|
-    t.integer  "stop_id"
+    t.string   "stop_onestop_id"
     t.integer  "vehicle_id"
     t.text     "description"
     t.integer  "user_id"
-    t.integer  "line_id"
+    t.string   "line_onestop_id"
     t.string   "types"
     t.boolean  "resolved"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.index ["stop_id"], name: "index_issues_on_stop_id"
+    t.index ["stop_onestop_id"], name: "index_issues_on_stop_onestop_id"
     t.index ["user_id"], name: "index_issues_on_user_id"
     t.index ["vehicle_id"], name: "index_issues_on_vehicle_id"
   end
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 20170829123148) do
 
   create_table "stops_users", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "stop_id"
-    t.index ["stop_id"], name: "index_stops_users_on_stop_id"
+    t.string  "stop_onestop_id"
+    t.index ["stop_onestop_id"], name: "index_stops_users_on_stop_onestop_id"
     t.index ["user_id"], name: "index_stops_users_on_user_id"
   end
 

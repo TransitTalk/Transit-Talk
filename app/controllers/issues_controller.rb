@@ -17,7 +17,7 @@ class IssuesController < ApplicationController
     unless user_signed_in?
       redirect_to new_user_session_path
     end
-    @issue = Issue.new(params.permit(:stop_id, :line_id))
+    @issue = Issue.new(stop_onestop_id: params[:stop_id], line_onestop_id: params[:line_id])
   end
 
   # GET /issues/1/edit
@@ -75,6 +75,6 @@ class IssuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def issue_params
-      params.require(:issue).permit(:types, :stop_id, :line_id, :description)
+      params.require(:issue).permit(:types, :stop_onestop_id, :line_onestop_id, :description)
     end
 end
