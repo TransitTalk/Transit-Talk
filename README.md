@@ -80,7 +80,18 @@ You may obtain a copy of the License at
     http://www.apache.org/licenses/LICENSE-2.0
     
 ## Making a New App
-### Loading GTFS Data
+
+### Loading Data from transit.land
+
+Start by finding the transit network operator you want to setup a site for from [transit.land's feed registry](https://transit.land/feed-registry/). Grab the `onestop_id` for the desired operator.
+
+Then run `rake transit:set_up_transitland TLAND_AGENCY_ONESTOP_ID=%onestop_id%`
+
+Alternatively, the transit agency's onestop_id can be pulled from environment variables, so setting the `TLAND_AGENCY_ONESTOP_ID` environment variable to your desired onestop_id and then running `rake transit:set_up_transitland` will also work.
+
+### Loading GTFS Data (Deprecated)
+**Note:** This method is now deprecated for the transit.land data import mentioned above
+
 Get the URL for the GTFS data, which we'll call _data_url_.
 
 Download the file using wget - `wget '_data_url_'`

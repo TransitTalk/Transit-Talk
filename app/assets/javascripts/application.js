@@ -48,7 +48,6 @@ $(document).ready(function()
 	$(".new-issue-line").change(function()
 	{
 		var self = this;
-		$(this).find("option:first-of-type").remove(); // remove default option to prevent it being submitted
 
 		$.ajax({
 		  url: "/lines/" + $(this).val() + "/get_stops",

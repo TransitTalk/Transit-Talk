@@ -68,10 +68,9 @@
 .stop-partial {
 	min-height: 30px;
 	margin: 5px 0px;
-	display: table;
 
 	.line-tile {
-		display: table-cell;
+		display: inline-block;
 		vertical-align: middle;
 		padding: 2px;
 
@@ -80,7 +79,6 @@
 	span {
 		padding-left: 5px;
 		vertical-align: middle;
-		display: table-cell;
 	}
 }
 
