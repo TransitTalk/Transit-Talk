@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field-issue">
-    <%= f.label :line_id %><br>
-    <%= f.collection_select(:line_id, Line.order('vehicle_type DESC, name'), :id, :name,
+    <%= f.label 'Line' %><br>
+    <%= f.collection_select(:line_onestop_id, Line.order('vehicle_type DESC, name'), :id, :route_long_name,
       {prompt: 'Select Line'},
       {:class => "new-issue-line"}
     ) %>
   </div>
 
   <div class="field-issue">
-    <%= f.label :stop_id %><br>
-    <%= f.collection_select(:stop_id, issue.line&.stops || [], :id, :name,
+    <%= f.label 'Stop' %><br>
+    <%= f.collection_select(:stop_onestop_id, issue.line&.stops || [], :id, :name,
       {prompt: issue.line ? nil : "Select a line first"},
       {:class => "new-issue-stops"}
     ) %>
