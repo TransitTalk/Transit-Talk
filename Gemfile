@@ -82,3 +82,6 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 # Add httpparty (https://github.com/jnunemaker/httparty) for simpler HTTP
 gem 'httparty'
+
+# Gem for site wide settings for site configuration
+gem 'rails-settings-cached'
