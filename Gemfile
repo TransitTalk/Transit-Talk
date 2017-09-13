@@ -85,3 +85,6 @@ gem 'httparty'
 
 # Gem for site wide settings for site configuration
 gem 'rails-settings-cached'
+
+# UI for rails-settings
+gem 'rails-settings-ui'

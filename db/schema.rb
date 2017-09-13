@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829151944) do
+ActiveRecord::Schema.define(version: 20170913013817) do
 
   create_table "issues", force: :cascade do |t|
     t.string   "stop_onestop_id"
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 20170829151944) do
     t.string "line_onestop_id"
     t.index ["line_onestop_id"], name: "index_lines_stops_on_line_onestop_id"
     t.index ["stop_onestop_id"], name: "index_lines_stops_on_stop_onestop_id"
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "var",                   null: false
+    t.text     "value"
+    t.integer  "thing_id"
+    t.string   "thing_type", limit: 30
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true
   end
 
   create_table "stops", force: :cascade do |t|
