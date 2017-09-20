@@ -1,129 +1,77 @@
-.headbar {
-	height: 50px;
+// DESKTOP STYLES
+
+.wrapper {
+	display: flex;
+	position: fixed;
+	background-color: #eee;
 	width: 100%;
-	background-color: #58b7ff;
+	height: 100px;
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
 	text-align: center;
+	width: 100%;
 }
 
-.hamburger {
-	float: left;
-	height: 50px;
-	width: 50px;
-	background-image: url(asset-path('menu.svg'));
-	background-size: 100%;
-}
-
-
-/* Styling for main header with project name and transportation line */
-.title {
+.menu {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 5px;
+	padding: 0;
+	list-style: none;
 	text-align: center;
-	color: white;
-	margin-top: 8px;
-	font-size: 26px;
-	display: inline-block;
+	color: #ccc;
 }
 
-.search {
-	float: right;
-	background-image: url(asset-path('search-white.svg'));
-	height: 50px;
-	width: 50px;
-	background-size: 80%;
-	background-position: center;
-	background-repeat: no-repeat;
+.title-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	text-transform: uppercase;
 }
 
-/* HEADERS OF STOP SECTIONS ("NEARBY STOPS", "FAVORITE STOPS") */
-.stopSections {
-	text-align: left;
-	color: #575757;
-	font-size: 40px;
-	width: 50px;
-	height: 100%;
+#title {
+	color: #555;
+	font-size: 2em;
+	flex-grow: 1;
+	padding-left: 0;
 }
 
-/* HEADERS WITH TRANSPORTATION NAMES ("ROOSEVELT", "CERMAK-McCORMICK") */
-.locationList {
-
-	
+.nav-item,
+.nav-item:after,
+.nav-item:before {
+	transition: all .5s;
 }
 
-.side-menu-overlay {
+.nav-item {
+	flex-grow: 1;
+	flex-shrink: 0;
+	color: #555;
+	margin-right: 15px;
+	position: relative;
+	text-transform: uppercase;
+}
+
+.nav-item:hover {
+	color: #fff;
+	cursor: pointer;
+}
+
+.nav-item:hover:after {
+	width: 80%;
+}
+
+#menu-toggle {
 	display: none;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
-	top: 0px;
-	z-index: 10;
 }
 
-.side-menu {
-	position: fixed;
-	background: #58b7ff;
-	height: 100%;
-	width: 75%;
-	top: 0px;
-	left: -85%;
-	padding-left: 20px;
-	box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
-	z-index: 10;
-
-	ul {
-		padding: 0px;
-		margin: 0px;
-		list-style: none;
-
-		li {
-			color: white;
-			margin: 10px 0px;
-			font-size: 18px;
-
-			a { text-decoration: none; color: white; }
-		}
-	}
-}
-
-.overlay-search {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,0.5);
-	top: 0;
-	left: 0;
-	z-index: 5;
-	display: none;
-
-	form {
-		width: 300px;
-		margin: 100px auto;
-		position: relative;
-
-		input[type="text"] {
-			box-sizing: border-box;
-			width: 300px;
-			height: 40px;
-			padding-left: 10px;
-			margin: auto;
-			font-size: 20px;
-		}
-	
-		input[type="submit"] {
-			box-shadow: none;
-			background: url(asset-path("search.svg"));
-			border: none;
-			background-size: 100%;
-			position: absolute;
-			right: 5px;
-			top: 5px;
-			height: 30px;
-			width: 30px;
-		}
-	}
-}
-
-h1, h2, h3, h4, h5, h6 { font-weight: normal; }
-
-* {
-	color: #535353;
-}
+// MOBILE STYLES
