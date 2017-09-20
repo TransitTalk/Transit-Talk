@@ -69,6 +69,10 @@ In the future we hope to expand the functionality of TransitNetwork by:
 ## Contributor Guide
 To learn more about how to contribute, check out [our contribution guidelines](CONTRIBUTING.md)
 
+### Adding New Modular Settings
+To add a new modular setting to the settings panel (`/settings`), add it as a default in `config/app.yml` and then add the display name of the attribute in
+`config/locales/en.yml` under `en.settings.attributes.{{new_setting_name}}.name`. For example, when adding the `theme_color` setting, I added a default theme_color of `theme_color: "#58b7ff"` and then added `en.settings.attributes.theme_color.name = "CSS Theme Color"`.
+
 ## License 
 
 Copyright 2017. Copyright shared among all those listed in [CONTRIBUTORS](CONTRIBUTORS.md)  
