@@ -15,6 +15,5 @@ end
 
 RailsSettingsUi.setup do |config|
   config.settings_class = "Setting" # Customize settings class name
-  config.defaults_for_settings = {mode: :manual} # Default option values for select tags
 end
 

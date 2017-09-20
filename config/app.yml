@@ -1,7 +1,7 @@
 # config/app.yml for rails-settings-cached
 defaults: &defaults
-  foo: "Foo"
-  bar: 123
+  site_name: "Transit Network"
+  theme_color: "#58b7ff"
 
 development:
   <<: *defaults
