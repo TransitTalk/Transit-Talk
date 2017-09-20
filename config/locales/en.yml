@@ -26,4 +26,4 @@ en:
       site_name:
         name: "Site Name"
       theme_color:
-        name: "Theme Color (RGB or Hex code)"
+        name: "CSS Theme Color"
