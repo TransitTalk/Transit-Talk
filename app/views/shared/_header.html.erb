@@ -1,7 +1,7 @@
 <header class="headbar">
 	<div class="hamburger"></div>
 	<a href="/">
-		<div class="title">Transit Network</div>
+		<div class="title"><%= Setting.site_name %></div>
 	</a>
 	<div class= "search"></div>
 </header>
@@ -15,7 +15,7 @@
 
 <div class="side-menu-overlay"></div>
 <div class="side-menu">
-	<div class="title">Transit Network Menu</div>
+	<div class="title"><%= Setting.site_name %> Menu</div>
 	<ul>
 		<li><%= link_to('Home', "/") %> </li>
 		<li><%= link_to('All Lines', lines_path) %> </li>
