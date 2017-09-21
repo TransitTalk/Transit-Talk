@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TransitNetwork</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <%= stylesheet_link_tag "application" %>
-    <%= stylesheet_link_tag "headers" %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-  </head>
+<head>
+  <title>TransitNetwork</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "headers" %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
-  	<%= render "shared/header" %>
+<body>
+  <%= render "shared/header" %>
 
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
+  <% if notice %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
 
-    <% if current_user %>
-      <%= link_to new_issue_path() do %>
-        <div class="create-issue"></div>
-      <% end %>
+  <% if alert %>
+    <p class="alert"><%= alert %></p>
+  <% end %>
+
+  <% if current_user %>
+    <%= link_to new_issue_path() do %>
+    <div class="create-issue"></div>
     <% end %>
-    <%= yield %>
-  </body>
+  <% end %>
+  
+  <%= yield %>
+</body>
 </html>
