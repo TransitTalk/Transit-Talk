@@ -1,22 +1,30 @@
-// DESKTOP STYLES
+// COLOR PALETTE
+ $transit-blue: #58b7ff;
+ $opacity-blue: rgba(88,183,255,0.1);
+ $transit-blue2x: #4692cc;
+ $transit-blue5x: #2c5b7f;
 
+ $off-white: #eee;
+ $opacity-white: rgba(238,238,238,.6);
+
+ $light-grey: #ccc;
+ $solid-grey: #777;
+ $solid-grey2x: #555; /* 2 shades darker */
+
+// DESKTOP STYLES
 .wrapper {
 	display: flex;
-	position: fixed;
-	background-color: #eee;
-	width: 100%;
-	height: 100px;
-	margin: 0;
-	padding: 0;
 }
 
 #header {
+	position: fixed;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	justify-content: space-around;
 	text-align: center;
 	width: 100%;
+	padding: 0;
+  background: $transit-blue;
 }
 
 .menu {
@@ -24,11 +32,11 @@
 	flex-flow: row wrap;
 	justify-content: space-between;
 	align-items: center;
-	border-radius: 5px;
+  border-radius: 5px;
 	padding: 0;
 	list-style: none;
 	text-align: center;
-	color: #ccc;
+  color: $solid-grey2x;
 }
 
 .title-div {
@@ -40,7 +48,7 @@
 }
 
 #title {
-	color: #555;
+	color: $off-white;
 	font-size: 2em;
 	flex-grow: 1;
 	padding-left: 0;
@@ -55,14 +63,14 @@
 .nav-item {
 	flex-grow: 1;
 	flex-shrink: 0;
-	color: #555;
+	color: $solid-grey2x;
 	margin-right: 15px;
 	position: relative;
 	text-transform: uppercase;
 }
 
 .nav-item:hover {
-	color: #fff;
+	color: $transit-blue5x;
 	cursor: pointer;
 }
 
@@ -75,3 +83,207 @@
 }
 
 // MOBILE STYLES
+
+@media all and (max-width: 600px) {
+  #header {
+		display: flex;
+    flex-flow: column;
+		align-items: center;
+		text-align: left;
+    padding: 0;
+		margin: 0;
+		position: relative;
+	}
+
+	.menu {
+		display: flex;
+    flex-flow: column;
+		justify-content: center;
+		align-items: center;
+    padding: 0;
+		margin: 0;
+		opacity: 0;
+		transition: all 1s ease;
+		visibility: hidden;
+		font-size: 1em;
+		width: 100%;
+	}
+
+// MOBILE NAV ITEMS
+	.nav-item {
+		width: 100%;
+		justify-content: left;
+		align-items: center;
+		color: $solid-grey2x;
+	}
+
+	.nav-item {
+		box-sizing: border-box;
+		border-bottom: 1px solid $transit-blue5x;
+	}
+
+	.nav-item:hover,
+  .nav-item:focus {
+		border-color: none;
+		background-color: $opacity-white;
+		color: $transit-blue5x;
+	}
+
+// NAV ITEM ID'S
+	#a, #b, #c, #d, #e, #f {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-grow: 1;
+		flex-shrink: 1;
+	}
+
+	#a {
+		flex-grow: 1;
+		flex-shrink: 1;
+		order: 2;
+	}
+
+	#b {
+		order: 3;
+	}
+
+	#c {
+		order: 4;
+	}
+
+	#d {
+		order: 5;
+	}
+
+	#e {
+		order: 6
+	}
+
+	#f {
+		order: 1;
+	}
+
+	.title-div {
+		position: absolute;
+		top: 0;
+		left: 60px;
+	}
+
+	.label-toggle {
+		padding-top: 2%;
+	}
+
+	.touch-menu span {
+		transition: 0.2s ease 0s;
+	}
+
+	.touch-menu span:before, .touch-menu span:after {
+		transition-property: margin, opacity;
+		transition-duration: 0.2s, 0s;
+		transition-delay: 0.2s;
+	}
+
+// ACTIVE HAMBURGER - MENU IS OPEN
+	#menu-toggle:checked ~ .label-toggle .touch-menu {
+		span {
+			transform: rotate(90deg);
+			transition-delay: 0.2s;
+		}
+		span:before, span:after {
+			margin-top: 0px;
+			opacity: 0;
+			transition-delay: 0s, .2s;
+		}
+	}
+
+	.mobile-menu {
+		position: relative;
+		display:  inline-block;
+		width: 30px;
+		height: 30px;
+		margin: 25px 15px;
+	}
+	.mobile-menu span {
+		margin: 0 auto;
+		position: relative;
+		top: 12px;
+	}
+
+	.mobile-menu span:before, .mobile-menu span:after {
+		position: absolute;
+		content: '';
+	}
+
+	.mobile-menu span, .mobile-menu span:before, .mobile-menu span:after {
+		width: 30px;
+		height: 6px;
+		background-color: $off-white;
+		display: block;
+	}
+	.mobile-menu span:before {
+		margin-top: -12px;
+	}
+
+	.mobile-menu span:after {
+		margin-top: 12px;
+	}
+
+	#menu-toggle {
+		display: none;
+	}
+
+	#menu-toggle:checked ~ ul {
+		opacity: 1;
+		height: calc(100vh - 92.5px);
+		visibility: visible;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+	ul {
+		border-top: 1px solid #555;
+		height: 0;
+		opacity: 0;
+		width: 100%;
+		display: block;
+		transition: all 1s ease;
+	}
+
+	li {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	#title {
+    font-size: 1.75em;
+    margin-top: 1em;
+  }
+}
+
+// ICON SIZING
+
+i {
+ padding: .2em;
+}
+
+.fa-1x{
+    font-size:0.8em;
+}
+.fa-2x{
+    font-size:1em;
+}
+.fa-3x{
+    font-size:1.2em;
+}
+.fa-4x{
+    font-size:1.4em;
+}
+.fa-5x{
+    font-size:1.6em;
+}
+.fa-custom{
+    font-size:3.2em;
+}
