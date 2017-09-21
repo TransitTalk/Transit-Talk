@@ -8,7 +8,7 @@
 				<span></span>
 			</div>
 		</label>
-
+	
 		<div class="title-div">
 			<h1 id="title">Transit Network</h1>
 		</div>
@@ -29,49 +29,3 @@
 
 	</main>
 </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- PREVIOUS CODE -->
-
-<!-- <header class="headbar">
-	<div class="hamburger"></div>
-	<a href="/">
-		<div class="title">Transit Network</div>
-	</a>
-	<div class= "search"></div>
-</header>
-
-<div class="overlay-search">
-	<%= form_tag(search_path, :method => "get", id: "search-form") do %>
-		<%= text_field_tag :q, params[:q], placeholder: "Search Stops or Lines" %>
-		<%= submit_tag "", :name => nil %>
-	<% end %>
-</div>
-
-<div class="side-menu-overlay"></div>
-<div class="side-menu">
-	<div class="title">Transit Network Menu</div>
-	<ul>
-		<li><%= link_to('Home', "/") %> </li>
-		<li><%= link_to('All Lines', lines_path) %> </li>
-		<li><%= link_to('About', page_path(:page_name => 'about')) %></li>
-		<% if current_user %>
-			<li><%= link_to('Favorite Stops', favorites_path) %></li>
-			<li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
-		<% else %>
-			<li><%= link_to('Sign In', new_user_session_path) %></li>
-			<li><%= link_to('Sign Up', new_user_registration_path) %></li>
-		<% end %>
-	</ul>
-</div> -->
