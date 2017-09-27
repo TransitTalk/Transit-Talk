@@ -11,6 +11,7 @@
  $solid-grey: #777;
  $solid-grey2x: #555; /* 2 shades darker */
 
+
 h1 {
   padding: 3em 0 1em 0;
 }
@@ -20,6 +21,19 @@ h1 {
   position: fixed;
   min-width: 100%;
   height: 4em;
+}
+
+span {
+  position: absolute;
+  top: 1em;
+  left: 2em;
+  z-index: 99;
+  color: #fff;
+}
+
+span > p {
+  font-size: 28px;
+  color: #eee;
 }
 
 .wrapper {
