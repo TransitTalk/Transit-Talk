@@ -1,0 +1,13 @@
+# config/app.yml for rails-settings-cached
+defaults: &defaults
+  site_name: "Transit Network"
+  theme_color: "#58b7ff"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

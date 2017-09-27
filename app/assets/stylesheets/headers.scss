@@ -1,7 +1,9 @@
+@import "variables";
+
 .headbar {
 	height: 50px;
 	width: 100%;
-	background-color: #58b7ff;
+	background-color: $theme-color;
 	text-align: center;
 }
 
@@ -60,7 +62,7 @@
 
 .side-menu {
 	position: fixed;
-	background: #58b7ff;
+	background: $theme-color;
 	height: 100%;
 	width: 75%;
 	top: 0px;

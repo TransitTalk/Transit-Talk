@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  settings:
+    attributes:
+      site_name:
+        name: "Site Name"
+      theme_color:
+        name: "CSS Theme Color"

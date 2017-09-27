@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import "variables";
+
 body {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0px;
@@ -32,7 +34,7 @@ body > a > .create-issue {
 	height: 40px;
 	width: 40px;
 	bottom: 10px;
-	background: #58b7ff;
+	background: $theme-color;
 	right: 10px;
 	border-radius: 20px;
 	background-image: url(asset-path('plus.svg'));
@@ -46,7 +48,7 @@ body > a > .create-issue {
 	display: inline-block;
 	height: 14px;
 	width: 14px;
-	background: #58b7ff;
+	background: $theme-color;
 	border-radius: 7px;
 	background-image: url(asset-path('plus.svg'));
 	background-size: 60%;

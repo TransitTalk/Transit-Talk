@@ -69,6 +69,10 @@ In the future we hope to expand the functionality of TransitNetwork by:
 ## Contributor Guide
 To learn more about how to contribute, check out [our contribution guidelines](CONTRIBUTING.md)
 
+### Adding New Modular Settings
+To add a new modular setting to the settings panel (`/settings`), add it as a default in `config/app.yml` and then add the display name of the attribute in
+`config/locales/en.yml` under `en.settings.attributes.{{new_setting_name}}.name`. For example, when adding the `theme_color` setting, I added a default theme_color of `theme_color: "#58b7ff"` and then added `en.settings.attributes.theme_color.name = "CSS Theme Color"`.
+
 ## License 
 
 Copyright 2017. Copyright shared among all those listed in [CONTRIBUTORS](CONTRIBUTORS.md)  
@@ -97,3 +101,8 @@ Get the URL for the GTFS data, which we'll call _data_url_.
 Download the file using wget - `wget '_data_url_'`
 
 Load in the data using the Rake task - `rake transit:set_up_transit GTFS_FILE=_path_to_data_file_`
+
+### Tweaking The Site
+We use [rails-settings-ui](https://github.com/accessd/rails-settings-ui) (a UI wrapper for [rails-settings-cached](https://github.com/huacnlee/rails-settings-cached)) that lets you tweak certain global setttings about your Transit Network site.
+
+To tweak your settings, go to http://your-app-url/settings. Once your settings are updated, you should see the changes reflected immediately (if they are non styling changes) or upon the next server restart. If you need to manually rebuild to test your settings, close your server, run `rm -fr tmp/cache` to clear built Sass files, and rerun your server.
