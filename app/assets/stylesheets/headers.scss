@@ -11,279 +11,103 @@
  $solid-grey: #777;
  $solid-grey2x: #555; /* 2 shades darker */
 
-// DESKTOP STYLES
+h1 {
+  padding: 3em 0 1em 0;
+}
+
+.nav {
+  background-color: #58b7ff;
+  position: fixed;
+  min-width: 100%;
+  height: 4em;
+}
+
 .wrapper {
-	display: flex;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 2%;
 }
 
-#header {
-	position: fixed;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-around;
-	text-align: center;
-	width: 100%;
-	padding: 0;
-  background: $transit-blue;
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 50%;
 }
 
-.menu {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-	align-items: center;
-  border-radius: 5px;
-	padding: 0;
-	list-style: none;
-	text-align: center;
-  color: $solid-grey2x;
+nav ul a {
+  color: #fff;
+  text-decoration: none;
+  transition: all .5s ease;
 }
 
-.title-div {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	text-transform: uppercase;
+nav ul a:hover {
+  color: #903749;
 }
 
-#title {
-	color: $off-white;
-	font-size: 2em;
-	flex-grow: 1;
-	padding-left: 0;
+nav li {
+  display: inline-block;
 }
 
-.nav-item,
-.nav-item:after,
-.nav-item:before {
-	transition: all .5s;
+nav #menu-toggle {
+  display: none;
 }
 
-.nav-item {
-	flex-grow: 1;
-	flex-shrink: 0;
-	color: $solid-grey2x;
-	margin-right: 15px;
-	position: relative;
-	text-transform: uppercase;
+nav .label-toggle {
+  margin-right: 12px;
+  display: none;
 }
 
-.nav-item:hover {
-	color: $transit-blue5x;
-	cursor: pointer;
+nav .wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
-.nav-item:hover:after {
-	width: 80%;
-}
-
-#menu-toggle {
-	display: none;
-}
-
-// MOBILE STYLES
-
-@media all and (max-width: 600px) {
-  #header {
-		display: flex;
-    flex-flow: column;
-		align-items: center;
-		text-align: left;
-    padding: 0;
-		margin: 0;
-		position: relative;
-	}
-
-	.menu {
-		display: flex;
-    flex-flow: column;
-		justify-content: center;
-		align-items: center;
-    padding: 0;
-		margin: 0;
-		opacity: 0;
-		transition: all 1s ease;
-		visibility: hidden;
-		font-size: 1em;
-		width: 100%;
-	}
-
-// MOBILE NAV ITEMS
-	.nav-item {
-		width: 100%;
-		justify-content: left;
-		align-items: center;
-		color: $solid-grey2x;
-	}
-
-	.nav-item {
-		box-sizing: border-box;
-		border-bottom: 1px solid $transit-blue5x;
-	}
-
-	.nav-item:hover,
-  .nav-item:focus {
-		border-color: none;
-		background-color: $opacity-white;
-		color: $transit-blue5x;
-	}
-
-// NAV ITEM ID'S
-	#a, #b, #c, #d, #e, #f {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-grow: 1;
-		flex-shrink: 1;
-	}
-
-	#a {
-		flex-grow: 1;
-		flex-shrink: 1;
-		order: 2;
-	}
-
-	#b {
-		order: 3;
-	}
-
-	#c {
-		order: 4;
-	}
-
-	#d {
-		order: 5;
-	}
-
-	#e {
-		order: 6
-	}
-
-	#f {
-		order: 1;
-	}
-
-	.title-div {
-		position: absolute;
-		top: 0;
-		left: 60px;
-	}
-
-	.label-toggle {
-		padding-top: 2%;
-	}
-
-	.touch-menu span {
-		transition: 0.2s ease 0s;
-	}
-
-	.touch-menu span:before, .touch-menu span:after {
-		transition-property: margin, opacity;
-		transition-duration: 0.2s, 0s;
-		transition-delay: 0.2s;
-	}
-
-// ACTIVE HAMBURGER - MENU IS OPEN
-	#menu-toggle:checked ~ .label-toggle .touch-menu {
-		span {
-			transform: rotate(90deg);
-			transition-delay: 0.2s;
-		}
-		span:before, span:after {
-			margin-top: 0px;
-			opacity: 0;
-			transition-delay: 0s, .2s;
-		}
-	}
-
-	.mobile-menu {
-		position: relative;
-		display:  inline-block;
-		width: 30px;
-		height: 30px;
-		margin: 25px 15px;
-	}
-	.mobile-menu span {
-		margin: 0 auto;
-		position: relative;
-		top: 12px;
-	}
-
-	.mobile-menu span:before, .mobile-menu span:after {
-		position: absolute;
-		content: '';
-	}
-
-	.mobile-menu span, .mobile-menu span:before, .mobile-menu span:after {
-		width: 30px;
-		height: 6px;
-		background-color: $off-white;
-		display: block;
-	}
-	.mobile-menu span:before {
-		margin-top: -12px;
-	}
-
-	.mobile-menu span:after {
-		margin-top: 12px;
-	}
-
-	#menu-toggle {
-		display: none;
-	}
-
-	#menu-toggle:checked ~ ul {
-		opacity: 1;
-		height: calc(100vh - 92.5px);
-		visibility: visible;
-	}
-
-}
-
-@media screen and (max-width: 600px) {
-	ul {
-		border-top: 1px solid #555;
-		height: 0;
-		opacity: 0;
-		width: 100%;
-		display: block;
-		transition: all 1s ease;
-	}
-
-	li {
-		display: block;
-	}
-}
-
-@media screen and (max-width: 350px) {
-	#title {
-    font-size: 1.75em;
-    margin-top: 1em;
+@media screen and (max-width: 768px) {
+  nav nav ul a {
+    color: #53354A;
   }
-}
 
-// ICON SIZING
+  nav ul {
+    background-color: #58b7ff;
+    display: block;
+    height: 0;
+    list-style-type: none;
+    opacity: 0;
+    text-align: center;
+    transition: all 1s ease;
+    width: 100%;
+    visibility: hidden;
+  }
 
-i {
- padding: .2em;
-}
+  nav li {
+    border-bottom: 2px solid #eee;
+    color: #53354A;
+    display: block;
+    font-size: 1.5em;
+    padding: 2em 0;
+  }
 
-.fa-1x{
-    font-size:0.8em;
-}
-.fa-2x{
-    font-size:1em;
-}
-.fa-3x{
-    font-size:1.2em;
-}
-.fa-4x{
-    font-size:1.4em;
-}
-.fa-5x{
-    font-size:1.6em;
-}
-.fa-custom{
-    font-size:3.2em;
+  nav #menu-toggle:checked ~ ul {
+    opacity: 1;
+    height: 100vh;
+    visibility: visible;
+  }
+
+  nav .label-toggle {
+    background: linear-gradient(to bottom, #eee 0%,
+      #eee 20%, transparent 20%, transparent 40%,
+      #eee 40%, #eee 60%, transparent 60%, transparent 80%,
+      #eee 80%, #eee 100%);
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 35px;
+    margin-top: 1em;
+    width: 35px;
+  }
+  nav .wrapper {
+    display: block;
+  }
 }
