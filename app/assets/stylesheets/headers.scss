@@ -23,7 +23,7 @@ h1 {
   height: 4em;
 }
 
-span {
+span.transit {
   position: absolute;
   top: 1em;
   left: 2em;
@@ -31,7 +31,7 @@ span {
   color: #fff;
 }
 
-span > p {
+span.transit > p {
   font-size: 28px;
   color: #eee;
 }
