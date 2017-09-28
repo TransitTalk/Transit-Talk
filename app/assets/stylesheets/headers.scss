@@ -61,7 +61,22 @@ nav ul a:hover {
 
 nav li {
   display: inline-block;
+
 }
+
+@media screen and (min-width: 768px) {
+  #wrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 90px;
+  }
+
+  nav li {
+    font-size: 18px;
+  }
+}
+
 
 nav #menu-toggle {
   display: none;
