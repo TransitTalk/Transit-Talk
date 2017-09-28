@@ -30,7 +30,7 @@ body {
 	margin: 0px 15px;
 }
 
-/* form centering after header converted to flexbox */
+/* signin/signup form for mobile - centering after header converted to flexbox */
 
 .new_user {
 	padding-top: 100px;
@@ -48,7 +48,33 @@ body {
 	padding-top: 20px;
 }
 
-/* */
+.space-40 {
+	margin-top: 40px;
+}
+
+/* signin/signup form for desktop - centering after header converted to flexbox */
+
+@media screen and (min-width: 768px) {
+	.desktop-center {
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+
+	.space-40 {
+		margin-top: 40px;
+	}
+
+	.actions {
+		width: 300px;
+	}
+
+	.links {
+		margin-top: 40px;
+		margin-left: 15%;
+	}
+}
+
+/**/
 
 a {
 	text-decoration: none;
