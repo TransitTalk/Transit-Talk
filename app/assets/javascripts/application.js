@@ -28,7 +28,7 @@ $(document).ready(function()
 		$(".side-menu-overlay").fadeOut();
 	});
 
-	$("header .search").click(function()
+	$("nav .search").click(function()
 	{
 		$(".overlay-search").fadeIn();
 		$(".overlay-search input[type='text']").val(""); // clear the value
