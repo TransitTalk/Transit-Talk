@@ -1,16 +1,3 @@
-// COLOR PALETTE
- $transit-blue: #58b7ff;
- $opacity-blue: rgba(88,183,255,0.1);
- $transit-blue2x: #4692cc;
- $transit-blue5x: #2c5b7f;
-
- $off-white: #eee;
- $opacity-white: rgba(238,238,238,.6);
-
- $light-grey: #ccc;
- $solid-grey: #777;
- $solid-grey2x: #555; /* 2 shades darker */
-
 
 h1 {
   padding: 3em 0 1em 0;
@@ -57,7 +44,7 @@ nav ul a {
 }
 
 nav ul a:hover {
-  color: #903749;
+  color: #22232f;
 }
 
 nav li {
@@ -94,6 +81,7 @@ nav .wrapper {
 }
 
 @media screen and (max-width: 768px) {
+
   nav nav ul a {
     color: #53354A;
   }
@@ -136,6 +124,7 @@ nav .wrapper {
     margin-top: 1em;
     width: 35px;
   }
+
   nav .wrapper {
     display: block;
   }
