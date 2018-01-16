@@ -1,0 +1,34 @@
+{
+  "MiniTest": {
+    "coverage": {
+      "/Users/davea/Documents/workspace/Caravan-App/test/controllers/issues_controller_test.rb": [
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/davea/Documents/workspace/Caravan-App/test/models/user_test.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1514149162
+  }
+}
