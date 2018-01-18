@@ -25,3 +25,6 @@
 
 # Ignore .env from dot-env, used for local config
 .env
+
+/coverage
+ 
