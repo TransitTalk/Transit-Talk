@@ -25,7 +25,6 @@ class LineTest < ActiveSupport::TestCase
   test 'returns proper short name if no short name provided' do
     route_long_name = "RouteLong"
     line = Line.new(route_long_name: route_long_name)
-    puts "short name: #{line.short_name}" 
     assert_nil line.short_name, "Failed to return correct route short name"  
   end
 
