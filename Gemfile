@@ -88,3 +88,6 @@ gem 'rails-settings-cached'
 
 # UI for rails-settings
 gem 'rails-settings-ui'
+
+# For controller tests 
+gem 'rails-controller-testing'
