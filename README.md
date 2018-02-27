@@ -1,4 +1,7 @@
-# Caravan [![Build Status](https://api.travis-ci.org/CaravanTransit/Caravan-App.svg?branch=master)](https://travis-ci.org/CaravanTransit/Caravan-App)
+# Caravan
+
+[![Build Status](https://api.travis-ci.org/CaravanTransit/Caravan-App.svg?branch=master)](https://travis-ci.org/CaravanTransit/Caravan-App)
+[![Coverage Status](https://coveralls.io/repos/github/CaravanTransit/Caravan-App/badge.svg?branch=master)](https://coveralls.io/github/CaravanTransit/Caravan-App?branch=master)
 
 Caravan is a platform for collective commuters to inquire and report on the status and structure of public transportation stations and lines. Behind the scenes, Caravan is an open-source framework that facilitates efficient implementation of any major transit system that provides their GTFS formatted information. This adaptability to any transportation network provides the potential for an extensive network of locations within one centralized package where users and contributors can take better advantage of transportation resources. Presently, these benefits are products of Caravan's ability to:
 
