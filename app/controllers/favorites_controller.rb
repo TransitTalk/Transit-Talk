@@ -7,11 +7,17 @@ class FavoritesController < ApplicationController
 
   def new
     current_user.favorites << Stop.find(params[:stop_id])
-    redirect_to favorites_path
+    render json: {
+      message: "Favorite has been added successfully.",
+      status: 201
+    }, status: 201
   end
 
   def delete
     current_user.favorites.delete(Stop.find(params[:stop_id]))
-    redirect_to favorites_path
+    render json: {
+      message: "Favorite has been deleted successfully.",
+      status: 204
+    }, status: 204
   end
 end

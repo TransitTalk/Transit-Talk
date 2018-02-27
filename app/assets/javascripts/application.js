@@ -45,6 +45,30 @@ $(document).ready(function()
 		event.stopPropagation();
 	});
 
+
+	$('.stop-partial a').on('ajax:success', function (e) {
+	  // Get the link that was clicked
+	  var link = $(e.target);
+
+	  // Find the first <span> element inside the link that was clicked
+	  var span = $(link.find('.fav-star')[0]);
+
+	  // Get the URL in the href of the link that was clicked
+	  var url  = link.attr('href');
+
+	  if (url.includes('unfavorite')) {
+	    // If the link clicked was an 'unfavorite link', swap everything out to be 'favorite'
+	    link.attr('href', url.replace(/unfavorite/i, 'favorite'));
+	    span.removeClass('unfavorite');
+	    span.addClass('favorite');
+	  } else {
+	    // If the link clicked was a 'favorite link', swap everything out to be 'unfavorite'
+	    link.attr('href', url.replace(/favorite/i, 'unfavorite'));
+	    span.removeClass('favorite');
+	    span.addClass('unfavorite');
+	  }
+	});
+
 	$(".new-issue-line").change(function()
 	{
 		var self = this;

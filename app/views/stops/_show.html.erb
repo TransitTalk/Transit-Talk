@@ -8,11 +8,11 @@
 		<%= link_to stop.name, stop %>
 		<% if user_signed_in? %>
 			<% if current_user.favorites.include?(stop) %>
-				<%= link_to unfavorite_path(stop) do %>
+				<%= link_to unfavorite_path(stop), :remote => true do %>
 					<div class="fav-star unfavorite"></div>
 				<% end %>
 			<% else %>
-				<%= link_to favorite_path(stop) do %>
+				<%= link_to favorite_path(stop), :remote => true do %>
 					<div class="fav-star favorite"></div>
 				<% end %>
 			<% end %>

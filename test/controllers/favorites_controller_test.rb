@@ -42,6 +42,7 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
     assert_difference 'user.favorites.count' do
       get "/favorite/#{@stop.id}"
     end
+    assert_response 201
   end
 
   test "creating a new favorite will decrease the count by one" do
@@ -69,6 +70,7 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
     assert_difference 'user.favorites.count', -1 do
       get "/unfavorite/#{@stop.id}"
     end
+    assert_response 204
   end
 
 end
