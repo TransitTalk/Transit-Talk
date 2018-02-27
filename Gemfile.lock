@@ -265,6 +265,7 @@ DEPENDENCIES
   rails-settings-cached
   rails-settings-ui
   sass-rails (~> 5.0)
+  simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
