@@ -89,5 +89,11 @@ gem 'rails-settings-cached'
 # UI for rails-settings
 gem 'rails-settings-ui'
 
-# For controller tests 
+# For controller tests
 gem 'rails-controller-testing'
+
+# Add SimpleCov for code coverage & coveralls config
+gem 'simplecov', require: false, group: :test
+
+# Add Coveralls for code coverage badge & tracking
+gem 'coveralls', require: false

@@ -1,3 +1,13 @@
+# Add Coveralls
+require 'simplecov'
+require 'coveralls'
+Coveralls.wear!
+
+SimpleCov.start do
+  add_filter "/test/"
+  add_filter "/config/"
+end
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
