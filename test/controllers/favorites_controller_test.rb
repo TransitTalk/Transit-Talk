@@ -40,7 +40,7 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
     # the current user's favorites count is not the same
     # as when it started the request
     assert_difference 'user.favorites.count' do
-      get "/favorite/#{@stop.id}"
+      get "/favorite/#{@stop.id}", format: 'json'
     end
     assert_response 201
   end
@@ -68,7 +68,7 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
     # the current user's favorites count is not the same
     # as when it started the request
     assert_difference 'user.favorites.count', -1 do
-      get "/unfavorite/#{@stop.id}"
+      get "/unfavorite/#{@stop.id}", format: 'json'
     end
     assert_response 204
   end
