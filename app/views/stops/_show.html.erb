@@ -1,4 +1,4 @@
-<div class="stop-partial" id='<%= "stop-#{stop.id}" %>'>
+<div class="stop-partial" id='<%= "stop-#{stop.html_id}" %>'>
 	<% if defined? current_line %>
 		<%= render "lines/tiles", lines: stop.lines, current_line: current_line %>
 	<% else %>

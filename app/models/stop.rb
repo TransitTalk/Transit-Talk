@@ -16,4 +16,9 @@ class Stop < ApplicationRecord
   def original
     twin_stop || self
   end
+
+  def html_id
+    self.id.gsub(/~/, '')
+  end
+
 end
