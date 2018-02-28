@@ -6,13 +6,20 @@ class FavoritesController < ApplicationController
   end
 
   def new
-    current_user.favorites << Stop.find(params[:stop_id])
+    # Get the stop from the URL parameter
+    @stop = Stop.find(params[:stop_id])
+
+    # Add the stop to the user's favorites
+    current_user.favorites << @stop
 
     respond_to do |format|
       # A normal HTML request was recieved
       format.html { redirect_to favorites_path }
 
-      # An AJAX request was recieved
+      # Respond with JS partial
+      format.js
+
+      # A request for JSON was recieved
       format.json {
         render json: {
           message: "Favorite has been added successfully.",
