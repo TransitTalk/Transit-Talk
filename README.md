@@ -27,7 +27,7 @@ In the future we hope to expand the functionality of Caravan by:
 
   * Creating an accountability system that will track an individual user's history of reports and closing of other user's reports. Distribute some form of punishment if logs suggest abuse of the platform.
 
-  * Consistently resolve bugs in the code as they appear over the development process. Unresolved issues are logged on [GitHub](https://github.com/CaravanTransit/Caravan-App/issues)
+  * Consistently resolve bugs in the code as they appear over the development process. Unresolved issues are logged on [GitHub](./issues).
 
 <br>
 
