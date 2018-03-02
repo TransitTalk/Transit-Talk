@@ -30,11 +30,15 @@ class FavoritesController < ApplicationController
   end
 
   def delete
+    @stop = Stop.find(params[:stop_id])
     current_user.favorites.delete(Stop.find(params[:stop_id]))
 
     respond_to do |format|
       # A normal HTML request was recieved
       format.html { redirect_to favorites_path }
+
+      # Respond with JS partial
+      format.js
 
       # An AJAX request was recieved
       format.json {
