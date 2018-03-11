@@ -1,0 +1,8 @@
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Metrics/MethodLength:
+  Max: 15
+
+Metrics/LineLength:
+  Max: 100
