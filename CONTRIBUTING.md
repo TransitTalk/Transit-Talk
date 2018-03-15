@@ -1,6 +1,6 @@
 ## Contributing to Transit Network
 
-Thanks for being here! Our project has grown out of a regional hackathon and is now part of Chi Hack Night, a weekly civic tech meeting. 
+Thanks for being here! Our project has grown out of a regional hackathon and is now part of Chi Hack Night, a weekly civic tech meeting.
 
 ...but enough about our history. If you're ready to get started with the project, read on!
 
@@ -24,10 +24,10 @@ To test that your install of this platform is correct on the data that we are cu
 Original development occurred on Canonical's [Ubuntu](https://www.ubuntu.com/) 16.04 LTS, and packages used for creating the platform were oriented around support for this OS. The project runs using Ruby (2.3.0) on Rails (5.0.1), and is typically evaluated with a simple `rails -s` to run a local server.
 
 As we continue initiation phases of this project, we'll have more details to share here. Check back soon.
- 
-## Submitting and Requesting Changes 
 
-If you have something fresh to throw in the project, but don't feel like contributing directly, feel free to fork this repository. We do ask that, both for central contributors to the project and those who work on the fringes of it, that most sets of modifications are submitted through _pull requests_. Here's what you should do. 
+## Submitting and Requesting Changes
+
+If you have something fresh to throw in the project, but don't feel like contributing directly, feel free to fork this repository. We do ask that, both for central contributors to the project and those who work on the fringes of it, that most sets of modifications are submitted through _pull requests_. Here's what you should do.
 * Create a sparkling new copy or branch just for your emendations.
 * Monitor discussion and use best judgment to participate in ongoing issues, which may involve your solution.
 * When all done, send it over by opening a pull request:
@@ -39,20 +39,30 @@ If you have something fresh to throw in the project, but don't feel like contrib
 
 We use the GitHub Issues platform tied into this repository to manage most feature and issue discussions. If you found something that went haywire, have suggestions, or need help, go there first.
 
-* Templates: 
+* Templates:
   * What is wrong:
   * Exact steps to recreate bug (if possible):
   * Error Log:
-     
+
 * First bugs for Contributors
   * Edit framework to accomodate different data sets from other transit centers
-    
+
 ## New Feature Requirements
 
 New Features must stay within the spirit of the original project: making transportation bettter. Submit new feature requests on the wiki and the community can discuss them. Features deemed needed or intriguing will be used to create issues and milestones.
 
-## Style Guide / Coding conventions 
-We utilize the Airbnb style guide. Specifics about the style can be found [here](http://airbnb.io/projects/styleguides/).
+## Style Guide / Coding conventions
+We utilize the Airbnb style guide. Specifics about the style can be found [here](http://airbnb.io/projects/styleguides/). In order to help keep Ruby style consistent we use [Robocop](bocop.readthedocs.io/en/latest/).
+
+### Rubocop: Better Style Through Static Code Analysis
+The Rubocop tool can lint ruby files for style violations that would be otherwise tedious to memorize
+and apply consistently. It provides an agreed-upon style 'baseline' so that contributors can focus on higher-level code structure and decisions. It isn't meant to replace you, the devloper, from crafting in a satisfying personal style :)
+
+* `rake rubocop` will run rubocop against all (.rb) files in `app`, `lib`, and `test`.
+* `bundle exec rubocop <filename>` will run rubocop against a specific file.
+* While it would be nice if you would update code to follow suggested styles, keep in mind that rubcop
+  can be overridden if needed (see 'Disabling Cops within Source Code' in the Rubocop docs).
+* Rubocop style is (mostly) based on the Ruby on Rails style (via the rubocop-rails gem).
 
 ## Code of Conduct
 This is a constructive environment. No discrimination against any members of this team and community will be tolerated here.
