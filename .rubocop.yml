@@ -1,3 +1,7 @@
+inherit_gem:
+  rubocop-rails:
+    - config/rails.yml
+
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
