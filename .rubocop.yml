@@ -1,0 +1,15 @@
+inherit_gem:
+  rubocop-rails:
+    - config/rails.yml
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Metrics/MethodLength:
+  Max: 15
+
+Metrics/LineLength:
+  Max: 100
+
+AllCops:
+  TargetRubyVersion: 2.3.0
