@@ -10,3 +10,6 @@ Metrics/MethodLength:
 
 Metrics/LineLength:
   Max: 100
+
+AllCops:
+  TargetRubyVersion: 2.3.0
