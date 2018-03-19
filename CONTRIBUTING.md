@@ -54,15 +54,15 @@ New Features must stay within the spirit of the original project: making transpo
 ## Style Guide / Coding conventions
 We utilize the Airbnb style guide. Specifics about the style can be found [here](http://airbnb.io/projects/styleguides/). In order to help keep Ruby style consistent we use [Robocop](bocop.readthedocs.io/en/latest/).
 
-### Rubocop: Better Style Through Static Code Analysis
-The Rubocop tool can lint ruby files for style violations that would be otherwise tedious to memorize
-and apply consistently. It provides an agreed-upon style 'baseline' so that contributors can focus on higher-level code structure and decisions. It isn't meant to replace you, the devloper, from crafting in a satisfying personal style :)
+### RuboCop: Better Style Through Static Code Analysis
+The [RuboCop](https://github.com/bbatsov/rubocop) tool can lint ruby files for style violations that would be otherwise tedious to memorize
+and apply consistently. It provides an agreed-upon style 'baseline' so that contributors can focus on higher-level code structure and decisions.
 
 * `rake rubocop` will run rubocop against all (.rb) files in `app`, `lib`, and `test`.
 * `bundle exec rubocop <filename>` will run rubocop against a specific file.
 * While it would be nice if you would update code to follow suggested styles, keep in mind that rubcop
-  can be overridden if needed (see 'Disabling Cops within Source Code' in the Rubocop docs).
-* Rubocop style is (mostly) based on the Ruby on Rails style (via the rubocop-rails gem).
+  can be overridden if needed (see 'Disabling Cops within Source Code' in the [RuboCop docs](https://rubocop.readthedocs.io/en/latest/)).
+* RuboCop style is (mostly) based on the Ruby on Rails style (via the [rubocop-rails gem](https://github.com/toshimaru/rubocop-rails)).
 
 ## Code of Conduct
 This is a constructive environment. No discrimination against any members of this team and community will be tolerated here.
