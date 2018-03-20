@@ -26,5 +26,7 @@
 # Ignore .env from dot-env, used for local config
 .env
 
+# Ignore ds_store files from Mac
+.DS_Store
+
 /coverage
- 
