@@ -1,6 +1,8 @@
 <% content_for :title do %> - Lines<% end %>
 <div class="page-container">
 	<h1>All Lines</h1>
+  <button id="toSortId" type="button">Sort By Id</button>
+  <button id="toSortName" type="button">Sort By Name</button>
 	<%= stylesheet_link_tag "application" %>
 
 	<% @lines.each do |line| %>
