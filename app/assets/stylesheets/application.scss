@@ -56,3 +56,13 @@ body > a > .create-issue {
 	background-repeat: no-repeat;
 	z-index: 2;
 }
+
+.create-issue-a {
+	@extend .create-issue;
+	background-color: purple;
+}
+
+.create-issue-b {
+	@extend .create-issue;
+	background-color: green;
+}
