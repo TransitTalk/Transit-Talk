@@ -1,0 +1,42 @@
+{
+	"location_types": [
+		"Bus",
+		"Train",
+		"Station/Stop"
+	],
+	"issue_types": [
+		{"type": "delay", "name": "Delays"},
+		{"type": "cleanliness", "name": "Cleanliness"},
+		{"type": "safety", "name": "Safety"},
+		{"type": "crowding", "name": "Crowding"},
+		{"type": "accesibility", "name": "Accessibility"},
+		{"type": "staff", "name": "Operator/CTA Staff"},
+		{"type": "other", "name": "Other"}
+	],
+	"train_lines": [
+		"Blue",
+		"Brown",
+		"Green",
+		"Orange",
+		"Pink",
+		"Purple",
+		"Red",
+		"Yellow"
+	],
+	"train_lines_2": [
+		{"name": "Blue", "line_onestop_id": "blue"},
+		{"name": "Brown", "line_onestop_id": "brown"},
+		{"name": "Green", "line_onestop_id": "green"},
+		{"name": "Orange", "line_onestop_id": "orange"},
+		{"name": "Pink", "line_onestop_id": "pink"},
+		{"name": "Purple", "line_onestop_id": "purple"},
+		{"name": "Red", "line_onestop_id": "red"},
+		{"name": "Yellow", "line_onestop_id": "yellow"}
+	],
+	"directions": [
+		"North",
+		"South",
+		"East",
+		"West"
+	]
+}

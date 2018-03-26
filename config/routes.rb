@@ -14,12 +14,15 @@ Rails.application.routes.draw do
 
   get "/search" => 'pages#search', :as => :search
 
-
   get "/favorites" => 'favorites#index', :as => :favorites
   get "/favorite/:stop_id" => 'favorites#new', :as => :favorite
   get "/unfavorite/:stop_id" => 'favorites#delete', :as => :unfavorite
 
   resources :issues
+  get "/report/a" => 'issues#new_a'
+  get "/report/b" => 'issues#new_b'
+  post "report/a" => 'issues#create_a'
+  post "report/b" => 'issues#create_b'
 
   root 'pages#dashboard'
 end

@@ -2,7 +2,75 @@
 	<h1>New Issue: A</h1>
 	<h2>One Page Form</h2>
 
-	<%#= render 'form', issue: @issue %>
+	<div class="form_container">
+		<%= form_for @issue, url: { action: 'create_a'} do |f| %>
+			Type:
+			<% @location_types.each do |t| %>
+				<%= f.radio_button(:location_type, t, checked: (@t == t)) %>
+				<%= f.label(:location_type, t) %>
+			<% end %>
+			<br>
 
+			Line:
+			<%= f.select(:line_onestop_id, options_for_select(@lines)) %>
+			<br>
+
+			Vehicle Number:
+			<%= f.text_field(:vehicle_id) %> (i)
+			<br>
+
+			Direction:
+			<%= f.select(:direction, options_for_select(@directions)) %>
+			<br>
+
+			Occurred at:<br>
+			<%= f.datetime_select(:reported_at, default: DateTime.now) %>
+			<br>
+
+			Please select your issue: <br>
+			<% @issue_types.each do |t| %>
+				<%= f.check_box(:issue_type, {}, t["type"], nil) %>
+				<%= f.label(:issue_type, t["name"]) %><br>
+			<% end %>
+
+			Please describe:<br>
+			<%= f.text_area(:description, rows: 8, placeholder: "What happened?") %>
+			<br>
+
+			Were you previously notified of this issue?<br>
+			<% ["yes", "no"].each do |a| %>
+				<%= f.radio_button(:notified, (a == "yes" ? true : false), checked: (@a == a)) %>
+				<%= f.label(:notified, a) %>
+			<% end %>
+			<br>
+			How?
+			input
+			<br>
+
+			Did you take an alternative mode of transportation?<br>
+			<% ["yes", "no"].each do |a| %>
+				<%= f.radio_button(:alt_transport, (a == "yes" ? true : false), checked: (@a == a)) %>
+				<%= f.label(:alt_transport, a) %>
+			<% end %>
+			<br>
+			What?
+			input
+			<br>
+
+			Do you want to forward your contact information to CTA?<br>
+			<% ["yes", "no"].each do |a| %>
+				<%= f.radio_button(:cta_contact, (a == "yes" ? true : false), checked: (@a == a)) %>
+				<%= f.label(:cta_contact, a) %>
+			<% end %>
+			<br>
+			How?
+			input
+			<br>
+
+			<%= f.submit "Submit!" %>
+
+		<% end %>
+	</div>
+	<br>
 	<%= link_to 'Back', issues_path %>
 </div>

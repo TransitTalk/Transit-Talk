@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913013817) do
+ActiveRecord::Schema.define(version: 20180325172124) do
 
   create_table "issues", force: :cascade do |t|
     t.string   "stop_onestop_id"
@@ -18,10 +18,16 @@ ActiveRecord::Schema.define(version: 20170913013817) do
     t.text     "description"
     t.integer  "user_id"
     t.string   "line_onestop_id"
-    t.string   "types"
     t.boolean  "resolved"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "location_type"
+    t.string   "direction"
+    t.datetime "reported_at"
+    t.string   "issue_type"
+    t.boolean  "notified"
+    t.boolean  "alt_transport"
+    t.boolean  "cta_contact"
     t.index ["stop_onestop_id"], name: "index_issues_on_stop_onestop_id"
     t.index ["user_id"], name: "index_issues_on_user_id"
     t.index ["vehicle_id"], name: "index_issues_on_vehicle_id"

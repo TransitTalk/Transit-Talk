@@ -20,6 +20,16 @@ class IssuesController < ApplicationController
     @issue = Issue.new(stop_onestop_id: params[:stop_id], line_onestop_id: params[:line_id])
   end
 
+  # GET /report/a
+  def new_a
+    file = JSON.parse File.read('lib/assets/issue_static_data.json')
+    @location_types = file["location_types"]
+    @lines = file["train_lines"]
+    @issue_types = file["issue_types"]
+    @directions = file["directions"]
+    @issue = Issue.new()
+  end
+
   # GET /issues/1/edit
   def edit
   end
@@ -41,6 +51,28 @@ class IssuesController < ApplicationController
         format.json { render json: @issue.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def create_a
+    @issue = Issue.new(issue_params_a)
+
+    if current_user
+      @issue.user_id = current_user.id
+    end
+
+    respond_to do |format|
+      if @issue.save
+        format.html { redirect_to root_path, notice: 'Issue was successfully created.' }
+        format.json { render :show, status: :created, location: @issue }
+      else
+        format.html { render :new }
+        format.json { render json: @issue.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def create_b
+    @issue = Issue.create(issue_params_a)
   end
 
   # PATCH/PUT /issues/1
@@ -76,5 +108,9 @@ class IssuesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def issue_params
       params.require(:issue).permit(:types, :stop_onestop_id, :line_onestop_id, :description)
+    end
+
+    def issue_params_a
+      params.require(:issue).permit(:location_type, :line_onestop_id, :direction, :vehicle_id, :reported_at, :issue_type, :description, :notified, :alt_transport, :cta_contact, :user_id)
     end
 end
