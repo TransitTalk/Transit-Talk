@@ -1,37 +1,11 @@
 <div class="page-container">
-	<h1>New Issue: A</h1>
-	<h2>One Page Form</h2>
+	<h1>New Issue: B</h1>
+	<h2>Two Page Form: Page 2</h2>
+
+	NOTE: not currently active
 
 	<div class="form_container">
-		<%= form_for @issue, url: { action: 'create_a'} do |f| %>
-			Type:
-			<% @location_types.each do |t| %>
-				<%= f.radio_button(:location_type, t, checked: (@t == t)) %>
-				<%= f.label(:location_type, t) %>
-			<% end %>
-			<br>
-
-			Line:
-			<%= f.select(:line_onestop_id, options_for_select(@lines)) %>
-			<br>
-
-			Vehicle Number:
-			<%= f.text_field(:vehicle_id) %> (i)
-			<br>
-
-			Direction:
-			<%= f.select(:direction, options_for_select(@directions)) %>
-			<br>
-
-			Occurred at:<br>
-			<%= f.datetime_select(:reported_at, default: DateTime.now) %>
-			<br>
-
-			Please select your issue: <br>
-			<% @issue_types.each do |t| %>
-				<%= f.check_box(:issue_type, {}, t["type"], nil) %>
-				<%= f.label(:issue_type, t["name"]) %><br>
-			<% end %>
+		<%= form_for @issue, url: { action: 'create_b'} do |f| %>
 
 			Please describe:<br>
 			<%= f.text_area(:description, rows: 8, placeholder: "What happened?") %>
@@ -66,12 +40,12 @@
 			How?
 			input
 			<br>
-			<%= recaptcha_tags %>
-			<br>
-			<%= f.submit "Submit!" %>
+
+			<%#= f.submit "Submit!" %>
 
 		<% end %>
 	</div>
 	<br>
+
 	<%= link_to 'Back', issues_path %>
 </div>

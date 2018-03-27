@@ -30,8 +30,14 @@ class IssuesController < ApplicationController
     @issue = Issue.new()
   end
 
-  # GET /issues/1/edit
-  def edit
+  # GET /report/a
+  def new_b1
+    file = JSON.parse File.read('lib/assets/issue_static_data.json')
+    @location_types = file["location_types"]
+    @lines = file["train_lines"]
+    @issue_types = file["issue_types"]
+    @directions = file["directions"]
+    @issue = Issue.new()
   end
 
   # POST /issues
@@ -54,25 +60,39 @@ class IssuesController < ApplicationController
   end
 
   def create_a
-    @issue = Issue.new(issue_params_a)
+    @issue = Issue.new(issue_params_ab)
 
     if current_user
       @issue.user_id = current_user.id
     end
 
     respond_to do |format|
-      if @issue.save
-        format.html { redirect_to root_path, notice: 'Issue was successfully created.' }
+      if verify_recaptcha(model: @issue) && @issue.save
+        format.html { redirect_to root_path, notice: 'Issue was successfully submitted.' }
         format.json { render :show, status: :created, location: @issue }
       else
-        format.html { render :new }
+        format.html { redirect_to root_path, notice: 'Captcha failure: Issue was not successfully submitted.' }
         format.json { render json: @issue.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  def create_b
-    @issue = Issue.create(issue_params_a)
+  def create_b1
+    @issue = Issue.create(issue_params_ab)
+
+    if current_user
+      @issue.user_id = current_user.id
+    end
+
+    respond_to do |format|
+      if verify_recaptcha(model: @issue) && @issue.save
+        format.html { redirect_to root_path, notice: 'Issue was successfully submitted. Dev note: page two coming soon.' }
+        format.json { render :show, status: :created, location: @issue }
+      else
+        format.html { redirect_to root_path, notice: 'Captcha failure: Issue was not successfully submitted.' }
+        format.json { render json: @issue.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /issues/1
@@ -110,7 +130,7 @@ class IssuesController < ApplicationController
       params.require(:issue).permit(:types, :stop_onestop_id, :line_onestop_id, :description)
     end
 
-    def issue_params_a
+    def issue_params_ab
       params.require(:issue).permit(:location_type, :line_onestop_id, :direction, :vehicle_id, :reported_at, :issue_type, :description, :notified, :alt_transport, :cta_contact, :user_id)
     end
 end

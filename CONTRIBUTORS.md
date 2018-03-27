@@ -4,6 +4,7 @@ This project was made possible through the hard work of many people:
 * Grant Reszczyk
 * Soren Spicknall
 * Viktor Koves
+* Ariel Diamond
 
 Our non-technical team has also included the following valued contributors over time:
 * Julian Hyde

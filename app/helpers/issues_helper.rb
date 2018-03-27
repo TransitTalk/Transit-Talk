@@ -17,7 +17,7 @@ module IssuesHelper
   def new_issue_button_b
     link_to(
       content_tag(:div, '', class: 'create-issue-b'),
-      report_b_path
+      report_b_1_path
     )
   end
 end

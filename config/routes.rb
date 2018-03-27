@@ -20,9 +20,11 @@ Rails.application.routes.draw do
 
   resources :issues
   get "/report/a" => 'issues#new_a'
-  get "/report/b" => 'issues#new_b'
+  get "/report/b/1" => 'issues#new_b1'
+  # get "/report/b/2" => 'issues#new_b2'
   post "report/a" => 'issues#create_a'
-  post "report/b" => 'issues#create_b'
+  post "report/b/1" => 'issues#create_b1'
+  # post "report/b/2" => 'issues#create_b2'
 
   root 'pages#dashboard'
 end

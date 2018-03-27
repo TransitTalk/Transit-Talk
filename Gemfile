@@ -22,6 +22,8 @@ group :development, :test do
 	gem 'sqlite3'
 end
 
+# Add recaptcha to form, https://www.google.com/recaptcha/intro/
+gem 'recaptcha', require: 'recaptcha/rails'
 # Use devise here for db management
 gem 'devise'
 # Use Puma as the app server
