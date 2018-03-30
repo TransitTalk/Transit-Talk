@@ -32,6 +32,7 @@ class FavoritesController < ApplicationController
   def delete
     @stop = Stop.find(params[:stop_id])
     current_user.favorites.delete(Stop.find(params[:stop_id]))
+    @should_remove_element = URI(request.referer).path == favorites_path
 
     respond_to do |format|
       # A normal HTML request was recieved
@@ -48,6 +49,7 @@ class FavoritesController < ApplicationController
         }, status: 204
       }
     end
+
   end
 
 end

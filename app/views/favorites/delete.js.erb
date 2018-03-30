@@ -1,1 +1,5 @@
-$('<%= "#stop-#{@stop.html_id}" %>').replaceWith('<%= j render "stops/show", stop: @stop %>');
+<% if @should_remove_element %>
+    $('<%= "#stop-#{@stop.html_id}-1" %>').remove();
+<% else %>
+    $('<%= "#stop-#{@stop.html_id}" %>').replaceWith('<%= j render "stops/show", stop: @stop %>');
+<% end %>
