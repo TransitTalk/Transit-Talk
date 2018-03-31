@@ -11,7 +11,7 @@ class IssueTest < ActiveSupport::TestCase
   end
 
   # Verify correct errors are raised if an issue is created
-  # without the proper fields. 
+  # without the proper fields.
   test "invalid without types" do
     line = lines(:one)
     issue = Issue.new(line: line)
