@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # lines_controller_test.rb
 require "test_helper"
 

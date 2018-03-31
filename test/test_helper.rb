@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Add Coveralls
 require "simplecov"
 require "coveralls"

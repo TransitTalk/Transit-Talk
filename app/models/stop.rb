@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Stop < ApplicationRecord
   has_many :issues, :foreign_key => "stop_onestop_id"
   has_and_belongs_to_many :lines, :foreign_key => "stop_onestop_id", :association_foreign_key => "line_onestop_id"
