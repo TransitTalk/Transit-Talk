@@ -1,5 +1,5 @@
 # issues_controller_test.rb
-require 'test_helper'
+require "test_helper"
 
 class IssuesControllerTest < ActionDispatch::IntegrationTest
 

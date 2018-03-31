@@ -1,5 +1,5 @@
 # lines_controller_test.rb
-require 'test_helper'
+require "test_helper"
 
 class LinesControllerTest < ActionDispatch::IntegrationTest
 
