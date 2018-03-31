@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module IssuesHelper
   def new_issue_button(line: nil, stop: nil)
     line ||= stop&.lines&.first

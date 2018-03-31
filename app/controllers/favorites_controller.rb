@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class FavoritesController < ApplicationController
   def index
       unless current_user

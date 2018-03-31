@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class IssuesController < ApplicationController
   before_action :set_issue, only: [:show, :edit, :update, :destroy]
 

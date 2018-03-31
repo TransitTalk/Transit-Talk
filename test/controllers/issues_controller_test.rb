@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # issues_controller_test.rb
 require "test_helper"
 
