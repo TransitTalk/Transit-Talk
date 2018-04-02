@@ -2,16 +2,16 @@
 
 class PagesController < ApplicationController
   def dashboard
-      if ((params[:lat]) && (params[:long]))
-          @nearby_stops = Stop.includes(:lines).within(0.2, origin: [params[:lat],params[:long]])
-      end
+    if ((params[:lat]) && (params[:long]))
+      @nearby_stops = Stop.includes(:lines).within(0.2, origin: [params[:lat],params[:long]])
+    end
   end
 
   def show
     if valid_page?
-        render template: "pages/#{params[:page_name]}"
+      render template: "pages/#{params[:page_name]}"
     else
-        render file: "public/404.html", status: :not_found
+      render file: "public/404.html", status: :not_found
     end
   end
 
