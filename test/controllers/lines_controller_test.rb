@@ -4,7 +4,6 @@
 require "test_helper"
 
 class LinesControllerTest < ActionDispatch::IntegrationTest
-
   # Can we get the index page?
   test "get index page" do
     get lines_url
@@ -34,5 +33,4 @@ class LinesControllerTest < ActionDispatch::IntegrationTest
       get line_path(invalid_line_id)
     end
   end
-
 end

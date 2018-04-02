@@ -4,7 +4,6 @@
 require "test_helper"
 
 class IssuesControllerTest < ActionDispatch::IntegrationTest
-
   include Devise::Test::IntegrationHelpers
 
   test "logged in should get issues page" do
