@@ -29,4 +29,3 @@ class LineTest < ActiveSupport::TestCase
     assert_nil line.short_name, "Failed to return correct route short name"
   end
 end
-

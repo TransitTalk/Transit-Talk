@@ -25,4 +25,3 @@ class StopsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 end
-

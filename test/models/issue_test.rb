@@ -18,4 +18,3 @@ class IssueTest < ActiveSupport::TestCase
     assert_not_nil issue.errors[:types]
   end
 end
-
