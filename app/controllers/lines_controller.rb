@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LinesController < ApplicationController
   def index
     @lines = Line.all.sort_by { |l| -l.name.to_i }.sort_by { |l| l.vehicle_type }.reverse!
