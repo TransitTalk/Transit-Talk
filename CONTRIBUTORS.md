@@ -1,11 +1,16 @@
-This project was made possible through the hard work of many people:
-* Robert Altman
-* CJ Bennett
-* Grant Reszczyk
+This project was made possible through the hard work of many people. Our leadership team is composed of:
+* Jannie Lung
+* Ranjani Prabhakar
 * Soren Spicknall
 * Viktor Koves
 
-Our non-technical team has also included the following valued contributors over time:
+Code has been contributed by the following other team members:
+* Robert Altman
+* Dave Alvarado
+* CJ Bennett
+* Grant Reszczyk
+
+Our non-technical teams have also included many valued contributors over time, including the following:
 * Julian Hyde
 * Justin Jones
 * Steven Vance
