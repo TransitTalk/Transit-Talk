@@ -25,5 +25,4 @@ class ActiveSupport::TestCase
       "user[email]"    => user.email,
       "user[password]" => password
   end
-
 end

@@ -4,7 +4,6 @@
 require "test_helper"
 
 class StopsControllerTest < ActionDispatch::IntegrationTest
-
   # Simple test to verify we get the show page when we
   # invoke the page with a valid ID
   test "get show page with valid stop id" do
@@ -25,6 +24,4 @@ class StopsControllerTest < ActionDispatch::IntegrationTest
       get stop_path(invalid_stop_id)
     end
   end
-
 end
-

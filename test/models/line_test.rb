@@ -3,7 +3,6 @@
 require "test_helper"
 
 class LineTest < ActiveSupport::TestCase
-
   test "returns proper long name" do
     route_long_name = "RouteLong"
     route_short_name = "RouteShort"
@@ -29,6 +28,4 @@ class LineTest < ActiveSupport::TestCase
     line = Line.new(route_long_name: route_long_name)
     assert_nil line.short_name, "Failed to return correct route short name"
   end
-
 end
-
