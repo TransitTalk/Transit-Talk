@@ -3,7 +3,6 @@
 require "test_helper"
 
 class IssueTest < ActiveSupport::TestCase
-
   # Verify issue is valid if correct fields are provided
   test "valid issue" do
     issue = Issue.new(types: "Cleanliness")
@@ -18,6 +17,4 @@ class IssueTest < ActiveSupport::TestCase
     refute issue.valid?
     assert_not_nil issue.errors[:types]
   end
-
 end
-
