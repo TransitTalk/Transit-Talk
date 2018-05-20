@@ -16,6 +16,9 @@ To ease the learning and involvement curve of the project, we have a few resourc
 * Very soon, the platform will be moving to [Transitland](https://transit.land/) data, which is a curated database of open GTFS data for transit systems around the world.
 * Chicago Transit Authority: This project was born in Illinois and mostly lives in Chicago, so many of our testers and contributors are currently using [CTA GTFS data](http://www.transitchicago.com/developers/gtfs.aspx). Our first full prototype will be built on CTA data.
 
+## Existing Schema Design
+![alt text](docs/schema.png)
+
 ## Testing
 To test that your install of this platform is correct on the data that we are currently using, download "google_transit.zip" from http://www.transitchicago.com/downloads/sch_data/ and then follow the directions to launch the platform to the local host in the README.md file. You can also use data from a wide variety of other transit systems.
 
@@ -76,4 +79,3 @@ The wiki is specifically there to encourage discussion among community members. 
 [issues]: https://github.com/CaravanTransit/Caravan-App/issues
 [wiki]: https://github.com/CaravanTransit/Caravan-App/wiki
 [contributors]: https://github.com/CaravanTransit/Caravan-App/blob/master/CONTRIBUTORS.md
-
