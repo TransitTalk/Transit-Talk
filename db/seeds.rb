@@ -1,21 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 RANDOM_BOOLEAN = [true, false]
 
-AMOUNT_ISSUES = 1000
-AMOUNT_LINES = 1000
-AMOUNT_SETTINGS = 1000
-AMOUNT_STOPS = 1000
-AMOUNT_STOPS_USERS = 1000
-AMOUNT_USERS = 1000
-AMOUNT_VEHICLES = 1000
-
-# LIST_API_ID = ["line_onestop_id","stop_onestop_id"]
+AMOUNT_ISSUES = 50
+AMOUNT_LINES = 10
+AMOUNT_SETTINGS = 50
+AMOUNT_STOPS = 50
+AMOUNT_STOPS_USERS = 50
+AMOUNT_USERS = 50
+AMOUNT_VEHICLES = 50
 
 LIST_ISSUES_TYPES = [
                       "Delays",
@@ -44,62 +35,59 @@ LIST_WHEELCHAIR_ACCESSIBLE =  ["Elevator", "Ramp"]
 
 BIKES_ALLOWED = 10
 
-AMOUNT_ISSUES.times do
+Issue.destroy_all
+AMOUNT_ISSUES.times do |i|
   Issue.create!(
-      # stop_onestop_id: ?,
-      # vehicle_id: ?,
+      stop_onestop_id: "#{i + 1}",
+      vehicle_id: i + 1,
       description: Faker::Lorem.paragraph(2, true),
       user_id: rand(1..AMOUNT_USERS),
-      # line_onestop_id: ?,
+      line_onestop_id: "#{i + 1}",
       types: LIST_ISSUES_TYPES.sample,
       resolved: RANDOM_BOOLEAN.sample
     )
 end
 
-AMOUNT_LINES.times do
+Line.destroy_all
+AMOUNT_LINES.times do |i|
   Line.create!(
       route_long_name: Faker::Address.street_address,
       name: Faker::Address.street_name,
       system_type: LIST_SYSTEM_TYPES.sample,
       color: LIST_LINE_COLORS.sample,
-      # onestop_id: ?,
+      onestop_id: "#{i}",
       vehicle_type: Faker::Vehicle.manufacture,
       wheelchair_accessible: LIST_WHEELCHAIR_ACCESSIBLE.sample,
       bikes_allowed: rand(0..BIKES_ALLOWED)
     )
 end
 
-AMOUNT_SETTINGS.times do
-  Setting.create!(
-      var: Faker::Lorem.word,
-      value: Faker::Lorem.word,
-      thing_id: rand(1..10),
-      thing_type: Faker::Lorem.word
-    )
-end
+# AMOUNT_SETTINGS.times do |i|
+#   Setting.create!(
+#       var: "var-#{i}",
+#       value: "value-#{i}",
+#       thing_id: rand(1..10),
+#       thing_type: "thing-type-#{i}"
+#     )
+# end
 
-AMOUNT_STOPS.times do
+Stop.destroy_all
+AMOUNT_STOPS.times do |i|
   Stop.create!(
-      # api_id: ?,
+      api_id: "#{i}",
       name: Faker::Address.street_address,
       longitude: Faker::Address.latitude,
       lattitude: Faker::Address.longitude,
-      # twin_stop_id: ?,
-      # onestop_id: ?
+      twin_stop_id: i,
+      onestop_id: "#{i + 1}"
     )
 end
 
-AMOUNT_STOPS_USERS.times do
-  StopUser.create!(
-      user_id: rand(1..AMOUNT_USERS),
-      stop_onestop_id: rand(1..AMOUNT_STOPS)
-    )
-end
-
-AMOUNT_USERS.times do
+User.destroy_all
+AMOUNT_USERS.times do |i|
   User.create!(
       email: Faker::Internet.email,
-      # encrypted_password: ?,
+      password: "cat-dog-#{i}",
       # reset_password_token: ?,
       # reset_password_sent_at: ?,
       remember_created_at: Faker::Time.between(20.days.ago, Date.today, :all),
@@ -111,9 +99,14 @@ AMOUNT_USERS.times do
     )
 end
 
-AMOUNT_VEHICLES.times do
-  User.create!(
-      # api_id: ?,
+Stop.all.each.with_index do |stop, i|
+  stop.users << User.all[i]
+end
+
+Vehicle.destroy_all
+AMOUNT_VEHICLES.times do |i|
+  Vehicle.create!(
+      api_id: "#{i}",
       line_id: rand(1..AMOUNT_LINES)
     )
 end
