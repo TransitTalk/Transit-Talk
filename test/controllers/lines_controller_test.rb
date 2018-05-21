@@ -33,4 +33,13 @@ class LinesControllerTest < ActionDispatch::IntegrationTest
       get line_path(invalid_line_id)
     end
   end
+
+  test "get stops page" do
+    param_line = lines(:one)
+    assert_not_nil param_line
+
+    get get_stops_path(param_line.id)
+    line = assigns(:line)
+    assert_response :success
+  end
 end
