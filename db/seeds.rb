@@ -35,7 +35,10 @@ LIST_WHEELCHAIR_ACCESSIBLE =  ["Elevator", "Ramp"]
 
 BIKES_ALLOWED = 10
 
+puts 'Destroying old issues and seeding fake ones'
+
 Issue.destroy_all
+
 AMOUNT_ISSUES.times do |i|
   Issue.create!(
       stop_onestop_id: "#{i + 1}",
@@ -47,6 +50,8 @@ AMOUNT_ISSUES.times do |i|
       resolved: RANDOM_BOOLEAN.sample
     )
 end
+
+puts 'Destroying old lines and seeding fake ones'
 
 Line.destroy_all
 AMOUNT_LINES.times do |i|
@@ -71,6 +76,8 @@ end
 #     )
 # end
 
+puts 'Destroying old stops and seeding fake ones'
+
 Stop.destroy_all
 AMOUNT_STOPS.times do |i|
   stop = Stop.create!(
@@ -85,6 +92,8 @@ AMOUNT_STOPS.times do |i|
   # Assign to a line
   stop.lines << Line.find(Line.pluck(:onestop_id).shuffle.first)
 end
+
+puts 'Destroying old users and seeding fake ones'
 
 User.destroy_all
 AMOUNT_USERS.times do |i|
