@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20170913013817) do
   create_table "vehicles", force: :cascade do |t|
     t.string  "api_id"
     t.integer "line_id"
-      t.index ["api_id"], name: "index_vehicles_on_api_id"
+    t.index ["api_id"], name: "index_vehicles_on_api_id"
     t.index ["line_id"], name: "index_vehicles_on_line_id"
   end
 

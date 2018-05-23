@@ -73,7 +73,7 @@ end
 
 Stop.destroy_all
 AMOUNT_STOPS.times do |i|
-  Stop.create!(
+  stop = Stop.create!(
       api_id: "#{i}",
       name: Faker::Address.street_address,
       longitude: Faker::Address.latitude,
@@ -81,6 +81,9 @@ AMOUNT_STOPS.times do |i|
       twin_stop_id: i,
       onestop_id: "#{i + 1}"
     )
+
+  # Assign to a line
+  stop.lines << Line.find(Line.pluck(:onestop_id).shuffle.first)
 end
 
 User.destroy_all
