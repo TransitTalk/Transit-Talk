@@ -21,14 +21,14 @@ LIST_ISSUES_TYPES = [
 LIST_SYSTEM_TYPES = [1,2,3,4]
 
 LIST_LINE_COLORS =  [
-                      "Orange Line",
-                      "Brown Line",
-                      "Green Line",
-                      "Pink Line",
-                      "Blue Line",
-                      "Yellow Line",
-                      "Purple Line",
-                      "Red Line"
+                      "F9461C",
+                      "62361c",
+                      "109a3a",
+                      "e27ea6",
+                      "2fa1de",
+                      "f9e300",
+                      "522397",
+                      "c70d30"
                     ]
 
 LIST_WHEELCHAIR_ACCESSIBLE =  ["Elevator", "Ramp"]
