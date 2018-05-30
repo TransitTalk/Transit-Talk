@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Issue < ApplicationRecord
   belongs_to :user
   belongs_to :stop, foreign_key: "stop_onestop_id"

@@ -1,7 +1,7 @@
 # Caravan
 
-[![Build Status](https://api.travis-ci.org/CaravanTransit/Caravan-App.svg?branch=master)](https://travis-ci.org/CaravanTransit/Caravan-App)
-[![Coverage Status](https://coveralls.io/repos/github/CaravanTransit/Caravan-App/badge.svg?branch=master)](https://coveralls.io/github/CaravanTransit/Caravan-App?branch=master)
+[![Build Status][build-status-icon]][build-status]
+[![Coverage Status][coverage-status-icon]][coverage-status]
 
 Caravan is a platform for collective commuters to inquire and report on the status and structure of public transportation stations and lines. Behind the scenes, Caravan is an open-source framework that facilitates efficient implementation of any major transit system that provides their GTFS formatted information. This adaptability to any transportation network provides the potential for an extensive network of locations within one centralized package where users and contributors can take better advantage of transportation resources. Presently, these benefits are products of Caravan's ability to:
 
@@ -27,7 +27,7 @@ In the future we hope to expand the functionality of Caravan by:
 
   * Creating an accountability system that will track an individual user's history of reports and closing of other user's reports. Distribute some form of punishment if logs suggest abuse of the platform.
 
-  * Consistently resolve bugs in the code as they appear over the development process. Unresolved issues are logged on [GitHub](https://github.com/CaravanTransit/Caravan-App/issues)
+  * Consistently resolve bugs in the code as they appear over the development process. Unresolved issues are logged on [GitHub][issues].
 
 <br>
 
@@ -70,7 +70,7 @@ In the future we hope to expand the functionality of Caravan by:
     * Connect to Localhost:3000 on your browser
 
 ## Contributor Guide
-To learn more about how to contribute, check out [our contribution guidelines](CONTRIBUTING.md)
+To learn more about how to contribute, check out [our contribution guidelines][contributing]
 
 ### Adding New Modular Settings
 To add a new modular setting to the settings panel (`/settings`), add it as a default in `config/app.yml` and then add the display name of the attribute in
@@ -78,7 +78,7 @@ To add a new modular setting to the settings panel (`/settings`), add it as a de
 
 ## License
 
-Copyright 2017. Copyright shared among all those listed in [CONTRIBUTORS](CONTRIBUTORS.md)
+Copyright 2017. Copyright shared among all those listed in [CONTRIBUTORS][contributors]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -109,3 +109,11 @@ Load in the data using the Rake task - `rake transit:set_up_transit GTFS_FILE=_p
 We use [rails-settings-ui](https://github.com/accessd/rails-settings-ui) (a UI wrapper for [rails-settings-cached](https://github.com/huacnlee/rails-settings-cached)) that lets you tweak certain global setttings about your Transit Network site.
 
 To tweak your settings, go to http://your-app-url/settings. Once your settings are updated, you should see the changes reflected immediately (if they are non styling changes) or upon the next server restart. If you need to manually rebuild to test your settings, close your server, run `rm -fr tmp/cache` to clear built Sass files, and rerun your server.
+
+[build-status-icon]: https://api.travis-ci.org/CaravanTransit/Caravan-App.svg?branch=master
+[build-status]: https://travis-ci.org/CaravanTransit/Caravan-App
+[coverage-status-icon]: https://coveralls.io/repos/github/CaravanTransit/Caravan-App/badge.svg?branch=master
+[coverage-status]: https://coveralls.io/github/CaravanTransit/Caravan-App?branch=master
+[issues]: https://github.com/CaravanTransit/Caravan-App/issues
+[contributing]: https://github.com/CaravanTransit/Caravan-App/blob/master/CONTRIBUTING.md
+[contributors]: https://github.com/CaravanTransit/Caravan-App/blob/master/CONTRIBUTORS.md

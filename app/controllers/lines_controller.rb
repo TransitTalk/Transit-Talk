@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LinesController < ApplicationController
   def index
     @lines = Line.all.sort_by { |l| -l.name.to_i }.sort_by { |l| l.vehicle_type }.reverse!
@@ -9,6 +11,6 @@ class LinesController < ApplicationController
 
   def get_stops
     @line = Line.find(params[:line_id])
-    render :json => @line.stops.pluck(:id, :name)
+    render json: @line.stops.pluck(:id, :name)
   end
 end

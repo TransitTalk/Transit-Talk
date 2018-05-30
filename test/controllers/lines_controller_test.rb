@@ -1,25 +1,26 @@
+# frozen_string_literal: true
+
 # lines_controller_test.rb
-require 'test_helper'
+require "test_helper"
 
 class LinesControllerTest < ActionDispatch::IntegrationTest
-
-  # Can we get the index page?  
+  # Can we get the index page?
   test "get index page" do
     get lines_url
-    lines = assigns(:lines) 
+    lines = assigns(:lines)
     all_lines = Line.all
-    assert_equal all_lines.size, lines.size 
+    assert_equal all_lines.size, lines.size
     assert_response :success
   end
 
   # Simple test to verify we get the show page when we
   # invoke the page with a valid ID
   test "get show page with valid line id" do
-    param_line = lines(:one) 
+    param_line = lines(:one)
     assert_not_nil param_line
 
-    get line_path(param_line.id) 
-    line = assigns(:line)  
+    get line_path(param_line.id)
+    line = assigns(:line)
     assert_equal param_line.id, line.id
     assert_response :success
   end
@@ -32,5 +33,4 @@ class LinesControllerTest < ActionDispatch::IntegrationTest
       get line_path(invalid_line_id)
     end
   end
-
 end
