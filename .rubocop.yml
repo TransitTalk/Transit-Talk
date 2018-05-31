@@ -18,6 +18,7 @@ AllCops:
   - 'config/**/*'
   - 'db/**/*'
   - 'lib/**/*'
+  - 'vendor/**/*'
   - '**/*.jbuilder'
   - '**/config.ru'
   - '**/Gemfile'
