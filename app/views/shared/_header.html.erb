@@ -20,7 +20,6 @@
 		<li><%= link_to('Home', "/") %> </li>
 		<li><%= link_to('All Lines', lines_path) %> </li>
 		<li><%= link_to('About', page_path(:page_name => 'about')) %></li>
-
 		<% if current_user %>
 			<% if current_user.admin %>
 				<li><%= link_to('Site Settings', '/settings') %></li>
@@ -38,6 +37,3 @@
 		<% end %>
 	</ul>
 </div>
-
-
-
