@@ -1,7 +1,6 @@
 <% unless stop.lines.empty? %>
-<div class="stops-container">
+<div class="stops-container" id='<%= "stop-#{stop.html_id}" %>-1'>
 	<%= render "stops/show", stop: stop %>
-	
 	<% unless stop.issues.empty? # only show issue container if there are issues to show %>
 		<%= render partial: "issues/show_list", locals: {issues: stop.issues} %>
 	<% end %>
