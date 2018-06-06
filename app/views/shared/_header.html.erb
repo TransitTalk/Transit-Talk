@@ -26,11 +26,6 @@
 			<% end %>
 			<li><%= link_to('Favorite Stops', favorites_path) %></li>
 			<li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
-			<li>
-				<div>Reset Password</div>
-				<%= current_user.reset_password(current_user.password,current_user.password)%>
-				<%= current_user.send_reset_password_instructions%>	
-			</li>
 		<% else %>
 			<li><%= link_to('Sign In', new_user_session_path) %></li>
 			<li><%= link_to('Sign Up', new_user_registration_path) %></li>
