@@ -1,0 +1,23 @@
+<div class="page-container">
+  <%= stylesheet_link_tag "home" %>
+  <h1>History</h1>
+  <br>
+  <h4>Issues</h4>
+  <br>
+  <% if current_user %>  
+    <div>You have open <%= current_user.issues.length %> issues.</div>
+    <% current_user.issues.each do |issue| %>
+        <tr>
+          <td><%= issue.types %></td>
+          <td><%= issue.stop_id %></td>
+          <td><%= issue.description %></td>
+          <td><%= issue.line_id %></td>
+          <td><%= link_to 'Show', issue %></td>
+          <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
+          <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+  <% else %> 
+    <div>Login to see the history</div>
+  <% end %>
+</div>
