@@ -16,12 +16,12 @@ class LinesControllerTest < ActionDispatch::IntegrationTest
   # Simple test to verify we get the show page when we
   # invoke the page with a valid ID
   test "get show page with valid line id" do
-    param_line = lines(:one)
-    assert_not_nil param_line
+    test_line = lines(:one)
+    assert_not_nil test_line
 
-    get line_path(param_line.id)
+    get line_path(test_line)
     line = assigns(:line)
-    assert_equal param_line.id, line.id
+    assert_equal test_line.id, line.id
     assert_response :success
   end
 
@@ -35,10 +35,10 @@ class LinesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "get stops page" do
-    param_line = lines(:one)
-    assert_not_nil param_line
+    test_line = lines(:one)
+    assert_not_nil test_line
 
-    get get_stops_path(param_line.id)
+    get get_stops_path(test_line)
     line = assigns(:line)
     assert_response :success
   end
