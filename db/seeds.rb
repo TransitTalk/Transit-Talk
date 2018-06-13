@@ -90,8 +90,13 @@ AMOUNT_STOPS.times do |i|
       onestop_id: "#{i + 1}"
     )
 
-  # Assign to a line
-  stop.lines << Line.find(Line.pluck(:onestop_id).shuffle.first)
+  # Assign to a random line
+  stop.lines << Line.all.shuffle.first
+
+  # 25% chance of assigning to another line for a transfer
+  if rand(4) === 0
+    stop.lines << (Line.all - Stop.first.lines).shuffle.first
+  end
 end
 
 puts 'Destroying old users and seeding fake ones'
@@ -112,6 +117,8 @@ AMOUNT_USERS.times do |i|
     )
 end
 
+puts 'Destroying old vehicles and seeding fake ones'
+
 Vehicle.destroy_all
 AMOUNT_VEHICLES.times do |i|
   Vehicle.create!(
@@ -119,3 +126,5 @@ AMOUNT_VEHICLES.times do |i|
       line_id: rand(1..AMOUNT_LINES)
     )
 end
+
+puts 'Done seeding.'
