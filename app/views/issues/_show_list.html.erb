@@ -3,7 +3,8 @@
 		<% issues.each do |issue| %>
 			<li class="li-dash">
 				<span class="issue-title"><%= issue.types %></span>
-				<span class="issue-time"><%= time_ago_in_words(issue.created_at) %> ago</span>
+        <span class="issue-time"><%= time_ago_in_words(issue.created_at) %> ago</span>
+				<span><%= link_to 'View Details', issue_path(issue) %></span>
 			</li>
 		<% end %>
 	</ul>

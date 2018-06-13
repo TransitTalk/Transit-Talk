@@ -7,7 +7,7 @@
 
 <p>
   <strong>Stop:</strong>
-  <%= @issue.stop_id %>
+  <%= render "stops/show", stop: @issue.stop %>
 </p>
 
 <p>
@@ -17,7 +17,15 @@
 
 <p>
   <strong>Line:</strong>
-  <%= @issue.line_id %>
+  <%= render "lines/show", line: @issue.line %>
+</p>
+
+<p>
+  <% if @issue.created_at == @issue.updated_at %>
+    Created: <%= @issue.created_at.strftime("%m/%d/%Y - %I:%M%p") %> 
+  <% else %>
+    Created: <%= @issue.created_at.strftime("%m/%d/%Y - %I:%M%p") %> (Edited: <%= @issue.updated_at.strftime("%m/%d/%Y - %I:%M%p") %>)
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |

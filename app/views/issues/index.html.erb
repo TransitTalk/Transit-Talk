@@ -2,7 +2,7 @@
   <p id="notice"><%= notice %></p>
 
   <h1>Issues</h1>
-
+  
   <table>
     <thead>
       <tr>
@@ -18,9 +18,9 @@
       <% @issues.each do |issue| %>
         <tr>
           <td><%= issue.types %></td>
-          <td><%= issue.stop_id %></td>
+          <td><%= issue.stop.id %></td>
           <td><%= issue.description %></td>
-          <td><%= issue.line_id %></td>
+          <td><%= issue.line.id %></td>
           <td><%= link_to 'Show', issue %></td>
           <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
           <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
