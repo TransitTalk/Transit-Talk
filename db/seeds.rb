@@ -20,6 +20,7 @@ LIST_ISSUES_TYPES = [
 
 LIST_SYSTEM_TYPES = [1,2,3,4]
 
+# Note: These are hex codes, as that's what the DB does
 LIST_LINE_COLORS =  [
                       "F9461C",
                       "62361c",
@@ -109,10 +110,6 @@ AMOUNT_USERS.times do |i|
       current_sign_in_ip: Faker::Internet.ip_v4_address,
       last_sign_in_ip: Faker::Internet.ip_v6_address
     )
-end
-
-Stop.all.each.with_index do |stop, i|
-  stop.users << User.all[i]
 end
 
 Vehicle.destroy_all
