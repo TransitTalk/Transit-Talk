@@ -8,12 +8,20 @@ class FavoritesController < ApplicationController
   end
 
   def new
-    current_user.favorites << Stop.find(params[:stop_id])
-    redirect_to favorites_path
+    @stop = Stop.find(params[:stop_id])
+    current_user.favorites << @stop
+
+    respond_to do |format|
+      format.js { render "new.js.erb", locals: { stop: @stop } }
+    end
   end
 
   def delete
-    current_user.favorites.delete(Stop.find(params[:stop_id]))
-    redirect_to favorites_path
+    @stop = Stop.find(params[:stop_id])
+    current_user.favorites.delete(@stop)
+
+    respond_to do |format|
+      format.js { render "delete.js.erb", locals: { stop: @stop } }
+    end
   end
 end
