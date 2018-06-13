@@ -20,4 +20,8 @@ class Stop < ApplicationRecord
   def original
     twin_stop || self
   end
+
+  def html_safe_id
+    id.gsub(/~/, "")
+  end
 end
