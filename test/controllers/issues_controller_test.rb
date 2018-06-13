@@ -33,13 +33,22 @@ class IssuesControllerTest < ActionDispatch::IntegrationTest
   test "user can create issue" do
     sign_in users(:one)
 
-    post issues_url params: {issue:{stop_onestop_id: stops(:one).id, line_onestop_id: lines(:one).id, description: 'something', types: 'another thing'}}
+    post issues_url params: { issue: {
+        stop_onestop_id: stops(:one).id,
+        line_onestop_id: lines(:one).id,
+        description: "something",
+        types: "another thing"
+    } }
 
     assert_response :found
   end
 
   test "creating issue fails if it does not have type" do
-    post issues_url params: {issue:{stop_onestop_id: stops(:one).id, line_onestop_id: lines(:one).id, description: 'something'}}
+    post issues_url params: { issue: {
+        stop_onestop_id: stops(:one).id,
+        line_onestop_id: lines(:one).id,
+        description: "something"
+    } }
 
     assert_response :ok
   end
@@ -47,7 +56,12 @@ class IssuesControllerTest < ActionDispatch::IntegrationTest
   test "user can modify issues" do
     sign_in users(:one)
     issue = issues(:one)
-    patch issue_url issue.id, params: {issue:{stop_onestop_id: "2", line_onestop_id: "2", description: 'something', types: 'another thing'}}
+    patch issue_url issue.id, params: { issue: {
+        stop_onestop_id: "2",
+        line_onestop_id: "2",
+        description: "something",
+        types: "another thing"
+    } }
 
     assert_response :found
     assert_equal "Issue was successfully updated.", flash[:notice]
@@ -62,5 +76,4 @@ class IssuesControllerTest < ActionDispatch::IntegrationTest
     assert_response :found
     assert_equal "Issue was successfully destroyed.", flash[:notice]
   end
-
 end

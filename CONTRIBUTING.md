@@ -63,6 +63,7 @@ and apply consistently. It provides an agreed-upon style 'baseline' so that cont
 
 * `rake rubocop` will run rubocop against all (.rb) files in `app`, `lib`, and `test`.
 * `bundle exec rubocop <filename>` will run rubocop against a specific file.
+* `bundle exec rubocop --auto-correct` will run rubocop and fix issues if possible
 * While it would be nice if you would update code to follow suggested styles, keep in mind that rubcop
   can be overridden if needed (see 'Disabling Cops within Source Code' in the [RuboCop docs](https://rubocop.readthedocs.io/en/latest/)).
 * RuboCop style is (mostly) based on the Ruby on Rails style (via the [rubocop-rails gem](https://github.com/toshimaru/rubocop-rails)).
