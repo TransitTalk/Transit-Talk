@@ -94,6 +94,9 @@ Start by finding the transit network operator you want to setup a site for from 
 
 Then run `rake transit:set_up_transitland TLAND_AGENCY_ONESTOP_ID=%onestop_id%`
 
+A nice [transit operator](https://transit.land/feed-registry/operators/o-drke-9towntransit) to use for testing: `rake transit:set_up_transitland TLAND_AGENCY_ONESTOP_ID=o-drke-9towntransit`
+
+
 Alternatively, the transit agency's onestop_id can be pulled from environment variables, so setting the `TLAND_AGENCY_ONESTOP_ID` environment variable to your desired onestop_id and then running `rake transit:set_up_transitland` will also work.
 
 ### Loading GTFS Data (Deprecated)
