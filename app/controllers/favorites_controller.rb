@@ -12,6 +12,7 @@ class FavoritesController < ApplicationController
     current_user.favorites << @stop
 
     respond_to do |format|
+      # using locals so we can pass in stop in the stops/show partial and lines/show view
       format.js { render "new.js.erb", locals: { stop: @stop } }
     end
   end
@@ -21,6 +22,7 @@ class FavoritesController < ApplicationController
     current_user.favorites.delete(@stop)
 
     respond_to do |format|
+      # using locals so we can pass in stop in the stops/show partial and lines/show view
       format.js { render "delete.js.erb", locals: { stop: @stop } }
     end
   end
