@@ -59,6 +59,7 @@ group :development, :test do
   gem 'rubocop', '~> 0.54.0'
   # Used in rubocop config to match official Ruby on Rails settings
   gem 'rubocop-rails', '~> 1.2.2'
+  gem 'faker'
 end
 
 group :development do
