@@ -13,3 +13,13 @@ Metrics/LineLength:
 
 AllCops:
   TargetRubyVersion: 2.3.0
+  Exclude:
+  - 'bin/**/*'
+  - 'config/**/*'
+  - 'db/**/*'
+  - 'lib/**/*'
+  - 'vendor/**/*'
+  - '**/*.jbuilder'
+  - '**/config.ru'
+  - '**/Gemfile'
+  - '**/Rakefile'
