@@ -8,7 +8,7 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     @user = users(:one)
-    @test_stop = Stop.create(name: "test stop", onestop_id: "test-stop-id")
+    @test_stop = stops(:one)
   end
 
   test "index action redirects to new_user_session_path if no user is signed in" do
