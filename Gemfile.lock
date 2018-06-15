@@ -101,6 +101,8 @@ GEM
       dry-types (~> 0.11.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    faker (1.8.7)
+      i18n (>= 0.7)
     ffi (1.9.17)
     geokit (1.10.0)
     geokit-rails (2.2.0)
@@ -269,6 +271,7 @@ DEPENDENCIES
   coveralls
   devise
   dotenv-rails
+  faker
   geokit-rails
   gtfs
   httparty
@@ -298,4 +301,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.16.1
+   1.16.2

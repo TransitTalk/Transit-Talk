@@ -18,9 +18,9 @@
       <% @issues.each do |issue| %>
         <tr>
           <td><%= issue.types %></td>
-          <td><%= issue.stop_id %></td>
+          <td><%= issue.stop_onestop_id %></td>
           <td><%= issue.description %></td>
-          <td><%= issue.line_id %></td>
+          <td><%= issue.line_onestop_id %></td>
           <td><%= link_to 'Show', issue %></td>
           <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
           <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
