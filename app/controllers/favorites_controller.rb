@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 class FavoritesController < ApplicationController
+  before_action :require_login
+
   def index
-    unless current_user
-      redirect_to new_user_session_path
-    end
   end
 
   def new
@@ -25,5 +24,11 @@ class FavoritesController < ApplicationController
       # using locals so we can pass in stop in the stops/show partial and lines/show view
       format.js { render "delete.js.erb", locals: { stop: @stop } }
     end
+  end
+
+  private
+
+  def require_login
+    redirect_to new_user_session_path unless current_user
   end
 end
