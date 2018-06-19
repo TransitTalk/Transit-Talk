@@ -1,9 +1,5 @@
 <div class="page-container">
-  <%= stylesheet_link_tag "home" %>
-  <h1>History</h1>
-  <br>
-  <h4>Issues</h4>
-  <br>
+  <h1>Reported issues:</h1>
   <% if current_user %>  
     <% if current_user.issues.any? %>
       <div>You have <%= pluralize(current_user.issues.length, 'issue')  %>:</div>
@@ -12,6 +8,6 @@
       <strong>You have not reported any issues yet!</strong>
     <% end %>
   <% else %> 
-    <div>Login to see the history</div>
+    <div>Login to see your reported issues.</div>
   <% end %>
 </div>
