@@ -1,1 +1,6 @@
+/*
+ * Finds the stop that has been unfavorited by its ID and swaps out the link for the
+ * favorited star for the unfavorited version, found in the partial
+ * views/favorites/_unfavorite.html.erb
+ */
 $('<%= "##{stop.html_safe_id}" %>').replaceWith('<%= j render "favorites/unfavorite", stop: stop %>');
