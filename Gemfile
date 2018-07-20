@@ -56,7 +56,7 @@ group :development, :test do
   # Static code analyser
   gem 'rubocop', '~> 0.54.0'
   # Used in rubocop config to match official Ruby on Rails settings
-  gem 'rubocop-rails', '~> 1.2.2'
+  gem 'rubocop-rails_config', '~> 0.1.3'
   gem 'faker'
 end
 
