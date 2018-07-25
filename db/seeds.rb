@@ -4,8 +4,7 @@ AMOUNT_ISSUES = 50
 AMOUNT_LINES = 10
 AMOUNT_SETTINGS = 50
 AMOUNT_STOPS = 50
-AMOUNT_STOPS_USERS = 50
-AMOUNT_USERS = 50
+AMOUNT_USERS = 5
 AMOUNT_VEHICLES = 50
 
 LIST_ISSUES_TYPES = [
@@ -41,15 +40,22 @@ puts 'Destroying old issues and seeding fake ones'
 Issue.destroy_all
 
 AMOUNT_ISSUES.times do |i|
-  Issue.create!(
-      stop_onestop_id: "#{i + 1}",
-      vehicle_id: i + 1,
-      description: Faker::Lorem.paragraph(2, true),
-      user_id: rand(1..AMOUNT_USERS),
-      line_onestop_id: "#{i + 1}",
-      types: LIST_ISSUES_TYPES.sample,
-      resolved: RANDOM_BOOLEAN.sample
-    )
+  issue_params = {
+    vehicle_id: i + 1,
+    description: Faker::Lorem.paragraph(2, true),
+    user_id: rand(1..AMOUNT_USERS),
+    types: LIST_ISSUES_TYPES.sample,
+    resolved: RANDOM_BOOLEAN.sample
+  }
+
+  # 10% chance of being a line issue vs stop issue
+  if rand(10) === 0
+    issue_params['line_onestop_id'] = rand(1..AMOUNT_LINES)
+  else
+    issue_params['stop_onestop_id'] = rand(1..AMOUNT_STOPS)
+  end
+
+  Issue.create(issue_params)
 end
 
 puts 'Destroying old lines and seeding fake ones'
@@ -57,8 +63,8 @@ puts 'Destroying old lines and seeding fake ones'
 Line.destroy_all
 AMOUNT_LINES.times do |i|
   Line.create!(
-      route_long_name: Faker::Address.street_address,
-      name: Faker::Address.street_name,
+      route_long_name: Faker::Address.street_name,
+      name: "#{i}",
       system_type: LIST_SYSTEM_TYPES.sample,
       color: LIST_LINE_COLORS.sample,
       onestop_id: "#{i}",
@@ -68,22 +74,13 @@ AMOUNT_LINES.times do |i|
     )
 end
 
-# AMOUNT_SETTINGS.times do |i|
-#   Setting.create!(
-#       var: "var-#{i}",
-#       value: "value-#{i}",
-#       thing_id: rand(1..10),
-#       thing_type: "thing-type-#{i}"
-#     )
-# end
-
 puts 'Destroying old stops and seeding fake ones'
 
 Stop.destroy_all
 AMOUNT_STOPS.times do |i|
   stop = Stop.create!(
       api_id: "#{i}",
-      name: Faker::Address.street_address,
+      name: Faker::Address.street_name,
       longitude: Faker::Address.latitude,
       lattitude: Faker::Address.longitude,
       twin_stop_id: i,
