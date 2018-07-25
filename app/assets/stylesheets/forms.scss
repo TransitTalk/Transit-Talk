@@ -1,0 +1,21 @@
+.field {
+  margin-top: 20px;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.actions > input[type="submit"] {
+  font-size: 16px;
+  border-radius: 80px;
+  background-color: #6cbfff;
+  color: white;
+  height: 40px;
+  margin-top:15px;
+  width: 100%;
+  border: none;
+  font-family:"Open Sans", "Segoe UI", sans-serif;
+  font-weight:600;
+}
