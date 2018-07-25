@@ -1,5 +1,5 @@
 <div class="page-container">
-  <h1>Reported issues:</h1>
+  <h1>Reported Issues</h1>
   <% if current_user %>  
     <% if current_user.issues.any? %>
       <div>You have <%= pluralize(current_user.issues.length, 'issue')  %>:</div>

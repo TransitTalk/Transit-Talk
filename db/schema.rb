@@ -1,3 +1,5 @@
+# This file is auto-generated from the current state of the database. Instead
+
 ActiveRecord::Schema.define(version: 20170913013817) do
 
   create_table "issues", force: :cascade do |t|
