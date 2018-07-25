@@ -4,8 +4,7 @@ AMOUNT_ISSUES = 50
 AMOUNT_LINES = 10
 AMOUNT_SETTINGS = 50
 AMOUNT_STOPS = 50
-AMOUNT_STOPS_USERS = 50
-AMOUNT_USERS = 50
+AMOUNT_USERS = 5
 AMOUNT_VEHICLES = 50
 
 LIST_ISSUES_TYPES = [
@@ -46,7 +45,6 @@ AMOUNT_ISSUES.times do |i|
       vehicle_id: i + 1,
       description: Faker::Lorem.paragraph(2, true),
       user_id: rand(1..AMOUNT_USERS),
-      line_onestop_id: "#{i + 1}",
       types: LIST_ISSUES_TYPES.sample,
       resolved: RANDOM_BOOLEAN.sample
     )
@@ -83,7 +81,7 @@ Stop.destroy_all
 AMOUNT_STOPS.times do |i|
   stop = Stop.create!(
       api_id: "#{i}",
-      name: Faker::Address.street_address,
+      name: Faker::Address.street_name,
       longitude: Faker::Address.latitude,
       lattitude: Faker::Address.longitude,
       twin_stop_id: i,
