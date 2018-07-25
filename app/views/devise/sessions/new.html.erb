@@ -13,12 +13,10 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-
-
     <div class="actions">
-      <%= f.submit "Log in" %>
+      <%= f.submit "Log in", :class => 'pill' %>
     </div>
-  <% end %>
+<% end %>
 
   <%= render "devise/shared/links" %>
 </div>
