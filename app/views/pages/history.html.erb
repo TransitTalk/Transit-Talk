@@ -1,0 +1,13 @@
+<div class="page-container">
+  <h1>Reported Issues</h1>
+  <% if current_user %>  
+    <% if current_user.issues.any? %>
+      <div>You have <%= pluralize(current_user.issues.length, 'issue')  %>:</div>
+      <%= render 'issues/show_list', issues: current_user.issues  %>
+    <% else %>
+      <strong>You have not reported any issues yet!</strong>
+    <% end %>
+  <% else %> 
+    <div>Login to see your reported issues.</div>
+  <% end %>
+</div>
