@@ -1,34 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="page-container">
+  <h1>Issue Details</h1>
 
-<p>
-  <strong>Type:</strong>
-  <%= @issue.types %>
-</p>
-
-<p>
-  <strong>Stop:</strong>
-  <%= render "stops/show", stop: @issue.stop %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @issue.description %>
-</p>
-
-<p>
-  <strong>Line:</strong>
-  <%= render "lines/show", line: @issue.line %>
-</p>
-
-<p>
-  <% if @issue.created_at == @issue.updated_at %>
-    Created: <%= @issue.created_at.strftime("%m/%d/%Y - %I:%M%p") %> 
-  <% else %>
-    Created: <%= @issue.created_at.strftime("%m/%d/%Y - %I:%M%p") %> (Edited: <%= @issue.updated_at.strftime("%m/%d/%Y - %I:%M%p") %>)
+  <% if @issue.line %>
+    <p>
+      <strong>Line:</strong>
+      <%= render "lines/show", line: @issue.line %>
+    </p>
   <% end %>
-</p>
 
-<%= link_to 'Edit', edit_issue_path(@issue) %> |
-<%= link_to 'Back', issues_path %>
+  <% if @issue.stop %>
+    <p>
+      <strong>Stop:</strong>
+      <%= render "stops/show", stop: @issue.stop %>
+    </p>
+  <% end %>
 
-<%= new_issue_button %>
+  <p>
+    <strong>Type:</strong>
+    <%= @issue.types %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @issue.description %>
+  </p>
+
+  <p>
+    <strong>Created:</strong>
+    <% if @issue.created_at == @issue.updated_at %>
+      <%= @issue.created_at.strftime("%m/%d/%Y - %I:%M%p") %>
+    <% else %>
+      <%= @issue.created_at.strftime("%m/%d/%Y - %I:%M%p") %> (Updated <%= @issue.updated_at.strftime("%m/%d/%Y - %I:%M%p") %>)
+    <% end %>
+  </p>
+</div>
