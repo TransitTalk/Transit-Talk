@@ -14,7 +14,7 @@ class IssueTest < ActiveSupport::TestCase
   test "invalid without types" do
     line = lines(:one)
     issue = Issue.new(line: line)
-    refute issue.valid?
+    assert_not issue.valid?
     assert_not_nil issue.errors[:types]
   end
 end
