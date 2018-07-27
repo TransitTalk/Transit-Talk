@@ -3,56 +3,51 @@
 [![Build Status][build-status-icon]][build-status]
 [![Coverage Status][coverage-status-icon]][coverage-status]
 
-Caravan is a platform for collective commuters to inquire and report on the status and structure of public transportation stations and lines. Behind the scenes, Caravan is an open-source framework that facilitates efficient implementation of any major transit system that provides their GTFS formatted information. This adaptability to any transportation network provides the potential for an extensive network of locations within one centralized package where users and contributors can take better advantage of transportation resources. Presently, these benefits are products of Caravan's ability to:
+Caravan is a crowd-sourced issue reporting platform for public transit systems. It's a friendly place for transit riders to share information about system delays, vehicle cleanliness, and other common challenges of mass transit in real time, making each report visible to every other rider of that system. Caravan augments or replaces reporting tools maintained by transit administrators, collecting rider feedback while empowering riders to make daily decisions based on reports from other riders. Behind the scenes, Caravan is an open-source framework that can be implemented easily for any transit system that uses GTFS-formatted information. Presently, Caravan is able to:
 
-  * Process GTFS formatted data and output accurate details regarding scheduling, transportation units, and locations.
+  * Process GTFS-formatted data and output accurate details regarding routes and stations.
 
-  * Act as a community forum where peers can report issues regarding discrepancies in the transit system that are publicly visible to other peers. These issues are likewise marked resolved by future users after the issue has dissipated.
+  * Act as a community forum where issues reports regarding discrepancies in a transit system are publicly visible to other riders.
 
-  * Track location which allows for automated presentation of the nearest stops and lines of transportation relative to a user's position.
+  * Track the location of a rider, presenting the nearest stations and routes of transportation to the rider.
 
-  * Log individual users with a login system that offers custom settings such as 'Favorite' stops.
+  * Manage individual users with an account system that offers custom settings such as 'Favorite' stations and routes.
 
 <br>
 
 In the future we hope to expand the functionality of Caravan by:
 
-  * Analyzing issues and their effect on a user's commute. From there, suggest alternative routes that improve efficiency.
+  * Analyzing issue patterns and their effect on a rider's commute in order to suggest alternative routes that improve efficiency.
 
-  * Implementing real-time rendering of transportation unit locations.
+  * Implementing real-time rendering of transportation vehicles as they move.
 
-  * Including more logistical factors and their effect on transit (i.e. transportation fares).
+  * Creating an accountability system that will allow deletion of the accounts of habitual spammers.
 
-  * Improving personal abilities to create a creative name.
-
-  * Creating an accountability system that will track an individual user's history of reports and closing of other user's reports. Distribute some form of punishment if logs suggest abuse of the platform.
-
-  * Consistently resolve bugs in the code as they appear over the development process. Unresolved issues are logged on [GitHub][issues].
+  * Consistently resolving bugs as they appear during the development process. Unresolved issues are logged on [GitHub][issues].
 
 <br>
 
 ## Using Caravan
 
- Caravan's user interaction occurs through a mobile-oriented website that allows users to view recent reported issues of nearby stops and transportation units.
+ Caravan's user interaction occurs through a mobile-first website that allows transit riders to view recently reported issues at nearby stations and on nearby vehicles.
 
  [//]: # (Homescreen w/o account photo TBD)
 
- For a user to report, they must first login or create an account. Navigation between pages is largely centered around the menu icon in the top left corner which opens a directory side menu (also accessible through a right swipe).
+ For a rider to report, they must first log in or create an account. Navigation between pages is largely centered around the menu icon in the top left corner, which opens a directory side menu (also accessible through a rightward swipe on a touchscreen).
 
  [//]: # (Insert Side Menu pic)
 
- The platform utilizes a standard account creation process requiring an email and a password. Once logged in, two core features are unlocked for the user--'Favorite' stops and report submission.
- Reports are created using the '+' icon located in the bottom right corner. The button takes the user to the issue report page.
+ The platform utilizes a standard account creation process requiring an email address and a password. Once logged in, two core features are unlocked for the user: 'Favorite' stops and report submission.
 
  [//]: # (Insert issue report page pic)
 
- The report page has a sequential selection order starting with the transportation line being chosen first. Based on which line is chosen, a list of all the stops on that line are listed and can be selected as an origin of an issue. From there, a user can classify the issue as a 'type' and give a description explaining the details.
+ The issue report form is broken up into multiple segments, which display different options based on rider input. Depending on which transit line is chosen by the rider, a list of all the stops on that line are listed and can be selected as the origin point for an issue. From there, the rider can classify the issue in various ways and provide a freeform text description explaining any relevant details.
 
 <br>
 
 ## BUILD/INSTALLATION INSTRUCTIONS
   * Ruby on Rails v2.3.0 and Other Packages
-    * All necessary packages for running this software are provided in the GEMFILE included in the source-code. Use the command:
+    * All necessary packages for running this software are provided in the GEMFILE included in the source code. Use the command:
 
       ```
       $ bundle install
@@ -70,15 +65,15 @@ In the future we hope to expand the functionality of Caravan by:
     * Connect to Localhost:3000 on your browser
 
 ## Contributor Guide
-To learn more about how to contribute, check out [our contribution guidelines][contributing]
+To learn more about how to contribute to Caravan's development, check out [our contribution guidelines][contributing].
 
 ### Adding New Modular Settings
 To add a new modular setting to the settings panel (`/settings`), add it as a default in `config/app.yml` and then add the display name of the attribute in
-`config/locales/en.yml` under `en.settings.attributes.{{new_setting_name}}.name`. For example, when adding the `theme_color` setting, I added a default theme_color of `theme_color: "#58b7ff"` and then added `en.settings.attributes.theme_color.name = "CSS Theme Color"`.
+`config/locales/en.yml` under `en.settings.attributes.{{new_setting_name}}.name`. For example, when adding the `theme_color` setting, we added a default theme_color of `theme_color: "#58b7ff"` and then added `en.settings.attributes.theme_color.name = "CSS Theme Color"`.
 
 ## License
 
-Copyright 2017. Copyright shared among all those listed in [CONTRIBUTORS][contributors]
+Copyright 2018. Copyright shared among all those listed in [CONTRIBUTORS][contributors]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -86,13 +81,13 @@ You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
-## Making a New App
+## Creating Your Own Caravan App
 
 ### Loading Data from transit.land
 
-Start by finding the transit network operator you want to setup a site for from [transit.land's feed registry](https://transit.land/feed-registry/). Grab the `onestop_id` for the desired operator.
+Start by finding the transit operator you want to set up an app for from [transit.land's feed registry](https://transit.land/feed-registry/). Copy the `onestop_id` for the desired operator.
 
-Then run `rake transit:set_up_transitland TLAND_AGENCY_ONESTOP_ID=%onestop_id%`
+Then, run `rake transit:set_up_transitland TLAND_AGENCY_ONESTOP_ID=%onestop_id%`
 
 A nice [transit operator](https://transit.land/feed-registry/operators/o-drke-9towntransit) to use for testing: `rake transit:set_up_transitland TLAND_AGENCY_ONESTOP_ID=o-drke-9towntransit`
 
@@ -108,10 +103,10 @@ Download the file using wget - `wget '_data_url_'`
 
 Load in the data using the Rake task - `rake transit:set_up_transit GTFS_FILE=_path_to_data_file_`
 
-### Tweaking The Site
-We use [rails-settings-ui](https://github.com/accessd/rails-settings-ui) (a UI wrapper for [rails-settings-cached](https://github.com/huacnlee/rails-settings-cached)) that lets you tweak certain global setttings about your Transit Network site.
+### Customizing Your Caravan App
+We use [rails-settings-ui](https://github.com/accessd/rails-settings-ui) (a UI wrapper for [rails-settings-cached](https://github.com/huacnlee/rails-settings-cached)), which lets you tweak certain global setttings for your Caravan app.
 
-To tweak your settings, go to http://your-app-url/settings. Once your settings are updated, you should see the changes reflected immediately (if they are non styling changes) or upon the next server restart. If you need to manually rebuild to test your settings, close your server, run `rm -fr tmp/cache` to clear built Sass files, and rerun your server.
+To change your settings, go to http://your-app-url/settings. Once your settings are updated, you should see the changes reflected immediately (if they are non-styling changes) or upon the next server restart. If you need to manually rebuild to test your settings: close your server, run `rm -fr tmp/cache` to clear built Sass files, and rerun your server.
 
 [build-status-icon]: https://api.travis-ci.org/CaravanTransit/Caravan-App.svg?branch=master
 [build-status]: https://travis-ci.org/CaravanTransit/Caravan-App
