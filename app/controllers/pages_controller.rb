@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
-  def dashboard
+  def view_issues
+    # If our location.js has pulled a location, use it to find Stops
     if ((params[:lat]) && (params[:long]))
       @nearby_stops = Stop.includes(:lines).within(0.2, origin: [params[:lat], params[:long]])
     end

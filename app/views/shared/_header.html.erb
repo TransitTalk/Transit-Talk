@@ -18,6 +18,7 @@
 	<div class="title"><%= Setting.site_name %> Menu</div>
 	<ul>
 		<li><%= link_to('Home', "/") %> </li>
+		<li><%= link_to('View Issues', view_issues_path) %></li>
 		<li><%= link_to('All Lines', lines_path) %> </li>
 		<li><%= link_to('About', page_path(:page_name => 'about')) %></li>
 		<% if current_user %>
