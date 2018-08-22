@@ -25,6 +25,7 @@
 				<li><%= link_to('Site Settings', '/settings') %></li>
 			<% end %>
 			<li><%= link_to('Favorite Stops', favorites_path) %></li>
+			<li><%= link_to('Reported Issues', page_path(:page_name => 'history')) %></li>
 			<li><%= link_to('Log Out', destroy_user_session_path, :method => :delete) %></li>
 		<% else %>
 			<li><%= link_to('Sign In', new_user_session_path) %></li>
