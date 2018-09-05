@@ -7,10 +7,14 @@
 
 		* { color: white; }
 	}
+	.heading {
+		font-size: 1.5em;
+		margin: 0.5em 0em;
+	}
 	.simple-btn {
 		display: block;
 		width: 50%;
-		padding: 10px;
+		padding: 0.4em 1em;
 		background: rgba(28, 28, 28, 0.75);
 		border: solid 2px white;
 		border-radius: 5px;
@@ -35,8 +39,7 @@
 		display: flex;
 	}
 	.logo {
-		width: 50%;
-		max-width: 500px;
+		width: 3em;
 	}
 	.view-issues-cont {
 		background-color: #D8D6D6;

@@ -2,17 +2,17 @@
   <div class="hero">
     <%= image_tag "caravan_logo.svg", class: "logo", alt: "Caravan Logo" %>
 
-    <h1>
+    <div class="heading">
       Report and View Public Transit Issues in
       <% # TODO: Make this print a setting city name %>
       <%= "Chicago" %>
-    </h1>
+    </div>
 
     <%= link_to('Learn More', page_path(:page_name => 'about'), :class => 'simple-btn') %>
     <%= link_to('Sign In', new_user_session_path, :class => 'simple-btn') %>
   </div>
 
-  <h2>Report An Issue</h2>
+  <div class="heading">Report An Issue</div>
 
   <div class="transit-btn-cont">
     <div class="blue-btn transit">
