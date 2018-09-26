@@ -1,11 +1,35 @@
+@import 'variables';
+
 .homepage {
+	height: calc(100vh - #{$header-height});
 	text-align: center;
+
+	// Make all homepage sections flex with vertical and horizontal
+	// centering, so the homepage EXACTLY fits the device
+	> div {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		box-sizing: border-box; // makes padding and border cut from size
+
+		/**
+		 * Layout homepage with three vertical sections
+		 *
+		 * Hero 		- 45% height
+		 * Report 		- 35% height
+		 * View Issues 	- 20% Height
+		 */
+		&.hero { height: 45%; }
+		&.report-issues-cont { height: 35%; }
+		&.view-issues-cont { height: 20%; }
+	}
 
 	.hero {
 		background-color: grey; // TEMP
-		padding: 50px 0px;
 
 		* { color: white; }
+		.logo { width: 3em; }
 	}
 	.heading {
 		font-size: 1.5em;
@@ -14,6 +38,7 @@
 	.simple-btn {
 		display: block;
 		width: 50%;
+		max-width: 250px;
 		padding: 0.4em 1em;
 		background: rgba(28, 28, 28, 0.75);
 		border: solid 2px white;
@@ -23,30 +48,39 @@
 	}
 	.blue-btn {
 		color: white;
+		font-weight: bold;
 		background-color: #2D9CDB;
 		border: solid #757474 3px;
 		box-shadow: 0 4px 4px #000;
 		border-radius: 10px;
 
-		&.transit {
-			width: 25%;
-
-			img { width: 100%; }
-		}
+		* { color: white; }
 	}
 
 	.transit-btn-cont {
+		width: 100%;
 		display: flex;
-	}
-	.logo {
-		width: 3em;
+		justify-content: space-evenly;
+		margin: 0 auto 50px auto;
+		max-width: 600px;
+
+		.blue-btn.transit {
+			width: 40%;
+
+			img { width: 70%; }
+		}
 	}
 	.view-issues-cont {
 		background-color: #D8D6D6;
-		padding: 3em 0em;
 
 		.blue-btn {
-			padding: 1em 3em;
+			display: block;
+			box-sizing: border-box;
+			width: 90%;
+			max-width: 300px;
+			padding: 0.5em;
+			margin: auto;
+			font-size: 1.7em;
 		}
 	}
 }
