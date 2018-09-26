@@ -13,33 +13,36 @@
 		flex-direction: column;
 		box-sizing: border-box; // makes padding and border cut from size
 
-		/**
-		 * Layout homepage with three vertical sections
-		 *
-		 * Hero 		- 45% height
-		 * Report 		- 35% height
-		 * View Issues 	- 20% Height
-		 */
-		&.hero { height: 45%; }
-		&.report-issues-cont { height: 35%; }
-		&.view-issues-cont { height: 20%; }
 	}
+
+	/**
+	 * Layout homepage with three vertical sections
+	 *
+	 * Hero 		- 45% height
+	 * Report 		- 35% height
+	 * View Issues 	- 20% Height
+	 */
+	.hero { height: 45%; }
+	.report-issues-cont { height: 35%; }
+	.view-issues-cont { height: 20%; }
 
 	.hero {
-		background-color: grey; // TEMP
+		background-image: url(asset-path('cta-overhead-blur-mobile.jpg'));
+		background-size: cover;
+		background-position: center top;
 
 		* { color: white; }
-		.logo { width: 3em; }
+		.logo { width: 3rem; }
 	}
 	.heading {
-		font-size: 1.5em;
-		margin: 0.5em 0em;
+		font-size: 1.5rem;
+		margin: 0.5em 0rem;
 	}
 	.simple-btn {
 		display: block;
 		width: 50%;
 		max-width: 250px;
-		padding: 0.4em 1em;
+		padding: 0.4em 1rem;
 		background: rgba(28, 28, 28, 0.75);
 		border: solid 2px white;
 		border-radius: 5px;
@@ -48,6 +51,7 @@
 	}
 	.blue-btn {
 		color: white;
+		box-sizing: border-box;
 		font-weight: bold;
 		background-color: #2D9CDB;
 		border: solid #757474 3px;
@@ -78,9 +82,36 @@
 			box-sizing: border-box;
 			width: 90%;
 			max-width: 300px;
-			padding: 0.5em;
+			padding: 0.5rem;
 			margin: auto;
-			font-size: 1.7em;
+			font-size: 1.7rem;
+		}
+	}
+}
+
+/**
+ * Desktop Styling
+ */
+@media (min-width: 800px) {
+	.homepage {
+		// Remove set heights, add padding
+		.hero, .report-issues-cont, .view-issues-cont { height: auto; }
+		.hero { padding: 12rem; }
+		.view-issues-cont { padding: 3rem; }
+
+		// Switch hero to unblurred image
+		.hero {
+			background-image: url(asset-path('cta-overhead.jpg'));
+			background-position: center 25%;
+		}
+		.heading { font-size: 2rem; }
+		.transit-btn-cont {
+			.blue-btn.transit {
+				width: 12rem;
+				height: 12rem;
+				font-size: 2rem;
+				padding-top: 0.5rem;
+			}
 		}
 	}
 }
