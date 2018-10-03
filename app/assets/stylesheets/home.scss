@@ -27,6 +27,7 @@
 	.view-issues-cont { height: 20%; }
 
 	.hero {
+		padding: 2rem 0.5rem;
 		background-image: url(asset-path('cta-overhead-blur-mobile.jpg'));
 		background-size: cover;
 		background-position: center top;
@@ -87,16 +88,13 @@
 			font-size: 1.7rem;
 		}
 	}
-}
 
-/**
- * Desktop Styling
- */
-@media (min-width: 800px) {
-	.homepage {
+	/**
+	 * Desktop/Mobile Landscape Styling
+	 */
+	@media (min-width: 800px), (max-height: 800px) {
 		// Remove set heights, add padding
 		.hero, .report-issues-cont, .view-issues-cont { height: auto; }
-		.hero { padding: 12rem; }
 		.view-issues-cont { padding: 3rem; }
 
 		// Switch hero to unblurred image
@@ -113,5 +111,12 @@
 				padding-top: 0.5rem;
 			}
 		}
+	}
+
+	/**
+	 * Desktop Styling
+	 */
+	@media (min-width: 800px) {
+		.hero { padding: 12rem 0rem; }
 	}
 }
