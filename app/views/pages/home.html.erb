@@ -1,0 +1,34 @@
+<div class="homepage">
+  <div class="hero">
+    <%= image_tag "caravan_logo.svg", class: "logo", alt: "Caravan Logo" %>
+
+    <div class="heading">
+      Report and View Public Transit Issues in
+      <% # TODO: Make this print a setting city name %>
+      <%= "Chicago" %>
+    </div>
+
+    <%= link_to('Learn More', page_path(:page_name => 'about'), :class => 'simple-btn') %>
+    <%= link_to('Sign In', new_user_session_path, :class => 'simple-btn') %>
+  </div>
+
+  <div class="report-issues-cont">
+    <div class="heading">Report An Issue</div>
+
+    <div class="transit-btn-cont">
+      <%= link_to(new_issue_path, class: 'blue-btn transit') do %>
+        <div>Bus</div>
+        <%= image_tag "bus_white.svg", alt: '' %>
+      <% end %>
+
+      <%= link_to(new_issue_path, class: 'blue-btn transit') do %>
+        <div>Train</div>
+        <%= image_tag "train_white.svg", alt: '' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="view-issues-cont">
+    <%= link_to('View Issues', view_issues_path, :class => 'blue-btn') %>
+  </div>
+</div>

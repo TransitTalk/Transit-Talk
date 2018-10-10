@@ -1,7 +1,7 @@
-@import "variables";
+@import 'variables';
 
 .headbar {
-	height: 50px;
+	height: $header-height;
 	width: 100%;
 	background-color: $theme-color;
 	text-align: center;
@@ -9,8 +9,8 @@
 
 .hamburger {
 	float: left;
-	height: 50px;
-	width: 50px;
+	height: $header-height;
+	width: $header-height;
 	background-image: url(asset-path('menu.svg'));
 	background-size: 100%;
 }
@@ -28,8 +28,8 @@
 .search {
 	float: right;
 	background-image: url(asset-path('search-white.svg'));
-	height: 50px;
-	width: 50px;
+	height: $header-height;
+	width: $header-height;
 	background-size: 80%;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -47,7 +47,7 @@
 /* HEADERS WITH TRANSPORTATION NAMES ("ROOSEVELT", "CERMAK-McCORMICK") */
 .locationList {
 
-	
+
 }
 
 .side-menu-overlay {
@@ -109,7 +109,7 @@
 			margin: auto;
 			font-size: 20px;
 		}
-	
+
 		input[type="submit"] {
 			box-shadow: none;
 			background: url(asset-path("search.svg"));

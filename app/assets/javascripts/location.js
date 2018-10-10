@@ -1,4 +1,5 @@
-if (!window.location.href.includes("?") && window.location.pathname == "/") {
+// Run geolocation if on the view issues page
+if (!window.location.href.includes("?") && window.location.pathname.includes("/view_issues")) {
     geol();
 }
 
