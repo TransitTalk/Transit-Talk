@@ -151,15 +151,22 @@ h6 {
 	}
 	.headbar {
 		height: auto;
+
 		a {
 			color: #fff;
 		}
+		.desktop-links {
+			padding: 10px 0px;
+		}
 		ul {
 			list-style: none;
+			margin: 0;
+
 			li {
 				display: inline;
 				border-left: solid white 1px;
 				padding-left: 5px;
+
 				&:first-of-type {
 					border-left: none;
 				}
