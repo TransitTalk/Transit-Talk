@@ -68,20 +68,24 @@
 	padding-left: 20px;
 	box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
 	z-index: 10;
+}
 
-	ul {
-		padding: 0px;
-		margin: 0px;
-		list-style: none;
+.header-links {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
 
-		li {
+	li {
+		color: white;
+		margin: 10px 0px;
+		font-size: 18px;
+
+		a {
+			text-decoration: none;
 			color: white;
-			margin: 10px 0px;
-			font-size: 18px;
 
-			a {
-				text-decoration: none;
-				color: white;
+			&:focus, &:hover {
+				text-decoration: underline;
 			}
 		}
 	}
@@ -147,30 +151,25 @@ h6 {
 
 /* Desktop */
 @media (min-width: 801px) {
-	.hamburger {
+	// Hide hamburger icon, menu, and menu overlay
+	.hamburger, .side-menu, .side-menu-overlay {
 		display: none;
 	}
 	.headbar {
+		text-align: left;
 		height: auto;
+		box-sizing: border-box;
+		padding: 0px 20px;
 
-		a {
-			color: #fff;
-		}
-		.desktop-links {
-			padding: 10px 0px;
-		}
-		ul {
-			list-style: none;
-			margin: 0;
+		.desktop-links { padding: 10px 0px; }
+		ul { display: flex; }
+		li {
+			border-left: solid #fff 1px;
+			padding: 0px 10px;
 
-			li {
-				display: inline;
-				border-left: solid white 1px;
-				padding-left: 5px;
-
-				&:first-of-type {
-					border-left: none;
-				}
+			&:first-of-type {
+				padding-left: 0px;
+				border-left: none;
 			}
 		}
 	}
