@@ -8,13 +8,13 @@
 <!-- Describe the tests you wrote, or manual testing you did, to ensure your changes are good -->
 
 
-#### Related Issue(s) or Specifications:
+### Related Issue(s) or Specifications:
 - 
 <!--- To automatically close related issue(s) on merge, put "Closes #<issue number>" in the list above -->
 
-#### Checklist:
+### Checklist:
 - [ ] Code follows code style of this project
 - [ ] Tests added to cover changes
 - [ ] All new and existing tests passing
 
-#### Questions / Additional Notes:
+### Questions / Additional Notes:
