@@ -1,24 +1,20 @@
-<!--- Title of pull request should be formatted as closes #issue_number (eg. closes #3) -->
-<!--- General summary of changes in the Title above -->
+<!--- Title of pull request should be formatted as closes #issue_number - description (eg. Closes #3 - Fixes things ) -->
 
 ### Description of Changes:
--
-*
-*
-*
+<!-- A description that explains the What, Why, and How of your changes -->
 
-### Tests Added:
-*
-*
 
-#### Reference Related Issue(s) or Spec Requirement:
-- #.
-<!--- To automatically close related issue(s) on merge, put "closes #<issue number>" in the Title of this request -->
+### How This Was Tested:
+<!-- Describe the tests you wrote, or manual testing you did, to ensure your changes are good -->
+
+
+#### Related Issue(s) or Specifications:
+- 
+<!--- To automatically close related issue(s) on merge, put "Closes #<issue number>" in the list above -->
 
 #### Checklist:
 - [ ] Code follows code style of this project
 - [ ] Tests added to cover changes
 - [ ] All new and existing tests passing
-#
 
 #### Questions / Additional Notes:
