@@ -15,7 +15,6 @@
 	background-size: 100%;
 }
 
-
 /* Styling for main header with project name and transportation line */
 .title {
 	text-align: center;
@@ -47,7 +46,6 @@
 /* HEADERS WITH TRANSPORTATION NAMES ("ROOSEVELT", "CERMAK-McCORMICK") */
 .locationList {
 
-
 }
 
 .side-menu-overlay {
@@ -70,18 +68,25 @@
 	padding-left: 20px;
 	box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
 	z-index: 10;
+}
 
-	ul {
-		padding: 0px;
-		margin: 0px;
-		list-style: none;
+.header-links {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
 
-		li {
+	li {
+		color: white;
+		margin: 10px 0px;
+		font-size: 18px;
+
+		a {
+			text-decoration: none;
 			color: white;
-			margin: 10px 0px;
-			font-size: 18px;
 
-			a { text-decoration: none; color: white; }
+			&:focus, &:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 }
@@ -90,7 +95,7 @@
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,0.5);
+	background: rgba(0, 0, 0, 0.5);
 	top: 0;
 	left: 0;
 	z-index: 5;
@@ -124,8 +129,48 @@
 	}
 }
 
-h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+}
 
 * {
 	color: #535353;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+	.desktop-links {
+		display: none;
+	}
+}
+
+/* Desktop */
+@media (min-width: 801px) {
+	// Hide hamburger icon, menu, and menu overlay
+	.hamburger, .side-menu, .side-menu-overlay {
+		display: none;
+	}
+	.headbar {
+		text-align: left;
+		height: auto;
+		box-sizing: border-box;
+		padding: 0px 20px;
+
+		.desktop-links { padding: 10px 0px; }
+		ul { display: flex; }
+		li {
+			border-left: solid #fff 1px;
+			padding: 0px 10px;
+
+			&:first-of-type {
+				padding-left: 0px;
+				border-left: none;
+			}
+		}
+	}
 }
