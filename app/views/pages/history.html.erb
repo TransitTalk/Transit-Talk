@@ -5,7 +5,7 @@
       <div>You have <%= pluralize(current_user.issues.length, 'issue')  %>:</div>
       <%= render 'issues/show_list', issues: current_user.issues  %>
     <% else %>
-      <em>You have not reported any issues yet!</em>
+      <em class="placeholder">You have not reported any issues yet!</em>
     <% end %>
   <% else %>
     <div>Login to see your reported issues.</div>

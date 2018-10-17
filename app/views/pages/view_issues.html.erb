@@ -13,7 +13,7 @@
                     <%= render "stops/show_with_issues", stop: stop %>
                 <% end %>
             <% else %>
-                <h3>There seem to be no nearby stops!</h3>
+                <em class="placeholder">There seem to be no nearby stops!</em>
             <% end %>
         <% else %>
             <h3>We can't show you nearby stops without location services allowed!</h3>
@@ -21,7 +21,6 @@
     </div>
 
     <% if current_user %>
-
         <h2>
         	<%= image_tag "star.svg", width: "30px", class: "star" %>
         	Favorite Stops
@@ -31,7 +30,7 @@
                 <%= render "stops/show_with_issues", stop: stop %>
             <% end %>
             <% if  current_user.favorites.empty? %>
-                You have no favorite stops! Go to <%= link_to "All Lines", lines_path %> or search for stops to favorite them.
+                <em class="placeholder">You have no favorite stops! Go to <%= link_to "All Lines", lines_path %> or search for stops to favorite them.</em>
             <% end %>
         </div>
     <% end %>
