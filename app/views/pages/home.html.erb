@@ -4,8 +4,7 @@
 
     <div class="heading">
       Report and View Public Transit Issues in
-      <% # TODO: Make this print a setting city name %>
-      <%= "Chicago" %>
+      <%= Setting.city_name %>
     </div>
 
     <%= link_to('Learn More', page_path(:page_name => 'about'), :class => 'simple-btn') %>

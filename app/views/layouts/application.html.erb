@@ -27,10 +27,14 @@
   	<%= render "shared/header" %>
 
     <% if notice %>
-      <p class="notice"><%= notice %></p>
+      <div class="global-msg -notice">
+        <%= notice %>
+      </div>
     <% end %>
     <% if alert %>
-      <p class="alert"><%= alert %></p>
+      <div class="global-msg -alert">
+        <%= alert %>
+      </div>
     <% end %>
 
     <% if current_user %>

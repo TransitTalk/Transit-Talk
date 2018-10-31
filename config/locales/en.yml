@@ -20,9 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   settings:
     attributes:
+      city_name:
+        name: "City/Municipality Name"
       site_name:
         name: "Site Name"
       theme_color:

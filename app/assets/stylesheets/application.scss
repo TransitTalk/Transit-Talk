@@ -30,6 +30,17 @@ a {
 	color: #0091ff;
 }
 
+// Style global messages
+.global-msg {
+	padding: 1rem;
+	color: #ffffff;
+
+	// Negative messages, like you are already signed in
+	&.-alert { background-color: #f44336; }
+	// Positive messages, like you've signed in
+	&.-notice { background-color: #4caf50; }
+}
+
 body > a > .create-issue {
 	position: fixed;
 	height: 40px;
