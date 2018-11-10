@@ -1,6 +1,5 @@
 This project was made possible through the hard work of many people. Our leadership team is composed of:
 * Jannie Lung
-* Ranjani Prabhakar
 * Soren Spicknall
 * Viktor Koves
 
@@ -17,6 +16,7 @@ Our non-technical teams have also included many valued contributors over time, i
 * Brent Wilson
 * Jeff Zoline
 * Nadeen Siddiqui
+* Ranjani Prabhakar
 
 Two mentors also made the original version of this project possible:
 * Marc-Andre Lafortune
