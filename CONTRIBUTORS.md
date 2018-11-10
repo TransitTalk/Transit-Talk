@@ -16,6 +16,7 @@ Our non-technical teams have also included many valued contributors over time, i
 * Steven Vance
 * Brent Wilson
 * Jeff Zoline
+* Nadeen Siddiqui
 
 Two mentors also made the original version of this project possible:
 * Marc-Andre Lafortune
