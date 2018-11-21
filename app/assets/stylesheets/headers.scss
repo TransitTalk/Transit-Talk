@@ -5,6 +5,12 @@
 	width: 100%;
 	background-color: $theme-color;
 	text-align: center;
+
+	.header-inner {
+		margin: auto;
+		max-width: $max-width-page;
+		padding: 0 $page-padding;
+	}
 }
 
 .hamburger {
