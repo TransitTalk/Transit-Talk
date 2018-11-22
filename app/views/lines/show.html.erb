@@ -1,26 +1,30 @@
 <div class="line-cover">
 	<h3>
-		<%= @line.long_name %>
-		<% if @line.short_name %>
-			(<%= @line.short_name %>)
-		<% end %>
+		<div class="page-container">
+			<%= @line.long_name %>
+			<% if @line.short_name %>
+				(<%= @line.short_name %>)
+			<% end %>
+		</div>
 	</h3>
 </div>
-<ul class="stop-list">
-	<% @line.stops.each do |stop| %>
-		<li class="stop">
-			<div class="line-mark">
-				<% if @line.color %>
-					<div class="mark-box" style="background: #<%= @line.color %>"></div>
-					<div class="mark-circle" style="border-color: #<%= @line.color %>"></div>
-				<% else %>
-					<div class="mark-box"></div>
-					<div class="mark-circle"></div>
-				<% end %>
-			</div>
-			<%= render "stops/show", stop: stop, current_line: @line %>
-		</li>
-	<% end %>
-</ul>
+<div class="page-container">
+	<ul class="stop-list">
+		<% @line.stops.each do |stop| %>
+			<li class="stop">
+				<div class="line-mark">
+					<% if @line.color %>
+						<div class="mark-box" style="background: #<%= @line.color %>"></div>
+						<div class="mark-circle" style="border-color: #<%= @line.color %>"></div>
+					<% else %>
+						<div class="mark-box"></div>
+						<div class="mark-circle"></div>
+					<% end %>
+				</div>
+				<%= render "stops/show", stop: stop, current_line: @line %>
+			</li>
+		<% end %>
+	</ul>
+</div>
 
 <%= new_issue_button(line: @line) %>

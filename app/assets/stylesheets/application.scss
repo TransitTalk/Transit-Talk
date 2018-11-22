@@ -22,7 +22,11 @@ body {
 	font-size: 1.2em;
 }
 .page-container {
-	margin: 0px 15px;
+	max-width: $max-width-page;
+	margin: auto;
+	padding: 0px $page-padding;
+
+	&.-thin { max-width: 600px; }
 }
 
 a {
@@ -33,12 +37,12 @@ a {
 // Style global messages
 .global-msg {
 	padding: 1rem;
-	color: #ffffff;
 
 	// Negative messages, like you are already signed in
 	&.-alert { background-color: #f44336; }
 	// Positive messages, like you've signed in
 	&.-notice { background-color: #4caf50; }
+	* { color: #ffffff; }
 }
 
 body > a > .create-issue {

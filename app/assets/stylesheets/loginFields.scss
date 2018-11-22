@@ -1,75 +1,24 @@
-.field-login {
-
-	height: 60px;
+input#user_email, input#user_password, input#user_password_confirmation {
+	box-sizing: border-box;
 	width: 100%;
-	background-color: white;
-	padding-bottom:20px;
-	padding-top:14px;
-
-}
-
-input#user_email, input#user_password, input#user_password_confirmation{
-
-	height: 24px;
-	width: 100%;
-	/*outline-style: none;*/
-	border: 1px #777 solid;
+	max-width: 600px;
+	padding: 10px;
+	cursor: auto;
+	font-size: 1rem;
+	border-radius: 5px;
+	border: 1px #d6d6d6 solid;
 	box-shadow: none;
-	margin-top:14px;
-	margin-bottom:4px;
+	margin-top: 15px;
+	margin-bottom: 5px;
 	background-color: #f1f1f1;
-
-}
-
-#devise-title {
-	font-size:24px;
-	/*padding:10px;*/
-	/*padding-top:10px;*/
-	/*float:left;*/
-	margin:0;
-	/*padding-left: 5%;*/
-	display: inline-block;
-	padding:0px;
-}
-
-.remember {
-	float:left;
- }
-
-.field-login label {
-	font-size: 15px;
-	float: right;
-	padding-top:10px;
-	display:inline-block;
-}
-
-
-
-
-label.check-label {
-
-	float: left;
-}
-
-form.new_user {
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
-#new_user > div:nth-child(5) {
-	height: 30px;
-}
-
-#devise-title {
-	padding-left: 5%;
 }
 
 .login-link {
 	text-decoration: none;
-	color:#6cbfff;
+	color: #0076d1;
+
+	&:hover, &:focus { text-decoration: underline; }
 }
-
-
 
 #signin-options {
 	padding-top:15px;
