@@ -46,7 +46,7 @@ In the future we hope to expand the functionality of Caravan by:
 <br>
 
 ## BUILD/INSTALLATION INSTRUCTIONS
-  * Ruby on Rails v2.3.0 and Other Packages
+  * Ruby on Rails v2.4.4 and Other Packages
     * All necessary packages for running this software are provided in the GEMFILE included in the source code. Use the command:
 
       ```

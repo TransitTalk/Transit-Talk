@@ -12,7 +12,7 @@ Metrics/LineLength:
   Max: 100
 
 AllCops:
-  TargetRubyVersion: 2.3.0
+  TargetRubyVersion: 2.4.4
   Exclude:
   - 'bin/**/*'
   - 'config/**/*'

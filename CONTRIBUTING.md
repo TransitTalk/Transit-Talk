@@ -24,7 +24,7 @@ To test that your install of this platform is correct on the data that we are cu
 
 ## Development environment details
 
-Original development occurred on Canonical's [Ubuntu](https://www.ubuntu.com/) 16.04 LTS, and packages used for creating the platform were oriented around support for this OS. The project runs using Ruby (2.3.0) on Rails (5.0.1), and is typically evaluated with a simple `rails -s` to run a local server.
+Original development occurred on Canonical's [Ubuntu](https://www.ubuntu.com/) 16.04 LTS, and packages used for creating the platform were oriented around support for this OS. The project runs using Ruby (2.4.4) on Rails (5.0.1), and is typically evaluated with a simple `rails -s` to run a local server.
 
 As we continue initiation phases of this project, we'll have more details to share here. Check back soon.
 
