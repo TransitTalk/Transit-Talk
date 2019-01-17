@@ -1,9 +1,9 @@
-# Caravan
+#TransitTalk
 
 [![Build Status][build-status-icon]][build-status]
 [![Coverage Status][coverage-status-icon]][coverage-status]
 
-Caravan is a crowd-sourced issue reporting platform for public transit systems. It's a friendly place for transit riders to share information about system delays, vehicle cleanliness, and other common challenges of mass transit in real time, making each report visible to every other rider of that system. Caravan augments or replaces reporting tools maintained by transit administrators, collecting rider feedback while empowering riders to make daily decisions based on reports from other riders. Behind the scenes, Caravan is an open-source framework that can be implemented easily for any transit system that uses GTFS-formatted information. Presently, Caravan is able to:
+Transit Talk is a crowd-sourced issue reporting platform for public transit systems. It's a friendly place for transit riders to share information about system delays, vehicle cleanliness, and other common challenges of mass transit in real time, making each report visible to every other rider of that system. Transit Talk augments or replaces reporting tools maintained by transit administrators, collecting rider feedback while empowering riders to make daily decisions based on reports from other riders. Behind the scenes, Transit Talk is an open-source framework that can be implemented easily for any transit system that uses GTFS-formatted information. Presently, Transit Talk is able to:
 
   * Process GTFS-formatted data and output accurate details regarding routes and stations.
 
@@ -15,7 +15,7 @@ Caravan is a crowd-sourced issue reporting platform for public transit systems. 
 
 <br>
 
-In the future we hope to expand the functionality of Caravan by:
+In the future we hope to expand the functionality of Transit Talk by:
 
   * Analyzing issue patterns and their effect on a rider's commute in order to suggest alternative routes that improve efficiency.
 
@@ -27,9 +27,9 @@ In the future we hope to expand the functionality of Caravan by:
 
 <br>
 
-## Using Caravan
+## Using Transit Talk
 
- Caravan's user interaction occurs through a mobile-first website that allows transit riders to view recently reported issues at nearby stations and on nearby vehicles.
+ Transit Talk's user interaction occurs through a mobile-first website that allows transit riders to view recently reported issues at nearby stations and on nearby vehicles.
 
  [//]: # (Homescreen w/o account photo TBD)
 
@@ -65,7 +65,7 @@ In the future we hope to expand the functionality of Caravan by:
     * Connect to Localhost:3000 on your browser
 
 ## Contributor Guide
-To learn more about how to contribute to Caravan's development, check out [our contribution guidelines][contributing].
+To learn more about how to contribute to Transit Talk's development, check out [our contribution guidelines][contributing].
 
 ### Adding New Modular Settings
 To add a new modular setting to the settings panel (`/settings`), add it as a default in `config/app.yml` and then add the display name of the attribute in
@@ -81,7 +81,7 @@ You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
-## Creating Your Own Caravan App
+## Creating Your Own Transit Talk App
 
 ### Loading Data from transit.land
 
