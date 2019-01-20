@@ -103,8 +103,8 @@ Download the file using wget - `wget '_data_url_'`
 
 Load in the data using the Rake task - `rake transit:set_up_transit GTFS_FILE=_path_to_data_file_`
 
-### Customizing Your Caravan App
-We use [rails-settings-ui](https://github.com/accessd/rails-settings-ui) (a UI wrapper for [rails-settings-cached](https://github.com/huacnlee/rails-settings-cached)), which lets you tweak certain global setttings for your Caravan app.
+### Customizing Your Transit Talk App
+We use [rails-settings-ui](https://github.com/accessd/rails-settings-ui) (a UI wrapper for [rails-settings-cached](https://github.com/huacnlee/rails-settings-cached)), which lets you tweak certain global setttings for your Transit Talk app.
 
 To change your settings, go to http://your-app-url/settings. Once your settings are updated, you should see the changes reflected immediately (if they are non-styling changes) or upon the next server restart. If you need to manually rebuild to test your settings: close your server, run `rm -fr tmp/cache` to clear built Sass files, and rerun your server.
 
@@ -112,6 +112,6 @@ To change your settings, go to http://your-app-url/settings. Once your settings 
 [build-status]: https://travis-ci.org/CaravanTransit/Caravan-App
 [coverage-status-icon]: https://coveralls.io/repos/github/CaravanTransit/Caravan-App/badge.svg?branch=master
 [coverage-status]: https://coveralls.io/github/CaravanTransit/Caravan-App?branch=master
-[issues]: https://github.com/CaravanTransit/Caravan-App/issues
-[contributing]: https://github.com/CaravanTransit/Caravan-App/blob/master/CONTRIBUTING.md
-[contributors]: https://github.com/CaravanTransit/Caravan-App/blob/master/CONTRIBUTORS.md
+[issues]: https://github.com/CaravanTransit/Transit-Talk/issues
+[contributing]: https://github.com/CaravanTransit/Transit-Talk/blob/master/CONTRIBUTING.md
+[contributors]: https://github.com/CaravanTransit/Transit-Talk/blob/master/CONTRIBUTORS.md
