@@ -1,4 +1,4 @@
-## Contributing to Caravan
+## Contributing to Transit Talk
 
 Thanks for being here! Our project has grown out of a regional hackathon and is now part of Chi Hack Night, a weekly civic tech meeting.
 
@@ -77,6 +77,6 @@ We value every bit of energy that is devoted to this project. If you have contri
 ## Where can I ask for help?
 The wiki is specifically there to encourage discussion among community members. If you have any problems that Google can't solve, feel free to post them on the wiki.
 
-[issues]: https://github.com/CaravanTransit/Caravan-App/issues
-[wiki]: https://github.com/CaravanTransit/Caravan-App/wiki
-[contributors]: https://github.com/CaravanTransit/Caravan-App/blob/master/CONTRIBUTORS.md
+[issues]: https://github.com/CaravanTransit/Transit-Talk/issues
+[wiki]: https://github.com/CaravanTransit/Transit-Talk/wiki
+[contributors]: https://github.com/CaravanTransit/Transit-Talk/blob/master/CONTRIBUTORS.md
