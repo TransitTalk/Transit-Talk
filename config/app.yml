@@ -2,7 +2,7 @@
 
 # These are the defaults for the site settings
 defaults: &defaults
-  site_name: "Caravan"
+  site_name: "Transit Talk"
   theme_color: "#58b7ff"
   city_name: "Our City"
 
