@@ -1,4 +1,4 @@
-#TransitTalk
+## Transit Talk
 
 [![Build Status][build-status-icon]][build-status]
 [![Coverage Status][coverage-status-icon]][coverage-status]
