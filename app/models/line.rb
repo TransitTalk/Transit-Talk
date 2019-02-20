@@ -29,4 +29,14 @@ class Line < ApplicationRecord
       system_type == 3
     end
   end
+
+  # GTFS reference says that a "route_type" of 0 or 1 indicates a train line
+  # https://developers.google.com/transit/gtfs/reference/#routestxt
+  def train?
+    if system_type.nil?
+      vehicle_type == "tram" || vehicle_type == "metro"
+    else
+      system_type == 0 || system_type == 1
+    end
+  end
 end

@@ -46,4 +46,30 @@ class LineTest < ActiveSupport::TestCase
     line = Line.new(vehicle_type: "tram")
     refute line.bus?
   end
+
+  test "train? returns true if system type is tram or metro" do
+    line = Line.new(system_type: 0)
+    assert line.train?
+
+    line = Line.new(system_type: 1)
+    assert line.train?
+  end
+
+  test "train? returns true if vehicle type is tram or metro" do
+    line = Line.new(vehicle_type: "tram")
+    assert line.train?
+
+    line = Line.new(vehicle_type: "metro")
+    assert line.train?
+  end
+
+  test "train? returns false if system type is not tram or metro" do
+    line = Line.new(system_type: 3, vehicle_type: "tram")
+    refute line.train?
+  end
+
+  test "train? returns false if system type is nil and vehicle type is wrong" do
+    line = Line.new(vehicle_type: "bus")
+    refute line.train?
+  end
 end
