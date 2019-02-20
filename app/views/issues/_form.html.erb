@@ -27,9 +27,11 @@
     ) %>
   </div>
 
-  <div class="field-issue">
-    <%= f.label :types %><br>
-    <%= f.text_field :types %>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <%= f.label 'Issue Category' %><br>
+        <%= f.select(:types,  ['Delays', 'Cleanliness', 'Crowding', 'Safety', 'Accessibility', 'Staff', 'Other'], { :prompt => "Select a category"}, {:class => 'form-control'}) %>
+    </div>
   </div>
 
   <div class="field-issue">
