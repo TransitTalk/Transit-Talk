@@ -72,4 +72,10 @@ class LineTest < ActiveSupport::TestCase
     line = Line.new(vehicle_type: "bus")
     refute line.train?
   end
+
+  test "line with no vehicle or system type is not bus? or train?" do
+    line = Line.new
+    refute line.bus?
+    refute line.train?
+  end
 end
