@@ -39,12 +39,12 @@ class LineTest < ActiveSupport::TestCase
 
   test "bus? returns false if system type is not bus type" do
     line = Line.new(system_type: 1, vehicle_type: "bus")
-    refute line.bus?
+    assert_not line.bus?
   end
 
   test "bus? returns false if system type is nil and vehicle type is not bus" do
     line = Line.new(vehicle_type: "tram")
-    refute line.bus?
+    assert_not line.bus?
   end
 
   test "train? returns true if system type is tram or metro" do
@@ -65,17 +65,17 @@ class LineTest < ActiveSupport::TestCase
 
   test "train? returns false if system type is not tram or metro" do
     line = Line.new(system_type: 3, vehicle_type: "tram")
-    refute line.train?
+    assert_not line.train?
   end
 
   test "train? returns false if system type is nil and vehicle type is wrong" do
     line = Line.new(vehicle_type: "bus")
-    refute line.train?
+    assert_not line.train?
   end
 
   test "line with no vehicle or system type is not bus? or train?" do
     line = Line.new
-    refute line.bus?
-    refute line.train?
+    assert_not line.bus?
+    assert_not line.train?
   end
 end
