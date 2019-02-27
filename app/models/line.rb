@@ -19,4 +19,24 @@ class Line < ApplicationRecord
   def short_name
     route_long_name != name ? name : nil
   end
+
+  # GTFS reference says that a "route_type" of 3 indicates a bus line
+  # https://developers.google.com/transit/gtfs/reference/#routestxt
+  def bus?
+    if system_type.nil?     # Prefer system_type if present
+      vehicle_type == "bus"
+    else
+      system_type == 3
+    end
+  end
+
+  # GTFS reference says that a "route_type" of 0 or 1 indicates a train line
+  # https://developers.google.com/transit/gtfs/reference/#routestxt
+  def train?
+    if system_type.nil?
+      vehicle_type == "tram" || vehicle_type == "metro"
+    else
+      system_type == 0 || system_type == 1
+    end
+  end
 end
