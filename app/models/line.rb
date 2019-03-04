@@ -45,6 +45,16 @@ class Line < ApplicationRecord
     end
   end
 
+  def line_type
+    if train?
+      "train"
+    elsif bus?
+      "bus"
+    else
+      nil
+    end
+  end
+
   # Query for bus/train lines.
   # line_type can be "train" or "bus".
   def self.of_line_type(line_type)

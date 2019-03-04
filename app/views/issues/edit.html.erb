@@ -1,6 +1,6 @@
 <h1>Editing Issue</h1>
 
-<%= render 'form', issue: @issue %>
+<%= render 'form', issue: @issue, line_type: @issue.line&.line_type %>
 
 <%= link_to 'Show', @issue %> |
 <%= link_to 'Back', issues_path %>
