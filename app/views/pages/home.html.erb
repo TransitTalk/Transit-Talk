@@ -15,12 +15,12 @@
     <div class="heading">Report An Issue</div>
 
     <div class="transit-btn-cont">
-      <%= link_to(new_issue_path, class: 'blue-btn transit') do %>
+      <%= link_to(new_issue_path(line_type: 'bus'), class: 'blue-btn transit') do %>
         <div>Bus</div>
         <%= image_tag "bus_white.svg", alt: '' %>
       <% end %>
 
-      <%= link_to(new_issue_path, class: 'blue-btn transit') do %>
+      <%= link_to(new_issue_path(line_type: 'train'), class: 'blue-btn transit') do %>
         <div>Train</div>
         <%= image_tag "train_white.svg", alt: '' %>
       <% end %>
