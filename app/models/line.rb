@@ -60,12 +60,12 @@ class Line < ApplicationRecord
   def self.of_line_type(line_type)
     if line_type == "train"
       Line.where(system_type: [TRAM_SYSTEM_TYPE, METRO_SYSTEM_TYPE])
-          .or(Line.where(vehicle_type: ["tram", "metro"]))
-          .order(:name)
+        .or(Line.where(vehicle_type: ["tram", "metro"]))
+        .order(:name)
     elsif line_type == "bus"
       Line.where(system_type: BUS_SYSTEM_TYPE)
-          .or(Line.where(vehicle_type: "bus"))
-          .order(:name)
+        .or(Line.where(vehicle_type: "bus"))
+        .order(:name)
     else
       Line.order(:name)
     end
