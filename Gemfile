@@ -20,6 +20,9 @@ gem 'rails', '~> 5.0.2'
 group :development, :test do
 	# SQLite, only on local
 	gem 'sqlite3'
+
+  # Annotate model files with db schema
+  gem 'annotate'
 end
 
 # Use devise here for db management
