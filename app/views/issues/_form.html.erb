@@ -1,3 +1,4 @@
+<% line_type = nil if local_assigns[:line_type].nil? %>
 <%= form_for(issue) do |f| %>
   <% if issue.errors.any? %>
     <div id="error_explanation">
@@ -13,7 +14,7 @@
 
   <div class="field-issue">
     <%= f.label 'Line' %><br>
-    <%= f.collection_select(:line_onestop_id, Line.order('vehicle_type DESC, name'), :id, :route_long_name,
+    <%= f.collection_select(:line_onestop_id, Line.of_line_type(line_type), :id, :route_long_name,
       {prompt: 'Select Line'},
       {:class => "new-issue-line"}
     ) %>

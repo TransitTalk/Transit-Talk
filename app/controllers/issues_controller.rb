@@ -19,6 +19,8 @@ class IssuesController < ApplicationController
     unless user_signed_in?
       redirect_to new_user_session_path
     end
+
+    @line_type = params[:line_type]
     @issue = Issue.new(stop_onestop_id: params[:stop_id], line_onestop_id: params[:line_id])
   end
 

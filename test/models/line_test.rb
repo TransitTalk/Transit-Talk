@@ -3,6 +3,15 @@
 require "test_helper"
 
 class LineTest < ActiveSupport::TestCase
+  setup do
+    Line.create(name: "RouteShort")
+    Line.create(name: "RouteShort", vehicle_type: "bus")
+    Line.create(name: "RouteShort", vehicle_type: "train")
+    Line.create(name: "RouteShort", system_type: Line::TRAM_SYSTEM_TYPE)
+    Line.create(name: "RouteShort", system_type: Line::METRO_SYSTEM_TYPE)
+    Line.create(name: "RouteShort", system_type: Line::BUS_SYSTEM_TYPE)
+  end
+
   test "returns proper long name" do
     route_long_name = "RouteLong"
     route_short_name = "RouteShort"
@@ -33,12 +42,12 @@ class LineTest < ActiveSupport::TestCase
     line = Line.new(vehicle_type: "bus")
     assert line.bus?
 
-    line = Line.new(system_type: 3)
+    line = Line.new(system_type: Line::BUS_SYSTEM_TYPE)
     assert line.bus?
   end
 
   test "bus? returns false if system type is not bus type" do
-    line = Line.new(system_type: 1, vehicle_type: "bus")
+    line = Line.new(system_type: Line::METRO_SYSTEM_TYPE, vehicle_type: "bus")
     assert_not line.bus?
   end
 
@@ -48,10 +57,10 @@ class LineTest < ActiveSupport::TestCase
   end
 
   test "train? returns true if system type is tram or metro" do
-    line = Line.new(system_type: 0)
+    line = Line.new(system_type: Line::TRAM_SYSTEM_TYPE)
     assert line.train?
 
-    line = Line.new(system_type: 1)
+    line = Line.new(system_type: Line::METRO_SYSTEM_TYPE)
     assert line.train?
   end
 
@@ -64,7 +73,7 @@ class LineTest < ActiveSupport::TestCase
   end
 
   test "train? returns false if system type is not tram or metro" do
-    line = Line.new(system_type: 3, vehicle_type: "tram")
+    line = Line.new(system_type: Line::BUS_SYSTEM_TYPE, vehicle_type: "tram")
     assert_not line.train?
   end
 
@@ -77,5 +86,24 @@ class LineTest < ActiveSupport::TestCase
     line = Line.new
     assert_not line.bus?
     assert_not line.train?
+  end
+
+  test "of_line_type(bus) returns all bus lines" do
+    lines = Line.of_line_type("bus")
+    assert_not lines.empty?
+    assert lines.all?(&:bus?)
+  end
+
+  test "of_line_type(train) returns all train lines" do
+    lines = Line.of_line_type("train")
+    assert_not lines.empty?
+    assert lines.all?(&:train?)
+  end
+
+  test "of_line_type(nil) returns all lines" do
+    line_count = Line.count
+    lines = Line.of_line_type(nil)
+    assert_not lines.empty?
+    assert_equal line_count, lines.count
   end
 end

@@ -8,6 +8,11 @@ class Line < ApplicationRecord
 
   self.primary_key = "onestop_id"
 
+  # GTFS route types
+  TRAM_SYSTEM_TYPE = 0
+  METRO_SYSTEM_TYPE = 1
+  BUS_SYSTEM_TYPE = 3
+
   # Returns the longest available name
   def long_name
     route_long_name ? route_long_name : name
@@ -26,7 +31,7 @@ class Line < ApplicationRecord
     if system_type.nil?     # Prefer system_type if present
       vehicle_type == "bus"
     else
-      system_type == 3
+      system_type == BUS_SYSTEM_TYPE
     end
   end
 
@@ -36,7 +41,33 @@ class Line < ApplicationRecord
     if system_type.nil?
       vehicle_type == "tram" || vehicle_type == "metro"
     else
-      system_type == 0 || system_type == 1
+      system_type == TRAM_SYSTEM_TYPE || system_type == METRO_SYSTEM_TYPE
+    end
+  end
+
+  def line_type
+    if train?
+      "train"
+    elsif bus?
+      "bus"
+    else
+      nil
+    end
+  end
+
+  # Query for bus/train lines.
+  # line_type can be "train" or "bus".
+  def self.of_line_type(line_type)
+    if line_type == "train"
+      Line.where(system_type: [TRAM_SYSTEM_TYPE, METRO_SYSTEM_TYPE])
+        .or(Line.where(vehicle_type: ["tram", "metro"]))
+        .order(:name)
+    elsif line_type == "bus"
+      Line.where(system_type: BUS_SYSTEM_TYPE)
+        .or(Line.where(vehicle_type: "bus"))
+        .order(:name)
+    else
+      Line.order(:name)
     end
   end
 end
