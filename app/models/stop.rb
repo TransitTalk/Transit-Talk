@@ -1,5 +1,19 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: stops
+#
+#  id           :integer          not null
+#  api_id       :string
+#  name         :string
+#  longitude    :decimal(12, 8)
+#  lattitude    :decimal(12, 8)
+#  twin_stop_id :integer
+#  onestop_id   :string           primary key
+#
+
+
 class Stop < ApplicationRecord
   has_many :issues, foreign_key: "stop_onestop_id"
   has_and_belongs_to_many :lines,

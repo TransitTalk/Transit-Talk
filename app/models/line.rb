@@ -1,5 +1,21 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: lines
+#
+#  id                    :integer          not null
+#  route_long_name       :string
+#  name                  :string
+#  system_type           :integer
+#  color                 :string
+#  onestop_id            :string           primary key
+#  vehicle_type          :string
+#  wheelchair_accessible :string
+#  bikes_allowed         :string
+#
+
+
 class Line < ApplicationRecord
   has_many :issues, foreign_key: "line_onestop_id"
   has_and_belongs_to_many :stops,
