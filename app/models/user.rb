@@ -27,4 +27,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :issues
   has_and_belongs_to_many :favorites, class_name: "Stop", association_foreign_key: "stop_onestop_id"
+
+  def self.ban_user!(email)
+    u = User.find_by_email(email)
+    if u.present?
+      u.is_banned = true
+      u.save
+    end
+  end
 end
