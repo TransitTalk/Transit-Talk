@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -18,8 +17,8 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  admin                  :boolean
+#  is_banned              :boolean          default(FALSE), not null
 #
-
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
