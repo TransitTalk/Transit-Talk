@@ -17,6 +17,9 @@
 !/log/.keep
 !/tmp/.keep
 
+# ignore intellij related
+.idea/*
+
 # Ignore Byebug command history file.
 .byebug_history
 
