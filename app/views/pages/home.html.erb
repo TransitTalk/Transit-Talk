@@ -1,23 +1,16 @@
-<div class="homepage">
-  <div class="hero">
-    <!-- # <%= image_tag "caravan_logo.svg", class: "logo", alt: "Transit Talk Logo" %> -->
+<div class="homepage column centered">
+  <h2 class="heading">
+    Report and View Public Transit Issues in <%= Setting.city_name %>
+  </h2>
 
-    <div class="heading">
-      Report and View Public Transit Issues in
-      <%= Setting.city_name %>
-    </div>
+  <%= link_to('View Issues', view_issues_path, :class => 'brown-btn') %>
 
-    <div class="view-issues-cont">
-      <%= link_to('View Issues', view_issues_path, :class => 'brown-btn') %>
-    </div>
-
-<!--     <%= link_to('Learn More', page_path(:page_name => 'about'), :class => 'simple-btn') %>
-    <%= link_to('Sign In', new_user_session_path, :class => 'simple-btn') %> -->
-  </div>
-  <div class="green-separator"></div>
+  <!--     <%= link_to('Learn More', page_path(:page_name => 'about'), :class => 'simple-btn') %>
+  <%= link_to('Sign In', new_user_session_path, :class => 'simple-btn') %> -->
+  <div class="green-separator separator"></div>
 
   <div class="report-issues-cont">
-    <div class="heading">Report an Issue</div>
+    <h3 class="heading">Report an Issue</h3>
 
     <div class="transit-btn-cont">
       <%= link_to(new_issue_path(line_type: 'bus'), class: 'blue-btn transit') do %>
@@ -26,17 +19,11 @@
       <% end %>
 
       <%= link_to(new_issue_path(line_type: 'train'), class: 'blue-btn transit') do %>
-        <div style="color: white">Train</div>
+        <div>Train</div>
         <%= image_tag "train_white.svg", alt: '' %>
       <% end %>
     </div>
   </div>
-  <div class="red-separator"></div>
-
-  <div class="select-routes-cont">
-      <%= link_to('Select Routes', view_issues_path, :class => 'brown-btn') %>
-
-  <!-- <div class="view-issues-cont">
-    <%= link_to('View Issues', view_issues_path, :class => 'blue-btn') %>
-  </div> -->
+  <div class="red-separator separator"></div>
+  <%= link_to('Select Routes', view_issues_path, :class => 'brown-btn') %>
 </div>

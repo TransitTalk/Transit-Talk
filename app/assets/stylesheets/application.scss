@@ -1,18 +1,33 @@
 @import 'normalize';
 
 @import 'variables';
-@import 'dashboard.scss';
-@import 'forms.scss';
-@import 'headers.scss';
-@import 'home.scss';
-@import 'lines.scss';
-@import 'loginFields.scss';
+@import 'dashboard';
+@import 'forms';
+@import 'headers';
+@import 'home';
+@import 'lines';
+@import 'loginFields';
+
+* *:before *:after {
+	box-sizing: border-box;
+}
 
 body {
 	font-family: 'Open Sans', sans-serif;
-	margin: 0px;
-	font-size: 1.2em;
+	margin: 0;
+	font-size: 1.2rem;
+	background-color: $background-grey;
 }
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
+.centered {
+	align-items: center;
+}
+
 .page-container {
 	max-width: $max-width-page;
 	margin: auto;
