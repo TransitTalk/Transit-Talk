@@ -12,6 +12,11 @@
 	box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	margin: 0;
+}
+
 body {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
@@ -22,6 +27,11 @@ body {
 .column {
 	display: flex;
 	flex-direction: column;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
 }
 
 .centered {
