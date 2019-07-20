@@ -12,11 +12,8 @@
 		padding-top: 7px;
 	}
 	.title {
-		font-family: Roboto;
 		font-style: italic;
-		font-weight: 500;
 		font-size: 32px;
-		line-height: 38px;
 		text-align: center;
 		color: #2D2D2D;
 		letter-spacing: -1.32303px;
@@ -165,19 +162,15 @@ h6 {
 	font-weight: normal;
 }
 
-* {
-	color: #535353;
-}
-
 /* Mobile */
-@media (max-width: 800px) {
+@media (max-width: 960px) {
 	.desktop-links {
 		display: none;
 	}
 }
 
 /* Desktop */
-@media (min-width: 801px) {
+@media (min-width: 961px) {
 	// Hide hamburger icon, menu, and menu overlay
 	.hamburger, .side-menu, .side-menu-overlay {
 		display: none;

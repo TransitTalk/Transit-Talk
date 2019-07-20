@@ -1,78 +1,38 @@
 @import 'variables';
 
+@mixin separator($color) {
+	background: url("/assets/separator-#{$color}.svg") no-repeat center;
+	height: 25px;
+	width: 400px;
+	margin: 2rem;
+}
+
 .homepage {
-	height: calc(100vh - #{$header-height});
 	text-align: center;
+	padding: 1rem;
 
-	// Make all homepage sections flex with vertical and horizontal
-	// centering, so the homepage EXACTLY fits the device
-	> div {
-		
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		box-sizing: border-box; // makes padding and border cut from size
-
-	}
-
-	/**
-	 * Layout homepage with three vertical sections
-	 *
-	 * Hero 		- 45% height
-	 * Report 		- 35% height
-	 * View Issues 	- 20% Height
-	 */
-	.hero { 
-		padding: 30px 20px 0px 20px;
-		//height: 45%; 
-	}
 	.green-separator {
-		background-image: url(asset-path('separator-green.svg'));
-		background-size: 100%;
-		height: 25px;
-		background-color: #EFEFF4;
-	}
-	.red-separator {
-		background-image: url(asset-path('separator-red.svg'));
-		background-size: 100%;
-		height: 25px;
-		background-color: #EFEFF4;
-	}
-	.report-issues-cont { 
-		padding: 10px 10px 20px 10px;
-		height: 35%; 
-		background: #EFEFF4;
-		.heading {
-			padding-bottom: 20px;
-			font-family: Roboto;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 24px;
-			line-height: 28px;
-			text-align: center;
-			color: #2D2D2D;
-		}
+		@include separator('green')
 	}
 
-	.hero {
-		//padding: 2rem 0.5rem;
-		//background-image: url(asset-path('cta-overhead-blur-mobile.jpg'));
-		//background-size: cover;
-		//background-position: center top;
-		background: #EFEFF4;
-		* { color: white; }
-		//.logo { width: 3rem; }
+	.red-separator {
+		@include separator('red')
 	}
+
+	h2 {
+		font-size: 1.75rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
+
 	.heading {
-		font-family: Roboto;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 26px;
-		line-height: 30px;
-		/* or 115% */
-		text-align: center;
+		margin-top: 0;
+		margin-bottom: 20px;
 		color: #2D2D2D;
 	}
+
 	.simple-btn {
 		display: block;
 		width: 50%;
@@ -94,10 +54,8 @@
 	}
 
 	.transit-btn-cont {
-		width: 100%;
 		display: flex;
 		justify-content: space-evenly;
-		//margin: 0 auto 50px auto;
 		max-width: 600px;
 
 		.blue-btn.transit {
@@ -107,77 +65,14 @@
 			img { width: 70%; }
 		}
 	}
-	.view-issues-cont {
-		width: 100%;
-		padding: 40px 0px 30px 0px;
-		background-color: #EFEFF4;
-		.brown-btn {
-			display: block;
-			width: 150%;
-			padding: 0.5rem;
-			margin: auto;
-			font-size: 1.7rem;
-			max-width: 300px;
-			background: #464646;
-			border-radius: 9px;
-		}
+
+	.brown-btn {
+		color: white;
+		padding: 0.5rem;
+		margin: auto;
+		font-size: 1.7rem;
+		min-width: 300px;
+		background: #464646;
+		border-radius: 9px;
 	}
-	.select-routes-cont {
-		width: 100%;
-		height: 160px;
-		background-color: #EFEFF4;
-		.brown-btn {
-			color: white;
-			display: block;
-			width: 150%;
-			padding: 0.5rem;
-			margin: auto;
-			font-size: 1.7rem;
-			max-width: 300px;
-			background: #464646;
-			border-radius: 9px;
-			transform: translateY(50%);
-		}
-	}
-	/**
-	 * Desktop/Mobile Landscape Styling
-	 */
-// 	@media (min-width: 800px), (max-height: 800px) {
-// 		// Remove set heights, add padding
-// 		.hero, .report-issues-cont, .view-issues-cont { height: auto; }
-// 		.view-issues-cont { padding: 3rem; }
-
-// 		// Switch hero to unblurred image
-// 		.hero {
-// 			background: #EFEFF4;
-// 			//background-image: url(asset-path('cta-overhead.jpg'));
-// 			//background-position: center 25%;
-// 		}
-// 		.heading {
-// 			font-family: Roboto;
-// 			font-style: normal;
-// 			font-weight: normal;
-// 			font-size: 26px;
-// 			line-height: 30px;
-// 			/* or 115% */
-// 			text-align: center;
-// 			color: #2D2D2D;
-
-// 		.transit-btn-cont {
-// 			.blue-btn.transit {
-// 				width: 12rem;
-// 				height: 12rem;
-// 				font-size: 2rem;
-// 				padding-top: 0.5rem;
-// 			}
-// 		}
-// 	}
-
-// 	/**
-// 	 * Desktop Styling
-// 	 */
-// 	@media (min-width: 800px) {
-// 		.hero { padding: 12rem 0rem; }
-// 	}
-// }
 }
