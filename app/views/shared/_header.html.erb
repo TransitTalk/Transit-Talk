@@ -1,14 +1,20 @@
 <header class="headbar">
-	<div class="header-inner">
-		<div class="hamburger"></div>
-		<a href="/">
-			<div class="title"><%= Setting.site_name %></div>
-		</a>
-		<div class= "search"></div>
-		<div class="desktop-links">
-			<%= render "shared/header-links" %>
+	<div class='column centered'>
+		<div class="header-inner row centered">
+			<%= image_tag "logo.svg", class: 'logo', alt: 'Transit Talk Logo' %>
+			<a href="/">
+				<h1 class="title"><%= Setting.site_name %></h1>
+			</a>
+			<div class="row">
+				<div class= "search"></div>
+				<div class="hamburger"></div>
+			</div>
 		</div>
+		<nav class="desktop-links">
+			<%= render "shared/header-links" %>
+		</nav>
 	</div>
+	<div class="nav-bottom-border"></div>
 </header>
 
 <div class="overlay-search">
