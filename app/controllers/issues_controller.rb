@@ -6,7 +6,11 @@ class IssuesController < ApplicationController
   # GET /issues
   # GET /issues.json
   def index
+    redirect_to root_path unless current_user && current_user.admin
+
     @issues = Issue.all
+
+
   end
 
   # GET /issues/1

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get "/unfavorite/:stop_id" => 'favorites#delete', :as => :unfavorite
 
   resources :issues
+  get "/admin" => 'issues#index'
 
   root 'pages#home'
 end
