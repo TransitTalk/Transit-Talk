@@ -11,5 +11,8 @@ one:
 #
 two:
   email: laredotornado@caravantransit.com
- 
+
+admin_user:
+  email: admin@transit-talk.com # fake email
+  admin: true
 # column: value
