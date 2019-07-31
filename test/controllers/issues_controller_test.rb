@@ -23,8 +23,15 @@ class IssuesControllerTest < ActionDispatch::IntegrationTest
     assert_response :found
   end
 
-  test "get index page for issues" do
+  test "get redirected from issues index if normal user" do
     sign_in users(:one)
+
+    get issues_path
+    assert_response :redirect
+  end
+
+  test "get index page for issues as admin" do
+    sign_in users(:admin_user)
 
     get issues_path
     assert_response :success
