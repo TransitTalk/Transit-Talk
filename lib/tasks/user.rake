@@ -16,7 +16,7 @@ namespace :user do
 
     if email.present?
       u = User.find_by_email(email)
-      return if u.present?
+      return unless u.present?
 
       u.admin = true
       u.save
