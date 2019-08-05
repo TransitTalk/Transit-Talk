@@ -1,23 +1,13 @@
 @import 'variables';
 
-@mixin separator($color) {
-	background: url("/assets/separator-#{$color}.svg") no-repeat center;
-	height: 25px;
-	width: 400px;
-	margin: 2rem;
+.svg-container {
+	margin: 2rem 0 2rem 0;
+	width: 100vw;
+	max-width: 500px;
 }
-
 .homepage {
 	text-align: center;
 	padding: 1rem;
-
-	.green-separator {
-		@include separator('green')
-	}
-
-	.red-separator {
-		@include separator('red')
-	}
 
 	h2 {
 		font-size: 1.75rem;
