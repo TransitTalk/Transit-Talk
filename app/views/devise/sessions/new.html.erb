@@ -15,6 +15,11 @@
     <div class="actions">
       <%= f.submit "Log in", :class => 'pill' %>
     </div>
+
+    <%# Pass query params to sign in controller - this way we can redirect back to where they came from %>
+    <% params.keys.each do |param_name| %>
+      <%= hidden_field_tag param_name, params[param_name] %>
+    <% end %>
   <% end %>
 
   <%= render "devise/shared/links" %>

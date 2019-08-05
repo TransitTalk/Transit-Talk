@@ -16,8 +16,11 @@ class IssuesController < ApplicationController
 
   # GET /issues/new
   def new
-    unless user_signed_in?
-      redirect_to new_user_session_path
+    unless user_signed_in? || cookies[:opted_out_of_login]
+      redirect_to new_user_session_path(params: {
+        from: new_issue_path,
+        line_type: params[:line_type]
+      })
     end
 
     @line_type = params[:line_type]

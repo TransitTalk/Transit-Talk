@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsSettingsUi::Engine, at: 'settings'
-  devise_for :users
+  devise_for :users, controllers: { sessions: "devise/sessions"}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # General page routes. Will include items like home and top-level pages
