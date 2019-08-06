@@ -39,7 +39,7 @@ class LinesControllerTest < ActionDispatch::IntegrationTest
     assert_not_nil test_line
 
     get get_stops_path(test_line)
-    line = assigns(:line)
+    assigns(:line)
     assert_response :success
   end
 end

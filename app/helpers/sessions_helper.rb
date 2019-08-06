@@ -2,7 +2,7 @@
 
 module SessionsHelper
   # returns the path from which a user came. A query parameters called "from" must be present for
-  # this method to work properly. We'll pass the other query params as query params to the next page.
+  # this method to work properly. We'll pass the other query params as query params to the next page
   def inferred_last_page_path(options = {})
     if params[:from].blank?
       return nil
