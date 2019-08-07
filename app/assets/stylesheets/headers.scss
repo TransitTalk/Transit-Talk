@@ -136,6 +136,12 @@
 
 		input[type="submit"] {
 			box-shadow: none;
+			background: #007AFF;
+    			border: 1px solid #979797;
+    			border-radius: 9px;
+    			width: 149px;
+    			height: 63px;
+    			color: #FFFFFF;
 			background: url(asset-path("search.svg"));
 			border: none;
 			background-size: 100%;
