@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	margin: 0;
 	font-size: 1.2rem;
 	background-color: $background-grey;
@@ -81,7 +81,7 @@ body > a > .create-issue {
 	display: inline-block;
 	height: 14px;
 	width: 14px;
-	background: $theme-color;
+	background: #0085FF;
 	border-radius: 7px;
 	background-image: url(asset-path('plus.svg'));
 	background-size: 60%;
