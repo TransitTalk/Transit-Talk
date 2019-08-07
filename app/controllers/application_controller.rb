@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   # take user back to last page if available
   def after_sign_in_path_for(resource_or_scope)
     inferred_last_page_path.blank? ?
-      super : inferred_last_page_path(allowed_query_params: :line_type)
+      super : inferred_last_page_path(allowed_query_params: [:line_type])
   end
 end

@@ -8,9 +8,13 @@ module SessionsHelper
       return nil
     end
 
-    query_params = options[:allowed_query_params] ?
-                     params.slice(*options[:allowed_query_params]).to_query : ""
+    query_params = {}
+    if options[:allowed_query_params]
+      options[:allowed_query_params].each do |query_param|
+        query_params[query_param] = params[query_param]
+      end
+    end
 
-    params[:from] + "?" + query_params
+    params[:from] + "?" + query_params.to_query
   end
 end
