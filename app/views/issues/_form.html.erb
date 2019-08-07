@@ -12,27 +12,23 @@
     </div>
   <% end %>
 
-  <div class="field-issue">
-    <%= f.label 'Line' %><br>
-    <%= f.collection_select(:line_onestop_id, Line.of_line_type(line_type), :id, :route_long_name,
-      {prompt: 'Select Line'},
-      {:class => "new-issue-line"}
-    ) %>
+  <div class="field-issue" style="width: 400px;">
+    <%= f.label 'Line' %>
+    <p style="margin-top: 32px; margin-bottom: 28px;">
+    <%= f.label 'Stop' %></p>
+    <p><%= f.label 'Issue' %></p>
   </div>
-
-  <div class="field-issue">
-    <%= f.label 'Stop' %><br>
-    <%= f.collection_select(:stop_onestop_id, issue.line&.stops || [], :id, :name,
+  <div class="field-issue" style="position: absolute; width: 300px; text-align: right; top: 112px;">
+    <%= f.collection_select(:line_onestop_id, Line.of_line_type(line_type), style="width: 198px;", :id, :route_long_name,
+      {prompt: 'Select Line'}, {:class => "new-issue-line"}) %>  
+    
+    <p><%= f.collection_select(:stop_onestop_id, issue.line&.stops || [], style="width: 198px;", :id, :name,
       {prompt: issue.line ? nil : "Select a line first"},
-      {:class => "new-issue-stops"}
-    ) %>
-  </div>
-
-  <div class="form-row">
-    <div class="form-group col-md-12">
-      <%= f.label 'Issue Category' %><br>
-        <%= f.select(:types,  ['Delays', 'Cleanliness', 'Crowding', 'Safety', 'Accessibility', 'Staff', 'Other'], { :prompt => "Select a category"}, {:class => 'form-control'}) %>
-    </div>
+      {:class => "new-issue-stops"}) %></p>
+    
+    <%= f.select(:types, style="width: 198px;", ['Delays', 'Cleanliness', 'Crowding', 'Safety', 'Accessibility', 'Staff', 'Other'], 
+      { :prompt => "Select a category"}, {:class => 'form-control'}) %>
+    
   </div>
 
   <div class="field-issue">
