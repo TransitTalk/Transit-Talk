@@ -7,7 +7,9 @@
 
   <!--     <%= link_to('Learn More', page_path(:page_name => 'about'), :class => 'simple-btn') %>
   <%= link_to('Sign In', new_user_session_path, :class => 'simple-btn') %> -->
-  <div class="green-separator separator"></div>
+  <div class="svg-container">
+  <img src='/assets/separator-green.svg' width='100%' height='auto' alt='green svg separator'>
+  </div>
 
   <div class="report-issues-cont">
     <h3 class="heading">Report an Issue</h3>
@@ -24,6 +26,8 @@
       <% end %>
     </div>
   </div>
-  <div class="red-separator separator"></div>
+  <div class="svg-container">
+  <img src='/assets/separator-red.svg' width='100%' height='auto' alt='red svg separator'>
+  </div>
   <%= link_to('Select Routes', view_issues_path, :class => 'brown-btn') %>
 </div>
