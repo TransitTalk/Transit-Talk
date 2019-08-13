@@ -41,7 +41,7 @@ body {
 .page-container {
 	max-width: $max-width-page;
 	margin: auto;
-	padding: 0px $page-padding;
+	padding: $page-padding;
 
 	&.-thin { max-width: 600px; }
 }
