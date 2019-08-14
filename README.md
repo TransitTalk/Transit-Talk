@@ -55,6 +55,10 @@ In the future we hope to expand the functionality of Transit Talk by:
 
       to install all packages listed.
 
+  * MySQL gem issues
+    * If you have problems installing the `mysql2` gem, the likeliest explanation is that you are missing some MySQL system libraries and headers that this gem needs to link against. Consult the [mysql2 gem documentation](https://github.com/brianmario/mysql2#general-instructions) for possible remedies. For example, on Debian GNU/Linux, running `sudo apt install libmariadb-dev` will install the necessary libraries and headers.
+
+
   * Local Testing
     * Navigate to root directory
 
