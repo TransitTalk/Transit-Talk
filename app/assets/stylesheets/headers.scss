@@ -4,8 +4,8 @@
 	.header-inner {
 		width: 100%;
 		max-width: $max-width-page;
-		justify-content: space-between;
-		padding: 0.25rem 1rem;
+		justify-content: space-around;
+		padding: 0.25rem 0rem;
 	}
 
 	.logo {
@@ -49,7 +49,6 @@
 }
 
 .search {
-	float: right;
 	background-image: url(asset-path('search-white.svg'));
 	height: $header-height;
 	width: $header-height;
