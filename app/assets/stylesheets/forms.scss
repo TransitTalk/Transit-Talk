@@ -23,3 +23,42 @@ input[type="submit"].pill {
     background-color: #52b4ff;
   }
 }
+
+/* CHECKBOX GRID */
+.checkbox-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 100px);
+	background-color: #464646;
+	width: 304px;
+	grid-gap: 2px;
+	padding: 2px;
+}
+
+.checkbox-container {
+	height: 100px;
+	display: inline-grid;
+	font-size: 1rem;
+	cursor: pointer;
+
+	&.wide {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		height: 50px;
+	}
+
+	input {
+		display: none;
+	}
+}
+
+.checkbox-tile {
+	background-color: #9CA8B5;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	color: white;
+}
+
+input:checked ~ .checkbox-tile {
+	background-color: #0085FF;
+}

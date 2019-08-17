@@ -44,7 +44,7 @@ AMOUNT_ISSUES.times do |i|
     vehicle_id: i + 1,
     description: Faker::Lorem.paragraph(2, true),
     user_id: rand(1..AMOUNT_USERS),
-    types: LIST_ISSUES_TYPES.sample,
+    types: LIST_ISSUES_TYPES.sample(2),
     resolved: RANDOM_BOOLEAN.sample
   }
 
