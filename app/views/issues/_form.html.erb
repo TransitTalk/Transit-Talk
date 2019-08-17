@@ -28,8 +28,8 @@
     ) %>
   </div>
 
-  <div class="form-row">
-      <%= f.label :types, "Issue Types" %>
+  <div class="field-issue">
+      <%= f.label :types, "Issue Types" %><em>Check all that apply</em>
       <div class="checkbox-grid">
         <% %w(Delays Cleanliness Crowding Safety Accessibility Staff).each do |issue_type| %>
           <label class="checkbox-container">
