@@ -46,27 +46,47 @@ In the future we hope to expand the functionality of Transit Talk by:
 <br>
 
 ## BUILD/INSTALLATION INSTRUCTIONS
-  * Ruby on Rails v2.4.4 and Other Packages
-    * All necessary packages for running this software are provided in the GEMFILE included in the source code. Use the command:
 
-      ```
-      $ bundle install
-      ```
+### Windows 10
 
-      to install all packages listed.
+* [Install Windows Sybsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (further instructions should be done in a WSL terminal/prompt)
+* [Install RVM](https://github.com/rvm/ubuntu_rvm)
+* `rvm install ruby`
+  * If you have issues, see [this StackOverflow](https://github.com/rvm/ubuntu_rvm)
+* `rvm install v.v.v`
+  * `v.v.v` is the current version of Ruby being used for the project
+* `rvm use v.v.v`
+* `gem install bundler`
+* Set up to install the `mysql2` gem later:
+  * `sudo apt-get update`
+  * `sudo apt-get upgrade`
+  * `sudo apt-get install libmysqlclient-dev`
 
-  * MySQL gem issues
-    * If you have problems installing the `mysql2` gem, the likeliest explanation is that you are missing some MySQL system libraries and headers that this gem needs to link against. Consult the [mysql2 gem documentation](https://github.com/brianmario/mysql2#general-instructions) for possible remedies. For example, on Debian GNU/Linux, running `sudo apt install libmariadb-dev` will install the necessary libraries and headers.
+### Ruby on Rails v2.4.4 and Other Packages
 
+All necessary packages for running this software are provided in the GEMFILE included in the source code. Use the command:
 
-  * Local Testing
-    * Navigate to root directory
+```
+$ bundle install
+```
 
-   ```
-   rails server
-   ```
+to install all packages listed.
 
-    * Connect to Localhost:3000 on your browser
+#### MySQL gem issues
+
+If you have problems installing the `mysql2` gem, the likeliest explanation is that you are missing some MySQL system libraries and headers that this gem needs to link against. Consult the [mysql2 gem documentation](https://github.com/brianmario/mysql2#general-instructions) for possible remedies, or see below.
+
+* Debian GNU/Linux: `sudo apt install libmariadb-dev`
+* WSL: `sudo apt-get upgrade`, then `sudo apt-get install libmysqlclient-dev`
+* macOS
+  * `brew install mysql` will install to /usr/local/Cellar/mysql/x.x.x
+  * `gem install mysql2 -v 'y.y.y' -- --srcdir='/usr/local/Cellar/mysql/x.x.x/include'`
+    * `x.x.x` is where brew installed mysql
+    * `y.y.y` is the required `mysql2` version listed in the GEMFILE
+
+### Local Testing
+
+Navigate to root directory of the project, then run `rails server`. Connect to Localhost:3000 on your browser.
 
 ## Contributor Guide
 To learn more about how to contribute to Transit Talk's development, check out [our contribution guidelines][contributing].
