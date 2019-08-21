@@ -49,7 +49,7 @@ In the future we hope to expand the functionality of Transit Talk by:
 
 ### Windows 10
 
-* [Install Windows Sybsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (further instructions should be done in a WSL terminal/prompt)
+* [Install Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (further instructions should be done in a WSL terminal/prompt)
 * [Install RVM](https://github.com/rvm/ubuntu_rvm)
 * `rvm install ruby`
   * If you have issues, see [this StackOverflow](https://github.com/rvm/ubuntu_rvm)
@@ -61,6 +61,8 @@ In the future we hope to expand the functionality of Transit Talk by:
   * `sudo apt-get update`
   * `sudo apt-get upgrade`
   * `sudo apt-get install libmysqlclient-dev`
+* `sudo apt-get install nodejs`
+  * We need to have a JavaScript runtime installed for running Transit-Talk
 
 ### Ruby on Rails v2.4.4 and Other Packages
 
@@ -86,7 +88,7 @@ If you have problems installing the `mysql2` gem, the likeliest explanation is t
 
 ### Local Testing
 
-Navigate to root directory of the project, then run `rails server`. Connect to Localhost:3000 on your browser.
+Navigate to root directory of the project, run `rails db:migrate` to create the database, then run `rails server`. Connect to [localhost:3000](http://localhost:3000) on your browser.
 
 ## Contributor Guide
 To learn more about how to contribute to Transit Talk's development, check out [our contribution guidelines][contributing].
