@@ -145,7 +145,7 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.5.5)
     mustermann (1.0.2)
-    mysql2 (0.3.21)
+    mysql2 (0.5.2)
     nio4r (2.4.0)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
@@ -296,7 +296,7 @@ DEPENDENCIES
   jbuilder (~> 2.9, >= 2.9.1)
   jquery-rails (= 4.3.5)
   listen (~> 3.0.5)
-  mysql2 (~> 0.3.18)
+  mysql2 (~> 0.5.2)
   pry
   puma (~> 3.0)
   rails (~> 5.2, >= 5.2.3)
