@@ -44,7 +44,7 @@ class IssuesControllerTest < ActionDispatch::IntegrationTest
         stop_onestop_id: stops(:one).id,
         line_onestop_id: lines(:one).id,
         description: "something",
-        types: "another thing"
+        types: ["another thing"]
     } }
 
     assert_response :found
@@ -67,7 +67,7 @@ class IssuesControllerTest < ActionDispatch::IntegrationTest
         stop_onestop_id: "2",
         line_onestop_id: "2",
         description: "something",
-        types: "another thing"
+        types: ["another thing"]
     } }
 
     assert_response :found
