@@ -9,7 +9,7 @@ end
 
 group :production do
 	# MySQL
-	gem 'mysql2', '~> 0.3.18'
+	gem 'mysql2', '~> 0.5.2'
 end
 
 
