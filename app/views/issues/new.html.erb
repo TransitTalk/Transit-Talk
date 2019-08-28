@@ -1,5 +1,9 @@
 <div class="page-container">
-	<h1>New Issue</h1>
+<% if @line_type %>
+	<h1>Report <%= @line_type.capitalize %> Issue</h1>
+<% else %>
+	<h1>Report an Issue</h1>
+<% end %>
 
 	<%= render 'form', issue: @issue, line_type: @line_type %>
 
