@@ -58,6 +58,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # Static code analyser
   gem 'rubocop', '~> 0.71.0'
+  gem 'rubocop-rails'
   gem "rubocop-rails_config", '0.6.1'
   gem 'faker'
 end
