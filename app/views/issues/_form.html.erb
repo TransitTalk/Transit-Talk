@@ -28,11 +28,23 @@
     ) %>
   </div>
 
-  <div class="form-row">
-    <div class="form-group col-md-12">
-      <%= f.label 'Issue Category' %><br>
-        <%= f.select(:types,  ['Delays', 'Cleanliness', 'Crowding', 'Safety', 'Accessibility', 'Staff', 'Other'], { :prompt => "Select a category"}, {:class => 'form-control'}) %>
-    </div>
+  <div class="field-issue">
+      <%= f.label :types, "Issue Types" %><em>Check all that apply</em>
+      <div class="checkbox-grid">
+        <% %w(Delays Cleanliness Crowding Safety Accessibility Staff).each do |issue_type| %>
+          <label class="checkbox-container">
+            <%= f.check_box(:types, {multiple: true}, issue_type, nil) %>
+            <span class="checkbox-tile">
+              <%= image_tag "issue_types/#{issue_type}.svg", alt: issue_type %>
+              <%= issue_type %>
+            </span>
+          </label>
+        <% end %>
+        <label class="checkbox-container wide">
+          <%= f.check_box(:types, {multiple: true}, "Other", nil) %>
+          <span class="checkbox-tile" style="padding-top: 12px; font-size: 1.25rem">Other</span>
+        </label>
+      </div>
   </div>
 
   <div class="field-issue">
