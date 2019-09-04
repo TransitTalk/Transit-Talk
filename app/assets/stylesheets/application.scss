@@ -8,11 +8,16 @@
 @import 'lines';
 @import 'loginFields';
 
-* *:before *:after {
+* *::before *::after {
 	box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-weight: normal;
 	margin: 0;
 }
@@ -59,7 +64,7 @@ a {
 	&.-alert { background-color: #f44336; }
 	// Positive messages, like you've signed in
 	&.-notice { background-color: #4caf50; }
-	* { color: #ffffff; }
+	* { color: #fff; }
 }
 
 body > a > .create-issue {
@@ -74,7 +79,6 @@ body > a > .create-issue {
 	background-size: 60%;
 	background-position: center;
 	background-repeat: no-repeat;
-
 }
 
 .create-issue {

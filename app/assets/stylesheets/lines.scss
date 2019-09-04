@@ -8,26 +8,28 @@
 	background-position: center;
 
 	* { color: white; }
+
 	h3 {
 		position: absolute;
 		width: 100%;
-		bottom: 0px;
+		bottom: 0;
 		box-sizing: border-box;
-		background-color: rgba(0,0,0,0.7);
-		padding: 8px 0px;
-		margin: 0px;
+		background-color: rgba(0, 0, 0, 0.7);
+		padding: 8px 0;
+		margin: 0;
 	}
 }
 
 .stop-list {
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	list-style: none;
 
 	/* Don't extend line past end of last stop */
 	.stop:last-of-type .mark-box {
 		height: 50% !important;
 	}
+
 	li {
 		display: table;
 		height: 40px;
@@ -45,6 +47,7 @@
 				left: 12px;
 				background: #535353;
 			}
+
 			.mark-circle {
 				background: white;
 				width: 10px;
@@ -57,6 +60,7 @@
 				border-color: #535353;
 			}
 		}
+
 		.name {
 			display: table-cell;
 			vertical-align: middle;
@@ -67,7 +71,7 @@
 
 .stop-partial {
 	min-height: 30px;
-	margin: 5px 0px;
+	margin: 5px 0;
 
 	.line-tile {
 		display: inline-block;
@@ -76,6 +80,7 @@
 
 		a { text-decoration: none; }
 	}
+
 	span {
 		padding-left: 5px;
 		vertical-align: middle;
@@ -88,6 +93,7 @@
 	padding: 2px 6px;
 	border-radius: 3px;
 }
+
 .line-swatch {
 	width: 20px;
 	height: 20px;
@@ -99,7 +105,9 @@
 		display: inline-block;
 
 		&:first-of-type { margin-left: 5px; }
-		.api-id, .line-swatch { font-size: 12px; }
+
+		.api-id,
+		.line-swatch { font-size: 12px; }
 	}
 }
 
@@ -112,6 +120,6 @@
 	vertical-align: top;
 	background-size: 100%;
 
-	&.favorite { background-image: url(asset-path("star-can-fav.svg"))}
-	&.unfavorite { background-image: url(asset-path("star-fav.svg"))}
+	&.favorite { background-image: url(asset-path("star-can-fav.svg")); }
+	&.unfavorite { background-image: url(asset-path("star-fav.svg")); }
 }

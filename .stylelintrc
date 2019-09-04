@@ -4,8 +4,9 @@
     "stylelint-scss"
   ],
   "rules": {
+    "indentation": "tab",
+
     "at-rule-empty-line-before": null,
-    "color-hex-case": "upper",
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true
   }
