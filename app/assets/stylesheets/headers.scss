@@ -1,17 +1,35 @@
 @import 'variables';
 
+/* Styling for main header with project name and transportation line */
+.title {
+	text-align: center;
+	color: white;
+	margin-top: 8px;
+	font-size: 26px;
+	display: inline-block;
+}
+
+.search {
+	background-image: url(asset-path('search-white.svg'));
+	height: $header-height;
+	width: $header-height;
+	background-size: 80%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 .headbar {
 	.header-inner {
 		width: 100%;
 		max-width: $max-width-page;
-		justify-content: space-between;
-		padding: 0.25rem 1rem;
+		justify-content: space-around;
+		padding: 0.25rem 0;
 	}
 
 	.logo {
 		height: calc(#{$header-height} - 10px);
 	}
-	
+
 	.title {
 		font-style: italic;
 		font-size: 32px;
@@ -33,29 +51,10 @@
 	}
 
 	.nav-bottom-border {
-		border-top: 5px solid #1BA4E3;
+		border-top: 5px solid #1ba4e3;
 		border-bottom: 5px solid #493390;
 		height: 0;
 	}
-}
-
-/* Styling for main header with project name and transportation line */
-.title {
-	text-align: center;
-	color: white;
-	margin-top: 8px;
-	font-size: 26px;
-	display: inline-block;
-}
-
-.search {
-	float: right;
-	background-image: url(asset-path('search-white.svg'));
-	height: $header-height;
-	width: $header-height;
-	background-size: 80%;
-	background-position: center;
-	background-repeat: no-repeat;
 }
 
 /* HEADERS OF STOP SECTIONS ("NEARBY STOPS", "FAVORITE STOPS") */
@@ -73,19 +72,19 @@
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.5);
-	top: 0px;
+	top: 0;
 	z-index: 10;
 }
 
 .side-menu {
 	position: fixed;
-	background: $theme-color;
-	height: 100%;
+	background: #f7f7f7;
 	width: 75%;
-	top: 0px;
+	border: 2px solid #414141;
+	top: 0;
+	border-radius: 10px;
 	left: -85%;
-	padding-left: 20px;
-	box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 	z-index: 10;
 }
 
@@ -96,15 +95,22 @@
 	list-style: none;
 
 	li {
-		margin: 1rem 0;
 		font-size: 18px;
+		border-bottom: 1px solid #414141;
+		padding: 20px 0;
+
+		&:last-child {
+			border-bottom: none;
+		}
 	}
 
 	a {
 		text-decoration: none;
-		color: white;
+		color: #414141;
+		padding: 0 10px;
 
-		&:focus, &:hover {
+		&:focus,
+		&:hover {
 			text-decoration: underline;
 		}
 	}
@@ -158,21 +164,28 @@
 /* Desktop */
 @media (min-width: 961px) {
 	// Hide hamburger icon, menu, and menu overlay
-	.hamburger, .side-menu, .side-menu-overlay {
+	.hamburger,
+	.side-menu,
+	.side-menu-overlay {
 		display: none;
 	}
+
+	.header-links li { border-bottom: none; }
+
 	.headbar {
 		ul { display: flex; }
+
 		li {
 			margin: 0;
 			padding: 0 1rem;
 			border-left: solid $black 1px;
 
 			&:first-of-type {
-				padding-left: 0px;
+				padding-left: 0;
 				border-left: none;
 			}
 		}
+
 		a {
 			color: $black;
 		}

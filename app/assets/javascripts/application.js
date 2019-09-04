@@ -47,8 +47,6 @@ $(document).ready(function()
 
 	$(".new-issue-line").change(function()
 	{
-		var self = this;
-
 		$.ajax({
 		  url: "/lines/" + $(this).val() + "/get_stops",
 		  context: document.body
@@ -61,4 +59,8 @@ $(document).ready(function()
 			});
 		});
 	});
+
+	$("#opt-out-login").click(function() {
+	  document.cookie = "opted_out_of_login=true;path=/"
+  })
 });

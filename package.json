@@ -1,0 +1,32 @@
+{
+  "name": "transit-talk",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/TransitTalk/Transit-Talk.svg?branch=master)](https://travis-ci.org/TransitTalk/Transit-Talk) [![Coverage Status][coverage-status-icon]][coverage-status]",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "postcss": "^7.0.17"
+  },
+  "devDependencies": {
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-scss": "^3.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TransitTalk/Transit-Talk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TransitTalk/Transit-Talk/issues"
+  },
+  "homepage": "https://github.com/TransitTalk/Transit-Talk#readme"
+}

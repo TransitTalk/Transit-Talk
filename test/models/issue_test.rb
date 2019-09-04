@@ -5,7 +5,7 @@ require "test_helper"
 class IssueTest < ActiveSupport::TestCase
   # Verify issue is valid if correct fields are provided
   test "valid issue" do
-    issue = Issue.new(types: "Cleanliness")
+    issue = Issue.new(types: ["Cleanliness"])
     assert issue.valid?
   end
 
