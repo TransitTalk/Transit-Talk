@@ -1,6 +1,6 @@
 ## Transit Talk
 
-[![Build Status][build-status-icon]][build-status]
+[![Build Status](https://travis-ci.org/TransitTalk/Transit-Talk.svg?branch=master)](https://travis-ci.org/TransitTalk/Transit-Talk)
 [![Coverage Status][coverage-status-icon]][coverage-status]
 
 Transit Talk is a crowd-sourced issue reporting platform for public transit systems. It's a friendly place for transit riders to share information about system delays, vehicle cleanliness, and other common challenges of mass transit in real time, making each report visible to every other rider of that system. Transit Talk augments or replaces reporting tools maintained by transit administrators, collecting rider feedback while empowering riders to make daily decisions based on reports from other riders. Behind the scenes, Transit Talk is an open-source framework that can be implemented easily for any transit system that uses GTFS-formatted information. Presently, Transit Talk is able to:
@@ -134,8 +134,6 @@ We use [rails-settings-ui](https://github.com/accessd/rails-settings-ui) (a UI w
 
 To change your settings, go to http://your-app-url/settings. Once your settings are updated, you should see the changes reflected immediately (if they are non-styling changes) or upon the next server restart. If you need to manually rebuild to test your settings: close your server, run `rm -fr tmp/cache` to clear built Sass files, and rerun your server.
 
-[build-status-icon]: https://api.travis-ci.org/CaravanTransit/Caravan-App.svg?branch=master
-[build-status]: https://travis-ci.org/CaravanTransit/Caravan-App
 [coverage-status-icon]: https://coveralls.io/repos/github/CaravanTransit/Caravan-App/badge.svg?branch=master
 [coverage-status]: https://coveralls.io/github/CaravanTransit/Caravan-App?branch=master
 [issues]: https://github.com/CaravanTransit/Transit-Talk/issues
