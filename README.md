@@ -1,6 +1,6 @@
 ## Transit Talk
 
-[![Build Status][build-status-icon]][build-status]
+[![Build Status](https://travis-ci.org/TransitTalk/Transit-Talk.svg?branch=master)](https://travis-ci.org/TransitTalk/Transit-Talk)
 [![Coverage Status][coverage-status-icon]][coverage-status]
 
 Transit Talk is a crowd-sourced issue reporting platform for public transit systems. It's a friendly place for transit riders to share information about system delays, vehicle cleanliness, and other common challenges of mass transit in real time, making each report visible to every other rider of that system. Transit Talk augments or replaces reporting tools maintained by transit administrators, collecting rider feedback while empowering riders to make daily decisions based on reports from other riders. Behind the scenes, Transit Talk is an open-source framework that can be implemented easily for any transit system that uses GTFS-formatted information. Presently, Transit Talk is able to:
@@ -46,23 +46,49 @@ In the future we hope to expand the functionality of Transit Talk by:
 <br>
 
 ## BUILD/INSTALLATION INSTRUCTIONS
-  * Ruby on Rails v2.4.4 and Other Packages
-    * All necessary packages for running this software are provided in the GEMFILE included in the source code. Use the command:
 
-      ```
-      $ bundle install
-      ```
+### Windows 10
 
-      to install all packages listed.
+* [Install Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (further instructions should be done in a WSL terminal/prompt)
+* [Install RVM](https://github.com/rvm/ubuntu_rvm)
+* `rvm install ruby`
+  * If you have issues, see [this StackOverflow](https://github.com/rvm/ubuntu_rvm)
+* `rvm install v.v.v`
+  * `v.v.v` is the current version of Ruby being used for the project
+* `rvm use v.v.v`
+* `gem install bundler`
+* Set up to install the `mysql2` gem later:
+  * `sudo apt-get update`
+  * `sudo apt-get upgrade`
+  * `sudo apt-get install libmysqlclient-dev`
+* `sudo apt-get install nodejs`
+  * We need to have a JavaScript runtime installed for running Transit-Talk
 
-  * Local Testing
-    * Navigate to root directory
+### Ruby on Rails v2.4.4 and Other Packages
 
-   ```
-   rails server
-   ```
+All necessary packages for running this software are provided in the GEMFILE included in the source code. Use the command:
 
-    * Connect to Localhost:3000 on your browser
+```
+$ bundle install
+```
+
+to install all packages listed.
+
+#### MySQL gem issues
+
+If you have problems installing the `mysql2` gem, the likeliest explanation is that you are missing some MySQL system libraries and headers that this gem needs to link against. Consult the [mysql2 gem documentation](https://github.com/brianmario/mysql2#general-instructions) for possible remedies, or see below.
+
+* Debian GNU/Linux: `sudo apt install libmariadb-dev`
+* WSL: `sudo apt-get upgrade`, then `sudo apt-get install libmysqlclient-dev`
+* macOS
+  * `brew install mysql` will install to /usr/local/Cellar/mysql/x.x.x
+  * `gem install mysql2 -v 'y.y.y' -- --srcdir='/usr/local/Cellar/mysql/x.x.x/include'`
+    * `x.x.x` is where brew installed mysql
+    * `y.y.y` is the required `mysql2` version listed in the GEMFILE
+
+### Local Testing
+
+Navigate to root directory of the project, run `rails db:migrate` to create the database, then run `rails server`. Connect to [localhost:3000](http://localhost:3000) on your browser.
 
 ## Contributor Guide
 To learn more about how to contribute to Transit Talk's development, check out [our contribution guidelines][contributing].
@@ -108,8 +134,6 @@ We use [rails-settings-ui](https://github.com/accessd/rails-settings-ui) (a UI w
 
 To change your settings, go to http://your-app-url/settings. Once your settings are updated, you should see the changes reflected immediately (if they are non-styling changes) or upon the next server restart. If you need to manually rebuild to test your settings: close your server, run `rm -fr tmp/cache` to clear built Sass files, and rerun your server.
 
-[build-status-icon]: https://api.travis-ci.org/CaravanTransit/Caravan-App.svg?branch=master
-[build-status]: https://travis-ci.org/CaravanTransit/Caravan-App
 [coverage-status-icon]: https://coveralls.io/repos/github/CaravanTransit/Caravan-App/badge.svg?branch=master
 [coverage-status]: https://coveralls.io/github/CaravanTransit/Caravan-App?branch=master
 [issues]: https://github.com/CaravanTransit/Transit-Talk/issues
