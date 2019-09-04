@@ -4,8 +4,8 @@
 	.header-inner {
 		width: 100%;
 		max-width: $max-width-page;
-		justify-content: space-between;
-		padding: 0.25rem 1rem;
+		justify-content: space-around;
+		padding: 0.25rem 0rem;
 	}
 
 	.logo {
@@ -49,7 +49,6 @@
 }
 
 .search {
-	float: right;
 	background-image: url(asset-path('search-white.svg'));
 	height: $header-height;
 	width: $header-height;
@@ -78,15 +77,15 @@
 }
 
 .side-menu {
-	position: fixed;
-	background: $theme-color;
-	height: 100%;
-	width: 75%;
-	top: 0px;
-	left: -85%;
-	padding-left: 20px;
-	box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.3);
-	z-index: 10;
+    position: fixed;
+    background: #f7f7f7;
+    width: 75%;
+    border: 2px solid #414141;
+    top: 0px;
+    border-radius: 10px;
+    left: -85%;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 .header-links {
@@ -96,13 +95,19 @@
 	list-style: none;
 
 	li {
-		margin: 1rem 0;
 		font-size: 18px;
+		border-bottom: 1px solid #414141;
+		padding: 20px 0px;
+
+		&:last-child {
+			border-bottom: none;
+		}
 	}
 
 	a {
 		text-decoration: none;
-		color: white;
+		color: #414141;
+		padding: 0px 10px;
 
 		&:focus, &:hover {
 			text-decoration: underline;
@@ -175,6 +180,12 @@
 		}
 		a {
 			color: $black;
+		}
+	}
+
+	.header-links {
+		li {
+			border-bottom: none;
 		}
 	}
 }
