@@ -67,6 +67,19 @@ a {
 	* { color: #fff; }
 }
 
+.create-issue {
+	display: inline-block;
+	height: 14px;
+	width: 14px;
+	background: $theme-color;
+	border-radius: 7px;
+	background-image: url(asset-path('plus.svg'));
+	background-size: 60%;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 2;
+}
+
 body > a > .create-issue {
 	position: fixed;
 	height: 40px;
@@ -79,17 +92,4 @@ body > a > .create-issue {
 	background-size: 60%;
 	background-position: center;
 	background-repeat: no-repeat;
-}
-
-.create-issue {
-	display: inline-block;
-	height: 14px;
-	width: 14px;
-	background: $theme-color;
-	border-radius: 7px;
-	background-image: url(asset-path('plus.svg'));
-	background-size: 60%;
-	background-position: center;
-	background-repeat: no-repeat;
-	z-index: 2;
 }

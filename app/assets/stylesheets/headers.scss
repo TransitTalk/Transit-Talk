@@ -1,5 +1,23 @@
 @import 'variables';
 
+/* Styling for main header with project name and transportation line */
+.title {
+	text-align: center;
+	color: white;
+	margin-top: 8px;
+	font-size: 26px;
+	display: inline-block;
+}
+
+.search {
+	background-image: url(asset-path('search-white.svg'));
+	height: $header-height;
+	width: $header-height;
+	background-size: 80%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 .headbar {
 	.header-inner {
 		width: 100%;
@@ -37,24 +55,6 @@
 		border-bottom: 5px solid #493390;
 		height: 0;
 	}
-}
-
-/* Styling for main header with project name and transportation line */
-.title {
-	text-align: center;
-	color: white;
-	margin-top: 8px;
-	font-size: 26px;
-	display: inline-block;
-}
-
-.search {
-	background-image: url(asset-path('search-white.svg'));
-	height: $header-height;
-	width: $header-height;
-	background-size: 80%;
-	background-position: center;
-	background-repeat: no-repeat;
 }
 
 /* HEADERS OF STOP SECTIONS ("NEARBY STOPS", "FAVORITE STOPS") */
@@ -170,6 +170,8 @@
 		display: none;
 	}
 
+	.header-links li { border-bottom: none; }
+
 	.headbar {
 		ul { display: flex; }
 
@@ -186,12 +188,6 @@
 
 		a {
 			color: $black;
-		}
-	}
-
-	.header-links {
-		li {
-			border-bottom: none;
 		}
 	}
 }

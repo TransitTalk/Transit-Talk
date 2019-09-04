@@ -25,11 +25,6 @@
 	padding: 0;
 	list-style: none;
 
-	/* Don't extend line past end of last stop */
-	.stop:last-of-type .mark-box {
-		height: 50% !important;
-	}
-
 	li {
 		display: table;
 		height: 40px;
@@ -67,6 +62,9 @@
 			padding-left: 10px;
 		}
 	}
+
+	/* Don't extend line past end of last stop */
+	.stop:last-of-type .mark-box { height: 50% !important; }
 }
 
 .stop-partial {
