@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore installed NPM packages
+/node_modules
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
@@ -30,4 +33,4 @@
 .env
 
 /coverage
- 
+
