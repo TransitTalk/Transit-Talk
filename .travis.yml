@@ -2,7 +2,7 @@ language: ruby
 cache: bundler # Cache the bundler. Makes builds run faster, automatically reruns build when bundler changes
 rvm:
  - 2.4.4
-script:
- - RAILS_ENV=test bundle exec rake db:migrate
- - bundle exec rubocop
- - bundle exec rake
+ install:
+   - bundle install # Install needed gems
+   - npm install -g stylelint postcss # Install stylelint
+   - npm install # Install other stylelint requirements
