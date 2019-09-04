@@ -304,6 +304,7 @@ DEPENDENCIES
   rails-settings-cached
   rails-settings-ui
   rubocop (~> 0.71.0)
+  rubocop-rails
   rubocop-rails_config (= 0.6.1)
   sass-rails (~> 5.0)
   sendgrid-ruby

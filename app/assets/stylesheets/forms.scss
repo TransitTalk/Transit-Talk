@@ -1,27 +1,28 @@
 .field {
-  margin-top: 20px;
+	margin-top: 20px;
 }
 
 .center {
-  margin: 0 auto;
-  text-align: center;
+	margin: 0 auto;
+	text-align: center;
 }
 
 input[type="submit"].pill {
-  font-family:"Open Sans", "Segoe UI", sans-serif;
-  font-weight:600;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 10px 30px;
-  border-radius: 5px;
-  background-color: #6cbfff;
-  margin-top: 15px;
-  color: white;
-  border: none;
+	font-family: "Open Sans", "Segoe UI", sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+	cursor: pointer;
+	padding: 10px 30px;
+	border-radius: 5px;
+	background-color: #6cbfff;
+	margin-top: 15px;
+	color: white;
+	border: none;
 
-  &:hover, &:focus {
-    background-color: #52b4ff;
-  }
+	&:hover,
+	&:focus {
+		background-color: #52b4ff;
+	}
 }
 
 /* CHECKBOX GRID */
@@ -52,7 +53,7 @@ input[type="submit"].pill {
 }
 
 .checkbox-tile {
-	background-color: #9CA8B5;
+	background-color: #9ca8b5;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -60,5 +61,5 @@ input[type="submit"].pill {
 }
 
 input:checked ~ .checkbox-tile {
-	background-color: #0085FF;
+	background-color: #0085ff;
 }
