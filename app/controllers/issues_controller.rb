@@ -9,8 +9,6 @@ class IssuesController < ApplicationController
     redirect_to root_path unless current_user && current_user.admin
 
     @issues = Issue.all
-
-
   end
 
   # GET /issues/1
