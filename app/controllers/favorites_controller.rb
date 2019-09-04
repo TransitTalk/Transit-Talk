@@ -27,7 +27,6 @@ class FavoritesController < ApplicationController
   end
 
   private
-
     def require_login
       redirect_to new_user_session_path unless current_user
     end

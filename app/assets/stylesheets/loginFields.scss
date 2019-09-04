@@ -1,4 +1,6 @@
-input#user_email, input#user_password, input#user_password_confirmation {
+input#user_email,
+input#user_password,
+input#user_password_confirmation {
 	box-sizing: border-box;
 	width: 100%;
 	max-width: 600px;
@@ -17,12 +19,13 @@ input#user_email, input#user_password, input#user_password_confirmation {
 	text-decoration: none;
 	color: #0076d1;
 
-	&:hover, &:focus { text-decoration: underline; }
+	&:hover,
+	&:focus { text-decoration: underline; }
 }
 
 #signin-options {
-	padding-top:15px;
-	margin-top:15px;
+	padding-top: 15px;
+	margin-top: 15px;
 	text-align: center;
-	display:inline-grid;
+	display: inline-grid;
 }
