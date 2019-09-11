@@ -25,4 +25,13 @@ class ActiveSupport::TestCase
       "user[email]"    => user.email,
       "user[password]" => password
   end
+
+  def sign_in_ui(user_fixture, password:)
+    visit user_session_url
+
+    fill_in 'user_email', with: user_fixture.email
+    fill_in 'user_password', with: password
+
+    click_on 'Log in'
+  end
 end
