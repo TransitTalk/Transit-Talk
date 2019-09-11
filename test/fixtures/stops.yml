@@ -6,4 +6,4 @@ one:
 fullerton:
   id: 2
   name: "fullerton"
-  onestop_id: "fullerton~id"
+  onestop_id: "fullerton-id"

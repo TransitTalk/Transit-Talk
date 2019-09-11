@@ -3,5 +3,5 @@ one:
   line_onestop_id: 1
 
 fullerton_red_line:
-  stop_onestop_id: "fullerton~id"
+  stop_onestop_id: "fullerton-id"
   line_onestop_id: "red-line"
