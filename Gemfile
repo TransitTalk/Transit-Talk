@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 if File.exist?('.ruby-version')
-  ruby "#{File.read('.ruby-version')}"
+  ruby "#{File.read('.ruby-version').strip()}"
 end
 
 git_source(:github) do |repo_name|
