@@ -1,18 +1,36 @@
 <div class="stop-partial">
-	<% if defined? current_line %>
-		<%= render "lines/tiles", lines: stop.lines, current_line: current_line %>
-	<% else %>
-		<%= render "lines/tiles", lines: stop.lines %>
-	<% end %>
-	<span>
-		<%= link_to stop.name, stop %>
-		<% if user_signed_in? %>
-			<% if current_user.favorites.include?(stop) %>
-				<%= render "favorites/favorite", stop: stop %>
+	<div class="issue-card">
+		<span>
+			<% if stop.lines.first.bus? %>
+				<span>Bus SVG here</span>
 			<% else %>
-				<%= render "favorites/unfavorite", stop: stop %>
+				<span>Train SVG here</span>
 			<% end %>
-			<%= new_issue_button(stop: stop) %>
-		<% end %>
-	</span>
+			<%= link_to stop.name, stop %>
+			<% if user_signed_in? %>
+				<% if current_user.favorites.include?(stop) %>
+					<%= render "favorites/favorite", stop: stop %>
+				<% else %>
+					<%= render "favorites/unfavorite", stop: stop %>
+				<% end %>
+				<%= new_issue_button(stop: stop) %>
+			<% end %>
+		</span>
+		<span>
+			<%= stop.issues.length %>
+		</span>
+	</div>
 </div>
+
+<style>
+	.issue-card {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.issue-card span {
+		margin-right: 5px;
+	}
+}
+
+</style>

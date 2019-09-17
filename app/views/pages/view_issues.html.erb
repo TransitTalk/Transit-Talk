@@ -3,8 +3,17 @@
 
 <div class="page-container">
     <h2>
-        Nearby Stops
+        View Issues
     </h2>
+
+	<div id="type-select">
+		<button class="split-button selected" id="bus-line-button">Train/Bus Line</button>
+		<button class="split-button" id="station-button">Station</button>
+	</div>
+
+	<div style="text-align: right;">
+		<span># of issues</span>
+	</div>
 
     <div id="stops_near">
         <% if @nearby_stops %>
@@ -20,20 +29,50 @@
         <% end %>
     </div>
 
-    <% if current_user %>
-        <h2>
-        	<%= image_tag "star.svg", width: "30px", class: "star" %>
-        	Favorite Stops
-        </h2>
-        <div id="stops_fav">
-            <% current_user.favorites.each do |stop| %>
-                <%= render "stops/show_with_issues", stop: stop %>
-            <% end %>
-            <% if  current_user.favorites.empty? %>
-                <em class="placeholder">You have no favorite stops! Go to <%= link_to "All Lines", lines_path %> or search for stops to favorite them.</em>
-            <% end %>
-        </div>
-    <% end %>
+	<div id="back-button">
+		<button>< Back</button>
+	</div>
 </div>
 
 <%= new_issue_button %>
+
+<style>
+	#back-button {
+		display: flex;
+		justify-content: space-around;
+	}
+	#back-button button {
+		padding: 10px 75px;
+		border-radius: 5px;
+	}
+	#stops_near {
+		height: 60vh;
+		overflow-y: auto;
+	}
+	#type-select {
+		display: flex;
+		justify-content: space-between
+	}
+	#type-select button {
+		width: 100%;
+	}
+
+	.split-button {
+		background: white;
+		border: thin solid blue;
+		color: blue;
+	}
+
+	.split-button.selected {
+		background: blue;
+		color: white;
+	}
+
+	#bus-line-button {
+		border-radius: 5px 0px 0px 5px;
+	}
+
+	#station-button {
+		border-radius: 0px 5px 5px 0px;
+	}
+</style>
