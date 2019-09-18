@@ -52,7 +52,7 @@ class IssuesControllerTest < ActionDispatch::IntegrationTest
 
   test "creating issue fails if it does not have type" do
     post issues_url params: { issue: {
-        stop_onestop_id: stops(:one).id,
+        stop_onestop_id: stops(:one).onestop_id,
         line_onestop_id: lines(:one).id,
         description: "something"
     } }
