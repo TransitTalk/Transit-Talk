@@ -1,9 +1,13 @@
 @import 'variables';
 
 .svg-container {
-	margin: 2rem 0 2rem 0;
-	width: 100vw;
-	max-width: 500px;
+	border-top: 10px solid #ff0000; 
+	margin: 3em 0;
+}
+
+.svg-container-green {
+	border-top: 10px solid #00ff00; 
+	margin: 3em 0;
 }
 
 .homepage {
