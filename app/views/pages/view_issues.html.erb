@@ -7,15 +7,29 @@
     </h2>
 
 	<div id="type-select">
-		<button class="split-button selected" id="bus-line-button">Train/Bus Line</button>
-		<button class="split-button" id="station-button">Station</button>
+		<button class="split-button selected" id="lines_near_button">Train/Bus Line</button>
+		<button class="split-button" id="stops_near_button">Station</button>
 	</div>
 
 	<div style="text-align: right;">
 		<span># of issues</span>
 	</div>
 
-    <div id="stops_near">
+	<div id="lines_near" class="toggleable-list">
+		<ul>
+			<% if @nearby_lines %>
+			<% unless @nearby_lines.empty? %>
+				<% @nearby_lines.each do |line| %>
+					<li><%= line.name %></li>
+				<% end %>
+			<% end %>
+			<% else %>
+				<span>No nearby lines</span>
+			<% end %>
+		</ul>
+	</div>
+
+    <div id="stops_near" class="toggleable-list" style="display: none;">
         <% if @nearby_stops %>
             <% unless @nearby_stops.empty? %>
                 <% @nearby_stops.each do |stop| %>
@@ -30,7 +44,7 @@
     </div>
 
 	<div id="back-button">
-		<button>< Back</button>
+		<button><a href="/">< Back</a></button>
 	</div>
 </div>
 
