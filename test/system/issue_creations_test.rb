@@ -7,7 +7,7 @@ class IssueCreationsTest < ApplicationSystemTestCase
     sign_in_ui users(:one), password: "password"
 
     visit line_url(lines(:red_line))
-    find("#create-issue-#{stops(:fullerton).id}").click
+    visit find("#create-issue-#{stops(:fullerton).id}")['href']
 
     assert_selector "h1", text: "Report Train Issue"
   end

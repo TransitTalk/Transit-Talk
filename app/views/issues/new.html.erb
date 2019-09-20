@@ -1,11 +1,12 @@
 <div class="page-container">
 <% if @line_type %>
 	<h1>Report <%= @line_type.capitalize %> Issue</h1>
+<% elsif @line_id %>
+	<% @line=Line.find_by_onestop_id(@line_id) %>
+	<h1>Report <%= @line.bus? ? "Bus" : "Train" %> Issue</h1>
 <% else %>
 	<h1>Report an Issue</h1>
 <% end %>
-
 	<%= render 'form', issue: @issue, line_type: @line_type %>
-
 	<%= link_to 'Back', issues_path %>
 </div>
