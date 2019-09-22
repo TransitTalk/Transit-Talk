@@ -3,7 +3,7 @@
 require "application_system_test_case"
 
 class IssueCreationsTest < ApplicationSystemTestCase
-  test "visiting the index" do
+  test "Creating a train issue is titled 'Report Train Issue'" do
     sign_in_ui users(:one), password: "password"
 
     visit line_url(lines(:red_line))

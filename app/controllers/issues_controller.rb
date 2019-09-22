@@ -27,7 +27,7 @@ class IssuesController < ApplicationController
 
     @line_type = params[:line_type]
     @line_id = params[:line_id]
-    @stop_id = params[:stop_id]
+    @line = Line.find_by_onestop_id(@line_id)
     @issue = Issue.new(stop_onestop_id: params[:stop_id], line_onestop_id: params[:line_id])
   end
 
