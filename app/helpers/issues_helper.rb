@@ -6,6 +6,7 @@ module IssuesHelper
     link_to(
       content_tag(:div, "", class: "create-issue"),
       new_issue_path(line_id: line&.id, stop_id: stop&.id),
+      id: "create-issue-#{stop&.id}"
     )
   end
 end

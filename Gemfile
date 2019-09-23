@@ -8,8 +8,8 @@ git_source(:github) do |repo_name|
 end
 
 group :production do
-	# MySQL
-	gem 'mysql2', '~> 0.5.2'
+  # MySQL
+  gem 'mysql2', '~> 0.5.2'
 end
 
 
@@ -18,8 +18,8 @@ gem 'rails', '~> 5.2', '>= 5.2.3'
 # Use sqlite3 as the database for Active Record
 
 group :development, :test do
-	# SQLite, only on local
-	gem 'sqlite3'
+  # SQLite, only on local
+  gem 'sqlite3'
 
   # Annotate model files with db schema
   gem 'annotate'
@@ -28,7 +28,7 @@ end
 # Use devise here for db management
 gem 'devise', '4.6.2'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -98,8 +98,15 @@ gem 'rails-settings-ui'
 # For controller tests
 gem 'rails-controller-testing'
 
-# Add SimpleCov for code coverage & coveralls config
-gem 'simplecov', require: false, group: :test
+group :test do
+  # Add SimpleCov for code coverage & coveralls config
+  gem 'simplecov', require: false
+
+  # add capybara and other UI testing dependencies
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end
 
 # Add Coveralls for code coverage badge & tracking
 gem 'coveralls', require: false
+
