@@ -16,17 +16,17 @@
 	</div>
 
 	<div id="lines_near" class="toggleable-list">
-		<ul>
-			<% if @nearby_lines %>
-			<% unless @nearby_lines.empty? %>
-				<% @nearby_lines.each do |line| %>
-					<li><%= line.name %></li>
-				<% end %>
-			<% end %>
-			<% else %>
-				<span>No nearby lines</span>
-			<% end %>
-		</ul>
+		<% if @nearby_lines %>
+            <% unless @nearby_lines.empty? %>
+                <% @nearby_lines.each do |line| %>
+                    <%= render "stops/show_with_issues", stop: line.stops.first %>
+                <% end %>
+            <% else %>
+                <em class="placeholder">There seem to be no nearby stops!</em>
+            <% end %>
+        <% else %>
+            <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
+        <% end %>
 	</div>
 
     <div id="stops_near" class="toggleable-list" style="display: none;">
