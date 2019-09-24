@@ -6,6 +6,7 @@
 #
 one: 
   email: vkoves@caravantransit.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
 
 # column: value
 #

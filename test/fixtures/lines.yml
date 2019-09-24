@@ -1,5 +1,11 @@
 one:
   onestop_id: "1" 
   name: "line1"
-  color: "green" 
+  color: "green"
+
+red_line:
+  onestop_id: "red-line"
+  name: "red line"
+  color: "red"
+  system_type: 0 # tram type
 

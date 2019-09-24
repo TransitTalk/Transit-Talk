@@ -11,6 +11,6 @@ class LinesController < ApplicationController
 
   def get_stops
     @line = Line.find(params[:line_id])
-    render json: @line.stops.pluck(:id, :name)
+    render json: @line.stops.pluck(:onestop_id, :name)
   end
 end
