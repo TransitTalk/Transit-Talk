@@ -19,7 +19,7 @@
 		<% if @nearby_lines %>
             <% unless @nearby_lines.empty? %>
                 <% @nearby_lines.each do |line| %>
-                    <%= render "stops/show_with_issues", stop: line.stops.first %>
+                    <%= render "lines/show_with_issues", line: line %>
                 <% end %>
             <% else %>
                 <em class="placeholder">There seem to be no nearby stops!</em>
