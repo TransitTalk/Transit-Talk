@@ -4,7 +4,8 @@
 			<% if stop.lines.first.bus? %>
 				<%= image_tag "bus.svg", alt: '' %>
 			<% else %>
-				<%= image_tag "train.svg", alt: '' %>
+				<span style="width: 5px; background: #<%= stop.lines.first.color %>"></span>
+				<%= image_tag "train.svg",alt: '' %>
 			<% end %>
 			<%= link_to stop.name, stop %>
 			<% if user_signed_in? %>
