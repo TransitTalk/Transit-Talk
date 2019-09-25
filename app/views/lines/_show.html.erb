@@ -4,7 +4,7 @@
 			<% if line.bus? %>
 				<%= image_tag "bus.svg", alt: '' %>
 			<% else %>
-				<span style="width: 5px; background: #<%= line.color %>"></span>
+				<span style="width: 5px; background-color: #<%= line.color %>">&nbsp;</span>
 				<%= image_tag "train.svg",alt: '' %>
 			<% end %>
 			<%= link_to line.name, line %>
