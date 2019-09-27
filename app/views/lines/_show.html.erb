@@ -1,24 +1,26 @@
-<div class="line-partial">
-	<div class="issue-card">
-		<span>
-			<% if line.bus? %>
-				<%= image_tag "bus.svg", alt: '' %>
-			<% else %>
-				<span style="width: 5px; background-color: #<%= line.color %>">&nbsp;</span>
-				<%= image_tag "train.svg",alt: '' %>
-			<% end %>
-			<%= link_to line.name, line %>
-			<% if user_signed_in? %>
-				<% if current_user.favorites.include?(line) %>
-					<%= render "favorites/favorite", line: line %>
+<%=link_to line_path(line) do %>
+	<div class="line-partial">
+		<div class="issue-card">
+			<span>
+				<% if line.bus? %>
+					<%= image_tag "bus.svg", alt: '' %>
 				<% else %>
-					<%= render "favorites/unfavorite", line: line %>
+					<span style="width: 5px; background-color: #<%= line.color %>">&nbsp;</span>
+					<%= image_tag "train.svg",alt: '' %>
 				<% end %>
-				<%= new_issue_button(line: line) %>
-			<% end %>
-		</span>
-		<span>
-			<%= line.issues.length %>
-		</span>
+				<span><%= line.name %></span>
+				<% if user_signed_in? %>
+					<% if current_user.favorites.include?(line) %>
+						<%= render "favorites/favorite", line: line %>
+					<% else %>
+						<%= render "favorites/unfavorite", line: line %>
+					<% end %>
+					<%= new_issue_button(line: line) %>
+				<% end %>
+			</span>
+			<span>
+				<%= line.issues.length %>
+			</span>
+		</div>
 	</div>
-</div>
+<% end %>
