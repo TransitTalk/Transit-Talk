@@ -1,0 +1,11 @@
+<% unless table_collection.empty? %>
+    <div class="striped-table">
+        <% table_collection.each_with_index do |row, index| %>
+            <div class="<%= 'stripe' if index % 2 == 0 %>">
+                <%= render row_partial, row_data: row, index: index %>
+            </div>
+        <% end %>
+    </div>
+<% else %>
+    <span>No data</span>
+<% end %>

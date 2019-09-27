@@ -28,17 +28,18 @@
     background: white;
     border: thin solid blue;
     color: blue;
+    font-size: 1.125em;
+}
+
+.split-button:first-child{
+    border-radius: 5px 0px 0px 5px;
+}
+
+.split-button:last-child{
+    border-radius: 0px 5px 5px 0px;
 }
 
 .split-button.selected {
     background: blue;
     color: white;
-}
-
-#bus-line-button {
-    border-radius: 5px 0px 0px 5px;
-}
-
-#station-button {
-    border-radius: 0px 5px 5px 0px;
 }

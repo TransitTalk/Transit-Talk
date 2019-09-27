@@ -13,27 +13,16 @@
 
 	<div id="lines_near" class="toggleable-list">
 		<% if @nearby_lines %>
-            <% unless @nearby_lines.empty? %>
-                <% @nearby_lines.each do |line| %>
-                    <%= render "lines/show_with_issues", line: line %>
-                <% end %>
-            <% else %>
-                <em class="placeholder">There seem to be no nearby stops!</em>
-            <% end %>
+            <%= render "shared/striped_table", table_collection: @nearby_lines, row_partial:"lines/show_with_issues"%>
         <% else %>
             <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
         <% end %>
 	</div>
 
+
     <div id="stops_near" class="toggleable-list" style="display: none;">
-        <% if @nearby_stops %>
-            <% unless @nearby_stops.empty? %>
-                <% @nearby_stops.each do |stop| %>
-                    <%= render "stops/show_with_issues", stop: stop %>
-                <% end %>
-            <% else %>
-                <em class="placeholder">There seem to be no nearby stops!</em>
-            <% end %>
+        <% if @nearby_lines %>
+            <%= render "shared/striped_table", table_collection: @nearby_stops, row_partial:"stops/show_with_issues"%>
         <% else %>
             <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
         <% end %>

@@ -1,5 +1,5 @@
-<% unless line.stops.empty? %>
+<% unless row_data.stops.empty? %>
 	<div class="lines-container">
-		<%= render "lines/show", line: line %>
+		<%= render "lines/show", line: row_data , stripe: index % 2 == 0%>
 	</div>
 <% end %>
