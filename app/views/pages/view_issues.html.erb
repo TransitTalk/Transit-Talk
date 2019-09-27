@@ -1,19 +1,15 @@
 <% content_for :title do %> - View Issues<% end %>
-<%= javascript_include_tag "location" %>
 
 <div class="page-container">
     <h2>
         View Issues
     </h2>
 
-	<div id="type-select">
-		<button class="split-button selected" id="lines_near_button">Train/Bus Line</button>
-		<button class="split-button" id="stops_near_button">Station</button>
-	</div>
-
 	<div style="text-align: right;">
 		<span># of issues</span>
 	</div>
+
+	<%= render "issues/split_button" %>
 
 	<div id="lines_near" class="toggleable-list">
 		<% if @nearby_lines %>
@@ -43,50 +39,7 @@
         <% end %>
     </div>
 
-	<div id="back-button">
-		<button><a href="/">< Back</a></button>
-	</div>
+	<%= render "issues/back_button" %>
 </div>
 
 <%= new_issue_button %>
-
-<style>
-	#back-button {
-		display: flex;
-		justify-content: space-around;
-	}
-	#back-button button {
-		padding: 10px 75px;
-		border-radius: 5px;
-	}
-	#stops_near {
-		height: 60vh;
-		overflow-y: auto;
-	}
-	#type-select {
-		display: flex;
-		justify-content: space-between
-	}
-	#type-select button {
-		width: 100%;
-	}
-
-	.split-button {
-		background: white;
-		border: thin solid blue;
-		color: blue;
-	}
-
-	.split-button.selected {
-		background: blue;
-		color: white;
-	}
-
-	#bus-line-button {
-		border-radius: 5px 0px 0px 5px;
-	}
-
-	#station-button {
-		border-radius: 0px 5px 5px 0px;
-	}
-</style>

@@ -1,0 +1,44 @@
+.back-button-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+.back-button-wrapper button {
+    padding: 10px 75px;
+    border-radius: 5px;
+}
+
+#stops_near {
+    height: 60vh;
+    overflow-y: auto;
+}
+#lines_near {
+    height: 60vh;
+    overflow-y: auto;
+}
+
+#type-select {
+    display: flex;
+    justify-content: space-between
+}
+#type-select button {
+    width: 100%;
+}
+
+.split-button {
+    background: white;
+    border: thin solid blue;
+    color: blue;
+}
+
+.split-button.selected {
+    background: blue;
+    color: white;
+}
+
+#bus-line-button {
+    border-radius: 5px 0px 0px 5px;
+}
+
+#station-button {
+    border-radius: 0px 5px 5px 0px;
+}

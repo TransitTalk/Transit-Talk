@@ -27,7 +27,3 @@ $(document).ready(function() {
             $(this).addClass('selected'); 
         });
 });
-
-console.log('loaded');
-
-console.log($('.split-button'));
