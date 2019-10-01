@@ -85,3 +85,13 @@ input:checked ~ .checkbox-tile {
 		width: 60%;
 	}
 }
+
+input[type=submit] {
+	background-color: #0085ff;
+	padding: 20px 25px;
+	color: #FFFFFF;
+	text-transform: capitalize;
+	border: 1px solid #979797;
+	box-sizing: border-box;
+	border-radius: 9px;
+}
