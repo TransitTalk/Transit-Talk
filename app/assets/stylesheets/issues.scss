@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: space-around;
 }
+
 .back-button-wrapper button {
 	padding: 10px 75px;
 	border-radius: 5px;
@@ -11,6 +12,7 @@
 	height: 60vh;
 	overflow-y: auto;
 }
+
 #lines_near {
 	height: 60vh;
 	overflow-y: auto;
@@ -20,6 +22,7 @@
 	display: flex;
 	justify-content: space-between;
 }
+
 #type-select button {
 	width: 100%;
 }
@@ -32,11 +35,11 @@
 }
 
 .split-button:first-child {
-	border-radius: 5px 0px 0px 5px;
+	border-radius: 5px 0 0 5px;
 }
 
 .split-button:last-child {
-	border-radius: 0px 5px 5px 0px;
+	border-radius: 0 5px 5px 0;
 }
 
 .split-button.selected {
