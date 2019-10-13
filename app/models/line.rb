@@ -51,6 +51,10 @@ class Line < ApplicationRecord
     end
   end
 
+  def has_color?
+    !color.nil? && !color.empty?
+  end
+
   # GTFS reference says that a "route_type" of 0 or 1 indicates a train line
   # https://developers.google.com/transit/gtfs/reference/#routestxt
   def train?
