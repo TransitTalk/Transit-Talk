@@ -28,7 +28,7 @@ group :development, :test do
 end
 
 # Use devise here for db management
-gem 'devise', '4.6.2'
+gem 'devise', '4.7.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.8'
 # Use SCSS for stylesheets
