@@ -12,11 +12,11 @@
 	padding: 1rem;
 
 	.green-separator {
-		@include separator('green')
+		@include separator('green');
 	}
 
 	.red-separator {
-		@include separator('red')
+		@include separator('red');
 	}
 
 	h2 {
