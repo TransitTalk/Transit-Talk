@@ -1,7 +1,7 @@
 @import 'variables';
 
 @mixin separator($color) {
-	background: image_url("/assets/separator-#{$color}.svg") no-repeat center;
+	background: image_url("separator-#{$color}.svg") no-repeat center;
 	height: 25px;
 	width: 400px;
 	margin: 2rem;
