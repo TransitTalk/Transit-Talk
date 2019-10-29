@@ -35,8 +35,21 @@ class Stop < ApplicationRecord
     twin_stop || self
   end
 
+  def bus?
+    serviced_by == "bus"
+  end
+
+  def train?
+    serviced_by == "tram" || serviced_by == "metro"
+  end
+
   # Replaces the ~ in stop IDs so they can be used as valid HTML IDs.
   def html_safe_id
     id.gsub(/~/, "-")
+  end
+
+  # adds num_issues attribute
+  def self.with_issue_count
+    Stop.left_joins(:issues).select("stops.*, count(issues.id) as num_issues").group("stops.onestop_id")
   end
 end

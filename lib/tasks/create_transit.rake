@@ -152,6 +152,7 @@ namespace :transit do
         stop.name = stop_obj['name']
         stop.longitude = stop_obj['geometry']['coordinates'][0] # takes [X, Y] format, aka [longitude, latitude]
         stop.lattitude = stop_obj['geometry']['coordinates'][1] # takes [X, Y] format, aka [longitude, latitude]
+        stop.serviced_by = stop_obj['served_by_vehicle_types'][0] # we'll just take the first type. For Chicago, there's only 1.
 
         tland_stops << stop
       end
