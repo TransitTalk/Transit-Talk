@@ -1,7 +1,7 @@
 @import 'variables';
 
 @mixin separator($color) {
-	background: url("/assets/separator-#{$color}.svg") no-repeat center;
+	background: image_url("separator-#{$color}.svg") no-repeat center;
 	height: 25px;
 	width: 400px;
 	margin: 2rem;
@@ -12,11 +12,11 @@
 	padding: 1rem;
 
 	.green-separator {
-		@include separator('green')
+		@include separator('green');
 	}
 
 	.red-separator {
-		@include separator('red')
+		@include separator('red');
 	}
 
 	h2 {
