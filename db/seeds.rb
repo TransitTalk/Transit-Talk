@@ -31,7 +31,9 @@ LIST_LINE_COLORS =  [
                       "c70d30"
                     ]
 
-LIST_WHEELCHAIR_ACCESSIBLE =  ["Elevator", "Ramp"]
+LIST_WHEELCHAIR_ACCESSIBLE = %w(Elevator Ramp)
+
+LIST_VEHICLE_TYPE = %w[bus metro]
 
 BIKES_ALLOWED = 10
 
@@ -84,7 +86,8 @@ AMOUNT_STOPS.times do |i|
       longitude: Faker::Address.latitude,
       lattitude: Faker::Address.longitude,
       twin_stop_id: i,
-      onestop_id: "#{i + 1}"
+      onestop_id: "#{i + 1}",
+      serviced_by: LIST_VEHICLE_TYPE.sample
     )
 
   # Assign to a random line

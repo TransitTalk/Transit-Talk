@@ -5,9 +5,7 @@ class PagesController < ApplicationController
     # If rails is not prod, just take the top 50 stops.
     # There is a known issue with SQLite and the geolocation gem
     if !Rails.env.production?
-      @nearby_stops = Stop.take(50)
-      @nearby_lines = Line.where(vehicle_type: "metro").take(10) |
-        Line.where(vehicle_type: "bus").take(10)
+      @nearby_stops = Stop.with_issue_count.take(50)
     # If our location.js has pulled a location, use it to find Stops
     elsif (params[:lat]) && (params[:long])
       @nearby_stops = Stop.includes(:lines).within(0.2, origin: [params[:lat], params[:long]])

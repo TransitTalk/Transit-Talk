@@ -1,24 +1,21 @@
 <div class="stop-partial">
-	<div class="issue-card">
-		<span>
-			<% if stop.lines.first.bus? %>
-				<%= image_tag "bus.svg", alt: '' %>
+  <span>
+		<%= link_to stop.name, stop %>
+    <% if user_signed_in? %>
+			<% if current_user.favorites.include?(stop) %>
+				<%= render "favorites/favorite", stop: stop %>
 			<% else %>
 				<span style="width: 5px; background: #<%= stop.lines.first.color %>"></span>
 				<%= image_tag "train.svg",alt: '' %>
 			<% end %>
-			<%= link_to stop.name, stop %>
-			<% if user_signed_in? %>
-				<% if current_user.favorites.include?(stop) %>
-					<%= render "favorites/favorite", stop: stop %>
-				<% else %>
-					<%= render "favorites/unfavorite", stop: stop %>
-				<% end %>
-				<%= new_issue_button(stop: stop) %>
-			<% end %>
-		</span>
-		<span>
-			<%= stop.issues.length %>
-		</span>
-	</div>
+    <% end %>
+    <%= new_issue_button(stop: stop) %>
+  </span>
+  <span>
+      <% if stop.respond_to?(:num_issues) %>
+			  <%= stop.num_issues %>
+      <% else %>
+        <%= stop.issues.count %>
+      <% end %>
+  </span>
 </div>
