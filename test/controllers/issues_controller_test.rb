@@ -17,10 +17,10 @@ class IssuesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "unauthenticated user cannot create an issue" do
+  test "unauthenticated user can create an issue" do
     get new_issue_url, params: { stop_id: stops(:one).id, line_id: lines(:one).id }
 
-    assert_response :found
+    assert_response :ok
   end
 
   test "get redirected from issues index if normal user" do

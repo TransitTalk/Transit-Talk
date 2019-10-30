@@ -59,8 +59,4 @@ $(document).ready(function()
 			});
 		});
 	});
-
-	$("#opt-out-login").click(function() {
-	  document.cookie = "opted_out_of_login=true;path=/"
-  })
 });
