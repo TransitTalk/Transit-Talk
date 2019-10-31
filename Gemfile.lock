@@ -113,6 +113,11 @@ GEM
       dry-types (~> 0.11.0)
     erubi (1.9.0)
     execjs (2.7.0)
+    factory_bot (5.1.1)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.1)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
     faker (1.8.7)
       i18n (>= 0.7)
     ffi (1.11.1)
@@ -309,6 +314,7 @@ DEPENDENCIES
   coveralls
   devise (= 4.7.1)
   dotenv-rails (= 2.7.5)
+  factory_bot_rails
   faker
   geokit-rails
   gtfs

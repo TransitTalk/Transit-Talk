@@ -7,8 +7,7 @@ class StopsControllerTest < ActionDispatch::IntegrationTest
   # Simple test to verify we get the show page when we
   # invoke the page with a valid ID
   test "get show page with valid stop id" do
-    param_stop = stops(:one)
-    assert_not_nil param_stop
+    param_stop = create :stop
 
     get stop_path(param_stop.id)
     stop = assigns(:stop)
