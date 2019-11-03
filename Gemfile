@@ -63,6 +63,7 @@ group :development, :test do
   gem 'rubocop-rails'
   gem "rubocop-rails_config", '0.6.1'
   gem 'faker'
+  gem 'factory_bot_rails'
 end
 
 group :development do

@@ -4,12 +4,12 @@ require "test_helper"
 
 class LineTest < ActiveSupport::TestCase
   setup do
-    Line.create(name: "RouteShort")
-    Line.create(name: "RouteShort", vehicle_type: "bus")
-    Line.create(name: "RouteShort", vehicle_type: "train")
-    Line.create(name: "RouteShort", system_type: Line::TRAM_SYSTEM_TYPE)
-    Line.create(name: "RouteShort", system_type: Line::METRO_SYSTEM_TYPE)
-    Line.create(name: "RouteShort", system_type: Line::BUS_SYSTEM_TYPE)
+    create :line, name: "RouteShort"
+    create :line, name: "RouteShort", vehicle_type: "bus"
+    create :line, name: "RouteShort", vehicle_type: "train"
+    create :line, name: "RouteShort", system_type: Line::TRAM_SYSTEM_TYPE
+    create :line, name: "RouteShort", system_type: Line::METRO_SYSTEM_TYPE
+    create :line, name: "RouteShort", vehicle_type: "bus", system_type: Line::BUS_SYSTEM_TYPE
   end
 
   test "returns proper long name" do
