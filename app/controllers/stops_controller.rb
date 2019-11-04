@@ -2,6 +2,6 @@
 
 class StopsController < ApplicationController
   def show
-    @stop = Stop.find(params[:stop_id])
+    @stop = Stop.includes(:issues).find(params[:stop_id])
   end
 end
