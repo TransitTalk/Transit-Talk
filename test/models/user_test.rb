@@ -4,9 +4,8 @@ require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
   setup do
-    User.create(email: "badperson@gmail.com",
-                password: "reallysecure",
-                password_confirmation: "reallysecure")
+    create :user, email: "badperson@gmail.com",
+                password: "reallysecure"
   end
 
   test "banning user bans correct user" do

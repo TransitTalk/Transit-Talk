@@ -84,7 +84,7 @@ class Line < ApplicationRecord
         .order(:name)
     elsif line_type == "bus"
       Line.where(system_type: BUS_SYSTEM_TYPE)
-        .or(Line.where(vehicle_type: "bus"))
+        .or(Line.where(system_type: nil, vehicle_type: "bus"))
         .order(:name)
     else
       Line.order(:name)

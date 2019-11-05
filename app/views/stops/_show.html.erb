@@ -1,3 +1,4 @@
+<% current_line ||= nil %>
 <div class="stop-partial">
   <span>
 		<%= link_to stop.name, stop %>
@@ -9,13 +10,9 @@
 				<%= image_tag "train.svg",alt: '' %>
 			<% end %>
     <% end %>
-    <%= new_issue_button(stop: stop) %>
+    <%= new_issue_button(stop: stop, line: current_line) %>
   </span>
   <span>
-      <% if stop.respond_to?(:num_issues) %>
-			  <%= stop.num_issues %>
-      <% else %>
-        <%= stop.issues.count %>
-      <% end %>
+    <%= stop.issues.length %>
   </span>
 </div>

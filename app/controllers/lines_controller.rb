@@ -6,7 +6,7 @@ class LinesController < ApplicationController
   end
 
   def show
-    @line = Line.find(params[:id])
+    @line = Line.includes(stops: [:issues]).find(params[:id])
   end
 
   def get_stops

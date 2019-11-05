@@ -1,9 +1,0 @@
-one:
-  id: 1
-  name: "stop1"
-  onestop_id: "test-stop-id"
-
-fullerton:
-  id: 2
-  name: "fullerton"
-  onestop_id: "fullerton-id"

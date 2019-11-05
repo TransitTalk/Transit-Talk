@@ -1,10 +1,13 @@
 require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  driven_by :selenium, using: :headless_firefox, screen_size: [1400, 1400]
-
-  def page
-    Capybara.current_session
+  def self.get_browser
+    if ENV["SHOW_SYSTEM_TEST_OUTPUT"].present?
+      :firefox
+    else
+      :headless_firefox      
+    end
   end
-  
+
+  driven_by :selenium, using: get_browser(), screen_size: [1400, 1400]
 end
