@@ -1,18 +1,17 @@
+<% current_line ||= nil %>
 <div class="stop-partial">
-	<% if defined? current_line %>
-		<%= render "lines/tiles", lines: stop.lines, current_line: current_line %>
-	<% else %>
-		<%= render "lines/tiles", lines: stop.lines %>
-	<% end %>
-	<span>
+  <span>
 		<%= link_to stop.name, stop %>
-		<% if user_signed_in? %>
+    <% if user_signed_in? %>
 			<% if current_user.favorites.include?(stop) %>
 				<%= render "favorites/favorite", stop: stop %>
 			<% else %>
 				<%= render "favorites/unfavorite", stop: stop %>
 			<% end %>
-			<%= new_issue_button(stop: stop) %>
-		<% end %>
-	</span>
+    <% end %>
+    <%= new_issue_button(stop: stop, line: current_line) %>
+  </span>
+  <span>
+    <%= stop.issues.length %>
+  </span>
 </div>

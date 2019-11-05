@@ -1,11 +1,6 @@
 <div class = 'center'>
   
   <div id="signin-options">
-
-    <%- unless params[:from].blank? %>
-      <%=  link_to "Opt out", inferred_last_page_path(allowed_query_params: [:line_type]), id: "opt-out-login"  %>
-    <% end -%>
-
     <%- if controller_name != 'sessions' %>
       <div id="signin-options" class = ''>  <%= link_to "Log in", new_session_path(resource_name), class: "login-link" %></div>
     <% end -%>

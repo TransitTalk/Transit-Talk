@@ -79,17 +79,3 @@ a {
 	background-repeat: no-repeat;
 	z-index: 2;
 }
-
-body > a > .create-issue {
-	position: fixed;
-	height: 40px;
-	width: 40px;
-	bottom: 10px;
-	background: $theme-color;
-	right: 10px;
-	border-radius: 20px;
-	background-image: url(asset-path('plus.svg'));
-	background-size: 60%;
-	background-position: center;
-	background-repeat: no-repeat;
-}

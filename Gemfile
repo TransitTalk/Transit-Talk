@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.4.4'
 
+if File.exist?('.ruby-version')
+  ruby "#{File.read('.ruby-version').strip()}"
+end
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -26,7 +28,7 @@ group :development, :test do
 end
 
 # Use devise here for db management
-gem 'devise', '4.6.2'
+gem 'devise', '4.7.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.8'
 # Use SCSS for stylesheets
@@ -61,6 +63,7 @@ group :development, :test do
   gem 'rubocop-rails'
   gem "rubocop-rails_config", '0.6.1'
   gem 'faker'
+  gem 'factory_bot_rails'
 end
 
 group :development do

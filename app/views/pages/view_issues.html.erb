@@ -8,7 +8,7 @@
 
     <div id="stops_near">
         <% if @nearby_stops %>
-            <% unless @nearby_stops.empty? %>
+            <% if @nearby_stops.present? %>
                 <% @nearby_stops.each do |stop| %>
                     <%= render "stops/show_with_issues", stop: stop %>
                 <% end %>
@@ -35,5 +35,3 @@
         </div>
     <% end %>
 </div>
-
-<%= new_issue_button %>

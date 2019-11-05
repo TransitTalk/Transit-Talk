@@ -7,8 +7,8 @@ class FavoritesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   setup do
-    @user = users(:one)
-    @test_stop = stops(:one)
+    @user = create :user
+    @test_stop = create :stop, onestop_id: "test-stop-id"
   end
 
   test "index action redirects to new_user_session_path if no user is signed in" do
