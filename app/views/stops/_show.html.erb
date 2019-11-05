@@ -1,13 +1,21 @@
 <% current_line ||= nil %>
 <div class="stop-partial">
   <span>
+   <% if stop.lines.first.bus? %>
+      <%= image_tag "bus.svg", alt: '', class: 'small' %>
+    <% else %>
+      <% stop.lines.each do |line| %>
+        <span class="color-stripe" style="background-color: #<%= line.color %>">&nbsp;</span>
+      <% end %>
+      <%= image_tag "train.svg",alt: '', class: 'small' %>
+    <% end %>
+    
 		<%= link_to stop.name, stop %>
     <% if user_signed_in? %>
 			<% if current_user.favorites.include?(stop) %>
 				<%= render "favorites/favorite", stop: stop %>
-			<% else %>
-				<span style="width: 5px; background: #<%= stop.lines.first.color %>"></span>
-				<%= image_tag "train.svg",alt: '' %>
+      <% else %>
+        <%= render "favorites/unfavorite", stop: stop %>
 			<% end %>
     <% end %>
     <%= new_issue_button(stop: stop, line: current_line) %>
