@@ -6,4 +6,5 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
   def page
     Capybara.current_session
   end
+  
 end

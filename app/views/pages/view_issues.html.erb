@@ -12,13 +12,25 @@
 	<%= render "issues/split_button" %>
 
 
-    <div id="stops_near" class="toggleable-list" style="display: none;">
-        <% if @nearby_stops %>
-            <%= render "shared/striped_table", table_collection: @nearby_stops, row_partial:"stops/show_with_issues"%>
+    <div id="trains_near" class="toggleable-list">
+        <p>Trains</p>
+        <% if @nearby_bus_stops %>
+            <%= render "shared/striped_table", table_collection: @nearby_bus_stops, row_partial:"stops/show_with_issues"%>
         <% else %>
             <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
         <% end %>
     </div>
+
+    <div id="busses_near" class="toggleable-list" style="display: none;">
+        <p>Busses</p>
+        <% if @nearby_train_stops %>
+            <%= render "shared/striped_table", table_collection: @nearby_train_stops, row_partial:"stops/show_with_issues"%>
+        <% else %>
+            <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
+        <% end %>
+    </div>
+
+    
 
 	<%= render "issues/back_button" %>
 </div>
