@@ -16,8 +16,7 @@ class LinesControllerTest < ActionDispatch::IntegrationTest
   # Simple test to verify we get the show page when we
   # invoke the page with a valid ID
   test "get show page with valid line id" do
-    test_line = lines(:one)
-    assert_not_nil test_line
+    test_line = create :line
 
     get line_path(test_line)
     line = assigns(:line)
@@ -35,8 +34,7 @@ class LinesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "get stops page" do
-    test_line = lines(:one)
-    assert_not_nil test_line
+    test_line = create :line
 
     get get_stops_path(test_line)
     assigns(:line)

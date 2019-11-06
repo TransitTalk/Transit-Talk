@@ -2,8 +2,8 @@
 	<% unless defined? current_line and line == current_line %>
 		<div class="line-tile">
 			<%= link_to line_path(line) do %>
-				<% if line.color %>
-					<div class="line-swatch" style="background: #<%= line.color %>"></div>
+				<% if line.color && line.train? %>
+					<div class="line-swatch" style="background: <%= "##{line.color}" %>"></div>
 				<% else %>
 					<div class="api-id"><%= line.name %></div>
 				<% end %>
