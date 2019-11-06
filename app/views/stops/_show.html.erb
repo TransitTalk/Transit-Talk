@@ -1,16 +1,13 @@
 <% current_line ||= nil %>
 <div class="stop-partial">
   <span>
-   <% if stop.lines.first.bus? %>
-      <%= image_tag "bus.svg", alt: '', class: 'small' %>
-    <% else %>
-      <% stop.lines.each do |line| %>
-        <span class="color-stripe" style="background-color: #<%= line.color %>">&nbsp;</span>
-      <% end %>
-      <%= image_tag "train.svg",alt: '', class: 'small' %>
-    <% end %>
-    
+    <%= image_tag((stop.bus? ?  "bus.svg" : "train.svg"), alt: '', class: "small") %>
 		<%= link_to stop.name, stop %>
+    <%if stop.train? %>
+      <% stop.lines.each do |line| %>
+        <span class="color-stripe" style="background-color: <%= "##{line.color}" %>"></span>
+      <% end %>
+    <% end %>
     <% if user_signed_in? %>
 			<% if current_user.favorites.include?(stop) %>
 				<%= render "favorites/favorite", stop: stop %>

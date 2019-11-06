@@ -1,6 +1,6 @@
 
 
-$(document).ready(function() {
+$(document).on('ready turbolinks:load', function() {
     $('button.split-button')
         .click(function() {
             // Get button Id which was clicked

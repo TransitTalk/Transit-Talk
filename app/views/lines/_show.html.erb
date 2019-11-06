@@ -2,16 +2,12 @@
 	<div class="line-partial">
 		<div class="issue-card">
 			<span>
-				<% if line.bus? %>
-					<%= image_tag "bus.svg", alt: '' %>
-				<% else %>
-					<% if line.has_color? %>
-						<span class="color-stripe" style="background-color: #<%= line.color %>">&nbsp;</span>
-					<% end %>
-					<%= image_tag "train.svg",alt: '' %>
-				<% end %>
+        <%= image_tag((line.bus? ?  "bus.svg" : "train.svg"), alt: '', class: "small") %>
 				<span><%= line.name %></span>
-				<% if user_signed_in? %>
+        <% if line.has_color? && line.train? %>
+						<span class="color-stripe" style="background-color: <%= "##{line.color}" %>">&nbsp;</span>
+        <% end %>
+        <% if user_signed_in? %>
 					<% if current_user.favorites.include?(line) %>
 						<%= render "favorites/favorite", line: line %>
 					<% else %>

@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require_tree .
 
-$(document).ready(function()
+$(document).on('ready turbolinks:load', function()
 {
 	$("header .hamburger").click(function()
 	{

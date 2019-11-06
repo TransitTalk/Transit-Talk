@@ -1,69 +1,54 @@
-# frozen_string_literal: true
+  # frozen_string_literal: true
 
-# == Schema Information
-#
-# Table name: stops
-#
-#  id           :integer          not null
-#  api_id       :string
-#  name         :string
-#  longitude    :decimal(12, 8)
-#  lattitude    :decimal(12, 8)
-#  twin_stop_id :integer
-#  onestop_id   :string           primary key
-#
+  # == Schema Information
+  #
+  # Table name: stops
+  #
+  #  id           :integer          not null
+  #  api_id       :string
+  #  name         :string
+  #  longitude    :decimal(12, 8)
+  #  lattitude    :decimal(12, 8)
+  #  twin_stop_id :integer
+  #  onestop_id   :string           primary key
+  #
 
-# GTFS route types
+  # GTFS route types
   TRAM_SYSTEM_TYPE = 0
   METRO_SYSTEM_TYPE = 1
   BUS_SYSTEM_TYPE = 3
 
-class Stop < ApplicationRecord
-  has_many :issues, foreign_key: "stop_onestop_id"
-  has_and_belongs_to_many :lines,
-    foreign_key: "stop_onestop_id",
-    association_foreign_key: "line_onestop_id"
-  belongs_to :twin_stop, class_name: "Stop", required: false
-  has_and_belongs_to_many :users, foreign_key: "stop_onestop_id"
+  class Stop < ApplicationRecord
+    has_many :issues, foreign_key: "stop_onestop_id"
+    has_and_belongs_to_many :lines,
+      foreign_key: "stop_onestop_id",
+      association_foreign_key: "line_onestop_id"
+    belongs_to :twin_stop, class_name: "Stop", required: false
+    has_and_belongs_to_many :users, foreign_key: "stop_onestop_id"
 
-  scope :bus_stop, -> { includes(:lines).where(
-    "lines.system_type = 3 OR 
-      (lines.system_type is null and vehicle_type = 'bus')"
-  ).references(:lines)}
+    self.primary_key = "onestop_id"
 
-  scope :train_stop, -> { includes(:lines).where(
-    "lines.system_type = 0 OR lines.system_type = 1 OR 
-      (lines.system_type is null and (vehicle_type = 'tram' or vehicle_type = 'metro'))"
-    ).references(:lines)}
-  # scope :bus_stop, -> { joins(:lines).where(system_type: BUS_SYSTEM_TYPE)
-  #   .or(Line.where(system_type: nil, vehicle_type: "bus"))}
-
-  # scope :train_stop, -> { joins(:lines).where(system_type: [TRAM_SYSTEM_TYPE, METRO_SYSTEM_TYPE])
-  # .or(Line.where(vehicle_type: ["tram", "metro"]))}
-
-  self.primary_key = "onestop_id"
-
-  acts_as_mappable default_units: :miles,
-                   default_formula: :sphere,
-                   distance_field_name: :distance,
-                   lat_column_name: :lattitude,
-                   lng_column_name: :longitude
+    acts_as_mappable default_units: :miles,
+                     default_formula: :sphere,
+                     distance_field_name: :distance,
+                     lat_column_name: :lattitude,
+                     lng_column_name: :longitude
 
 
-  def original
-    twin_stop || self
+    def original
+      twin_stop || self
+    end
+
+    def bus?
+      serviced_by == "bus"
+    end
+
+    def train?
+      serviced_by == "tram" || serviced_by == "metro"
+    end
+
+    # Replaces the ~ in stop IDs so they can be used as valid HTML IDs.
+    def html_safe_id
+      id.gsub(/~/, "-")
+    end
   end
-
-  def bus?
-    serviced_by == "bus"
-  end
-
-  def train?
-    serviced_by == "tram" || serviced_by == "metro"
-  end
-
-  # Replaces the ~ in stop IDs so they can be used as valid HTML IDs.
-  def html_safe_id
-    id.gsub(/~/, "-")
-  end
-end

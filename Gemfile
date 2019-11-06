@@ -42,7 +42,7 @@ gem 'geokit-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '4.3.5'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-# gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.9', '>= 2.9.1'
 # Use Redis adapter to run Action Cable in production
