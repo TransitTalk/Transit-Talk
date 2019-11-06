@@ -29,11 +29,11 @@ class ActiveSupport::TestCase
   #
   # Use this rather than sign_in for system tests, as they cannot make direct
   # requests via POST
-  def sign_in_ui(user_fixture, password:)
+  def sign_in_ui(user)
     visit user_session_url
 
-    fill_in 'user_email', with: user_fixture.email
-    fill_in 'user_password', with: password
+    fill_in 'user_email', with: user.email
+    fill_in 'user_password', with: user.password
 
     click_on 'Log in'
   end
