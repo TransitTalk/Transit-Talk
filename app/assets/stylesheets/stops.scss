@@ -1,26 +1,16 @@
-.issue-card {
+.stops-container {
+	padding: 1rem;
 	display: flex;
 	justify-content: space-between;
 }
 
-.issue-card span {
-	margin-right: 5px;
-}
-
-.stop-name {
-	margin-right: 5px;
+.stop-colors {
+	height: 1.5rem;
+	margin-left: 0.5rem;
 }
 
 .color-stripe {
+	display: inline-block;
 	width: 8px;
-	margin-right: 2px;
-}
-
-.stop-partial {
-	display: flex;
-	justify-content: space-between;
-}
-
-.stop-label{
-	display: flex;
+	height: 1.5rem;
 }

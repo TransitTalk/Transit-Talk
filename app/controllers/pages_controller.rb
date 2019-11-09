@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require "pry"
 
 class PagesController < ApplicationController
   def view_issues
