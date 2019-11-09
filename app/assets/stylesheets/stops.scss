@@ -7,7 +7,20 @@
 	margin-right: 5px;
 }
 
+.stop-name {
+	margin-right: 5px;
+}
+
 .color-stripe {
 	width: 8px;
 	margin-right: 2px;
+}
+
+.stop-partial {
+	display: flex;
+	justify-content: space-between;
+}
+
+.stop-label{
+	display: flex;
 }

@@ -1,23 +1,26 @@
 <% current_line ||= nil %>
 <div class="stop-partial">
-  <span>
+  <div class="stop-label">
     <%= image_tag((stop.bus? ?  "bus.svg" : "train.svg"), alt: '', class: "small") %>
-		<%= link_to stop.name, stop %>
-    <%if stop.train? %>
-      <% stop.lines.each do |line| %>
-        <span class="color-stripe" style="background-color: <%= "##{line.color}" %>"></span>
+    <span class="stop-descriptor">
+    <span class="stop-name"><%= link_to stop.name, stop %></span>
+      <%if stop.train? %>
+        <% stop.lines.each do |line| %>
+          <span class="color-stripe" style="background-color: <%= "##{line.color}" %>"></span>
+        <% end %>
       <% end %>
-    <% end %>
-    <% if user_signed_in? %>
-			<% if current_user.favorites.include?(stop) %>
-				<%= render "favorites/favorite", stop: stop %>
-      <% else %>
-        <%= render "favorites/unfavorite", stop: stop %>
-			<% end %>
-    <% end %>
-    <%= new_issue_button(stop: stop, line: current_line) %>
-  </span>
-  <span>
+      
+    </span>
+  </div>
+  <div>
     <%= stop.issues.length %>
-  </span>
+    <% if user_signed_in? %>
+        <% if current_user.favorites.include?(stop) %>
+          <%= render "favorites/favorite", stop: stop %>
+        <% else %>
+          <%= render "favorites/unfavorite", stop: stop %>
+        <% end %>
+      <% end %>
+    <%= new_issue_button(stop: stop, line: current_line) %>
+  </div>
 </div>

@@ -1,5 +1,6 @@
-<% content_for :title do %> - View Issues<% end %>
+<%= javascript_include_tag "split-button" %>
 
+<% content_for :title do %> - View Issues<% end %>
 <div class="page-container">
     <h2>
         View Issues
@@ -14,8 +15,8 @@
 
     <div id="trains_near" class="toggleable-list">
         <p>Trains</p>
-        <% if @nearby_train_stops %>
-            <%= render "shared/striped_table", table_collection: @nearby_train_stops, row_partial:"stops/show_with_issues"%>
+        <% if @nearby_stops&.fetch("train") %>
+            <%= render "shared/striped_table", table_collection: @nearby_stops.fetch("train"), row_partial:"stops/show_with_issues"%>
         <% else %>
             <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
         <% end %>
@@ -23,8 +24,8 @@
 
     <div id="busses_near" class="toggleable-list" style="display: none;">
         <p>Busses</p>
-        <% if @nearby_bus_stops %>
-            <%= render "shared/striped_table", table_collection: @nearby_bus_stops, row_partial:"stops/show_with_issues"%>
+        <% if @nearby_stops&.fetch("bus") %>
+            <%= render "shared/striped_table", table_collection: @nearby_stops.fetch("bus"), row_partial:"stops/show_with_issues"%>
         <% else %>
             <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
         <% end %>
