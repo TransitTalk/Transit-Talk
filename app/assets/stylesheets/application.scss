@@ -7,6 +7,8 @@
 @import 'home';
 @import 'lines';
 @import 'loginFields';
+@import 'issues';
+@import 'stops';
 
 * *::before *::after {
 	box-sizing: border-box;
@@ -78,4 +80,30 @@ a {
 	background-position: center;
 	background-repeat: no-repeat;
 	z-index: 2;
+}
+
+body > a > .create-issue {
+	position: fixed;
+	height: 40px;
+	width: 40px;
+	bottom: 10px;
+	background: $theme-color;
+	right: 10px;
+	border-radius: 20px;
+	background-image: url(asset-path('plus.svg'));
+	background-size: 60%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.striped-table {
+	box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+
+	.stripe {
+		background-color: white;
+	}
+
+	div.clickable-row a {
+		color: black;
+	}
 }

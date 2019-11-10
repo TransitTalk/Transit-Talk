@@ -1,37 +1,35 @@
 <% content_for :title do %> - View Issues<% end %>
-<%= javascript_include_tag "location" %>
-
 <div class="page-container">
     <h2>
-        Nearby Stops
+        View Issues
     </h2>
 
-    <div id="stops_near">
-        <% if @nearby_stops %>
-            <% if @nearby_stops.present? %>
-                <% @nearby_stops.each do |stop| %>
-                    <%= render "stops/show_with_issues", stop: stop %>
-                <% end %>
-            <% else %>
-                <em class="placeholder">There seem to be no nearby stops!</em>
-            <% end %>
+	<div style="text-align: right;">
+		<span># of issues</span>
+	</div>
+
+	<%= render "issues/split_button" %>
+
+
+    <div id="trains_near" class="toggleable-list">
+        <p>Trains</p>
+        <% if @nearby_stops&.fetch("train") %>
+            <%= render "shared/striped_table", table_collection: @nearby_stops["train"], row_partial:"stops/show_with_issues"%>
         <% else %>
             <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
         <% end %>
     </div>
 
-    <% if current_user %>
-        <h2>
-        	<%= image_tag "star.svg", width: "30px", class: "star" %>
-        	Favorite Stops
-        </h2>
-        <div id="stops_fav">
-            <% current_user.favorites.each do |stop| %>
-                <%= render "stops/show_with_issues", stop: stop %>
-            <% end %>
-            <% if  current_user.favorites.empty? %>
-                <em class="placeholder">You have no favorite stops! Go to <%= link_to "All Lines", lines_path %> or search for stops to favorite them.</em>
-            <% end %>
-        </div>
-    <% end %>
+    <div id="busses_near" class="toggleable-list" style="display: none;">
+        <p>Busses</p>
+        <% if @nearby_stops&.fetch("bus") %>
+            <%= render "shared/striped_table", table_collection: @nearby_stops["bus"], row_partial:"stops/show_with_issues"%>
+        <% else %>
+            <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
+        <% end %>
+    </div>
+
+    
+
+	<%= render "issues/back_button" %>
 </div>

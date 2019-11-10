@@ -1,7 +1,6 @@
 .star { vertical-align: bottom; }
 
-.stops-container {
-	background-color: rgb(236, 236, 236);
+.lines-container {
 	left: 0;
 	right: 0;
 	padding: 3px 4px 4px 4px;
@@ -9,7 +8,12 @@
 	position: relative;
 	border-bottom-width: 1px;
 	border-bottom-color: white;
-	box-shadow: 1px 1px 1px silver;
+}
+
+img.small {
+	color: black;
+	height: 4vh;
+	width: 4vh;
 }
 
 .ul-dash {

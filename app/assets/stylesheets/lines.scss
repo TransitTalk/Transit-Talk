@@ -41,6 +41,7 @@
 				height: 100%;
 				left: 12px;
 				background: #535353;
+				top: 32px;
 			}
 
 			.mark-circle {
@@ -120,4 +121,19 @@
 
 	&.favorite { background-image: url(asset-path("star-can-fav.svg")); }
 	&.unfavorite { background-image: url(asset-path("star-fav.svg")); }
+}
+
+.issue-card {
+	display: flex;
+	justify-content: space-between;
+}
+
+.issue-card span {
+	margin-right: 5px;
+}
+
+img.small {
+	color: black;
+	height: 4vh;
+	width: 4vh;
 }

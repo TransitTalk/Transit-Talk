@@ -1,0 +1,16 @@
+.stops-container {
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.stop-colors {
+	height: 1.5rem;
+	margin-left: 0.5rem;
+}
+
+.color-stripe {
+	display: inline-block;
+	width: 8px;
+	height: 1.5rem;
+}

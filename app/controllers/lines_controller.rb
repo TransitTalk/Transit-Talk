@@ -2,7 +2,7 @@
 
 class LinesController < ApplicationController
   def index
-    @lines = Line.all.sort_by { |l| -l.name.to_i }.sort_by { |l| l.vehicle_type }.reverse!
+    @lines = Line.includes(:issues).all.sort_by { |l| -l.name.to_i }.sort_by { |l| l.vehicle_type }.reverse!
   end
 
   def show
