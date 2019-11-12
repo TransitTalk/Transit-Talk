@@ -3,10 +3,9 @@
 module IssuesHelper
   def new_issue_button(line: nil, stop: nil)
     line ||= stop&.lines&.first
-    link_to(
-      content_tag(:div, "", class: "create-issue"),
+    link_to("",
       new_issue_path(line_id: line&.id, stop_id: stop&.id),
-      id: "create-issue-#{stop&.id}"
+      id: "create-issue-#{stop&.id}", class: "create-issue"
     )
   end
 end
