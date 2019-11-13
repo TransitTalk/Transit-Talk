@@ -59,9 +59,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # Static code analyser
-  gem 'rubocop', '~> 0.71.0'
+  gem 'rubocop'
   gem 'rubocop-rails'
-  gem "rubocop-rails_config", '0.6.1'
+  gem "rubocop-rails_config"
   gem 'faker'
   gem 'factory_bot_rails'
 end
@@ -112,4 +112,3 @@ end
 
 # Add Coveralls for code coverage badge & tracking
 gem 'coveralls', require: false
-
