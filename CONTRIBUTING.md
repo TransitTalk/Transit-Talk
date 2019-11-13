@@ -1,42 +1,100 @@
 ## Contributing to Transit Talk
 
-Thanks for being here! Our project has grown out of a regional hackathon and is now part of Chi Hack Night, a weekly civic tech meeting.
+Thanks for being here! Our project has grown out of a regional hackathon and is now part of Chi Hack Night, a weekly civic tech meetup.
 
-...but enough about our history. If you're ready to get started with the project, read on!
+If you want to get started with the project, read on!
 
 ## Resources and Links
 
-To ease the learning and involvement curve of the project, we have a few resources to look over as you wish. Some of these will be helpful to understand the project's motivations itself, while some are general administration resources.
+To ease the learning and involvement curve for this project, we have a few resources to look over as you wish. Some of these will be helpful to understand the project's motivations, while some are more specific to the technologies we use.
 
 * The contributing guidelines document. Oh, hey, you're already here!
-* Project Slack and discussion channels. These are WIP and require some discussion on our end before we figure this out completely, so we have no links here yet. Check back very soon.
+* Day-to-day project takes place in [the Chi Hack Night Slack group](https://slackme.chihacknight.org/). Our channel is called #transit-talk.
 * Bugs can be reported through [GitHub Issues][issues].
-* Wiki: Hey, look at that, we have a wiki too! As of this document's construction, it's pretty vacant, but don't be shy. A lot of this project is still in concept development while features are produced, so start a conversation [here][wiki].
-* GTFS Primer: This project heavily relies on the General Transit Feed Specification, originally developed by Google but now widely supported by various agencies. If you are unfamiliar with formatting of GTFS packages and what the project was in general, check out [Google's documentation on the matter](https://developers.google.com/transit/gtfs/).
-* Very soon, the platform will be moving to [Transitland](https://transit.land/) data, which is a curated database of open GTFS data for transit systems around the world.
-* Chicago Transit Authority: This project was born in Illinois and mostly lives in Chicago, so many of our testers and contributors are currently using [CTA GTFS data](http://www.transitchicago.com/developers/gtfs.aspx). Our first full prototype will be built on CTA data.
+* [We have a wiki, too!][wiki] That document covers more than just development-related topics, and is still being actively built.
+* GTFS Primer: Transit Talk heavily relies on the General Transit Feed Specification (GTFS), originally developed by Google but now widely supported by transit agencies around the world. If you are unfamiliar with formatting of GTFS data or what the overall purpose of the data standard is, check out [Google's documentation on the project](https://developers.google.com/transit/gtfs/).
+* Transit Talk uses [Transitland](https://transit.land/), which is a curated database of open GTFS data for transit systems around the world. Transitland provides data in a few different forms that are different than the raw GTFS standard, so it's worth exploring their own docmentation.
+* This project was born in Illinois and most active development comes from folks in Chicago, so many of our testers and contributors are currently using [CTA GTFS data](http://www.transitchicago.com/developers/gtfs.aspx). Our first running prototype is built using CTA data.
 
-## Existing Schema Design
-![alt text](docs/schema.png)
+## BUILD/INSTALLATION INSTRUCTIONS
 
-## Testing
-To test that your install of this platform is correct on the data that we are currently using, download "google_transit.zip" from http://www.transitchicago.com/downloads/sch_data/ and then follow the directions to launch the platform to the local host in the README.md file. You can also use data from a wide variety of other transit systems.
+### Windows 10
 
-## Development environment details
+* [Install Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (further instructions should be done in a WSL terminal/prompt)
+* [Install RVM](https://github.com/rvm/ubuntu_rvm)
+* `rvm install ruby`
+  * If you have issues, see [this StackOverflow](https://github.com/rvm/ubuntu_rvm)
+* `rvm install v.v.v`
+  * `v.v.v` is the current version of Ruby being used for the project
+* `rvm use v.v.v`
+* `gem install bundler`
+* Set up to install the `mysql2` gem later:
+  * `sudo apt-get update`
+  * `sudo apt-get upgrade`
+  * `sudo apt-get install libmysqlclient-dev`
+* `sudo apt-get install nodejs`
+  * We need to have a JavaScript runtime installed for running Transit-Talk
 
-Original development occurred on Canonical's [Ubuntu](https://www.ubuntu.com/) 16.04 LTS, and packages used for creating the platform were oriented around support for this OS. The project runs using Ruby (2.4.4) on Rails (5.0.1), and is typically evaluated with a simple `rails -s` to run a local server.
+### Ruby on Rails v2.4.4 and Other Packages
 
-As we continue initiation phases of this project, we'll have more details to share here. Check back soon.
+All necessary packages for running this software are provided in the GEMFILE included in the source code. Use the command:
 
-## Submitting and Requesting Changes
+```
+$ bundle install
+```
 
-If you have something fresh to throw in the project, but don't feel like contributing directly, feel free to fork this repository. We do ask that, both for central contributors to the project and those who work on the fringes of it, that most sets of modifications are submitted through _pull requests_. Here's what you should do.
-* Create a sparkling new copy or branch just for your emendations.
-* Monitor discussion and use best judgment to participate in ongoing issues, which may involve your solution.
-* When all done, send it over by opening a pull request:
-  * Give a general summary of everything that you did. It doesn't have to be lengthy, especially if the contributions are relatively small.
-  * If this is relevant to an open issue (or a few), mention them in the request. We also recommend you write in commit titles and/or descriptions about what issues were fixed (again, if applicable).
-  * Requests or features that warrant a large explanation should be posted about on the Wiki for further conversation, along with a link to the pull request.
+to install all packages listed.
+
+#### MySQL gem issues
+
+If you have problems installing the `mysql2` gem, the likeliest explanation is that you are missing some MySQL system libraries and headers that this gem needs to link against. Consult the [mysql2 gem documentation](https://github.com/brianmario/mysql2#general-instructions) for possible remedies, or see below.
+
+* Debian GNU/Linux: `sudo apt install libmariadb-dev`
+* WSL: `sudo apt-get upgrade`, then `sudo apt-get install libmysqlclient-dev`
+* macOS
+  * `brew install mysql` will install to /usr/local/Cellar/mysql/x.x.x
+  * `gem install mysql2 -v 'y.y.y' -- --srcdir='/usr/local/Cellar/mysql/x.x.x/include'`
+    * `x.x.x` is where brew installed mysql
+    * `y.y.y` is the required `mysql2` version listed in the GEMFILE
+
+### Local Testing
+
+Navigate to root directory of the project, run `rails db:migrate` to create the database, then run `rails server`. Connect to [localhost:3000](http://localhost:3000) on your browser.
+
+## Contributor Guide
+To learn more about how to contribute to Transit Talk's development, check out [our contribution guidelines][contributing].
+
+### Adding New Modular Settings
+To add a new modular setting to the settings panel (`/settings`), add it as a default in `config/app.yml` and then add the display name of the attribute in
+`config/locales/en.yml` under `en.settings.attributes.{{new_setting_name}}.name`. For example, when adding the `theme_color` setting, we added a default theme_color of `theme_color: "#58b7ff"` and then added `en.settings.attributes.theme_color.name = "CSS Theme Color"`.
+
+## License
+
+Copyright 2018. Copyright shared among all those listed in [CONTRIBUTORS][contributors]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+## Creating Your Own Transit Talk App
+
+### Loading Data from transit.land
+
+Start by finding the transit operator you want to set up an app for from [transit.land's feed registry](https://transit.land/feed-registry/). Copy the `onestop_id` for the desired operator.
+
+Then, run `rake transit:set_up_transitland TLAND_AGENCY_ONESTOP_ID=%onestop_id%`
+
+A nice [transit operator](https://transit.land/feed-registry/operators/o-drke-9towntransit) to use for testing: `rake transit:set_up_transitland TLAND_AGENCY_ONESTOP_ID=o-drke-9towntransit`
+
+
+Alternatively, the transit agency's onestop_id can be pulled from environment variables, so setting the `TLAND_AGENCY_ONESTOP_ID` environment variable to your desired onestop_id and then running `rake transit:set_up_transitland` will also work.
+
+### Customizing Your Transit Talk App
+We use [rails-settings-ui](https://github.com/accessd/rails-settings-ui) (a UI wrapper for [rails-settings-cached](https://github.com/huacnlee/rails-settings-cached)), which lets you tweak certain global setttings for your Transit Talk app.
+
+To change your settings, go to http://your-app-url/settings. Once your settings are updated, you should see the changes reflected immediately (if they are non-styling changes) or upon the next server restart. If you need to manually rebuild to test your settings: close your server, run `rm -fr tmp/cache` to clear built Sass files, and rerun your server.
 
 ## Bug Reports and Issues
 
@@ -50,12 +108,8 @@ We use the GitHub Issues platform tied into this repository to manage most featu
 * First bugs for Contributors
   * Edit framework to accomodate different data sets from other transit centers
 
-## New Feature Requirements
-
-New Features must stay within the spirit of the original project: making transportation bettter. Submit new feature requests on the wiki and the community can discuss them. Features deemed needed or intriguing will be used to create issues and milestones.
-
 ## Style Guide / Coding conventions
-We utilize the Airbnb style guide. Specifics about the style can be found [here](http://airbnb.io/projects/styleguides/). In order to help keep Ruby style consistent we use [Robocop](bocop.readthedocs.io/en/latest/).
+We utilize the Airbnb style guide. Specifics about the style can be found [here](http://airbnb.io/projects/styleguides/). In order to help keep Ruby style consistent we use [RuboCop](bocop.readthedocs.io/en/latest/).
 
 ### RuboCop: Better Style Through Static Code Analysis
 The [RuboCop](https://github.com/bbatsov/rubocop) tool can lint ruby files for style violations that would be otherwise tedious to memorize
@@ -75,7 +129,7 @@ This is a constructive environment. No discrimination against any members of thi
 We value every bit of energy that is devoted to this project. If you have contributed to the project through a pull request, issue and evaluation management, or in some other way, you can ask for recognition in the repository's [CONTRIBUTORS.md][contributors] file.
 
 ## Where can I ask for help?
-The wiki is specifically there to encourage discussion among community members. If you have any problems that Google can't solve, feel free to post them on the wiki.
+Our Slack channel is specifically there to encourage discussion among community members. If you have any problems that a web search can't solve, feel free to post them in the Slack channel.
 
 [issues]: https://github.com/CaravanTransit/Transit-Talk/issues
 [wiki]: https://github.com/CaravanTransit/Transit-Talk/wiki
