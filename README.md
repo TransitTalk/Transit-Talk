@@ -64,7 +64,7 @@ In the future we hope to expand the functionality of Transit Talk by:
 * `sudo apt-get install nodejs`
   * We need to have a JavaScript runtime installed for running Transit-Talk
 
-### Ruby on Rails v2.4.4 and Other Packages
+### Ruby on Rails v2.6.5 and Other Packages
 
 All necessary packages for running this software are provided in the GEMFILE included in the source code. Use the command:
 

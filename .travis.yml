@@ -1,7 +1,7 @@
 language: ruby
 cache: bundler # Cache the bundler. Makes builds run faster, automatically reruns build when bundler changes
 rvm:
- - 2.4.4
+ - 2.6.5
 
 install:
   - bundle install # Install needed gems
