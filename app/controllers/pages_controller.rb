@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
-  def view_issues
+  def home
     # If rails is not prod, just take the top 50 stops.
     # There is a known issue with SQLite and the geolocation gem
     if !Rails.env.production?
