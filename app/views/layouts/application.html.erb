@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag "application" %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <%= javascript_include_tag "application" %>
+    <%= javascript_pack_tag "application" %>
     <%= csrf_meta_tags %>
 
     <!-- Google Analytics - tied to Viktor -->
@@ -22,7 +23,7 @@
     </script>
   </head>
 
-  <body>
+  <body data-controller="hello">
   	<%= render "shared/header" %>
 
     <% if notice %>

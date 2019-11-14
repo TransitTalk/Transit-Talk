@@ -9,12 +9,15 @@
     "test": "test"
   },
   "dependencies": {
-    "postcss": "^7.0.17"
+    "@rails/webpacker": "^4.2.0",
+    "postcss": "^7.0.17",
+    "stimulus": "^1.1.1"
   },
   "devDependencies": {
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
-    "stylelint-scss": "^3.10.0"
+    "stylelint-scss": "^3.10.0",
+    "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
