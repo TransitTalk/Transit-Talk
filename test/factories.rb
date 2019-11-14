@@ -27,7 +27,7 @@ FactoryBot.define do
     api_id { rand(1..100) }
     twin_stop_id { rand(1..100) }
     onestop_id { "onestop_id" }
-    serviced_by { %w[bus metro].sample }
+    serviced_by { LIST_VEHICLE_TYPE.sample }
     issues { [FactoryBot.create(:issue)] }
   end
 
@@ -37,7 +37,7 @@ FactoryBot.define do
     system_type { LIST_SYSTEM_TYPES.sample }
     color { LIST_LINE_COLORS.sample }
     onestop_id { Faker::Hipster.word }
-    vehicle_type { Faker::Vehicle.manufacture }
+    vehicle_type { LIST_VEHICLE_TYPE.sample }
     wheelchair_accessible { LIST_WHEELCHAIR_ACCESSIBLE.sample }
     bikes_allowed { rand(0..BIKES_ALLOWED) }
     stops { [] }
