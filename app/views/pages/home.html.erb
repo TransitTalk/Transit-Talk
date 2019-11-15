@@ -21,19 +21,31 @@
 
   <div class="green-separator separator"></div>
 
-  <h2>
-    Nearby Issues
-  </h2>
+  <% if @favorites.present? %>
+    <h3 class="heading">Favorite Stops</h3>
+
+    <div style="text-align: right;">
+      <span># of issues</span>
+    </div>
+
+    <div id="favorites_table" class="toggleable-list">
+      <%= render "shared/striped_table", table_collection: @favorites, row_partial: "stops/show_with_issues" %>
+    </div>
+
+    <div class="green-separator separator"></div>
+  <% end %>
+
+  <h3 class="heading">Nearby Issues</h3>
+
+  <%= render "issues/split_button" %>
 
   <div style="text-align: right;">
     <span># of issues</span>
   </div>
 
-  <%= render "issues/split_button" %>
-
   <div id="trains_near" class="toggleable-list">
     <% if @nearby_stops&.fetch("train") %>
-      <%= render "shared/striped_table", table_collection: @nearby_stops["train"], row_partial:"stops/show_with_issues"%>
+      <%= render "shared/striped_table", table_collection: @nearby_stops["train"], row_partial: "stops/show_with_issues" %>
     <% else %>
       <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
     <% end %>
@@ -41,7 +53,7 @@
 
   <div id="buses_near" class="toggleable-list" style="display: none;">
     <% if @nearby_stops&.fetch("bus") %>
-      <%= render "shared/striped_table", table_collection: @nearby_stops["bus"], row_partial:"stops/show_with_issues"%>
+      <%= render "shared/striped_table", table_collection: @nearby_stops["bus"], row_partial: "stops/show_with_issues" %>
     <% else %>
       <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
     <% end %>
