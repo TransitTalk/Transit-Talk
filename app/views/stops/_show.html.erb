@@ -1,26 +1,41 @@
 <% current_line ||= nil %>
+<% options ||= {} %>
 
-<div class="stops-container">
-  <%= link_to stop, class: 'centered row' do %>
-    <%= image_tag((stop.bus? ? "bus.svg" : "train.svg"), alt: '', class: "small") %>
-    <span class="stop-name"><%= stop.name %></span>
-    <% if stop.train? %>
-      <div class="stop-colors">
-        <% stop.lines.each do |line| %>
-          <div class="color-stripe" style="background-color: <%= "##{line.color}" %>"></div>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
-  <div class="centered row">
-    <span><%= stop.issues.length %></span>
-    <% if user_signed_in? %>
-      <% if current_user.favorites.include?(stop) %>
-        <%= render "favorites/favorite", stop: stop %>
-      <% else %>
-        <%= render "favorites/unfavorite", stop: stop %>
+
+<%= link_to stop do %>
+  <div class="stops-container">
+    <div class="centered row">
+      <% if options.fetch(:show_icon, false) %>
+        <%= image_tag((stop.bus? ? "bus.svg" : "train.svg"), alt: '', class: "small") %>
       <% end %>
-    <% end %>
-    <%= new_issue_button(stop: stop, line: current_line) %>
+      <span class="stop-name"><%= stop.name %></span>
+      <% if stop.train? %>
+        <% if options.fetch(:show_line_colors, false) %>
+          <div class="stop-colors">
+            <% stop.lines.each do |line| %>
+              <div class="color-stripe" style="background-color: <%= "##{line.color}" %>"></div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    
+    <div class="centered row">
+      <% if options.fetch(:show_issue_count, false) %>
+        <span><%= stop.issues.length %></span>
+      <% end %>
+      <% if options.fetch(:show_add_issue_button, false) %>
+        <%= new_issue_button(stop: stop, line: current_line) %>
+      <% end %>
+      <% if options.fetch(:show_favorite, false) %>
+        <% if user_signed_in? %>
+          <% if current_user.favorites.include?(stop) %>
+            <%= render "favorites/favorite", stop: stop %>
+          <% else %>
+            <%= render "favorites/unfavorite", stop: stop %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>

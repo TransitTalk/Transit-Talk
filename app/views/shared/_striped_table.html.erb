@@ -1,8 +1,10 @@
+<% row_options = {} if local_assigns[:row_options].nil? %>
+
 <% unless table_collection.empty? %>
     <div class="striped-table">
         <% table_collection.each_with_index do |row, index| %>
             <div class="clickable-row <%= 'stripe' if index % 2 == 0 %>">
-                <%= render row_partial, row_data: row, index: index %>
+                <%= render row_partial, row_data: row, row_options: row_options, index: index %>
             </div>
         <% end %>
     </div>

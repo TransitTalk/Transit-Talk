@@ -13,6 +13,13 @@ class PagesController < ApplicationController
       @nearby_stops_req = Stop.includes(:lines, :issues).within(0.2, origin: [params[:lat], params[:long]]).group_by(&:serviced_by)
       @nearby_stops = { "bus" => @nearby_stops_req.fetch("bus", []), "train" =>  @nearby_stops_req.fetch("metro", []) +  @nearby_stops_req.fetch("tram", []) }
     end
+    @stop_view_options = {
+      :show_icon => true,
+      :show_line_colors => true,
+      :show_issue_count => true,
+      :show_add_issue_button => true,
+      :show_favorite => true
+    }
   end
 
   def show
