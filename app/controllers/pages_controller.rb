@@ -2,6 +2,7 @@
 
 class PagesController < ApplicationController
   def home
+    @favorites = user_signed_in? ? current_user.favorites : []
     # If rails is not prod, just take the top 50 stops.
     # There is a known issue with SQLite and the geolocation gem
     if !Rails.env.production?
