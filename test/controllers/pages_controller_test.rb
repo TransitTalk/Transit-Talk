@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class FavoritesControllerTest < ActionDispatch::IntegrationTest
+class PagesControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
   test "shows favorites on home page for logged in user" do
