@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   match "/lines/:line_id/get_stops" => 'lines#get_stops', :as => :get_stops, via: [:get, :post]
 
+  get "/nearby_stops" => 'stops#nearby', constraints: { format: 'json' }, as: :nearby_stops
   get "/stops/:stop_id" => 'stops#show', :as => :stop
 
   get "/search" => 'pages#search', :as => :search

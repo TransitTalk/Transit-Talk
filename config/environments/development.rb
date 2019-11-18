@@ -54,4 +54,5 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
+  config.active_record.sqlite3.represent_boolean_as_integer = true
 end
