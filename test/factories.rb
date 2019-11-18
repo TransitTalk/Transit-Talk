@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "securerandom"
 require_relative "../lib/constants"
 
 FactoryBot.define do
@@ -26,7 +27,7 @@ FactoryBot.define do
     longitude { Faker::Address.longitude }
     api_id { rand(1..100) }
     twin_stop_id { rand(1..100) }
-    onestop_id { "onestop_id" }
+    onestop_id { SecureRandom.base64(8) }
     serviced_by { LIST_VEHICLE_TYPE.sample }
     issues { [FactoryBot.create(:issue)] }
   end

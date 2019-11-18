@@ -23,4 +23,13 @@ class StopsControllerTest < ActionDispatch::IntegrationTest
       get stop_path(invalid_stop_id)
     end
   end
+
+  test "get nearby stops" do
+    lat, long = [41.892581, -87.631068]
+    create :stop, lattitude: lat, longitude: long, serviced_by: "bus"
+
+    get "#{nearby_stops_path}?longitude=#{long}&latitude=#{lat}"
+    assert_response :success
+    assert_equal(JSON.parse(@response.body)["bus"].length, 1)
+  end
 end
