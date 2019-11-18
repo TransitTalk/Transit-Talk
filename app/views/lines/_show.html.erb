@@ -7,14 +7,6 @@
         <% if line.has_color? && line.train? %>
 						<span class="color-stripe" style="background-color: <%= "##{line.color}" %>"></span>
         <% end %>
-        <% if user_signed_in? %>
-					<% if current_user.favorites.include?(line) %>
-						<%= render "favorites/favorite", line: line %>
-					<% else %>
-						<%= render "favorites/unfavorite", line: line %>
-					<% end %>
-					<%= new_issue_button(line: line) %>
-				<% end %>
 			</span>
 			<span>
 				<%= line.issues.length %>

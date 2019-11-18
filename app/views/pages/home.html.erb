@@ -1,13 +1,7 @@
-<div class="homepage column centered">
+<div class="homepage column">
   <h2 class="heading">
     Report and View Public Transit Issues in <%= Setting.city_name %>
   </h2>
-
-  <%= link_to('View Issues', view_issues_path, :class => 'brown-btn') %>
-
-  <!--     <%= link_to('Learn More', page_path(:page_name => 'about'), :class => 'simple-btn') %>
-  <%= link_to('Sign In', new_user_session_path, :class => 'simple-btn') %> -->
-  <div class="green-separator separator"></div>
 
   <div class="report-issues-cont">
     <h3 class="heading">Report an Issue</h3>
@@ -24,6 +18,48 @@
       <% end %>
     </div>
   </div>
+
+  <div class="green-separator separator"></div>
+
+  <% if @favorites.present? %>
+    <h3 class="heading">Favorite Stops</h3>
+
+    <div style="text-align: right;">
+      <span># of issues</span>
+    </div>
+
+    <div id="favorites_table" class="toggleable-list">
+      <%= render "shared/striped_table", table_collection: @favorites, row_partial: "stops/show_with_issues" %>
+    </div>
+
+    <div class="green-separator separator"></div>
+  <% end %>
+
+  <h3 class="heading">Nearby Issues</h3>
+
+  <%= render "issues/split_button" %>
+
+  <div style="text-align: right;">
+    <span># of issues</span>
+  </div>
+
+  <div id="trains_near" class="toggleable-list">
+    <% if @nearby_stops&.fetch("train") %>
+      <%= render "shared/striped_table", table_collection: @nearby_stops["train"], row_partial: "stops/show_with_issues" %>
+    <% else %>
+      <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
+    <% end %>
+  </div>
+
+  <div id="buses_near" class="toggleable-list" style="display: none;">
+    <% if @nearby_stops&.fetch("bus") %>
+      <%= render "shared/striped_table", table_collection: @nearby_stops["bus"], row_partial: "stops/show_with_issues" %>
+    <% else %>
+      <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
+    <% end %>
+  </div>
+
   <div class="red-separator separator"></div>
-  <%= link_to('Select Routes', view_issues_path, :class => 'brown-btn') %>
+
+  <%= link_to('Select Routes', lines_path, :class => 'brown-btn') %>
 </div>

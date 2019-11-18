@@ -7,8 +7,8 @@ class IssueCreationsTest < ApplicationSystemTestCase
   setup do
     @user = create :user
     @admin = create :user, :admin
-    @stop = create :stop, onestop_id: "test-stop-id"
-    @line = create :line, stops: [@stop]
+    @stop = create :stop, onestop_id: "test-stop-id", serviced_by: "metro"
+    @line = create :line, stops: [@stop], vehicle_type: "metro"
     @issue = create :issue, user: @user
   end
 

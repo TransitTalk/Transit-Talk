@@ -4,12 +4,14 @@
 	background: image_url("separator-#{$color}.svg") no-repeat center;
 	height: 25px;
 	width: 400px;
-	margin: 2rem;
+	margin: 2rem auto;
 }
 
 .homepage {
 	text-align: center;
 	padding: 1rem;
+	max-width: 960px;
+	margin: 0 auto;
 
 	.green-separator {
 		@include separator('green');
@@ -57,6 +59,7 @@
 		display: flex;
 		justify-content: space-evenly;
 		max-width: 600px;
+		margin: 0 auto;
 
 		.blue-btn.transit {
 			width: 40%;
