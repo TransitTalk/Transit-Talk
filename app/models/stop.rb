@@ -38,6 +38,10 @@ class Stop < ApplicationRecord
     bus_stops = Stop.includes(:lines, :issues).where(serviced_by: "bus").within(0.2, units: :miles, origin: [latitude, longitude])
     train_stops = Stop.includes(:lines, :issues).where(serviced_by: "metro").within(0.5, units: :miles, origin: [latitude, longitude])
     (bus_stops + train_stops).group_by(&:serviced_by)
+  rescue StandardError # this will occur on non-prod environments
+    @top_bus_stops = Stop.includes(:lines, :issues).where(serviced_by: "bus").take(10)
+    @top_train_stops = Stop.includes(:lines, :issues).where(serviced_by: "metro").take(10)
+    { "bus" => @top_bus_stops, "metro" => @top_train_stops }
   end
 
   def original
