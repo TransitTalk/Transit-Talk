@@ -3,17 +3,6 @@
 class PagesController < ApplicationController
   def home
     @favorites = user_signed_in? ? current_user.favorites : []
-    # If rails is not prod, just take the top 50 stops.
-    # There is a known issue with SQLite and the geolocation gem
-    if !Rails.env.production?
-      @top_bus_stops = Stop.includes(:lines, :issues).where(serviced_by: "bus").take(10)
-      @top_train_stops = Stop.includes(:lines, :issues).where(serviced_by: "metro").take(10)
-      @nearby_stops = { "bus" => @top_bus_stops, "train" => @top_train_stops }
-    # If our location.js has pulled a location, use it to find Stops
-    elsif (params[:lat]) && (params[:long])
-      @nearby_stops_req = Stop.includes(:lines, :issues).within(0.2, origin: [params[:lat], params[:long]]).group_by(&:serviced_by)
-      @nearby_stops = { "bus" => @nearby_stops_req.fetch("bus", []), "train" =>  @nearby_stops_req.fetch("metro", []) +  @nearby_stops_req.fetch("tram", []) }
-    end
   end
 
   def show

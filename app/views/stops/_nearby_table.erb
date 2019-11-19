@@ -1,0 +1,23 @@
+<div data-controller="split-button">
+  <%= render "issues/split_button" %>
+
+  <div style="text-align: right;">
+    <span># of issues</span>
+  </div>
+
+  <div data-target="split-button.fragment" id="trains_near">
+    <% if @nearby_stops&.fetch("metro") %>
+      <%= render "shared/striped_table", table_collection: @nearby_stops["metro"], row_partial: "stops/show_with_issues" %>
+    <% else %>
+      <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
+    <% end %>
+  </div>
+
+  <div data-target="split-button.fragment" id="buses_near" style="display: none;">
+    <% if @nearby_stops&.fetch("bus") %>
+      <%= render "shared/striped_table", table_collection: @nearby_stops["bus"], row_partial: "stops/show_with_issues" %>
+    <% else %>
+      <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
+    <% end %>
+  </div>
+</div>

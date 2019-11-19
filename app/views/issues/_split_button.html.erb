@@ -1,6 +1,6 @@
-<%= javascript_include_tag "split-button" %>
-
 <div id="type-select">
-    <button class="split-button selected" id="trains_near_button">Trains</button>
-    <button class="split-button" id="buses_near_button">Buses</button>
+    <button data-target="split-button.button" data-action="click->split-button#select" data-to-show="trains_near"
+            class="split-button selected" id="trains_near_button">Trains</button>
+    <button data-target="split-button.button" data-action="click->split-button#select" data-to-show="buses_near"
+            class="split-button" id="buses_near_button">Buses</button>
 </div>

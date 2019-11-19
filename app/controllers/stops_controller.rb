@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 class StopsController < ApplicationController
+  # not called directly, called by JS
   def nearby
-    if has_coordinate_params
-      render json: Stop.find_nearby(longitude: params[:longitude], latitude: params[:latitude])
+    unless has_coordinate_params
+      render status: :no_content
       return
     end
 
-    render json: Stop.take(10).group_by(&:serviced_by)
+    @nearby_stops = Stop.find_nearby(longitude: params[:longitude], latitude: params[:latitude])
+    render partial: "stops/nearby_table", layout: false
   end
 
   def show
