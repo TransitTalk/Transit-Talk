@@ -3,9 +3,6 @@
 class FavoritesController < ApplicationController
   before_action :require_login
 
-  def index
-  end
-
   def new
     @stop = Stop.find(params[:stop_id])
     current_user.favorites << @stop

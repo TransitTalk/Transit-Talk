@@ -30,6 +30,6 @@ class StopsControllerTest < ActionDispatch::IntegrationTest
 
     get "#{nearby_stops_path}?longitude=#{long}&latitude=#{lat}"
     assert_response :success
-    assert_equal(JSON.parse(@response.body)["bus"].length, 1)
+    assert_select "#buses_near"
   end
 end
