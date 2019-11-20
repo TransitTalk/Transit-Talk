@@ -65,7 +65,7 @@
 	}
 
 	/* Don't extend line past end of last stop */
-	.stop:last-of-type .mark-box { height: 50% !important; }
+	.stop:last-of-type .mark-box { display: none; }
 }
 
 .stop-partial {
