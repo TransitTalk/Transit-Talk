@@ -1,4 +1,4 @@
-<% unless row_data.empty? %>
+<% if row_data.present? %>
 	<div class="lines-container">
 		<%= render "lines/show", line: row_data , stripe: index % 2 == 0%>
 	</div>

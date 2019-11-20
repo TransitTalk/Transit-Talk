@@ -9,6 +9,7 @@
 @import 'loginFields';
 @import 'issues';
 @import 'stops';
+@import 'rows';
 
 * *::before *::after {
 	box-sizing: border-box;
@@ -43,6 +44,10 @@ body {
 
 .centered {
 	align-items: center;
+}
+
+.spaced-items > * {
+	margin-right: 0.5rem;
 }
 
 .page-container {

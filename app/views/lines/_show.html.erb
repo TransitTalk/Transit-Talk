@@ -1,16 +1,19 @@
-<%=link_to line_path(line) do %>
-	<div class="line-partial">
-		<div class="issue-card">
-			<span>
-        <%= image_tag((line.bus? ?  "bus.svg" : "train.svg"), alt: '', class: "small") %>
-				<span><%= line.name %></span>
+<%= link_to line_path(line) do %>
+  <div class="row-container">
+			<span class="centered row spaced-items">
+        <%= image_tag((line.bus? ? "bus.svg" : "train.svg"), alt: '', class: "small") %>
+        <span>
         <% if line.has_color? && line.train? %>
-						<span class="color-stripe" style="background-color: <%= "##{line.color}" %>"></span>
+            <div class="line-tile line-swatch" style="background: <%= "##{line.color}" %>"></div>
+        <% else %>
+            <div class="line-tile api-id"><%= line.name %></div>
         <% end %>
+        </span>
+        <span><%= line.route_long_name %></span>
 			</span>
-			<span>
-				<%= line.issues.length %>
-			</span>
-		</div>
-	</div>
+    <span class="centered row spaced-items">
+      <span><%= line.issues.length %></span>
+      <span><%= image_tag "arrow.svg"  %></span>
+    </span>
+  </div>
 <% end %>

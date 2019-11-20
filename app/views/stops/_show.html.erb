@@ -1,6 +1,6 @@
 <% current_line ||= nil %>
 
-<div class="stops-container">
+<div class="row-container">
   <%= link_to stop, class: 'centered row' do %>
     <%= image_tag((stop.bus? ? "bus.svg" : "train.svg"), alt: '', class: "small") %>
     <span class="stop-name"><%= stop.name %></span>
