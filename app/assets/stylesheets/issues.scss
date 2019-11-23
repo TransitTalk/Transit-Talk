@@ -14,11 +14,21 @@
 	.field-issue {
 		margin: 0.5rem 0;
 	}
+
+	select {
+		width: 330px;
+		height: 3rem;
+		text-align: center;
+		padding-bottom: 0.25rem;
+	}
+
 }
 
 textarea#issue_description {
 	width: 100%;
 	height: 4rem;
+	border: 1px solid $border-color;
+	margin-top: 0.5rem;
 }
 
 .back-button-wrapper {
