@@ -1,3 +1,26 @@
+.new-issue-container {
+	margin: 1rem auto;
+	width: min-content;
+	padding: 1rem;
+	background: $card-white;
+	border: 1px solid $border-color;
+	border-radius: 1rem;
+
+	em {
+		color: $label-color;
+		float: right;
+	}
+
+	.field-issue {
+		margin: 0.5rem 0;
+	}
+}
+
+textarea#issue_description {
+	width: 100%;
+	height: 4rem;
+}
+
 .back-button-wrapper {
 	display: flex;
 	justify-content: space-around;
