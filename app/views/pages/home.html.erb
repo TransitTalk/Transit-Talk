@@ -45,29 +45,7 @@
   <div data-controller="nearby-stops">
     <h3 class="heading">Nearby Issues</h3>
 
-  <%= render "issues/split_button" %>
-
-  <div style="text-align: right;">
-    <span># of issues</span>
-  </div>
-
-  <div id="trains_near" class="toggleable-list">
-    <% if @nearby_stops&.fetch("train") %>
-      <%= render "shared/striped_table", table_collection: @nearby_stops["train"], row_partial: "stops/show_with_issues", row_options: @stop_view_options %>
-    <% else %>
-      <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
-    <% end %>
-  </div>
-
-  <div id="buses_near" class="toggleable-list" style="display: none;">
-    <% if @nearby_stops&.fetch("bus") %>
-      <%= render "shared/striped_table", table_collection: @nearby_stops["bus"], row_partial: "stops/show_with_issues", row_options: @stop_view_options %>
-    <% else %>
-      <em class="placeholder">We can't show you nearby stops without location services allowed!</em>
-    <% end %>
-  </div>
-
-    <div data-target="nearby-stops.content">Loading...</div>
+  <div data-target="nearby-stops.content">Loading...</div>
 
 
   <div class="red-separator separator"></div>

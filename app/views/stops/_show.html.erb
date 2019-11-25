@@ -1,5 +1,4 @@
 <% current_line ||= nil %>
-<% options ||= {} %>
 
 <div class="row-container">
   <%= link_to stop, class: 'centered row' do %>
@@ -10,7 +9,18 @@
         <% stop.lines.each do |line| %>
           <div class="color-stripe" style="background-color: <%= "##{line.color}" %>"></div>
         <% end %>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="centered row">
+    <span><%= stop.issues.length %></span>
+    <% if user_signed_in? %>
+      <% if current_user.favorites.include?(stop) %>
+        <%= render "favorites/favorite", stop: stop %>
+      <% else %>
+        <%= render "favorites/unfavorite", stop: stop %>
       <% end %>
-    </div>
+    <% end %>
+    <%= new_issue_button(stop: stop, line: current_line) %>
   </div>
-<% end %>
+</div>
