@@ -1,50 +1,39 @@
 <% line_type = nil if local_assigns[:line_type].nil? %>
 <%= form_for(issue) do |f| %>
-  <% if issue.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
-
-      <ul>
-      <% issue.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field-issue">
+  <div class="field-issue centered row">
     <%= f.label 'Line' %><br>
     <%= f.collection_select(:line_onestop_id, Line.of_line_type(line_type), :id, :route_long_name,
-      {prompt: 'Select Line'},
-      {:class => "new-issue-line"}
-    ) %>
+                            { prompt: 'Select Line' },
+                            { :class => "new-issue-line" }
+        ) %>
   </div>
 
-  <div class="field-issue">
+  <div class="field-issue centered row">
     <%= f.label 'Stop' %><br>
     <%= f.collection_select(:stop_onestop_id, issue.line&.stops || [], :id, :name,
-      {prompt: issue.line ? nil : "Select a line first"},
-      {:class => "new-issue-stops"}
-    ) %>
+                            { prompt: issue.line ? nil : "Select a line first" },
+                            { :class => "new-issue-stops" }
+        ) %>
   </div>
 
   <div class="field-issue">
-      <%= f.label :types, "Issue Types" %><em>Check all that apply</em>
-      <div class="checkbox-grid">
-        <% %w(Delays Cleanliness Crowding Safety Accessibility Staff).each do |issue_type| %>
-          <label class="checkbox-container">
-            <%= f.check_box(:types, {multiple: true}, issue_type, nil) %>
-            <span class="checkbox-tile">
+    <%= f.label :types, "Issue Types" %><em>Check all that apply</em>
+
+    <div class="types-container">
+      <% %w(Delays Cleanliness Crowding Safety Accessibility Staff).each do |issue_type| %>
+        <label class="checkbox-container">
+          <%= f.check_box(:types, { multiple: true }, issue_type, nil) %>
+          <span class="checkbox-tile column centered">
               <%= image_tag "issue_types/#{issue_type}.svg", alt: issue_type %>
-              <%= issue_type %>
-            </span>
-          </label>
-        <% end %>
-        <label class="checkbox-container wide">
-          <%= f.check_box(:types, {multiple: true}, "Other", nil) %>
-          <span class="checkbox-tile" style="padding-top: 12px; font-size: 1.25rem">Other</span>
+            <span class="checkbox-text"><%= issue_type %></span>
+        </span>
         </label>
-      </div>
+      <% end %>
+      <label class="checkbox-container wide">
+        <%= f.check_box(:types, { multiple: true }, "Other", nil) %>
+        <span class="checkbox-tile" style="padding-top: 12px; font-size: 1.25rem">Other</span>
+      </label>
+    </div>
   </div>
 
   <div class="field-issue">
@@ -52,7 +41,8 @@
     <%= f.text_area :description %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions row-container centered">
+    <%= link_to 'Cancel', issues_path %>
+    <%= f.submit "Submit", class: "pill" %>
   </div>
 <% end %>

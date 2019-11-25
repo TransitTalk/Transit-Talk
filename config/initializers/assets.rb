@@ -12,6 +12,4 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( home.css )
 Rails.application.config.assets.precompile += %w( headers.css )
-Rails.application.config.assets.precompile += %w( location.js )
-Rails.application.config.assets.precompile += %w( split-button.js )
 Rails.application.config.assets.precompile += %w( back-button.js )

@@ -1,4 +1,16 @@
-<div class="page-container">
+<% if @issue.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
+
+    <ul>
+      <% @issue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="new-issue-container">
 <% if @line_type %>
 	<h1>Report <%= @line_type.capitalize %> Issue</h1>
 <% elsif @line %>
@@ -7,5 +19,4 @@
 	<h1>Report an Issue</h1>
 <% end %>
 	<%= render 'form', issue: @issue, line_type: @line_type %>
-	<%= link_to 'Back', issues_path %>
 </div>

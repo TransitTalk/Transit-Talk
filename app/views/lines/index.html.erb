@@ -1,12 +1,9 @@
 <% content_for :title do %> - Lines<% end %>
 <div class="page-container">
 	<h1>All Lines</h1>
-	<%= stylesheet_link_tag "application" %>
 
 	<% if @lines.any? %>
-		<% @lines.each do |line| %>
-			<%= render "lines/show", line: line %>
-		<% end %>
+    <%= render "shared/striped_table", table_collection: @lines, row_partial: "lines/show_with_issues" %>
 	<% else %>
 		<em class="placeholder">There are no lines in this Transit Talk app!</em>
 	<% end %>
