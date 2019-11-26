@@ -8,3 +8,42 @@
 	width: 8px;
 	height: 1.5rem;
 }
+
+li.stop {
+	display: table;
+	height: 40px;
+
+	.line-mark {
+		position: relative;
+		display: table-cell;
+		height: 100%;
+		width: 30px;
+
+		.mark-box {
+			width: 6px;
+			position: absolute;
+			height: 100%;
+			left: 12px;
+			background: #535353;
+			top: 32px;
+		}
+
+		.mark-circle {
+			background: white;
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			border: solid 3px;
+			border-radius: 50px;
+			left: 7px;
+			top: calc(50% - 8px);
+			border-color: #535353;
+		}
+	}
+
+	.name {
+		display: table-cell;
+		vertical-align: middle;
+		padding-left: 10px;
+	}
+}

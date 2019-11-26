@@ -4,7 +4,7 @@
     <div class="striped-table">
         <% table_collection.each_with_index do |row, index| %>
             <div class="clickable-row <%= 'stripe' if index % 2 == 0 %>">
-                <%= render row_partial, row_data: row, row_options: row_options, index: index %>
+                <%= render row_partial, row_data: row, row_options: row_options, index: index, class: @class %>
             </div>
         <% end %>
     </div>

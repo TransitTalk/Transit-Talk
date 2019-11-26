@@ -1,6 +1,16 @@
 <% current_line ||= nil %>
 <% options ||= {} %>
 
+<li class="stop">
+  <div class="line-mark">
+  <% if @line != nil && @line.color %>
+      <div class="mark-box" style="background: <%= "##{@line.color}" %>"></div>
+      <div class="mark-circle" style="border-color: <%= "##{@line.color}" %>"></div>
+    <% else %>
+      <div class="mark-box"></div>
+      <div class="mark-circle"></div>
+    <% end %>
+</div>
 <div class="row-container">
   <%= link_to stop, class: 'centered row' do %>
   <% if options.fetch(:show_icon, false) %>
@@ -8,7 +18,7 @@
     <% end %>
     <span class="stop-name"><%= stop.name %></span>
     <% if stop.train? %>
-      <% if options.fetch(:show_line_colors, false) %>
+      <% if options.fetch(:show_line_colors, true) %>
         <div class="stop-colors">
           <% stop.lines.each do |line| %>
             <div class="color-stripe" style="background-color: <%= "##{line.color}" %>"></div>
@@ -31,3 +41,4 @@
     <% end %>
   </div>
 </div>
+</li>
