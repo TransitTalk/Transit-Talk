@@ -12,7 +12,7 @@
     <span># of issues</span>
   </div>
 
-  <div data-target="split-button.fragment" id="trains_near">
+  <div data-target="split-button.fragment" id="trains_near" class="stop-list">
     <% if @nearby_stops&.key?("metro") %>
       <%= render "shared/striped_table", table_collection: @nearby_stops["metro"], row_partial: "stops/show_with_issues", row_options: @stop_view_options %>
     <% else %>
@@ -20,7 +20,7 @@
     <% end %>
   </div>
 
-  <div data-target="split-button.fragment" id="buses_near" style="display: none;">
+  <div data-target="split-button.fragment" id="buses_near" style="display: none;" class="stop-list">
     <% if @nearby_stops&.key?("bus") %>
       <%= render "shared/striped_table", table_collection: @nearby_stops["bus"], row_partial: "stops/show_with_issues", row_options: @stop_view_options %>
     <% else %>

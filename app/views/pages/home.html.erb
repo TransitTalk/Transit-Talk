@@ -35,7 +35,7 @@
       <span># of issues</span>
     </div>
 
-    <div id="favorites_table">
+    <div id="favorites_table" class="stop-list">
       <%= render "shared/striped_table", table_collection: @favorites, row_partial: "stops/show_with_issues", row_options: @stop_view_options %>
     </div>
 

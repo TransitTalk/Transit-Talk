@@ -1,12 +1,20 @@
-<% current_line ||= nil %>
+<% main_line ||= @line %>
+<% transfers = stop.lines.where.not(:onestop_id => main_line&.onestop_id) %>
 <% options ||= {} %>
 
 <li class="stop">
-  <div class="line-mark">
-  <% if @line != nil && @line.color %>
-      <div class="mark-box" style="background: <%= "##{@line.color}" %>"></div>
-      <div class="mark-circle" style="border-color: <%= "##{@line.color}" %>"></div>
+  <% if user_signed_in? %>
+    <% if current_user.favorites.include?(stop) %>
+      <%= render "favorites/favorite", stop: stop %>
     <% else %>
+      <%= render "favorites/unfavorite", stop: stop %>
+    <% end %>
+  <% end %>
+  <div class="line-mark">
+  <% if !main_line.nil? && main_line.color %>
+      <div class="mark-box" style="background: <%= "##{main_line.color}" %>"></div>
+      <div class="mark-circle" style="border-color: <%= "##{main_line.color}" %>"></div>
+    <% elsif !main_line.nil? %>
       <div class="mark-box"></div>
       <div class="mark-circle"></div>
     <% end %>
@@ -17,28 +25,30 @@
       <%= image_tag((stop.bus? ? "bus.svg" : "train.svg"), alt: '', class: "small") %>
     <% end %>
     <span class="stop-name"><%= stop.name %></span>
-    <% if stop.train? %>
-      <% if options.fetch(:show_line_colors, true) %>
-        <div class="stop-colors">
-          <% stop.lines.each do |line| %>
-            <div class="color-stripe" style="background-color: <%= "##{line.color}" %>"></div>
-          <% end %>
-        </div>
-      <% end %>
-    <% end %>
   <% end %>
   <div class="centered row">
     <span><%= stop.issues.length %></span>
-    <% if user_signed_in? %>
-      <% if current_user.favorites.include?(stop) %>
-        <%= render "favorites/favorite", stop: stop %>
-      <% else %>
-        <%= render "favorites/unfavorite", stop: stop %>
-      <% end %>
-    <% end %>
     <% if options.fetch(:show_add_issue_button, true) %>
-      <%= new_issue_button(stop: stop, line: current_line) %>
+      <%= new_issue_button(stop: stop, line: main_line) %>
     <% end %>
   </div>
+</div>
+<div class="transfers row">
+  <% if options.fetch(:show_line_colors, true) && transfers.any? %>
+    <% if main_line.nil? %>
+      Serviced by:
+    <% else %>
+      Transfers:
+    <% end %>
+    <div class="stop-identifiers row">
+      <% transfers.each do |line| %>
+        <% if line.train? %>
+          <div class="line-swatch" style="background-color: <%= "##{line.color}" %>"></div>
+        <% else %>
+          <div class="line-tile api-id"><%= line.name %></div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 </li>

@@ -1,6 +1,11 @@
-.stop-colors {
+.stop-identifiers {
 	height: 1.5rem;
 	margin-left: 0.5rem;
+
+	div.line-tile,
+	div.line-swatch {
+		margin-left: 0.5rem;
+	}
 }
 
 .color-stripe {

@@ -76,11 +76,10 @@ a {
 
 .create-issue {
 	display: inline-block;
-	height: 14px;
-	width: 14px;
+	white-space: pre-line;
+	padding: 0 1em;
 	background: $theme-color;
 	border-radius: 7px;
-	background-image: url(asset-path('plus.svg'));
 	background-size: 60%;
 	background-position: center;
 	background-repeat: no-repeat;
