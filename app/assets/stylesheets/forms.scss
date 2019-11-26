@@ -20,7 +20,7 @@ input[type="submit"].pill {
 	cursor: pointer;
 	padding: 10px 30px;
 	border-radius: 5px;
-	background-color: #0085FF;
+	background-color: #0085ff;
 	border: 1px solid #979797;
 	margin-top: 15px;
 	color: white;
@@ -55,7 +55,7 @@ textarea {
 	cursor: pointer;
 	background-color: #9ca8b5;
 	border-radius: 50%;
-	border: 1px solid $border-color;;
+	border: 1px solid $border-color;
 	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	text-align: center;
 	color: white;
@@ -66,6 +66,11 @@ textarea {
 	}
 }
 
+input:checked ~ .checkbox-tile {
+	background-color: #0085ff;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
 .checkbox-container.wide {
 	width: 100%;
 
@@ -74,9 +79,4 @@ textarea {
 		height: 36px;
 		border-radius: 2rem;
 	}
-}
-
-input:checked ~ .checkbox-tile {
-	background-color: #0085ff;
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 }

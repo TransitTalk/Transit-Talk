@@ -1,3 +1,10 @@
+<% 
+  @stop_view_options = {
+    show_icon: true,
+    show_line_colors: true
+  }
+%>
+
 <div class="homepage column">
   <h2 class="heading">
     Report and View Public Transit Issues in <%= Setting.city_name %>
@@ -29,7 +36,7 @@
     </div>
 
     <div id="favorites_table">
-      <%= render "shared/striped_table", table_collection: @favorites, row_partial: "stops/show_with_issues" %>
+      <%= render "shared/striped_table", table_collection: @favorites, row_partial: "stops/show_with_issues", row_options: @stop_view_options %>
     </div>
 
     <div class="green-separator separator"></div>
@@ -38,8 +45,8 @@
   <div data-controller="nearby-stops">
     <h3 class="heading">Nearby Issues</h3>
 
-    <div data-target="nearby-stops.content">Loading...</div>
-  </div>
+  <div data-target="nearby-stops.content">Loading...</div>
+
 
   <div class="red-separator separator"></div>
 
