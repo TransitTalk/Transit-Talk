@@ -14,13 +14,50 @@
 	height: 1.5rem;
 }
 
-li.stop {
-	display: table;
-	height: 40px;
+div.stop {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+
+	.left-controls {
+		display: flex;
+		justify-content: space-between;
+
+		.favorites {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	}
+
+	.center-controls {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		.stop-details {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+
+			.stop-name-container {
+				text-align: left;
+			}
+		}
+
+		.issue-readout {
+			display: flex;
+			justify-content: space-between;
+
+			div {
+				margin: 1em;
+			}
+		}
+	}
 
 	.line-mark {
 		position: relative;
-		display: table-cell;
+		// display: table-cell;
 		height: 100%;
 		width: 30px;
 
