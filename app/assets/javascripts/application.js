@@ -60,4 +60,8 @@ $(document).on('ready turbolinks:load', function()
 			});
 		});
 	});
+
+	$(".nested-link-button").click((event) => {
+		event.stopPropagation();
+	})
 });

@@ -3,4 +3,8 @@
  * unfavorited star for the favorited version, found in the partial
  * views/favorites/_favorite.html.erb
  */
-$('<%= "##{stop.html_safe_id}" %>').html('<%= j render "favorites/favorite", stop: stop %>');
+$('<%= "##{stop.html_safe_id}" %>').replaceWith('<%= j render "favorites/favorite", stop: stop %>');
+
+$('<%= "##{stop.html_safe_id}" %>').click((event) => {
+    event.stopPropagation();
+})
