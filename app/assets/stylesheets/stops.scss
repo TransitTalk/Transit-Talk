@@ -43,22 +43,20 @@ div.stop {
 			width: 60%;
 
 			.image {
-
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				overflow: hidden;
 				min-width: 20%;
 
-	
 				img {
 					flex-shrink: 0;
 					min-width: 100%;
-					min-height: 100%
+					min-height: 100%;
 				}
 			}
 
-			
+
 			.name-and-transfer {
 				display: flex;
 				flex-direction: column;
@@ -72,14 +70,13 @@ div.stop {
 					flex-direction: column;
 					text-align: left;
 				}
-	
+
 				.transfers {
 					flex: 1;
 					justify-content: left;
 					font-size: small;
 					color: gray;
 				}
-	
 			}
 		}
 
