@@ -61,7 +61,7 @@ $(document).on('ready turbolinks:load', function()
 		});
 	});
 
-	$(".nested-link-button").click((event) => {
+	$(".nested-link-button").click(function(event) {
 		event.stopPropagation();
 	})
 });
