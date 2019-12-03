@@ -28,10 +28,13 @@
   </div>
   <div class="center-controls">
     <div class="stop-details">
+      <div class="image">
+      <% if options.fetch(:show_icon, false) %>
+        <%= image_tag((stop.bus? ? "bus.svg" : "train.svg"), alt: '', class: "small") %>
+      <% end %>
+    </div>
+    <div class="name-and-transfer">
       <div class="stop-name-container">
-        <% if options.fetch(:show_icon, false) %>
-          <%= image_tag((stop.bus? ? "bus.svg" : "train.svg"), alt: '', class: "small") %>
-        <% end %>
         <span class="stop-name"><%= stop.name %></span>
       </div>
       <% if options.fetch(:show_line_colors, true) && transfers.any? %>
@@ -53,6 +56,8 @@
         </div>
       <% end %>
     </div>
+    </div>
+    
     <div class="issue-readout">
       <div class="issue-count"><%= stop.issues.length %></div>
       <% if options.fetch(:show_add_issue_button, true) %>

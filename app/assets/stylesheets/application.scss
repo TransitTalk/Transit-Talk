@@ -84,8 +84,20 @@ a {
 	background-position: center;
 	background-repeat: no-repeat;
 	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
 	color: white !important;
 	z-index: 2;
+}
+
+button.no-style {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 body > a.create-issue {

@@ -24,9 +24,10 @@ div.stop {
 		justify-content: space-between;
 
 		.favorites {
+			margin-left: 0.5em;
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
+			justify-content: space-around;
 		}
 	}
 
@@ -37,17 +38,55 @@ div.stop {
 
 		.stop-details {
 			display: flex;
-			flex-direction: column;
+			flex-direction: row;
 			justify-content: space-around;
+			width: 60%;
 
-			.stop-name-container {
-				text-align: left;
+			.image {
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				min-width: 20%;
+
+	
+				img {
+					flex-shrink: 0;
+					min-width: 100%;
+					min-height: 100%
+				}
+			}
+
+			
+			.name-and-transfer {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				flex: 1;
+
+				.stop-name-container {
+					height: 75%;
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					text-align: left;
+				}
+	
+				.transfers {
+					flex: 1;
+					justify-content: left;
+					font-size: small;
+					color: gray;
+				}
+	
 			}
 		}
 
 		.issue-readout {
 			display: flex;
 			justify-content: space-between;
+			width: 40%;
 
 			div {
 				margin: 1em;
