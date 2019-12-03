@@ -1,3 +1,5 @@
-<%= link_to favorite_path(stop), remote: true, method: :get, id: stop.html_safe_id do %>
-  <div class="fav-star favorite"></div>
-<% end %>
+<div data-controller="favorites" data-target="favorites.button" data-action="click->favorites#unfavorite">
+  <%= button_to favorite_path(stop), remote: true, method: :get, id: stop.html_safe_id, class: "no-style" do %>
+    <div class="fav-star favorite"></div>
+  <% end %>
+</div>

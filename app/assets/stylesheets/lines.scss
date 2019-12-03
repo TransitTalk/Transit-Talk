@@ -30,6 +30,7 @@
 		height: 40px;
 
 		.line-mark {
+			margin-left: 20px;
 			position: relative;
 			display: table-cell;
 			height: 100%;
@@ -65,7 +66,7 @@
 	}
 
 	/* Don't extend line past end of last stop */
-	.stop:last-of-type .mark-box { display: none; }
+	.clickable-row:last-of-type .mark-box { display: none; }
 }
 
 .stop-partial {
@@ -95,8 +96,8 @@
 }
 
 .line-swatch {
-	width: 20px;
-	height: 20px;
+	width: 2vh;
+	height: 2vh;
 	border-radius: 50px;
 }
 

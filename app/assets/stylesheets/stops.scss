@@ -1,10 +1,126 @@
-.stop-colors {
+.stop-identifiers {
 	height: 1.5rem;
 	margin-left: 0.5rem;
+
+	div.line-tile,
+	div.line-swatch {
+		margin-left: 0.5rem;
+	}
 }
 
 .color-stripe {
 	display: inline-block;
 	width: 8px;
 	height: 1.5rem;
+}
+
+div.stop {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+
+	.left-controls {
+		display: flex;
+		justify-content: space-between;
+
+		.favorites {
+			margin-left: 0.5em;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+		}
+	}
+
+	.center-controls {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		.stop-details {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			width: 60%;
+
+			.image {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				min-width: 20%;
+
+				img {
+					flex-shrink: 0;
+					min-width: 100%;
+					min-height: 100%;
+				}
+			}
+
+			.name-and-transfer {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				flex: 1;
+
+				.stop-name-container {
+					height: 75%;
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					text-align: left;
+				}
+
+				.transfers {
+					flex: 1;
+					justify-content: left;
+					font-size: small;
+					color: gray;
+				}
+			}
+		}
+
+		.issue-readout {
+			display: flex;
+			justify-content: space-between;
+			width: 40%;
+
+			div {
+				margin: 1em;
+			}
+		}
+	}
+
+	.line-mark {
+		position: relative;
+		// display: table-cell;
+		height: 100%;
+		width: 30px;
+
+		.mark-box {
+			width: 6px;
+			position: absolute;
+			height: 100%;
+			left: 12px;
+			background: #535353;
+			top: 32px;
+		}
+
+		.mark-circle {
+			background: white;
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			border: solid 3px;
+			border-radius: 50px;
+			left: 7px;
+			top: calc(50% - 8px);
+			border-color: #535353;
+		}
+	}
+
+	.name {
+		display: table-cell;
+		vertical-align: middle;
+		padding-left: 10px;
+	}
 }

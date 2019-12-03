@@ -4,3 +4,7 @@
  * views/favorites/_unfavorite.html.erb
  */
 $('<%= "##{stop.html_safe_id}" %>').replaceWith('<%= j render "favorites/unfavorite", stop: stop %>');
+
+$('<%= "##{stop.html_safe_id}" %>').click((event) => {
+    event.stopPropagation();
+})
