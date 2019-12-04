@@ -1,0 +1,16 @@
+<% issue = row_data %>
+
+<div class="issue-container">
+  <div class="row">
+    <div class="issue-line">
+    <%= render "lines/tiles", lines: [issue.line] %>
+    </div>
+    <div>
+    <div class="issue-title"><%= issue.types.join(', ') %></div>
+    <% if issue.description.present? %>
+      <div class="issue-description"><%= issue.description %></div>
+    <% end %>
+    <div><span class="issue-time"><%= time_ago_in_words(issue.created_at) %> ago</span></div>
+    </div>
+  </div>
+</div>

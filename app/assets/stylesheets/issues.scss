@@ -30,51 +30,22 @@ textarea#issue_description {
 	margin-top: 0.5rem;
 }
 
-.back-button-wrapper {
-	display: flex;
-	justify-content: space-around;
-}
+.issue-container {
+	padding: 0.25rem;
 
-.back-button-wrapper button {
-	padding: 10px 75px;
-	border-radius: 5px;
-}
+	.issue-line {
+		width: 3rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-#stops_near {
-	height: 60vh;
-	overflow-y: auto;
-}
+	.issue-title {
+		font-size: 1.2rem;
+	}
 
-#lines_near {
-	height: 60vh;
-	overflow-y: auto;
-}
-
-#type-select {
-	display: flex;
-	justify-content: space-between;
-}
-
-#type-select button {
-	width: 100%;
-}
-
-.split-button {
-	background: white;
-	border: thin solid blue;
-	color: blue;
-	font-size: 1.125em;
-}
-
-.split-button:first-child {
-	border-radius: 5px 0 0 5px;
-}
-
-.split-button:last-child {
-	border-radius: 0 5px 5px 0;
-}
-
-.split-button.selected {
-	background: blue;
-	color: white;
+	.issue-time, .issue-description {
+		color: #999;
+		font-size: 0.9rem;
+	}
 }

@@ -3,7 +3,7 @@
 # These are the defaults for the site settings
 defaults: &defaults
   site_name: "Transit Talk"
-  theme_color: "#58b7ff"
+  theme_color: "#0085ff"
   city_name: "Our City"
 
 development:

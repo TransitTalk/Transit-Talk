@@ -10,16 +10,6 @@ img.small {
 	margin: 1px 0;
 }
 
-.issue-container {
-	background-color: rgb(247, 247, 247);
-	width: 100%;
-	margin-top: 0;
-	margin-bottom: 2px;
-	padding: 0;
-	position: relative;
-	display: inline-grid;
-}
-
 #stops_near,
 #stops_fav {
 	width: 100%;
@@ -29,11 +19,3 @@ img.small {
 	position: relative;
 }
 
-.issue-title {
-	font-size: 18px;
-}
-
-.issue-time {
-	color: #999;
-	font-size: 14px;
-}
