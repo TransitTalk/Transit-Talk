@@ -1,7 +1,5 @@
 .stop-identifiers {
 	height: 1.5rem;
-	//margin-left: 0.5rem;
-
 	div.line-tile,
 	div.line-swatch {
 		margin-left: 0.3rem;
@@ -25,7 +23,6 @@ div.stop {
 		justify-content: space-between;
 
 		.favorites {
-			//margin-left: 0.5em;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
@@ -94,7 +91,6 @@ div.stop {
 
 	.line-mark {
 		position: relative;
-		// display: table-cell;
 		height: 100%;
 		width: 30px;
 
