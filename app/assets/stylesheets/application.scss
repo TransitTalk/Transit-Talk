@@ -88,6 +88,7 @@ a {
 	font-weight: bold;
 	color: white !important;
 	z-index: 2;
+	font-size: 0.8rem;
 }
 
 button.no-style {
@@ -124,4 +125,33 @@ body > a.create-issue {
 	div.clickable-row a {
 		color: black;
 	}
+}
+
+#type-select {
+	display: flex;
+	justify-content: space-between;
+}
+
+#type-select button {
+	width: 100%;
+}
+
+.split-button {
+	background: white;
+	border: thin solid blue;
+	color: blue;
+	font-size: 1.125em;
+}
+
+.split-button:first-child {
+	border-radius: 5px 0 0 5px;
+}
+
+.split-button:last-child {
+	border-radius: 0 5px 5px 0;
+}
+
+.split-button.selected {
+	background: blue;
+	color: white;
 }

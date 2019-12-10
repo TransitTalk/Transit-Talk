@@ -102,16 +102,12 @@
 }
 
 .stop-title {
+	margin-bottom: 1rem;
 	.line-tile {
 		display: inline-block;
-
-		&:first-of-type { margin-left: 5px; }
-
 		.line-swatch { font-size: 12px; }
 	}
 }
-
-.issue-title { margin-bottom: 5px; }
 
 .fav-star {
 	width: 20px;

@@ -7,13 +7,13 @@ class StopsController < ApplicationController
       render status: :no_content
       return
     end
-    
+
     @nearby_stops = Stop.find_nearby(longitude: params[:longitude], latitude: params[:latitude])
     render partial: "stops/nearby_table", layout: false
   end
 
   def show
-    @stop = Stop.includes(:issues).find(params[:stop_id])
+    @stop = Stop.includes([:issues, :users]).find(params[:stop_id])
   end
 
   private
