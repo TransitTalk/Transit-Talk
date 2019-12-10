@@ -4,6 +4,7 @@
 	div.line-swatch {
 		margin-left: 0.3rem;
 		height: 14px;
+		margin-right: 0.3rem;
 	}
 }
 
@@ -80,7 +81,7 @@ div.stop {
 
 		.issue-readout {
 			display: flex;
-			justify-content: space-between;
+			justify-content: end;
 			width: 40%;
 
 			div {

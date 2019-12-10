@@ -1,13 +1,11 @@
 <% lines.uniq.each do |line| %>
-	<% unless defined? current_line and line == current_line %>
-		<div class="line-tile">
-			<%= link_to line_path(line) do %>
-				<% if line.color && line.train? %>
-					<div class="line-swatch" style="background: <%= "##{line.color}" %>"></div>
-				<% else %>
-					<div class="api-id"><%= line.name %></div>
-				<% end %>
-			<% end %>
-		</div>
-	<% end %>
+  <% unless defined? current_line and line == current_line %>
+    <%= link_to line_path(line), class: "line-tile" do %>
+      <% if line.color && line.train? %>
+        <div class="line-swatch" style="background: <%= "##{line.color}" %>"></div>
+      <% else %>
+        <div class="api-id"><%= line.name %></div>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
