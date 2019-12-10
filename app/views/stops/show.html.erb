@@ -1,14 +1,16 @@
 <div class="page-container">
+  <div class="row centered" style="justify-content: space-between">
+    <h2>Issues</h2>
+    <%= new_issue_button(stop: @stop) %>
+  </div>
+
 	<h3 class="stop-title">
 		<%= @stop.name %>
 		<%= render "lines/tiles", lines: @stop.lines %>
 	</h3>
-
-	<h4 class="issue-title">Issues</h4>
-	<% unless @stop.issues.empty? # only show issue container if there are issues to show %>
-		<%= render partial: "issues/show_list", locals: {issues: @stop.issues} %>
+	<% if @stop.issues.any? # only show issue container if there are issues to show %>
+    <%= render "shared/striped_table", table_collection: @stop.issues, row_partial: "issues/row" %>
 	<% else %>
 		There are no issues!
 	<% end %>
 </div>
-<%= new_issue_button(stop: @stop) %>
