@@ -50,12 +50,8 @@
   <% end %>
   <div class="issue-readout">
     <div class="issue-count"><%= stop.issues.length %></div>
-    <% if options.fetch(:show_add_issue_button, true) %>
       <div class="issue-button">
-        <% if options.fetch(:show_add_issue_button, true) %>
           <%= new_issue_button(stop: stop, line: main_line) %>
-        <% end %>
       </div>
-    <% end %>
   </div>
 </div>
