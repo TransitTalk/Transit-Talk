@@ -17,18 +17,18 @@
 		padding-top: 10px;
 	}
 	.line-wrapper {
-		width:100%;
-		display: inline;
+		width:93%;
+		display: inline-block;
+		position: absolute;
 	}
 	.separator {
 		height: 10px;
-    width: 85%;
     margin: 10px auto;
-    display: inline-block;
 	}
 
 	.mark-circle {
 		display: inline-block;
+		z-index: 999;
 		background: white;
     width: 15px;
     height: 15px;
@@ -39,10 +39,9 @@
 		}
 
 	.mark-circle-left {
-		float:left;
 	}
 	.mark-circle-right {
-		float:right;
+		margin-left: auto;
 	}
 
 	.green-separator {
