@@ -16,10 +16,13 @@
 	.separator-container {
 		padding-top: 10px;
 	}
-
+	.line-wrapper {
+		width:100%;
+		display: inline;
+	}
 	.separator {
 		height: 10px;
-    width: 84%;
+    width: 85%;
     margin: 10px auto;
     display: inline-block;
 	}
@@ -37,11 +40,9 @@
 
 	.mark-circle-left {
 		float:left;
-		transform: translateX(1px);
 	}
 	.mark-circle-right {
 		float:right;
-		transform: translateX(-1px);
 	}
 
 	.green-separator {
