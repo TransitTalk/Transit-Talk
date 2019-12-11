@@ -13,59 +13,49 @@
         <% end %>
       <% end %>
     </div>
-    <div>
+    <% if main_line.present? %>
       <div class="line-mark">
-        <% if !main_line.nil? && main_line.color %>
-          <div class="mark-box" style="background: <%= "##{main_line.color}" %>"></div>
-          <div class="mark-circle" style="border-color: <%= "##{main_line.color}" %>"></div>
-        <% elsif !main_line.nil? %>
-          <div class="mark-box"></div>
-          <div class="mark-circle"></div>
-        <% end %>
+        <div class="mark-box" style="background: <%= "##{main_line.color || "535353"}" %>"></div>
+        <div class="mark-circle" style="border-color: <%= "##{main_line.color || "535353"}" %>"></div>
       </div>
-    </div>
+    <% end %>
   </div>
   <%= link_to stop, class: 'center-controls' do %>
-    <div class="stop-details">
-        <div class="image">
-        <% if options.fetch(:show_icon, false) %>
-          <%= image_tag((stop.bus? ? "bus.svg" : "train.svg"), alt: '', class: "small") %>
-        <% end %>
+    <% if options.fetch(:show_icon, false) %>
+      <%= image_tag((stop.bus? ? "bus.svg" : "train.svg"), alt: '', class: "small") %>
+    <% end %>
+    <div class="name-and-transfer">
+      <div class="stop-name-container">
+        <%= stop.name %>
       </div>
-      <div class="name-and-transfer">
-        <div class="stop-name-container">
-          <span class="stop-name"><%= stop.name %></span>
-        </div>
-        <% if options.fetch(:show_line_colors, true) && transfers.any? %>
-          <div class="transfers row">
-            <% if main_line.nil? %>
-              Serviced by:
-            <% else %>
-              Transfers:
-            <% end %>
-            <div class="stop-identifiers row">
-              <% transfers.each do |line| %>
-                <% if line.train? %>
-                  <div class="line-swatch" style="background-color: <%= "##{line.color}" %>"></div>
-                <% else %>
-                  <div class="line-tile api-id"><%= line.name %></div>
-                <% end %>
+      <% if options.fetch(:show_line_colors, true) && transfers.any? %>
+        <div class="transfers row">
+          <% if main_line.nil? %>
+            Serviced by:
+          <% else %>
+            Transfers:
+          <% end %>
+          <div class="stop-identifiers row">
+            <% transfers.each do |line| %>
+              <% if line.train? %>
+                <div class="line-swatch" style="background-color: <%= "##{line.color}" %>"></div>
+              <% else %>
+                <div class="line-tile api-id"><%= line.name %></div>
               <% end %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      </div>
-      
-      <div class="issue-readout">
-        <div class="issue-count"><%= stop.issues.length %></div>
-        <% if options.fetch(:show_add_issue_button, true) %>
-          <div class="issue-button">
-            <% if options.fetch(:show_add_issue_button, true) %>
-              <%= new_issue_button(stop: stop, line: main_line) %>
             <% end %>
           </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="issue-readout">
+    <div class="issue-count"><%= stop.issues.length %></div>
+    <% if options.fetch(:show_add_issue_button, true) %>
+      <div class="issue-button">
+        <% if options.fetch(:show_add_issue_button, true) %>
+          <%= new_issue_button(stop: stop, line: main_line) %>
         <% end %>
       </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
