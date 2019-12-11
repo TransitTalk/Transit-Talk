@@ -2,7 +2,6 @@
 <% transfers = stop.lines.where.not(:onestop_id => main_line&.onestop_id) %>
 <% options ||= {} %>
 
-<%= link_to stop, class: 'centered row' do %>
 <div class="stop">
   <div class="left-controls">
     <div class="favorites">
@@ -14,28 +13,20 @@
         <% end %>
       <% end %>
     </div>
-    <div>
+    <% if main_line.present? %>
       <div class="line-mark">
-        <% if !main_line.nil? && main_line.color %>
-          <div class="mark-box" style="background: <%= "##{main_line.color}" %>"></div>
-          <div class="mark-circle" style="border-color: <%= "##{main_line.color}" %>"></div>
-        <% elsif !main_line.nil? %>
-          <div class="mark-box"></div>
-          <div class="mark-circle"></div>
-        <% end %>
+        <div class="mark-box" style="background: <%= "##{main_line.color || "535353"}" %>"></div>
+        <div class="mark-circle" style="border-color: <%= "##{main_line.color || "535353"}" %>"></div>
       </div>
-    </div>
+    <% end %>
   </div>
-  <div class="center-controls">
-    <div class="stop-details">
-      <div class="image">
-      <% if options.fetch(:show_icon, false) %>
-        <%= image_tag((stop.bus? ? "bus.svg" : "train.svg"), alt: '', class: "small") %>
-      <% end %>
-    </div>
+  <%= link_to stop, class: 'center-controls' do %>
+    <% if options.fetch(:show_icon, false) %>
+      <%= image_tag((stop.bus? ? "bus.svg" : "train.svg"), alt: '', class: "small") %>
+    <% end %>
     <div class="name-and-transfer">
       <div class="stop-name-container">
-        <span class="stop-name"><%= stop.name %></span>
+        <%= stop.name %>
       </div>
       <% if options.fetch(:show_line_colors, true) && transfers.any? %>
         <div class="transfers row">
@@ -56,18 +47,11 @@
         </div>
       <% end %>
     </div>
-    </div>
-    
-    <div class="issue-readout">
-      <div class="issue-count"><%= stop.issues.length %></div>
-      <% if options.fetch(:show_add_issue_button, true) %>
-        <div class="issue-button">
-          <% if options.fetch(:show_add_issue_button, true) %>
-            <%= new_issue_button(stop: stop, line: main_line) %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+  <% end %>
+  <div class="issue-readout">
+    <div class="issue-count"><%= stop.issues.length %></div>
+      <div class="issue-button">
+          <%= new_issue_button(stop: stop, line: main_line) %>
+      </div>
   </div>
 </div>
-<% end %>

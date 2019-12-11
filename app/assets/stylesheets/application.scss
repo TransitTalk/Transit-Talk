@@ -77,17 +77,13 @@ a {
 .create-issue {
 	display: inline-block;
 	white-space: pre-line;
-	padding: 0 1em;
-	background: $theme-color;
+	padding: 0.25rem 1em;
+	background-color: $theme-color;
 	border-radius: 7px;
-	background-size: 60%;
-	background-position: center;
-	background-repeat: no-repeat;
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: bold;
 	color: white !important;
-	z-index: 2;
 	font-size: 0.8rem;
 }
 
@@ -99,20 +95,6 @@ button.no-style {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
-}
-
-body > a.create-issue {
-	position: fixed;
-	height: 40px;
-	width: 40px;
-	bottom: 10px;
-	background: $theme-color;
-	right: 10px;
-	border-radius: 20px;
-	background-image: url(asset-path('plus.svg'));
-	background-size: 60%;
-	background-position: center;
-	background-repeat: no-repeat;
 }
 
 .striped-table {
