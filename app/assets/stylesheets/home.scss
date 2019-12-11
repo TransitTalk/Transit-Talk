@@ -1,11 +1,11 @@
 @import 'variables';
 
-@mixin separator($color) {
-	background: image_url("separator-#{$color}.svg") no-repeat center;
-	height: 25px;
-	width: 400px;
-	margin: 2rem auto;
-}
+// @mixin separator($color) {
+// 	background: image_url("separator-#{$color}.svg") no-repeat center;
+// 	height: 25px;
+// 	width: 400px;
+// 	margin: 2rem auto;
+// }
 
 .homepage {
 	text-align: center;
@@ -13,12 +13,45 @@
 	max-width: 960px;
 	margin: 0 auto;
 
+	.separator-container {
+		padding-top: 10px;
+	}
+
+	.separator {
+		height: 10px;
+    width: 84%;
+    margin: 10px auto;
+    display: inline-block;
+	}
+
+	.mark-circle {
+		display: inline-block;
+		background: white;
+    width: 15px;
+    height: 15px;
+    border: solid 6px;
+    border-radius: 50px;
+    top: calc(50% - 8px);
+    border-color: #535353;
+		}
+
+	.mark-circle-left {
+		float:left;
+		transform: translateX(1px);
+	}
+	.mark-circle-right {
+		float:right;
+		transform: translateX(-1px);
+	}
+
 	.green-separator {
-		@include separator('green');
+		//@include separator('green');
+		background-color: #16A050;
 	}
 
 	.red-separator {
-		@include separator('red');
+		//@include separator('red');
+		background-color: #DE1D41;
 	}
 
 	h2 {
