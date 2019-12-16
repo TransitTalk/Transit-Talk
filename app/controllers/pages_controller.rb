@@ -13,6 +13,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def history
+    
+  end
+
   def search
     @result_lines = Line.includes(:stops).where(
       "name LIKE ? OR route_long_name LIKE ?", "%#{params[:q]}%", "%#{params[:q]}%"
