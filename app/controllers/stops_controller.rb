@@ -17,7 +17,7 @@ class StopsController < ApplicationController
   end
 
   private
-  def has_coordinate_params
-    params[:longitude].present? && params[:latitude].present?
-  end
+    def has_coordinate_params
+      params[:longitude].present? && params[:latitude].present?
+    end
 end
