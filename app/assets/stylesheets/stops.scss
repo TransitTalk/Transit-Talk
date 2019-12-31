@@ -1,6 +1,9 @@
 .stop-identifiers {
+	flex-wrap: wrap;
+
 	div.line-tile,
 	div.line-swatch {
+		margin-bottom: 0.25rem;
 		margin-left: 0.5rem;
 		height: 1rem;
 	}
