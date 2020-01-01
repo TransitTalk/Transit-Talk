@@ -19,6 +19,7 @@ FactoryBot.define do
     types { LIST_ISSUES_TYPES.sample(2) }
     resolved { RANDOM_BOOLEAN.sample }
     user
+    stop
   end
 
   factory :stop do
@@ -29,7 +30,11 @@ FactoryBot.define do
     twin_stop_id { rand(1..100) }
     onestop_id { SecureRandom.base64(8) }
     serviced_by { LIST_VEHICLE_TYPE.sample }
-    issues { [FactoryBot.create(:issue)] }
+
+    after(:create) do |stop|
+      lines = create_list(:line, 1, stops: [stop])
+      create_list(:issue, 1, stop: stop, line: lines[0])
+    end
   end
 
   factory :line do
