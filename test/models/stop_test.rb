@@ -16,9 +16,9 @@ class StopTest < ActiveSupport::TestCase
     far_away_train_stop = create :stop, lattitude: lat + 3, longitude: long - 5, serviced_by: "metro"
 
     result = Stop.find_nearby(longitude: long, latitude: lat)
-    assert_includes(result['metro'], nearby_train_stop)
-    assert_not_includes(result['metro'], far_away_train_stop)
-    assert_includes(result['bus'], nearby_stop)
-    assert_not_includes(result['bus'], far_away_stop)
+    assert_includes(result["metro"], nearby_train_stop)
+    assert_not_includes(result["metro"], far_away_train_stop)
+    assert_includes(result["bus"], nearby_stop)
+    assert_not_includes(result["bus"], far_away_stop)
   end
 end
