@@ -2,8 +2,8 @@
   <h1>Reported Issues</h1>
   <% if current_user %>
     <% if current_user.issues.any? %>
-      <div>You have <%= pluralize(current_user.issues.length, 'issue')  %>:</div>
-      <%= render 'issues/show_list', issues: current_user.issues  %>
+      <div>You have reported <%= pluralize(current_user.issues.length, 'issue')  %>:</div>
+        <%= render "shared/striped_table", table_collection: current_user.issues.order(created_at: :desc), row_partial: "issues/row" %>
     <% else %>
       <em class="placeholder">You have not reported any issues yet!</em>
     <% end %>

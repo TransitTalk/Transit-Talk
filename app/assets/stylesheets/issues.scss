@@ -12,6 +12,13 @@
 
 	.field-issue {
 		margin: 0.5rem 0;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.new-issue-stops,
+	.new-issue-line {
+		max-width: 80%;
 	}
 
 	select {
