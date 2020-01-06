@@ -10,7 +10,7 @@
 		float: right;
 	}
 
-	.field-issue {
+	.field-issue-row {
 		margin: 0.5rem 0;
 		display: flex;
 		justify-content: space-between;
@@ -34,6 +34,10 @@ textarea#issue_description {
 	height: 4rem;
 	border: 1px solid $border-color;
 	margin-top: 0.5rem;
+}
+
+textarea#issue_description::placeholder {
+	font-style: italic;
 }
 
 .issue-container {
