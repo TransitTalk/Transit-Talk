@@ -1,6 +1,6 @@
 <% line_type = nil if local_assigns[:line_type].nil? %>
 <%= form_for(issue) do |f| %>
-  <div class="field-issue centered row">
+  <div class="field-issue-row centered row">
     <%= f.label 'Line' %><br>
     <%= f.collection_select(:line_onestop_id, Line.of_line_type(line_type), :id, :route_long_name,
                             { prompt: 'Select Line' },
@@ -8,7 +8,7 @@
         ) %>
   </div>
 
-  <div class="field-issue centered row">
+  <div class="field-issue-row centered row">
     <%= f.label 'Stop' %><br>
     <%= f.collection_select(:stop_onestop_id, issue.line&.stops || [], :id, :name,
                             { prompt: issue.line ? nil : "Select a line first" },
@@ -16,9 +16,10 @@
         ) %>
   </div>
 
-  <div class="field-issue">
+  <div class="field-issue-row centered row">
     <%= f.label :types, "Issue Types" %><em>Select all that apply</em>
-
+  </div>
+  <div class="field-issue-row">
     <div class="types-container">
       <% %w(Delays Cleanliness Crowding Safety Accessibility Staff).each do |issue_type| %>
         <label class="checkbox-container">
@@ -31,17 +32,16 @@
       <% end %>
       <label class="checkbox-container wide">
         <%= f.check_box(:types, { multiple: true }, "Other", nil) %>
-        <span class="checkbox-tile" style="padding-top: 12px; font-size: 1.25rem">Other</span>
+        <span class="checkbox-tile" style="padding-top: 12px; font-size: 1.25rem">Other (please specify)</span>
       </label>
     </div>
   </div>
 
-  <div class="field-issue">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="field-issue-row centered row">
+    <%= f.text_area :description, placeholder: "Optional description" %>
   </div>
 
-  <div class="actions row-container centered">
+  <div class="actions row-container centered row">
     <%= link_to 'Cancel', issues_path %>
     <%= f.submit "Submit", class: "pill" %>
   </div>
