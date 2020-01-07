@@ -38,7 +38,7 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.save
-        format.html { redirect_to stop_path(@issue.stop), notice: "Issue was successfully created." }
+        format.html { redirect_to stop_path(@issue.stop), notice: "Issue was successfully reported." }
         format.json { render :show, status: :created, location: @issue }
       else
         format.html { render :new }
