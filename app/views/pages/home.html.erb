@@ -11,17 +11,21 @@
   </h2>
 
   <div class="report-issues-cont">
-    <h3 class="heading">Report an Issue</h3>
+    <h3 class="heading" aria-hidden="true">Report an Issue</h3>
 
     <div class="transit-btn-cont">
-      <%= link_to(new_issue_path(line_type: 'bus'), class: 'blue-btn transit') do %>
+      <%= link_to(new_issue_path(line_type: 'bus'),
+        class: 'blue-btn transit',
+        aria: { label: "Report bus issue" } ) do %>
         <div style="color: white">Bus</div>
-        <%= image_tag "bus_white.svg", alt: '' %>
+        <%= image_tag "bus_white.svg", alt: '', aria: { hidden: true } %>
       <% end %>
 
-      <%= link_to(new_issue_path(line_type: 'train'), class: 'blue-btn transit') do %>
+      <%= link_to(new_issue_path(line_type: 'train'),
+        class: 'blue-btn transit',
+        aria: { label: "Report train issue" } ) do %>
         <div>Train</div>
-        <%= image_tag "train_white.svg", alt: '' %>
+        <%= image_tag "train_white.svg", alt: '', aria: { hidden: true } %>
       <% end %>
     </div>
   </div>
@@ -31,7 +35,7 @@
   <% if @favorites.present? %>
     <h3 class="heading">Favorite Stops</h3>
 
-    <div class="issues-label">
+    <div class="issues-label" aria-hidden="true">
       <span># of issues</span>
     </div>
 

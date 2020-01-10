@@ -25,9 +25,9 @@
         <label class="checkbox-container">
           <%= f.check_box(:types, { multiple: true }, issue_type, nil) %>
           <span class="checkbox-tile column centered">
-              <%= image_tag "issue_types/#{issue_type}.svg", alt: issue_type %>
+            <%= image_tag "issue_types/#{issue_type}.svg", alt: issue_type, aria: { hidden: true } %>
             <span class="checkbox-text"><%= issue_type %></span>
-        </span>
+          </span>
         </label>
       <% end %>
       <label class="checkbox-container wide">
