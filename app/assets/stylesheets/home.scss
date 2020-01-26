@@ -1,12 +1,5 @@
 @import 'variables';
 
-@mixin separator($color) {
-	background: image_url("separator-#{$color}.svg") no-repeat center;
-	height: 25px;
-	width: 400px;
-	margin: 2rem auto;
-}
-
 .issues-label {
 	padding-top: 15px;
 	padding-bottom: 5px;
@@ -18,14 +11,6 @@
 	padding: 1rem;
 	max-width: 960px;
 	margin: 0 auto;
-
-	.green-separator {
-		@include separator('green');
-	}
-
-	.red-separator {
-		@include separator('red');
-	}
 
 	h2 {
 		font-size: 1.75rem;

@@ -31,9 +31,9 @@
       <% if options.fetch(:show_line_colors, true) && transfers.any? %>
         <div class="transfers row">
           <% if main_line.nil? %>
-            Serviced by:
+            <div style="text-align:left">Serviced by:</div>
           <% else %>
-            Transfers:
+            <div>Transfers:</div>
           <% end %>
           <div class="stop-identifiers row">
             <% transfers.each do |line| %>
