@@ -151,14 +151,14 @@ button.no-style {
 		top: -50%;
 		width: 1.25rem;
 		height: 1.25rem;
-		background-color: #000000;
+		background-color: #000;
 		border-radius: 50%;
 		position: relative;
 
 		&.left {
 			left: -5px;
 		}
-		
+
 		&.right {
 			right: -5px;
 		}
@@ -168,10 +168,9 @@ button.no-style {
 			left: 25%;
 			width: 50%;
 			height: 50%;
-			background-color: #ffffff;
+			background-color: #fff;
 			border-radius: 50%;
 			position: relative;
 		}
-
 	}
 }
