@@ -43,13 +43,12 @@
   <% end %>
 
   <div data-controller="nearby-stops">
-    <h3 class="heading">Nearby Issues</h3>
+ 	   <h3 class="heading">Nearby Issues</h3>
 
-  <div data-target="nearby-stops.content">Loading...</div>
+  		<div data-target="nearby-stops.content">Loading...</div>
 
+		<div class="red-separator separator"></div>
 
-  <div class="red-separator separator"></div>
-
-  <%= link_to('Select Routes', lines_path, class: 'brown-btn') %>
-</div>
+		<%= link_to('Select Routes', lines_path, class: 'brown-btn') %>
+	</div>
 </div>

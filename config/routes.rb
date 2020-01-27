@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :lines, only: [:index, :show]
 
   match "/lines/:line_id/get_stops" => 'lines#get_stops', :as => :get_stops, via: [:get, :post]
+  match "/lines/:line_id/get_stops_map" => 'lines#get_stops_map', :as => :get_stops_map, via: [:get, :post]
+
 
   get "/nearby_stops" => 'stops#nearby', constraints: { format: 'json' }, as: :nearby_stops
   get "/stops/:stop_id" => 'stops#show', :as => :stop

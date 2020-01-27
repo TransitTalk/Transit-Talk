@@ -1,0 +1,12 @@
+<% line_onestop_id = local_assigns[:line].nil? ? "" : local_assigns[:line].onestop_id 
+	line_color = local_assigns[:line].nil? ? "#000" : local_assigns[:line].color
+	stop_onestop_id = local_assigns[:stop].nil? ? "" : local_assigns[:stop].onestop_id 
+%>
+
+
+<div data-controller="map" 
+	data-map-line-id="<%= line_onestop_id %>"
+	data-map-stop-id="<%= stop_onestop_id %>"
+	data-map-line-color="<%= line_color %>">
+	<div style="height: 400px; width: 400px" id="map" class="map"></div>
+</div>

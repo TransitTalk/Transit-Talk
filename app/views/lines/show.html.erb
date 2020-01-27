@@ -8,6 +8,7 @@
 		</div>
 	</h3>
 </div>
+<%= render "shared/map", line: @line %>
 <div class="page-container">
 	<ul class="stop-list">
 		<%= render "shared/striped_table", table_collection: @line.stops, row_partial: "stops/show_with_issues" %>

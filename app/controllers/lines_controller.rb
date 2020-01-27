@@ -13,4 +13,9 @@ class LinesController < ApplicationController
     @line = Line.find(params[:line_id])
     render json: @line.stops.pluck(:onestop_id, :name)
   end
+
+  def get_stops_map
+	@line = Line.find(params[:line_id])
+	render json: @line.stops.select(:onestop_id, :name, :lattitude, :longitude)
+  end
 end

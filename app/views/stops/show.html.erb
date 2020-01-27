@@ -13,4 +13,5 @@
 	<% else %>
 		There are no issues!
 	<% end %>
+	<%= render "shared/map", line: @stop.lines.first, stop: @stop %>
 </div>
