@@ -19,13 +19,13 @@ $(document).on('ready turbolinks:load', function()
 {
 	$("header .hamburger").click(function()
 	{
-		$(".side-menu").animate({"left": '0%'});
+		$(".side-menu").animate({"right": '0%'});
 		$(".side-menu-overlay").fadeIn();
 	});
 
 	$(".side-menu-overlay").click(function()
 	{
-		$(".side-menu").animate({"left": '-85%'});
+		$(".side-menu").animate({"right": '-85%'});
 		$(".side-menu-overlay").fadeOut();
 	});
 

@@ -26,7 +26,7 @@
     </div>
   </div>
 
-  <div class="green-separator separator"></div>
+  <%= render "shared/separator", color: "blue" %>
 
   <% if @favorites.present? %>
     <h3 class="heading">Favorite Stops</h3>
@@ -39,16 +39,15 @@
       <%= render "shared/striped_table", table_collection: @favorites, row_partial: "stops/show_with_issues", row_options: @stop_view_options %>
     </div>
 
-    <div class="green-separator separator"></div>
+    <%= render "shared/separator", color: "green" %>
   <% end %>
 
   <div data-controller="nearby-stops">
-    <h3 class="heading">Nearby Issues</h3>
+    <h3 class="heading">Nearby Stops</h3>
 
   <div data-target="nearby-stops.content">Loading...</div>
 
-
-  <div class="red-separator separator"></div>
+  <%= render "shared/separator", color: "red" %>
 
   <%= link_to('Select Routes', lines_path, class: 'brown-btn') %>
 </div>
