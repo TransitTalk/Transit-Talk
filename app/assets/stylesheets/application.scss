@@ -137,3 +137,40 @@ button.no-style {
 	background: blue;
 	color: white;
 }
+
+.separator {
+	height: 10px;
+	width: 90%;
+	margin: 2rem auto;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	vertical-align: middle;
+
+	.node-external {
+		top: -50%;
+		width: 1.25rem;
+		height: 1.25rem;
+		background-color: #000;
+		border-radius: 50%;
+		position: relative;
+
+		&.left {
+			left: -5px;
+		}
+
+		&.right {
+			right: -5px;
+		}
+
+		.node-internal {
+			top: 25%;
+			left: 25%;
+			width: 50%;
+			height: 50%;
+			background-color: #fff;
+			border-radius: 50%;
+			position: relative;
+		}
+	}
+}
