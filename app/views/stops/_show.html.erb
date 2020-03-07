@@ -38,7 +38,7 @@
           <div class="stop-identifiers row">
             <% transfers.each do |line| %>
               <% if line.train? %>
-                <div class="line-swatch" style="background-color: <%= "##{line.color}" %>"></div>
+                <div aria-label="<%= line.name %>" class="line-swatch" style="background-color: <%= "##{line.color}" %>"></div>
               <% else %>
                 <div class="line-tile api-id"><%= line.name %></div>
               <% end %>
@@ -49,7 +49,7 @@
     </div>
   <% end %>
   <div class="issue-readout">
-    <div class="issue-count"><%= stop.issues.length %></div>
+    <div class="issue-count" aria-describedby="<%= stop.issues.length %> issues at <%= stop.name %>"><%= stop.issues.length %></div>
       <div class="issue-button">
           <%= new_issue_button(stop: stop, line: main_line) %>
       </div>

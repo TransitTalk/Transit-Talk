@@ -44,7 +44,11 @@ textarea {
 }
 
 .checkbox-container input {
-	display: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0;
+	display: inline; 
 }
 
 .checkbox-tile {
