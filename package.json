@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@rails/webpacker": "^4.2.0",
-    "postcss": "^7.0.17",
+    "postcss": "^8.2.10",
     "stimulus": "^1.1.1"
   },
   "devDependencies": {
