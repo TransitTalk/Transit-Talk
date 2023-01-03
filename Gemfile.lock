@@ -131,7 +131,8 @@ GEM
       multi_json
       rake
       rubyzip (~> 1.1)
-    httparty (0.15.6)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
@@ -160,7 +161,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.13.0)
     multi_json (1.12.1)
-    multi_xml (0.5.5)
+    multi_xml (0.6.0)
     mustermann (1.0.2)
     mysql2 (0.5.2)
     nio4r (2.5.2)
